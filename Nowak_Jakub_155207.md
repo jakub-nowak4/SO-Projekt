@@ -40,3 +40,4 @@ wzięli udział w egzaminie wstępnym.
 Napisz programy Dziekan, Komisja i Kandydat symulujące przeprowadzenie egzaminu wstępnego.
 Raport z przebiegu symulacji zapisać w pliku (plikach) tekstowym.
 
+Github: https://github.com/jakub-nowak4/SO-Projekt
