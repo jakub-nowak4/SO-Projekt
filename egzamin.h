@@ -8,23 +8,11 @@
 
 #include <unistd.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 
-#define M 10                    // W docelowej symulacji M = 120
+#define M 12 // W docelowej symulacji M = 120
+#define LICZBA_KANDYDATOW 12 * M
 #define CZAS_OPRACOWNIE_PYTAN 5 // Czas Ti na opracownie pytan od komisji
-
-typedef struct
-{
-    pid_t pid;
-    Kandydat_Status status;
-
-    float wynik_matura;
-    bool czy_powtarza_egzamin;
-
-    float wynika_a;
-    float wynik_b;
-    float wynik_koncowy;
-
-} Kandydat;
 
 typedef enum
 {
@@ -41,5 +29,19 @@ typedef enum
     EGZAMIN_B_ODPOWIADA,
     KONIEC_EGZAMINU
 } Kandydat_Status;
+
+typedef struct
+{
+    pid_t pid;
+    Kandydat_Status status;
+
+    float wynik_matura;
+    bool czy_powtarza_egzamin;
+
+    float wynika_a;
+    float wynik_b;
+    float wynik_koncowy;
+
+} Kandydat;
 
 #endif
