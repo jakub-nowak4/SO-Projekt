@@ -9,10 +9,16 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/sem.h>
+#include <sys/shm.h>
+#include <sys/ipc.h>
 
 #define M 12 // W docelowej symulacji M = 120
 #define LICZBA_KANDYDATOW 12 * M
 #define CZAS_OPRACOWNIE_PYTAN 5 // Czas Ti na opracownie pytan od komisji
+
+int semafor_id;
+int shmid;
 
 typedef enum
 {
@@ -43,5 +49,105 @@ typedef struct
     float wynik_koncowy;
 
 } Kandydat;
+
+key_t utworz_klucz(int arg)
+{
+    key_t klucz = ftok(".", arg);
+    if (klucz == -1)
+    {
+        printf("ftok() | Nie udalo sie utworzyc klucza\n");
+        exit(EXIT_FAILURE);
+    }
+
+    return klucz;
+}
+
+typedef enum
+{
+    SEMAFOR_BUDYNEK
+} Semafory;
+
+void usun_semafory()
+{
+    if(semctl(semafor_id,0,IPC_RMID) == -1)
+    {
+        perror("semctl() | Nie udalo sie usunac zbioru semaforow");
+        exit(EXIT_FAILURE);
+    }
+}
+
+void utworz_semafory(key_t klucz_sem)
+{
+    semafor_id = semget(klucz_sem, 1, IPC_CREAT | IPC_EXCL | 0600);
+    if (semafor_id == -1)
+    {
+        if (errno == EEXIST)
+        {
+            semafor_id = semget(klucz_sem, 1, 0600);
+            if (semafor_id == -1)
+            {
+                perror("semget() | Nie udalo sie przylaczyc do zbioru semaforow");
+                usun_semafory();
+                exit(EXIT_FAILURE);
+            }
+        }else
+        {
+            perror("semget() | Nie udalo sie utworzyc zbioru semaforow");
+            exit(EXIT_FAILURE);
+        }
+    }
+    else
+    {
+        if(semctl(semafor_id,SEMAFOR_BUDYNEK,SETVAL,0) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_BUDYNEK");
+            usun_semafory();
+            exit(EXIT_FAILURE);
+        }
+    }
+}
+
+void semafor_p(int semNum)
+{
+    struct sembuf buffer;
+    buffer.sem_num = semNum;
+    buffer.sem_num = -1;
+    buffer.sem_flg = 0;
+
+    if(semop(semafor_id,&buffer,1) == -1)
+    {
+        perror("semop() | Nie udalo sie wykonac operacji semafor P");
+        usun_semafory();
+        exit(EXIT_FAILURE);
+    }
+}
+
+void semafor_v(int semNum)
+{
+    struct sembuf buffer;
+    buffer.sem_num = semNum;
+    buffer.sem_op = 1;
+    buffer.sem_flg = 0;
+
+    if(semop(semafor_id,&buffer,1) == -1)
+    {
+        perror("semop() | Nie udalo sie wykonac operacji semafor V");
+        usun_semafory();
+        exit(EXIT_FAILURE);
+    }
+}
+
+int semafor_wartosc(int semNum)
+{
+    int wartosc = semctl(semafor_id,semNum,GETVAL);
+    if(wartosc == -1)
+    {
+        perror("semop() | Nie udalo sie odczytac wartosci semafora");
+        usun_semafory();
+        exit(EXIT_FAILURE);
+    }
+
+    return wartosc;
+}
 
 #endif

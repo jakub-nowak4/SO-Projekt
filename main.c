@@ -7,6 +7,12 @@ int main()
     printf("[main] LICZBA MIEJSC: %d\n", M);
     printf("[main] LICZBA KANDYDATÓW: %d\n", LICZBA_KANDYDATOW);
 
+    //init
+    key_t klucz_sem = utworz_klucz(66);
+    utworz_semafory(klucz_sem);
+
+    key_t klucz_shm = utworz_klucz(77);
+
     // Dziekan
     switch (fork())
     {
