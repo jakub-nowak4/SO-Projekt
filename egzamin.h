@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <errno.h>
+#include <string.h>
 
 #include <unistd.h>
 #include <sys/types.h>
@@ -64,12 +65,13 @@ key_t utworz_klucz(int arg)
 
 typedef enum
 {
-    SEMAFOR_BUDYNEK
+    SEMAFOR_BUDYNEK,
+    SEMAFOR_STD_OUT
 } Semafory;
 
 void usun_semafory()
 {
-    if(semctl(semafor_id,0,IPC_RMID) == -1)
+    if (semctl(semafor_id, 0, IPC_RMID) == -1)
     {
         perror("semctl() | Nie udalo sie usunac zbioru semaforow");
         exit(EXIT_FAILURE);
@@ -78,19 +80,20 @@ void usun_semafory()
 
 void utworz_semafory(key_t klucz_sem)
 {
-    semafor_id = semget(klucz_sem, 1, IPC_CREAT | IPC_EXCL | 0600);
+    semafor_id = semget(klucz_sem, 2, IPC_CREAT | IPC_EXCL | 0600);
     if (semafor_id == -1)
     {
         if (errno == EEXIST)
         {
-            semafor_id = semget(klucz_sem, 1, 0600);
+            semafor_id = semget(klucz_sem, 2, 0600);
             if (semafor_id == -1)
             {
                 perror("semget() | Nie udalo sie przylaczyc do zbioru semaforow");
                 usun_semafory();
                 exit(EXIT_FAILURE);
             }
-        }else
+        }
+        else
         {
             perror("semget() | Nie udalo sie utworzyc zbioru semaforow");
             exit(EXIT_FAILURE);
@@ -98,9 +101,16 @@ void utworz_semafory(key_t klucz_sem)
     }
     else
     {
-        if(semctl(semafor_id,SEMAFOR_BUDYNEK,SETVAL,0) == -1)
+        if (semctl(semafor_id, SEMAFOR_BUDYNEK, SETVAL, 0) == -1)
         {
             perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_BUDYNEK");
+            usun_semafory();
+            exit(EXIT_FAILURE);
+        }
+
+        if (semctl(semafor_id, SEMAFOR_STD_OUT, SETVAL, 1) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_STD_OUT");
             usun_semafory();
             exit(EXIT_FAILURE);
         }
@@ -111,10 +121,10 @@ void semafor_p(int semNum)
 {
     struct sembuf buffer;
     buffer.sem_num = semNum;
-    buffer.sem_num = -1;
+    buffer.sem_op = -1;
     buffer.sem_flg = 0;
 
-    if(semop(semafor_id,&buffer,1) == -1)
+    if (semop(semafor_id, &buffer, 1) == -1)
     {
         perror("semop() | Nie udalo sie wykonac operacji semafor P");
         usun_semafory();
@@ -129,7 +139,7 @@ void semafor_v(int semNum)
     buffer.sem_op = 1;
     buffer.sem_flg = 0;
 
-    if(semop(semafor_id,&buffer,1) == -1)
+    if (semop(semafor_id, &buffer, 1) == -1)
     {
         perror("semop() | Nie udalo sie wykonac operacji semafor V");
         usun_semafory();
@@ -139,8 +149,8 @@ void semafor_v(int semNum)
 
 int semafor_wartosc(int semNum)
 {
-    int wartosc = semctl(semafor_id,semNum,GETVAL);
-    if(wartosc == -1)
+    int wartosc = semctl(semafor_id, semNum, GETVAL);
+    if (wartosc == -1)
     {
         perror("semop() | Nie udalo sie odczytac wartosci semafora");
         usun_semafory();
@@ -148,6 +158,25 @@ int semafor_wartosc(int semNum)
     }
 
     return wartosc;
+}
+
+void wypisz_wiadomosc(char *msg)
+{
+    if (msg == NULL)
+    {
+        printf("wypisz_wiadomosc() | Podano nieprawidlowa wiadomosc\n");
+        exit(EXIT_FAILURE);
+    }
+
+    semafor_p(SEMAFOR_STD_OUT);
+
+    if (write(STDOUT_FILENO, msg, strlen(msg)) == -1)
+    {
+        perror("write() | Nie udalo sie wypisac wiadomosci na stdout");
+        exit(EXIT_FAILURE);
+    }
+
+    semafor_v(SEMAFOR_STD_OUT);
 }
 
 #endif
