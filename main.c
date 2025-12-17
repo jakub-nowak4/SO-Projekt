@@ -2,6 +2,7 @@
 
 int main()
 {
+    srand(time(NULL));
     // init
     key_t klucz_sem = utworz_klucz(66);
     utworz_semafory(klucz_sem);
@@ -75,6 +76,7 @@ int main()
     // Kandydaci
     for (int i = 0; i < LICZBA_KANDYDATOW; i++)
     {
+        usleep(rand() % (500000 - 100000 + 1) + 100000);
         switch (fork())
         {
         case -1:

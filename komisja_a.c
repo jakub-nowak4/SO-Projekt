@@ -2,7 +2,7 @@
 
 int main()
 {
-    char msg_buffer[1024];
+    char msg_buffer[200];
     key_t klucz_sem = utworz_klucz(66);
     utworz_semafory(klucz_sem);
 

@@ -6,8 +6,10 @@
 #include <stdbool.h>
 #include <errno.h>
 #include <string.h>
+#include <time.h>
 
 #include <unistd.h>
+#include <signal.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/sem.h>
@@ -15,7 +17,7 @@
 #include <sys/ipc.h>
 
 #define M 12 // W docelowej symulacji M = 120
-#define LICZBA_KANDYDATOW 12 * M
+#define LICZBA_KANDYDATOW 10 * M
 #define CZAS_OPRACOWNIE_PYTAN 5 // Czas Ti na opracownie pytan od komisji
 
 int semafor_id;
@@ -51,6 +53,12 @@ typedef struct
 
 } Kandydat;
 
+typedef struct
+{
+    Kandydat LISTA_KANDYDACI[LICZBA_KANDYDATOW];
+    Kandydat LISTA_ODRZUCONYCH[LICZBA_KANDYDATOW];
+} PamiecDzielona;
+
 key_t utworz_klucz(int arg)
 {
     key_t klucz = ftok(".", arg);
@@ -65,7 +73,7 @@ key_t utworz_klucz(int arg)
 
 typedef enum
 {
-    SEMAFOR_BUDYNEK,
+    SEMAFOR_EGZAMIN_START,
     SEMAFOR_STD_OUT
 } Semafory;
 
@@ -101,7 +109,7 @@ void utworz_semafory(key_t klucz_sem)
     }
     else
     {
-        if (semctl(semafor_id, SEMAFOR_BUDYNEK, SETVAL, 0) == -1)
+        if (semctl(semafor_id, SEMAFOR_EGZAMIN_START, SETVAL, 0) == -1)
         {
             perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_BUDYNEK");
             usun_semafory();
@@ -160,17 +168,35 @@ int semafor_wartosc(int semNum)
     return wartosc;
 }
 
+void pobierz_czas(struct tm *wynik)
+{
+    if (wynik == NULL)
+    {
+        printf("Nie udalo sie pobrac wartosci czasu\n");
+        exit(EXIT_FAILURE);
+    }
+
+    time_t now = time(NULL);
+    *wynik = *localtime(&now);
+}
+
 void wypisz_wiadomosc(char *msg)
 {
+    struct tm czas;
+    pobierz_czas(&czas);
+
     if (msg == NULL)
     {
         printf("wypisz_wiadomosc() | Podano nieprawidlowa wiadomosc\n");
         exit(EXIT_FAILURE);
     }
 
+    char buffor[250];
+    int len = snprintf(buffor, sizeof(buffor), "%02d:%02d:%02d | %s", czas.tm_hour, czas.tm_min, czas.tm_sec, msg);
+
     semafor_p(SEMAFOR_STD_OUT);
 
-    if (write(STDOUT_FILENO, msg, strlen(msg)) == -1)
+    if (write(STDOUT_FILENO, buffor, len) == -1)
     {
         perror("write() | Nie udalo sie wypisac wiadomosci na stdout");
         exit(EXIT_FAILURE);
