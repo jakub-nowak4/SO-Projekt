@@ -15,19 +15,8 @@ int main()
     snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | Ustawia sie w kolejce przed budynkiem\n", getpid());
     wypisz_wiadomosc(msg_buffer);
 
-    // Oczekiwanie na start egzaminu
-    while (true)
-    {
-        if (semafor_wartosc(SEMAFOR_EGZAMIN_START) == 1)
-        {
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Dziekan rozpoczal egzamin\n", getpid());
-            wypisz_wiadomosc(msg_buffer);
-            break;
-        }
-    }
-
-    // symulacja pracy
-    sleep(30);
+    // Wyslij inforamcje poprzez FIFO i czekaj na odpowiedz
+    sleep(20);
 
     odlacz_shm(pamiec_shm);
 

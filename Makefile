@@ -7,8 +7,9 @@ PROGS := main dziekan kandydat komisja_a komisja_b
 
 all: $(PROGS)
 
-%: %.c
-	$(CC) $(CFLAGS) -o $@ $<
+
+%: %.c egzamin.c
+	$(CC) $(CFLAGS) -o $@ $< egzamin.c
 
 clean:
 	rm -f $(PROGS)

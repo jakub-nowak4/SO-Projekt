@@ -30,9 +30,10 @@ int main()
         pause();
     }
 
-    sprintf(msg_buffer, "PID: %d | Dziekan rozpoczyna egzamin\n", getpid());
+    sprintf(msg_buffer, "[DZIEKAN] PID: %d | Rozpoczynam egzamin\n", getpid());
     wypisz_wiadomosc(msg_buffer);
-    semafor_v(SEMAFOR_EGZAMIN_START);
+
+    // Czekaj na wiadomosci z FIFO
 
     odlacz_shm(pamiec_shm);
 
