@@ -8,7 +8,9 @@ int main()
     utworz_semafory(klucz_sem);
 
     key_t klucz_shm = utworz_klucz(77);
-    char msg_buffer[1024];
+    utworz_shm(klucz_shm);
+
+    char msg_buffer[200];
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[main] Rozpoczynam symulacje EGZAMIN WSTĘPNY NA KIERUNEK INFORMATYKA\n");
     wypisz_wiadomosc(msg_buffer);
@@ -116,5 +118,6 @@ int main()
     wypisz_wiadomosc(msg_buffer);
 
     usun_semafory();
+    usun_shm();
     return 0;
 }

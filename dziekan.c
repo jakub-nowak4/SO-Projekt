@@ -12,8 +12,14 @@ int main()
     }
 
     char msg_buffer[200];
+    PamiecDzielona *pamiec_shm;
+
     key_t klucz_sem = utworz_klucz(66);
     utworz_semafory(klucz_sem);
+
+    key_t klucz_shm = utworz_klucz(77);
+    utworz_shm(klucz_shm);
+    dolacz_shm(&pamiec_shm);
 
     snprintf(msg_buffer, sizeof(msg_buffer), "Utworzono PROCES Dziekan | PID: %d\n", getpid());
     wypisz_wiadomosc(msg_buffer);
@@ -27,6 +33,8 @@ int main()
     sprintf(msg_buffer, "PID: %d | Dziekan rozpoczyna egzamin\n", getpid());
     wypisz_wiadomosc(msg_buffer);
     semafor_v(SEMAFOR_EGZAMIN_START);
+
+    odlacz_shm(pamiec_shm);
 
     return 0;
 }

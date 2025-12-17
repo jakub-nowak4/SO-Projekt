@@ -1,5 +1,5 @@
-#ifndef EGZAMIN
-#define EGZAMIN
+#ifndef EGZAMIN_H
+#define EGZAMIN_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,11 +17,11 @@
 #include <sys/ipc.h>
 
 #define M 12 // W docelowej symulacji M = 120
-#define LICZBA_KANDYDATOW 10 * M
-#define CZAS_OPRACOWNIE_PYTAN 5 // Czas Ti na opracownie pytan od komisji
+#define LICZBA_KANDYDATOW (10 * M)
+#define CZAS_OPRACOWANIE_PYTAN 5 // Czas Ti na opracownie pytan od komisji
 
-int semafor_id;
-int shmid;
+int semafor_id = -1;
+int shmid = -1;
 
 typedef enum
 {
@@ -47,7 +47,7 @@ typedef struct
     float wynik_matura;
     bool czy_powtarza_egzamin;
 
-    float wynika_a;
+    float wynik_a;
     float wynik_b;
     float wynik_koncowy;
 
@@ -97,7 +97,6 @@ void utworz_semafory(key_t klucz_sem)
             if (semafor_id == -1)
             {
                 perror("semget() | Nie udalo sie przylaczyc do zbioru semaforow");
-                usun_semafory();
                 exit(EXIT_FAILURE);
             }
         }
@@ -112,14 +111,12 @@ void utworz_semafory(key_t klucz_sem)
         if (semctl(semafor_id, SEMAFOR_EGZAMIN_START, SETVAL, 0) == -1)
         {
             perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_BUDYNEK");
-            usun_semafory();
             exit(EXIT_FAILURE);
         }
 
         if (semctl(semafor_id, SEMAFOR_STD_OUT, SETVAL, 1) == -1)
         {
             perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_STD_OUT");
-            usun_semafory();
             exit(EXIT_FAILURE);
         }
     }
@@ -130,12 +127,11 @@ void semafor_p(int semNum)
     struct sembuf buffer;
     buffer.sem_num = semNum;
     buffer.sem_op = -1;
-    buffer.sem_flg = 0;
+    buffer.sem_flg = SEM_UNDO;
 
     if (semop(semafor_id, &buffer, 1) == -1)
     {
         perror("semop() | Nie udalo sie wykonac operacji semafor P");
-        usun_semafory();
         exit(EXIT_FAILURE);
     }
 }
@@ -145,12 +141,11 @@ void semafor_v(int semNum)
     struct sembuf buffer;
     buffer.sem_num = semNum;
     buffer.sem_op = 1;
-    buffer.sem_flg = 0;
+    buffer.sem_flg = SEM_UNDO;
 
     if (semop(semafor_id, &buffer, 1) == -1)
     {
         perror("semop() | Nie udalo sie wykonac operacji semafor V");
-        usun_semafory();
         exit(EXIT_FAILURE);
     }
 }
@@ -161,11 +156,60 @@ int semafor_wartosc(int semNum)
     if (wartosc == -1)
     {
         perror("semop() | Nie udalo sie odczytac wartosci semafora");
-        usun_semafory();
         exit(EXIT_FAILURE);
     }
 
     return wartosc;
+}
+
+void usun_shm(void)
+{
+    if (shmctl(shmid, IPC_RMID, NULL) == -1)
+    {
+        perror("shmctl() | Nie udalo sie usunac shm.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+void utworz_shm(key_t klucz_shm)
+{
+    shmid = shmget(klucz_shm, sizeof(PamiecDzielona), IPC_CREAT | IPC_EXCL | 0600);
+    if (shmid == -1)
+    {
+        if (errno == EEXIST)
+        {
+            shmid = shmget(klucz_shm, sizeof(PamiecDzielona), 0600);
+            if (shmid == -1)
+            {
+                perror("shmget() | Nie udalo sie podlaczyc do shm.");
+                exit(EXIT_FAILURE);
+            }
+        }
+        else
+        {
+            perror("shmget() | Nie udalo sie utworzyc shm.");
+            exit(EXIT_FAILURE);
+        }
+    }
+}
+
+void dolacz_shm(PamiecDzielona **wsk)
+{
+    *wsk = (PamiecDzielona *)shmat(shmid, NULL, 0);
+    if (*wsk == (PamiecDzielona *)-1)
+    {
+        perror("shmat() | Nie udalo sie dolaczyc shm do pamieci adresowej procesu.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+void odlacz_shm(PamiecDzielona *adr)
+{
+    if (shmdt(adr) == -1)
+    {
+        perror("shmdt() | Nie udalo sie odlaczyc shm od pamiec adresowej procesu.");
+        exit(EXIT_FAILURE);
+    }
 }
 
 void pobierz_czas(struct tm *wynik)
@@ -183,7 +227,7 @@ void pobierz_czas(struct tm *wynik)
 void wypisz_wiadomosc(char *msg)
 {
     struct tm czas;
-    pobierz_czas(&czas);
+    char buffor[250];
 
     if (msg == NULL)
     {
@@ -191,13 +235,13 @@ void wypisz_wiadomosc(char *msg)
         exit(EXIT_FAILURE);
     }
 
-    char buffor[250];
-    int len = snprintf(buffor, sizeof(buffor), "%02d:%02d:%02d | %s", czas.tm_hour, czas.tm_min, czas.tm_sec, msg);
-
     semafor_p(SEMAFOR_STD_OUT);
+    pobierz_czas(&czas);
+    int len = snprintf(buffor, sizeof(buffor), "%02d:%02d:%02d | %s", czas.tm_hour, czas.tm_min, czas.tm_sec, msg);
 
     if (write(STDOUT_FILENO, buffor, len) == -1)
     {
+        semafor_v(SEMAFOR_STD_OUT);
         perror("write() | Nie udalo sie wypisac wiadomosci na stdout");
         exit(EXIT_FAILURE);
     }
