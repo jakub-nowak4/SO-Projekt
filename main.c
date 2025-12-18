@@ -10,6 +10,14 @@ int main()
     key_t klucz_shm = utworz_klucz(77);
     utworz_shm(klucz_shm);
 
+    key_t klucz_msq_budynek = utworz_klucz(MSQ_KOLEJKA_BUDYNEK);
+    key_t klucz_msq_A = utworz_klucz(MSQ_KOLEJKA_EGZAMIN_A);
+    key_t klucz_msq_B = utworz_klucz(MSQ_KOLEJKA_EGZAMIN_B);
+
+    int msqid_budynek = utworz_msq(klucz_msq_budynek);
+    int msqid_A = utworz_msq(klucz_msq_A);
+    int msqid_B = utworz_msq(klucz_msq_B);
+
     char msg_buffer[200];
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[main] Rozpoczynam symulacje EGZAMIN WSTĘPNY NA KIERUNEK INFORMATYKA\n");
@@ -119,5 +127,9 @@ int main()
 
     usun_semafory();
     usun_shm();
+    usun_msq(msqid_budynek);
+    usun_msq(msqid_A);
+    usun_msq(msqid_B);
+
     return 0;
 }

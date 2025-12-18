@@ -14,9 +14,10 @@
 #include <sys/wait.h>
 #include <sys/sem.h>
 #include <sys/shm.h>
+#include <sys/msg.h>
 #include <sys/ipc.h>
 
-#define M 12 // W docelowej symulacji M = 120
+#define M 120 // W docelowej symulacji M = 120
 #define LICZBA_KANDYDATOW (10 * M)
 #define CZAS_OPRACOWANIE_PYTAN 5 // Czas Ti na opracownie pytan od komisji
 
@@ -39,19 +40,30 @@ typedef enum
     KONIEC_EGZAMINU
 } Kandydat_Status;
 
+typedef enum
+{
+    MSQ_KOLEJKA_BUDYNEK = 88,
+    MSQ_KOLEJKA_EGZAMIN_A = 881,
+    MSQ_KOLEJKA_EGZAMIN_B = 882
+} MSQ;
+
 typedef struct
 {
     pid_t pid;
     Kandydat_Status status;
 
-    float wynik_matura;
+    bool czy_zdal_mature;
     bool czy_powtarza_egzamin;
 
-    float wynik_a;
-    float wynik_b;
+    int wynik_a;
+    int wynik_b;
     float wynik_koncowy;
 
 } Kandydat;
+
+bool losuj_czy_zdal_matura();
+bool losuj_czy_powtarza_egzamin();
+void init_kandydat(pid_t pid, Kandydat *k);
 
 typedef struct
 {
@@ -61,7 +73,7 @@ typedef struct
 
 typedef enum
 {
-    SEMAFOR_EGZAMIN_START,
+    SEMAFOR_BUDYNEK,
     SEMAFOR_STD_OUT
 } Semafory;
 
@@ -83,5 +95,45 @@ void utworz_shm(key_t klucz_shm);
 void dolacz_shm(PamiecDzielona **wsk);
 void odlacz_shm(PamiecDzielona *adr);
 void usun_shm(void);
+
+// ---- Kolejki Komunikatow ----
+
+typedef enum
+{
+    DZIEKAN = 1,
+    KOMISJA_A_NADZORCA = 2,
+    KOMISJA_A_CZLONEK_2 = 3,
+    KOMISJA_A_CZLONEK_3 = 4,
+    KOMISJA_A_CZLONEK_4 = 5,
+    KOMISJA_A_CZLONEK_5 = 6,
+    KOMISJA_B_NADZORCA = 7,
+    KOMISJA_B_CZLONEK_2 = 8,
+    KOMISJA_B_CZLONEK_3 = 9
+
+} MSG_Odbiorca;
+
+typedef struct
+{
+    long mtype;
+    Kandydat kandydat;
+} MSG_ZGLOSZENIE;
+
+typedef struct
+{
+    long mtype;
+    bool dopuszczony_do_egzamin;
+    int numer_na_liscie;
+} MSG_DECYZJA;
+
+typedef struct
+{
+    long mtype;
+    pid_t pid;
+} MSG_POTWIERDZENIE;
+
+int utworz_msq(key_t klucz_msq);
+void msq_send(int msqid, void *msg, size_t msg_size);
+void msq_receive(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci);
+void usun_msq(int msqid);
 
 #endif

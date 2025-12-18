@@ -40,6 +40,40 @@ void wypisz_wiadomosc(char *msg)
     semafor_v(SEMAFOR_STD_OUT);
 }
 
+bool losuj_czy_zdal_matura()
+{
+    int los = rand() % 100;
+    return (los < 2) ? false : true;
+}
+
+bool losuj_czy_powtarza_egzamin()
+{
+    int los = rand() % 100;
+    return (los < 2) ? false : true;
+}
+
+void init_kandydat(pid_t pid, Kandydat *k)
+{
+
+    k->pid = pid;
+    k->status = KOLEJKA_PRZED_BUDYNKIEM;
+
+    k->czy_zdal_mature = losuj_czy_zdal_matura();
+
+    if (k->czy_zdal_mature)
+    {
+        k->czy_powtarza_egzamin = losuj_czy_powtarza_egzamin();
+    }
+    else
+    {
+        k->czy_powtarza_egzamin = false;
+    }
+
+    k->wynik_a = -1;
+    k->wynik_b = -1;
+    k->wynik_koncowy = -1;
+}
+
 key_t utworz_klucz(int arg)
 {
     key_t klucz = ftok(".", arg);
@@ -74,7 +108,7 @@ void utworz_semafory(key_t klucz_sem)
     }
     else
     {
-        if (semctl(semafor_id, SEMAFOR_EGZAMIN_START, SETVAL, 0) == -1)
+        if (semctl(semafor_id, SEMAFOR_BUDYNEK, SETVAL, 1) == -1)
         {
             perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_BUDYNEK");
             exit(EXIT_FAILURE);
@@ -183,6 +217,57 @@ void usun_shm(void)
     if (shmctl(shmid, IPC_RMID, NULL) == -1)
     {
         perror("shmctl() | Nie udalo sie usunac shm.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+int utworz_msq(key_t klucz_msq)
+{
+    int msqid = msgget(klucz_msq, IPC_CREAT | IPC_EXCL | 0600);
+    if (msqid == -1)
+    {
+        if (errno == EEXIST)
+        {
+            msqid = msgget(klucz_msq, 0600);
+            if (msqid == -1)
+            {
+                perror("msgget() | Nie udalo sie podlaczyc do kolejki komunikatow");
+                exit(EXIT_FAILURE);
+            }
+        }
+        else
+        {
+            perror("msgget() | Nie udalo sie utworzyc kolejki komunikatow");
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    return msqid;
+}
+
+void msq_send(int msqid, void *msg, size_t msg_size)
+{
+    if (msgsnd(msqid, msg, msg_size - sizeof(long), 0) == -1)
+    {
+        perror("msgsnd() | Nie udalo sie wyslac wiadomosci.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+void msq_receive(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci)
+{
+    if (msgrcv(msqid, buffer, buffer_size - sizeof(long), typ_wiadomosci, 0) == -1)
+    {
+        perror("msgrcv() | Nie udalo sie odberac wiadomosci.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+void usun_msq(int msqid)
+{
+    if (msgctl(msqid, IPC_RMID, NULL) == -1)
+    {
+        perror("msgctl() | Nie udalo sie usunac kolejki komunikatow");
         exit(EXIT_FAILURE);
     }
 }
