@@ -10,6 +10,16 @@ int main()
     key_t klucz_shm = utworz_klucz(77);
     utworz_shm(klucz_shm);
 
+    PamiecDzielona *pamiec_shm;
+    dolacz_shm(&pamiec_shm);
+
+    // Init shm
+    semafor_p(SEMAFOR_MUTEX);
+    pamiec_shm->index_kandydaci = 0;
+    pamiec_shm->index_odrzuceni = 0;
+    pamiec_shm->egzamin_trwa = false;
+    semafor_v(SEMAFOR_MUTEX);
+
     key_t klucz_msq_budynek = utworz_klucz(MSQ_KOLEJKA_BUDYNEK);
     key_t klucz_msq_A = utworz_klucz(MSQ_KOLEJKA_EGZAMIN_A);
     key_t klucz_msq_B = utworz_klucz(MSQ_KOLEJKA_EGZAMIN_B);
@@ -125,7 +135,30 @@ int main()
     snprintf(msg_buffer, sizeof(msg_buffer), "Zakończono oczekiwanie na procesy.\n");
     wypisz_wiadomosc(msg_buffer);
 
+    semafor_p(SEMAFOR_MUTEX);
+    int dopuszczonych = pamiec_shm->index_kandydaci;
+
+    for (int i = 0; i < dopuszczonych; i++)
+    {
+        Kandydat k = pamiec_shm->LISTA_KANDYDACI[i];
+        snprintf(msg_buffer, sizeof(msg_buffer), "Index:%d PID:%d | Matura:%d Czy powtarza:%d\n", i, k.pid, k.czy_zdal_mature, k.czy_powtarza_egzamin);
+        wypisz_wiadomosc(msg_buffer);
+    }
+
+    // Odrzuceni
+    int odrzuconych = pamiec_shm->index_odrzuceni;
+
+    for (int i = 0; i < odrzuconych; i++)
+    {
+        Kandydat k = pamiec_shm->LISTA_ODRZUCONYCH[i];
+        snprintf(msg_buffer, sizeof(msg_buffer), "Index:%d PID:%d | Matura:%d Czy powtarza:%d\n", i, k.pid, k.czy_zdal_mature, k.czy_powtarza_egzamin);
+        wypisz_wiadomosc(msg_buffer);
+    }
+
+    semafor_v(SEMAFOR_MUTEX);
+
     usun_semafory();
+    odlacz_shm(pamiec_shm);
     usun_shm();
     usun_msq(msqid_budynek);
     usun_msq(msqid_A);

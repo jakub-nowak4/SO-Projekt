@@ -49,7 +49,7 @@ bool losuj_czy_zdal_matura()
 bool losuj_czy_powtarza_egzamin()
 {
     int los = rand() % 100;
-    return (los < 2) ? false : true;
+    return (los < 2) ? true : false;
 }
 
 void init_kandydat(pid_t pid, Kandydat *k)
@@ -88,12 +88,12 @@ key_t utworz_klucz(int arg)
 
 void utworz_semafory(key_t klucz_sem)
 {
-    semafor_id = semget(klucz_sem, 2, IPC_CREAT | IPC_EXCL | 0600);
+    semafor_id = semget(klucz_sem, 3, IPC_CREAT | IPC_EXCL | 0600);
     if (semafor_id == -1)
     {
         if (errno == EEXIST)
         {
-            semafor_id = semget(klucz_sem, 2, 0600);
+            semafor_id = semget(klucz_sem, 3, 0600);
             if (semafor_id == -1)
             {
                 perror("semget() | Nie udalo sie przylaczyc do zbioru semaforow");
@@ -117,6 +117,12 @@ void utworz_semafory(key_t klucz_sem)
         if (semctl(semafor_id, SEMAFOR_STD_OUT, SETVAL, 1) == -1)
         {
             perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_STD_OUT");
+            exit(EXIT_FAILURE);
+        }
+
+        if (semctl(semafor_id, SEMAFOR_MUTEX, SETVAL, 1) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMFOR_MUTEX");
             exit(EXIT_FAILURE);
         }
     }

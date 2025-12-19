@@ -12,6 +12,9 @@ int main()
     utworz_shm(klucz_shm);
     dolacz_shm(&pamiec_shm);
 
+    key_t klucz_msq_A = utworz_klucz(MSQ_KOLEJKA_EGZAMIN_A);
+    int msqid_A = utworz_msq(klucz_msq_A);
+
     snprintf(msg_buffer, sizeof(msg_buffer), "Utworzono PROCES Komisja A |  PID: %d\n", getpid());
     wypisz_wiadomosc(msg_buffer);
 

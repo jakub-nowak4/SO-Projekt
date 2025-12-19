@@ -1,6 +1,6 @@
 #include "egzamin.h"
 
-void start_egzamin(int sig);
+void start_egzamin(int);
 volatile sig_atomic_t egzamin_start = false; // kompilator zawsze czyta z pamięci
 
 int main()
@@ -33,8 +33,11 @@ int main()
         pause();
     }
 
+    semafor_p(SEMAFOR_MUTEX);
+    pamiec_shm->egzamin_trwa = true;
     sprintf(msg_buffer, "[DZIEKAN] PID: %d | Rozpoczynam egzamin\n", getpid());
     wypisz_wiadomosc(msg_buffer);
+    semafor_v(SEMAFOR_MUTEX);
 
     // Czekaj na wiadomosci z FIFO
     int ilosc_zgloszen = 0;
@@ -55,7 +58,15 @@ int main()
 
             decyzja.mtype = zgloszenie.kandydat.pid;
             decyzja.dopuszczony_do_egzamin = true;
-            decyzja.numer_na_liscie = -1;
+
+            semafor_p(SEMAFOR_MUTEX);
+
+            int index = pamiec_shm->index_kandydaci;
+            pamiec_shm->LISTA_KANDYDACI[index] = zgloszenie.kandydat;
+            decyzja.numer_na_liscie = index;
+            pamiec_shm->index_kandydaci++;
+
+            semafor_v(SEMAFOR_MUTEX);
         }
         else
         {
@@ -65,13 +76,20 @@ int main()
             decyzja.mtype = zgloszenie.kandydat.pid;
             decyzja.dopuszczony_do_egzamin = false;
             decyzja.numer_na_liscie = -1;
+
+            semafor_p(SEMAFOR_MUTEX);
+
+            int index = pamiec_shm->index_odrzuceni;
+            pamiec_shm->LISTA_ODRZUCONYCH[index] = zgloszenie.kandydat;
+            pamiec_shm->index_odrzuceni++;
+
+            semafor_v(SEMAFOR_MUTEX);
         }
 
         msq_send(msqid_budynek, &decyzja, sizeof(decyzja));
         MSG_POTWIERDZENIE potwierdzenie;
         msq_receive(msqid_budynek, &potwierdzenie, sizeof(potwierdzenie), zgloszenie.kandydat.pid);
 
-        usleep(500000);
         ilosc_zgloszen++;
     }
 

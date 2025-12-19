@@ -17,7 +17,7 @@
 #include <sys/msg.h>
 #include <sys/ipc.h>
 
-#define M 120 // W docelowej symulacji M = 120
+#define M 12 // W docelowej symulacji M = 120
 #define LICZBA_KANDYDATOW (10 * M)
 #define CZAS_OPRACOWANIE_PYTAN 5 // Czas Ti na opracownie pytan od komisji
 
@@ -42,9 +42,9 @@ typedef enum
 
 typedef enum
 {
-    MSQ_KOLEJKA_BUDYNEK = 88,
-    MSQ_KOLEJKA_EGZAMIN_A = 881,
-    MSQ_KOLEJKA_EGZAMIN_B = 882
+    MSQ_KOLEJKA_BUDYNEK = 8,
+    MSQ_KOLEJKA_EGZAMIN_A = 9,
+    MSQ_KOLEJKA_EGZAMIN_B = 10
 } MSQ;
 
 typedef struct
@@ -67,6 +67,9 @@ void init_kandydat(pid_t pid, Kandydat *k);
 
 typedef struct
 {
+    bool egzamin_trwa;
+    int index_kandydaci;
+    int index_odrzuceni;
     Kandydat LISTA_KANDYDACI[LICZBA_KANDYDATOW];
     Kandydat LISTA_ODRZUCONYCH[LICZBA_KANDYDATOW];
 } PamiecDzielona;
@@ -74,7 +77,8 @@ typedef struct
 typedef enum
 {
     SEMAFOR_BUDYNEK,
-    SEMAFOR_STD_OUT
+    SEMAFOR_STD_OUT,
+    SEMAFOR_MUTEX
 } Semafory;
 
 void pobierz_czas(struct tm *wynik);

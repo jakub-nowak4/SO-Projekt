@@ -41,8 +41,20 @@ int main()
 
     msq_send(msqid_budynek, &potwierdzenie, sizeof(potwierdzenie));
 
-    snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem decyzje od dziekana\n", getpid());
+    if (decyzja.numer_na_liscie == -1)
+    {
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem decyzje od dziekana i koncze udzial w egzaminie\n", getpid());
+        wypisz_wiadomosc(msg_buffer);
+        exit(EXIT_SUCCESS);
+    }
+
+    snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A\n", getpid());
     wypisz_wiadomosc(msg_buffer);
+
+    // KOMUNIKACJA Z KOMISJA A
+
+    key_t klucz_msq_A = utworz_klucz(MSQ_KOLEJKA_EGZAMIN_A);
+    int msqid_A = utworz_msq(klucz_msq_A);
 
     sleep(30);
 
