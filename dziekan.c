@@ -44,7 +44,7 @@ int main()
     while (ilosc_zgloszen < LICZBA_KANDYDATOW)
     {
         MSG_ZGLOSZENIE zgloszenie;
-        msq_receive(msqid_budynek, &zgloszenie, sizeof(zgloszenie), DZIEKAN);
+        msq_receive(msqid_budynek, &zgloszenie, sizeof(zgloszenie), KANDYDAT_PRZESYLA_MATURE);
 
         snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Odebralem informacje o wyniku matury od Kandydata PID:%d\n", getpid(), zgloszenie.kandydat.pid);
         wypisz_wiadomosc(msg_buffer);

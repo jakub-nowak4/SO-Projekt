@@ -88,12 +88,12 @@ key_t utworz_klucz(int arg)
 
 void utworz_semafory(key_t klucz_sem)
 {
-    semafor_id = semget(klucz_sem, 3, IPC_CREAT | IPC_EXCL | 0600);
+    semafor_id = semget(klucz_sem, 5, IPC_CREAT | IPC_EXCL | 0600);
     if (semafor_id == -1)
     {
         if (errno == EEXIST)
         {
-            semafor_id = semget(klucz_sem, 3, 0600);
+            semafor_id = semget(klucz_sem, 5, 0600);
             if (semafor_id == -1)
             {
                 perror("semget() | Nie udalo sie przylaczyc do zbioru semaforow");
@@ -123,6 +123,18 @@ void utworz_semafory(key_t klucz_sem)
         if (semctl(semafor_id, SEMAFOR_MUTEX, SETVAL, 1) == -1)
         {
             perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMFOR_MUTEX");
+            exit(EXIT_FAILURE);
+        }
+
+        if (semctl(semafor_id, SEMAFOR_ODPOWIEDZ_A, SETVAL, 1) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMFOR_ODPOWIEDZ_A");
+            exit(EXIT_FAILURE);
+        }
+
+        if (semctl(semafor_id, SEMAFOR_ODPOWIEDZ_B, SETVAL, 1) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMFOR_ODPOWIEDZ_B");
             exit(EXIT_FAILURE);
         }
     }
@@ -267,6 +279,25 @@ void msq_receive(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosc
         perror("msgrcv() | Nie udalo sie odberac wiadomosci.");
         exit(EXIT_FAILURE);
     }
+}
+
+ssize_t msq_receive_no_wait(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci)
+{
+    ssize_t res;
+    if ((res = msgrcv(msqid, buffer, buffer_size - sizeof(long), typ_wiadomosci, IPC_NOWAIT)) == -1)
+    {
+        if (errno == ENOMSG)
+        {
+            return res;
+        }
+        else
+        {
+            perror("msgrcv() | Nie udalo sie odberac wiadomosci.");
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    return res;
 }
 
 void usun_msq(int msqid)

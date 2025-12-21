@@ -18,6 +18,7 @@ int main()
     pamiec_shm->index_kandydaci = 0;
     pamiec_shm->index_odrzuceni = 0;
     pamiec_shm->egzamin_trwa = false;
+    pamiec_shm->pozostalo_kandydatow = LICZBA_KANDYDATOW;
     semafor_v(SEMAFOR_MUTEX);
 
     key_t klucz_msq_budynek = utworz_klucz(MSQ_KOLEJKA_BUDYNEK);
