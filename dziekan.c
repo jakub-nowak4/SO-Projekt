@@ -40,57 +40,71 @@ int main()
     semafor_v(SEMAFOR_MUTEX);
 
     // Czekaj na wiadomosci z FIFO
-    int ilosc_zgloszen = 0;
-    while (ilosc_zgloszen < LICZBA_KANDYDATOW)
+    while (true)
     {
+        ssize_t res;
+
+        semafor_p(SEMAFOR_MUTEX);
+        bool egzamin_trwa = pamiec_shm->egzamin_trwa;
+        semafor_v(SEMAFOR_MUTEX);
+
+        if (!egzamin_trwa)
+        {
+            break;
+        }
+
         MSG_ZGLOSZENIE zgloszenie;
-        msq_receive(msqid_budynek, &zgloszenie, sizeof(zgloszenie), KANDYDAT_PRZESYLA_MATURE);
+        res = msq_receive_no_wait(msqid_budynek, &zgloszenie, sizeof(zgloszenie), KANDYDAT_PRZESYLA_MATURE);
 
-        snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Odebralem informacje o wyniku matury od Kandydata PID:%d\n", getpid(), zgloszenie.kandydat.pid);
-        wypisz_wiadomosc(msg_buffer);
-
-        MSG_DECYZJA decyzja;
-
-        if (zgloszenie.kandydat.czy_zdal_mature)
+        // Dziekan sprawdza wynik matury kandydata
+        if (res != -1)
         {
-            snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Po weryfikacji matury dopuszczam Kandydata PID:%d do dalszej czesci egzaminu\n", getpid(), zgloszenie.kandydat.pid);
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Odebralem informacje o wyniku matury od Kandydata PID:%d\n", getpid(), zgloszenie.kandydat.pid);
             wypisz_wiadomosc(msg_buffer);
 
-            decyzja.mtype = zgloszenie.kandydat.pid;
-            decyzja.dopuszczony_do_egzamin = true;
+            MSG_DECYZJA decyzja;
 
-            semafor_p(SEMAFOR_MUTEX);
+            if (zgloszenie.kandydat.czy_zdal_mature)
+            {
+                snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Po weryfikacji matury dopuszczam Kandydata PID:%d do dalszej czesci egzaminu\n", getpid(), zgloszenie.kandydat.pid);
+                wypisz_wiadomosc(msg_buffer);
 
-            int index = pamiec_shm->index_kandydaci;
-            pamiec_shm->LISTA_KANDYDACI[index] = zgloszenie.kandydat;
-            decyzja.numer_na_liscie = index;
-            pamiec_shm->index_kandydaci++;
+                decyzja.mtype = zgloszenie.kandydat.pid;
+                decyzja.dopuszczony_do_egzamin = true;
 
-            semafor_v(SEMAFOR_MUTEX);
+                semafor_p(SEMAFOR_MUTEX);
+
+                int index = pamiec_shm->index_kandydaci;
+                pamiec_shm->LISTA_KANDYDACI[index] = zgloszenie.kandydat;
+                decyzja.numer_na_liscie = index;
+                pamiec_shm->index_kandydaci++;
+
+                semafor_v(SEMAFOR_MUTEX);
+            }
+            else
+            {
+                snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Po weryfikacji matury nie dopuszczam Kandydata PID:%d do dalszej czesci egzaminu.\n", getpid(), zgloszenie.kandydat.pid);
+                wypisz_wiadomosc(msg_buffer);
+
+                decyzja.mtype = zgloszenie.kandydat.pid;
+                decyzja.dopuszczony_do_egzamin = false;
+                decyzja.numer_na_liscie = -1;
+
+                semafor_p(SEMAFOR_MUTEX);
+
+                int index = pamiec_shm->index_odrzuceni;
+                pamiec_shm->LISTA_ODRZUCONYCH[index] = zgloszenie.kandydat;
+                pamiec_shm->index_odrzuceni++;
+
+                semafor_v(SEMAFOR_MUTEX);
+            }
+
+            msq_send(msqid_budynek, &decyzja, sizeof(decyzja));
+            MSG_POTWIERDZENIE potwierdzenie;
+            msq_receive(msqid_budynek, &potwierdzenie, sizeof(potwierdzenie), zgloszenie.kandydat.pid);
         }
-        else
-        {
-            snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Po weryfikacji matury nie dopuszczam Kandydata PID:%d do dalszej czesci egzaminu.\n", getpid(), zgloszenie.kandydat.pid);
-            wypisz_wiadomosc(msg_buffer);
 
-            decyzja.mtype = zgloszenie.kandydat.pid;
-            decyzja.dopuszczony_do_egzamin = false;
-            decyzja.numer_na_liscie = -1;
-
-            semafor_p(SEMAFOR_MUTEX);
-
-            int index = pamiec_shm->index_odrzuceni;
-            pamiec_shm->LISTA_ODRZUCONYCH[index] = zgloszenie.kandydat;
-            pamiec_shm->index_odrzuceni++;
-
-            semafor_v(SEMAFOR_MUTEX);
-        }
-
-        msq_send(msqid_budynek, &decyzja, sizeof(decyzja));
-        MSG_POTWIERDZENIE potwierdzenie;
-        msq_receive(msqid_budynek, &potwierdzenie, sizeof(potwierdzenie), zgloszenie.kandydat.pid);
-
-        ilosc_zgloszen++;
+        usleep(1000);
     }
 
     odlacz_shm(pamiec_shm);

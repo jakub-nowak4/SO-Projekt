@@ -36,21 +36,34 @@ int main()
     msq_receive(msqid_budynek, &decyzja, sizeof(decyzja), getpid());
 
     MSG_POTWIERDZENIE potwierdzenie;
-    potwierdzenie.mtype = getpid();
-    potwierdzenie.pid = getpid();
-
-    msq_send(msqid_budynek, &potwierdzenie, sizeof(potwierdzenie));
 
     if (decyzja.numer_na_liscie == -1)
     {
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem decyzje od dziekana i koncze udzial w egzaminie.\n", getpid());
-        wypisz_wiadomosc(msg_buffer);
+        potwierdzenie.mtype = getpid();
+        potwierdzenie.pid = getpid();
         msq_send(msqid_budynek, &potwierdzenie, sizeof(potwierdzenie));
 
         semafor_p(SEMAFOR_MUTEX);
         pamiec_shm->pozostalo_kandydatow--;
+        if (pamiec_shm->pozostalo_kandydatow == 0)
+        {
+            pamiec_shm->egzamin_trwa = false;
+        }
+
         semafor_v(SEMAFOR_MUTEX);
+
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem decyzje od dziekana i koncze udzial w egzaminie.\n", getpid());
+        wypisz_wiadomosc(msg_buffer);
+
+        odlacz_shm(pamiec_shm);
         exit(EXIT_SUCCESS);
+    }
+    else
+    {
+        potwierdzenie.mtype = getpid();
+        potwierdzenie.pid = getpid();
+
+        msq_send(msqid_budynek, &potwierdzenie, sizeof(potwierdzenie));
     }
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.\n", getpid());
@@ -84,7 +97,7 @@ int main()
             pamiec_shm->liczba_osob_w_A++;
             semafor_v(SEMAFOR_MUTEX);
 
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDA] PID:%d | Wchodze na czesc teorytyczna egzaminu do Komisji A.\n", getpid());
+            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Wchodze na czesc teorytyczna egzaminu do Komisji A.\n", getpid());
             wypisz_wiadomosc(msg_buffer);
 
             break;
@@ -93,42 +106,81 @@ int main()
         usleep(1000);
     }
 
-    // Czekam na pytania od komisji A
-    snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDA] PID:%d | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.\n", getpid());
-    wypisz_wiadomosc(msg_buffer);
-    for (int i = 0; i < 5; i++)
+    bool czy_musze_zdawac = false;
+
+    if (kandydat.czy_powtarza_egzamin)
     {
-        MSG_PYTANIE pytanie;
-        msq_receive(msqid_A, &pytanie, sizeof(pytanie), getpid());
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Mam zdana czesc teorytyczna egzaminu. Czekam na weryfikacje od nadzorcy Komisji A.\n", getpid());
+        wypisz_wiadomosc(msg_buffer);
+
+        MSG_KANDYDAT_POWTARZA weryfikacja;
+        weryfikacja.mtype = NADZORCA_KOMISJI_A_WERYFIKUJE_WYNIK_POWTARZAJACEGO;
+        weryfikacja.pid = getpid();
+        weryfikacja.wynika_a = kandydat.wynik_a;
+
+        msq_send(msqid_A, &weryfikacja, sizeof(weryfikacja));
+
+        MSG_KANDYDAT_POWTARZA_ODPOWIEDZ_NADZORCY weryfikacja_odpowiedz;
+        msq_receive(msqid_A, &weryfikacja_odpowiedz, sizeof(weryfikacja_odpowiedz), getpid());
+
+        if (weryfikacja_odpowiedz.zgoda)
+        {
+
+            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Nadzorca Komisji A uznaje moj wynik z egazminu. Ustawiam sie w kolejce do Komisji B.\n", getpid());
+            wypisz_wiadomosc(msg_buffer);
+        }
+        else
+        {
+            czy_musze_zdawac = true;
+            // Tutaj trzeba sie zastanowic czy wystepuje taki przypadek
+            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Nadzorca Komisji A nie uznal mojego wyniku z egazminu. Czekam na pytania od Komisji A.\n", getpid());
+            wypisz_wiadomosc(msg_buffer);
+        }
+    }
+    else
+    {
+        czy_musze_zdawac = true;
     }
 
-    snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDA] PID:%d | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.\n", getpid());
-    wypisz_wiadomosc(msg_buffer);
-
-    sleep(rand() % 3);
-
-    snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDA] PID:%d | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.\n", getpid());
-    wypisz_wiadomosc(msg_buffer);
-
-    semafor_p(SEMAFOR_ODPOWIEDZ_A);
-    for (int i = 1; i <= 5; i++)
+    if (czy_musze_zdawac)
     {
-        MSG_ODPOWIEDZ odpowiedz;
-        odpowiedz.mtype = i;
-        odpowiedz.pid = getpid();
+        // Czekam na pytania od komisji A
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.\n", getpid());
+        wypisz_wiadomosc(msg_buffer);
+        for (int i = 0; i < 5; i++)
+        {
+            MSG_PYTANIE pytanie;
+            msq_receive(msqid_A, &pytanie, sizeof(pytanie), getpid());
+        }
 
-        msq_send(msqid_A, &odpowiedz, sizeof(odpowiedz));
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.\n", getpid());
+        wypisz_wiadomosc(msg_buffer);
+
+        usleep(rand() % 3000);
+
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.\n", getpid());
+        wypisz_wiadomosc(msg_buffer);
+
+        semafor_p(SEMAFOR_ODPOWIEDZ_A);
+        for (int i = 1; i <= 5; i++)
+        {
+            MSG_ODPOWIEDZ odpowiedz;
+            odpowiedz.mtype = i;
+            odpowiedz.pid = getpid();
+
+            msq_send(msqid_A, &odpowiedz, sizeof(odpowiedz));
+        }
+
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.\n", getpid());
+        wypisz_wiadomosc(msg_buffer);
+
+        for (int i = 0; i < 5; i++)
+        {
+            MSG_WYNIK wynik;
+            msq_receive(msqid_A, &wynik, sizeof(wynik), getpid());
+        }
+        semafor_v(SEMAFOR_ODPOWIEDZ_A);
     }
-
-    snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDA] PID:%d | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.\n", getpid());
-    wypisz_wiadomosc(msg_buffer);
-
-    for (int i = 0; i < 5; i++)
-    {
-        MSG_WYNIK wynik;
-        msq_receive(msqid_A, &wynik, sizeof(wynik), getpid());
-    }
-    semafor_v(SEMAFOR_ODPOWIEDZ_A);
 
     semafor_p(SEMAFOR_MUTEX);
     pamiec_shm->pozostalo_kandydatow--;

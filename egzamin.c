@@ -69,7 +69,15 @@ void init_kandydat(pid_t pid, Kandydat *k)
         k->czy_powtarza_egzamin = false;
     }
 
-    k->wynik_a = -1;
+    if (k->czy_powtarza_egzamin)
+    {
+        k->wynik_a = rand() % (100 - 30 + 1) + 30;
+    }
+    else
+    {
+        k->wynik_a = -1;
+    }
+
     k->wynik_b = -1;
     k->wynik_koncowy = -1;
 }

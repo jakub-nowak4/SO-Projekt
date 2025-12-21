@@ -123,8 +123,9 @@ void usun_shm(void);
 
 typedef enum
 {
-    KANDYDAT_PRZESYLA_MATURE = 1,
-    KANDYDAT_WCHODZI_DO_A = 100
+    KANDYDAT_PRZESYLA_MATURE = 100,
+    KANDYDAT_WCHODZI_DO_A = 101,
+    NADZORCA_KOMISJI_A_WERYFIKUJE_WYNIK_POWTARZAJACEGO = 102
 
 } MSG_MTYPE;
 
@@ -153,6 +154,20 @@ typedef struct
     pid_t pid;
     int numer_na_liscie;
 } MSG_KANDYDAT_WCHODZI_DO_A;
+
+typedef struct
+{
+    long mtype;
+    pid_t pid;
+    float wynika_a;
+
+} MSG_KANDYDAT_POWTARZA;
+
+typedef struct
+{
+    long mtype;
+    bool zgoda;
+} MSG_KANDYDAT_POWTARZA_ODPOWIEDZ_NADZORCY;
 
 typedef struct
 {

@@ -144,6 +144,54 @@ void *nadzorca(void *args)
             pthread_mutex_unlock(&mutex);
         }
 
+        // Nadzorca sprawdza czy jakis kandydat nie zglasza mu ze ma zdana to czesc egzaminu
+        MSG_KANDYDAT_POWTARZA weryfikacja;
+        rozmiar_odpowiedz = msq_receive_no_wait(msqid_A, &weryfikacja, sizeof(weryfikacja), NADZORCA_KOMISJI_A_WERYFIKUJE_WYNIK_POWTARZAJACEGO);
+
+        if (rozmiar_odpowiedz != -1)
+        {
+            MSG_KANDYDAT_POWTARZA_ODPOWIEDZ_NADZORCY weryfikacja_odpowiedz;
+            weryfikacja_odpowiedz.mtype = weryfikacja.pid;
+            weryfikacja_odpowiedz.zgoda = (weryfikacja.wynika_a >= 30 && weryfikacja.wynika_a <= 100);
+
+            if (weryfikacja_odpowiedz.zgoda)
+            {
+                pthread_mutex_lock(&mutex);
+                for (int i = 0; i < 3; i++)
+                {
+                    if (miejsca[i].pid == weryfikacja.pid)
+                    {
+                        memset(&miejsca[i], 0, sizeof(Sala_A));
+
+                        semafor_p(SEMAFOR_MUTEX);
+                        pamiec_shm->liczba_osob_w_A--;
+                        semafor_v(SEMAFOR_MUTEX);
+                        break;
+                    }
+                }
+                pthread_mutex_unlock(&mutex);
+            }
+            else
+            {
+                // Nadzorca nie uznal wyniku - kandydat musi zdawac egzamin
+                pthread_mutex_lock(&mutex);
+                for (int i = 0; i < 3; i++)
+                {
+                    if (miejsca[i].pid == weryfikacja.pid)
+                    {
+                        // Resetujemy tylko niezbedne pola, żeby kandydat mógł zdawać
+                        memset(miejsca[i].czy_dostal_pytanie, 0, sizeof(miejsca[i].czy_dostal_pytanie));
+                        memset(miejsca[i].oceny, 0, sizeof(miejsca[i].oceny));
+                        miejsca[i].liczba_ocen = 0;
+                        break;
+                    }
+                }
+                pthread_mutex_unlock(&mutex);
+            }
+
+            msq_send(msqid_A, &weryfikacja_odpowiedz, sizeof(weryfikacja_odpowiedz));
+        }
+
         // Nadzorca sprawdza czy wyslal pytania do wszytskich
         for (int i = 0; i < 3; i++)
         {
@@ -153,7 +201,7 @@ void *nadzorca(void *args)
             {
                 pthread_mutex_unlock(&mutex);
 
-                usleep(rand() % 2000000 + 500000);
+                usleep(rand() % 2000 + 5000);
 
                 pthread_mutex_lock(&mutex);
                 MSG_PYTANIE pytanie;
@@ -210,7 +258,7 @@ void *nadzorca(void *args)
                 wynik_koncowy.wynik_koncowy = srednia;
                 msq_send(msqid_A, &wynik_koncowy, sizeof(wynik_koncowy));
 
-                snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA A] PID:%d | Kandydat PID:%d otrzymal wynik koncowy za czesc teorytyczna=%f.\n", getpid(), miejsca[i].pid, srednia);
+                snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA A] PID:%d | Kandydat PID:%d otrzymal wynik koncowy za czesc teorytyczna=%.2f.\n", getpid(), miejsca[i].pid, srednia);
                 wypisz_wiadomosc(msg_buffer);
 
                 memset(&miejsca[i], 0, sizeof(Sala_A));
@@ -257,7 +305,7 @@ void *czlonek(void *args)
             {
                 pthread_mutex_unlock(&mutex);
 
-                usleep(rand() % 2000000 + 500000);
+                usleep(rand() % 2000 + 5000);
 
                 pthread_mutex_lock(&mutex);
                 MSG_PYTANIE pytanie;
