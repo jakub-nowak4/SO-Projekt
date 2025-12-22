@@ -20,6 +20,7 @@ int main()
     pamiec_shm->egzamin_trwa = false;
     pamiec_shm->pozostalo_kandydatow = LICZBA_KANDYDATOW;
     pamiec_shm->liczba_osob_w_A = 0;
+    pamiec_shm->liczba_osob_w_B = 0;
     pamiec_shm->nastepny_do_komisja_A = 0;
     semafor_v(SEMAFOR_MUTEX);
 

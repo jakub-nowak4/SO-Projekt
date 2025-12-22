@@ -107,6 +107,7 @@ int main()
     }
 
     bool czy_musze_zdawac = false;
+    bool czy_ide_do_B = false;
 
     if (kandydat.czy_powtarza_egzamin)
     {
@@ -128,6 +129,7 @@ int main()
 
             snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Nadzorca Komisji A uznaje moj wynik z egazminu. Ustawiam sie w kolejce do Komisji B.\n", getpid());
             wypisz_wiadomosc(msg_buffer);
+            czy_ide_do_B = true;
         }
         else
         {
@@ -135,6 +137,7 @@ int main()
             // Tutaj trzeba sie zastanowic czy wystepuje taki przypadek
             snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Nadzorca Komisji A nie uznal mojego wyniku z egazminu. Czekam na pytania od Komisji A.\n", getpid());
             wypisz_wiadomosc(msg_buffer);
+            czy_ide_do_B = false;
         }
     }
     else
@@ -179,7 +182,123 @@ int main()
             MSG_WYNIK wynik;
             msq_receive(msqid_A, &wynik, sizeof(wynik), getpid());
         }
+
+        MSG_WYNIK_KONCOWY wynik_koncowy;
+        msq_receive(msqid_A, &wynik_koncowy, sizeof(wynik_koncowy), getpid());
         semafor_v(SEMAFOR_ODPOWIEDZ_A);
+
+        czy_ide_do_B = wynik_koncowy.czy_zdal;
+        if (wynik_koncowy.czy_zdal)
+        {
+            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: %.2f. Ustawiam sie w kolejsce do Komisji B.\n", getpid(), wynik_koncowy.wynik_koncowy);
+            wypisz_wiadomosc(msg_buffer);
+        }
+        else
+        {
+            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: %.2f. Moj wynik jest za niski aby przystapic do kolejnego etapu egzaminu.\n", getpid(), wynik_koncowy.wynik_koncowy);
+            wypisz_wiadomosc(msg_buffer);
+
+            semafor_p(SEMAFOR_MUTEX);
+            pamiec_shm->pozostalo_kandydatow--;
+            if (pamiec_shm->pozostalo_kandydatow == 0)
+            {
+                pamiec_shm->egzamin_trwa = false;
+            }
+            semafor_v(SEMAFOR_MUTEX);
+
+            odlacz_shm(pamiec_shm);
+
+            exit(EXIT_SUCCESS);
+        }
+    }
+
+    // Kandydat ustawia sie w kolejce do komisji B
+
+    if (czy_ide_do_B)
+    {
+
+        key_t klucz_msq_B = utworz_klucz(MSQ_KOLEJKA_EGZAMIN_B);
+        int msqid_B = utworz_msq(klucz_msq_B);
+
+        MSG_KANDYDAT_WCHODZI_DO_B zgloszenie_B;
+        zgloszenie_B.mtype = KANDYDAT_WCHODZI_DO_B;
+        zgloszenie_B.numer_na_liscie = decyzja.numer_na_liscie;
+        zgloszenie_B.pid = getpid();
+
+        msq_send(msqid_B, &zgloszenie_B, sizeof(zgloszenie_B));
+
+        MSG_KANDYDAT_WCHODZI_DO_B_POTWIERDZENIE potwierdzenie_wejscia;
+        msq_receive(msqid_B, &potwierdzenie_wejscia, sizeof(potwierdzenie_wejscia), getpid());
+
+        semafor_p(SEMAFOR_MUTEX);
+        pamiec_shm->liczba_osob_w_B++;
+        semafor_v(SEMAFOR_MUTEX);
+
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Wchodze na czesc praktyczna egzaminu do Komisji B.\n", getpid());
+        wypisz_wiadomosc(msg_buffer);
+
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.\n", getpid());
+        wypisz_wiadomosc(msg_buffer);
+
+        MSG_PYTANIE pytanie_B;
+        for (int i = 0; i < LICZBA_CZLONKOW_B; i++)
+        {
+            msq_receive(msqid_B, &pytanie_B, sizeof(pytanie_B), getpid());
+        }
+
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.\n", getpid());
+        wypisz_wiadomosc(msg_buffer);
+
+        usleep(rand() % 3000);
+
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.\n", getpid());
+        wypisz_wiadomosc(msg_buffer);
+
+        semafor_p(SEMAFOR_ODPOWIEDZ_B);
+        for (int i = 0; i < LICZBA_CZLONKOW_B; i++)
+        {
+            MSG_ODPOWIEDZ odpowiedz_B;
+            odpowiedz_B.pid = getpid();
+            odpowiedz_B.mtype = i + 1;
+            msq_send(msqid_B, &odpowiedz_B, sizeof(odpowiedz_B));
+        }
+
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.\n", getpid());
+        wypisz_wiadomosc(msg_buffer);
+
+        for (int i = 0; i < LICZBA_CZLONKOW_B; i++)
+        {
+            MSG_WYNIK wynik_B;
+            msq_receive(msqid_B, &wynik_B, sizeof(wynik_B), getpid());
+        }
+
+        MSG_WYNIK_KONCOWY wynik_koncowy_B;
+        msq_receive(msqid_B, &wynik_koncowy_B, sizeof(wynik_koncowy_B), getpid());
+
+        semafor_v(SEMAFOR_ODPOWIEDZ_B);
+
+        if (wynik_koncowy_B.czy_zdal)
+        {
+            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: %.2f. Czekam az Dziekan oglosi liste rankingowa.\n", getpid(), wynik_koncowy_B.wynik_koncowy);
+            wypisz_wiadomosc(msg_buffer);
+        }
+        else
+        {
+            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: %.2f. Moj wynik jest za niski - koncze egzamin.\n", getpid(), wynik_koncowy_B.wynik_koncowy);
+            wypisz_wiadomosc(msg_buffer);
+
+            semafor_p(SEMAFOR_MUTEX);
+            pamiec_shm->pozostalo_kandydatow--;
+            if (pamiec_shm->pozostalo_kandydatow == 0)
+            {
+                pamiec_shm->egzamin_trwa = false;
+            }
+            semafor_v(SEMAFOR_MUTEX);
+
+            odlacz_shm(pamiec_shm);
+
+            exit(EXIT_SUCCESS);
+        }
     }
 
     semafor_p(SEMAFOR_MUTEX);

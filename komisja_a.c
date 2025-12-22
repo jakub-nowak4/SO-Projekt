@@ -5,7 +5,7 @@ void *czlonek(void *args);
 
 pthread_mutex_t mutex;
 
-int msqid_A;
+int msqid_A = -1;
 PamiecDzielona *pamiec_shm;
 Sala_A miejsca[3] = {0};
 int numery_czlonkow[LICZBA_CZLONKOW_A] = {0};
@@ -233,6 +233,8 @@ void *nadzorca(void *args)
                     wynik.numer_czlonka_komisj = numer_czlonka;
                     wynik.ocena = ocena;
                     msq_send(msqid_A, &wynik, sizeof(wynik));
+
+                    break;
                 }
             }
             pthread_mutex_unlock(&mutex);
@@ -246,23 +248,23 @@ void *nadzorca(void *args)
             if (miejsca[i].liczba_ocen == 5)
             {
                 float srednia = 0.0f;
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < LICZBA_CZLONKOW_A; j++)
                 {
                     srednia += miejsca[i].oceny[j];
                 }
 
                 srednia = srednia / LICZBA_CZLONKOW_A;
 
-                MSG_WYNIK_A wynik_koncowy;
+                MSG_WYNIK_KONCOWY wynik_koncowy;
                 wynik_koncowy.mtype = miejsca[i].pid;
                 wynik_koncowy.wynik_koncowy = srednia;
+                wynik_koncowy.czy_zdal = (srednia >= 30 && srednia <= 100);
                 msq_send(msqid_A, &wynik_koncowy, sizeof(wynik_koncowy));
 
                 snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA A] PID:%d | Kandydat PID:%d otrzymal wynik koncowy za czesc teorytyczna=%.2f.\n", getpid(), miejsca[i].pid, srednia);
                 wypisz_wiadomosc(msg_buffer);
 
                 memset(&miejsca[i], 0, sizeof(Sala_A));
-                pthread_mutex_unlock(&mutex);
 
                 semafor_p(SEMAFOR_MUTEX);
                 pamiec_shm->liczba_osob_w_A--;
@@ -281,9 +283,8 @@ void *nadzorca(void *args)
 
 void *czlonek(void *args)
 {
-    ssize_t rozmiar_odpowiedzi;
+    ssize_t res;
     int numer_czlonka = *(int *)args;
-    char msg_buffer[200];
 
     while (true)
     {
@@ -318,9 +319,9 @@ void *czlonek(void *args)
         }
 
         MSG_ODPOWIEDZ odpowiedz;
-        rozmiar_odpowiedzi = msq_receive_no_wait(msqid_A, &odpowiedz, sizeof(odpowiedz), numer_czlonka + 1);
+        res = msq_receive_no_wait(msqid_A, &odpowiedz, sizeof(odpowiedz), numer_czlonka + 1);
 
-        if (rozmiar_odpowiedzi != -1)
+        if (res != -1)
         {
             // Czlonek sprawdza czy otrzymal pytanie
             pthread_mutex_lock(&mutex);

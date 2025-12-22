@@ -74,6 +74,16 @@ typedef struct
     float wynik_koncowy_za_A;
 } Sala_A;
 
+typedef struct
+{
+    pid_t pid;
+    int numer_na_liscie;
+    bool czy_dostal_pytanie[LICZBA_CZLONKOW_B];
+    int oceny[LICZBA_CZLONKOW_B];
+    int liczba_ocen;
+    float wynik_koncowy_za_B;
+} Sala_B;
+
 bool losuj_czy_zdal_matura();
 bool losuj_czy_powtarza_egzamin();
 void init_kandydat(pid_t pid, Kandydat *k);
@@ -88,6 +98,7 @@ typedef struct
 
     int nastepny_do_komisja_A;
     int liczba_osob_w_A;
+    int liczba_osob_w_B;
     int pozostalo_kandydatow;
 } PamiecDzielona;
 
@@ -125,7 +136,8 @@ typedef enum
 {
     KANDYDAT_PRZESYLA_MATURE = 100,
     KANDYDAT_WCHODZI_DO_A = 101,
-    NADZORCA_KOMISJI_A_WERYFIKUJE_WYNIK_POWTARZAJACEGO = 102
+    NADZORCA_KOMISJI_A_WERYFIKUJE_WYNIK_POWTARZAJACEGO = 102,
+    KANDYDAT_WCHODZI_DO_B = 103
 
 } MSG_MTYPE;
 
@@ -154,6 +166,18 @@ typedef struct
     pid_t pid;
     int numer_na_liscie;
 } MSG_KANDYDAT_WCHODZI_DO_A;
+
+typedef struct
+{
+    long mtype;
+    pid_t pid;
+    int numer_na_liscie;
+} MSG_KANDYDAT_WCHODZI_DO_B;
+
+typedef struct
+{
+    long mtype;
+} MSG_KANDYDAT_WCHODZI_DO_B_POTWIERDZENIE;
 
 typedef struct
 {
@@ -192,9 +216,10 @@ typedef struct
 typedef struct
 {
     long mtype;
+    bool czy_zdal;
     float wynik_koncowy;
 
-} MSG_WYNIK_A;
+} MSG_WYNIK_KONCOWY;
 
 int utworz_msq(key_t klucz_msq);
 void msq_send(int msqid, void *msg, size_t msg_size);
