@@ -1,6 +1,6 @@
 #include "egzamin.h"
 
-void start_egzamin(int);
+void start_egzamin(int sigNum);
 volatile sig_atomic_t egzamin_start = false; // kompilator zawsze czyta z pamięci
 
 int main()
@@ -112,7 +112,8 @@ int main()
     return 0;
 }
 
-void start_egzamin(int)
+void start_egzamin(int sigNum)
 {
+    (void)sigNum;
     egzamin_start = true;
 }

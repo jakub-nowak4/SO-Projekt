@@ -76,13 +76,30 @@ int main()
 
     while (true)
     {
+        bool moge_wejsc = false;
+
         semafor_p(SEMAFOR_MUTEX);
+
         bool egzamin_trwa = pamiec_shm->egzamin_trwa;
         int aktualny = pamiec_shm->nastepny_do_komisja_A;
         int osoby = pamiec_shm->liczba_osob_w_A;
+
+        if (!egzamin_trwa)
+        {
+            semafor_v(SEMAFOR_MUTEX);
+            break;
+        }
+
+        if (aktualny == decyzja.numer_na_liscie && osoby < 3)
+        {
+            pamiec_shm->nastepny_do_komisja_A++;
+            pamiec_shm->liczba_osob_w_A++;
+            moge_wejsc = true;
+        }
+
         semafor_v(SEMAFOR_MUTEX);
 
-        if (egzamin_trwa && (aktualny == decyzja.numer_na_liscie) && osoby < 3)
+        if (moge_wejsc)
         {
             // Wysyla komunikat do nadzorcy komisji A
 
@@ -91,11 +108,6 @@ int main()
             zgloszenia_A.numer_na_liscie = decyzja.numer_na_liscie;
             zgloszenia_A.pid = getpid();
             msq_send(msqid_A, &zgloszenia_A, sizeof(zgloszenia_A));
-
-            semafor_p(SEMAFOR_MUTEX);
-            pamiec_shm->nastepny_do_komisja_A++;
-            pamiec_shm->liczba_osob_w_A++;
-            semafor_v(SEMAFOR_MUTEX);
 
             snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Wchodze na czesc teorytyczna egzaminu do Komisji A.\n", getpid());
             wypisz_wiadomosc(msg_buffer);

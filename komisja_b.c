@@ -144,28 +144,30 @@ void *nadzorca(void *args)
                 msq_send(msqid_B, &potwierdzenie, sizeof(potwierdzenie));
             }
         }
-
-        // Nadzorca spawdza czy wyslal wszytskiem swoje pytanie
-        pthread_mutex_lock(&mutex);
+        // Czlonek  spawdza czy wyslal wszytskiem swoje pytanie
         for (int i = 0; i < 3; i++)
         {
+            pid_t kandydat_pid = 0;
+            pthread_mutex_lock(&mutex);
+
             if (miejsca[i].pid != 0 && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
             {
-                pthread_mutex_unlock(&mutex);
+                kandydat_pid = miejsca[i].pid;
+                miejsca[i].czy_dostal_pytanie[numer_czlonka] = true;
+            }
+            pthread_mutex_unlock(&mutex);
+
+            if (kandydat_pid != 0)
+            {
 
                 usleep(rand() % 2000 + 5000);
 
-                pthread_mutex_lock(&mutex);
                 MSG_PYTANIE pytanie;
                 pytanie.mtype = miejsca[i].pid;
                 pytanie.pid = miejsca[i].pid;
-
                 msq_send(msqid_B, &pytanie, sizeof(pytanie));
-
-                miejsca[i].czy_dostal_pytanie[numer_czlonka] = true;
             }
         }
-        pthread_mutex_unlock(&mutex);
 
         // Nadzorca sprawdza czy nie otrzymal odpowiedzi na pytanie
         MSG_ODPOWIEDZ odpowiedz;
@@ -233,7 +235,7 @@ void *nadzorca(void *args)
         usleep(1000);
     }
 
-    return 0;
+    return NULL;
 }
 
 void *czlonek(void *args)
@@ -253,22 +255,26 @@ void *czlonek(void *args)
         // Czlonek  spawdza czy wyslal wszytskiem swoje pytanie
         for (int i = 0; i < 3; i++)
         {
+            pid_t kandydat_pid = 0;
             pthread_mutex_lock(&mutex);
+
             if (miejsca[i].pid != 0 && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
             {
-                pthread_mutex_unlock(&mutex);
+                kandydat_pid = miejsca[i].pid;
+                miejsca[i].czy_dostal_pytanie[numer_czlonka] = true;
+            }
+            pthread_mutex_unlock(&mutex);
+
+            if (kandydat_pid != 0)
+            {
 
                 usleep(rand() % 2000 + 5000);
 
-                pthread_mutex_lock(&mutex);
                 MSG_PYTANIE pytanie;
                 pytanie.mtype = miejsca[i].pid;
                 pytanie.pid = miejsca[i].pid;
-                miejsca[i].czy_dostal_pytanie[numer_czlonka] = true;
-
                 msq_send(msqid_B, &pytanie, sizeof(pytanie));
             }
-            pthread_mutex_unlock(&mutex);
         }
 
         // Czlonek sprawdza czy nie otrzymal odpowiedzi na pytanie
@@ -301,5 +307,5 @@ void *czlonek(void *args)
         usleep(1000);
     }
 
-    return 0;
+    return NULL;
 }
