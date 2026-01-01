@@ -6,6 +6,7 @@ void *czlonek(void *args);
 pthread_mutex_t mutex;
 
 int msqid_A = -1;
+int msqid_dziekan_komisja = -1;
 PamiecDzielona *pamiec_shm;
 Sala_A miejsca[3] = {0};
 int numery_czlonkow[LICZBA_CZLONKOW_A] = {0};
@@ -25,6 +26,9 @@ int main()
 
     key_t klucz_msq_A = utworz_klucz(MSQ_KOLEJKA_EGZAMIN_A);
     msqid_A = utworz_msq(klucz_msq_A);
+
+    key_t klucz_msq_dziekan_komisja = utworz_klucz(MSQ_DZIEKAN_KOMISJA);
+    msqid_dziekan_komisja = utworz_msq(klucz_msq_dziekan_komisja);
 
     pthread_mutex_init(&mutex, NULL);
 
@@ -171,23 +175,6 @@ void *nadzorca(void *args)
                 }
                 pthread_mutex_unlock(&mutex);
             }
-            else
-            {
-                // Nadzorca nie uznal wyniku - kandydat musi zdawac egzamin
-                pthread_mutex_lock(&mutex);
-                for (int i = 0; i < 3; i++)
-                {
-                    if (miejsca[i].pid == weryfikacja.pid)
-                    {
-                        // Resetujemy tylko niezbedne pola, żeby kandydat mógł zdawać
-                        memset(miejsca[i].czy_dostal_pytanie, 0, sizeof(miejsca[i].czy_dostal_pytanie));
-                        memset(miejsca[i].oceny, 0, sizeof(miejsca[i].oceny));
-                        miejsca[i].liczba_ocen = 0;
-                        break;
-                    }
-                }
-                pthread_mutex_unlock(&mutex);
-            }
 
             msq_send(msqid_A, &weryfikacja_odpowiedz, sizeof(weryfikacja_odpowiedz));
         }
@@ -246,6 +233,8 @@ void *nadzorca(void *args)
 
         pthread_mutex_lock(&mutex);
 
+        // Nadzorca sprawdza czy moze wystawic ocene koncowa
+
         for (int i = 0; i < 3; i++)
         {
 
@@ -267,6 +256,13 @@ void *nadzorca(void *args)
 
                 snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA A] PID:%d | Kandydat PID:%d otrzymal wynik koncowy za czesc teorytyczna=%.2f.\n", getpid(), miejsca[i].pid, srednia);
                 wypisz_wiadomosc(msg_buffer);
+
+                MSG_WYNIK_KONCOWY_DZIEKAN wynik_dla_dziekana;
+                wynik_dla_dziekana.mtype = NADZORCA_PRZESYLA_WYNIK_DO_DZIEKANA;
+                wynik_dla_dziekana.komisja = 'A';
+                wynik_dla_dziekana.pid = miejsca[i].pid;
+                wynik_dla_dziekana.wynik_koncowy = srednia;
+                msq_send(msqid_dziekan_komisja, &wynik_dla_dziekana, sizeof(wynik_dla_dziekana));
 
                 memset(&miejsca[i], 0, sizeof(Sala_A));
 

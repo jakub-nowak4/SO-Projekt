@@ -56,6 +56,7 @@ void init_kandydat(pid_t pid, Kandydat *k)
 {
 
     k->pid = pid;
+    k->numer_na_liscie = -1;
     k->status = KOLEJKA_PRZED_BUDYNKIEM;
 
     k->czy_zdal_mature = losuj_czy_zdal_matura();
@@ -314,5 +315,61 @@ void usun_msq(int msqid)
     {
         perror("msgctl() | Nie udalo sie usunac kolejki komunikatow");
         exit(EXIT_FAILURE);
+    }
+}
+
+int znajdz_kandydata(pid_t pid, PamiecDzielona *shm)
+{
+    if (shm == NULL)
+    {
+        printf("znajdz_index() | Przekazano pusty wskaznik\n");
+        exit(EXIT_FAILURE);
+    }
+
+    int index = -1;
+
+    semafor_p(SEMAFOR_MUTEX);
+    for (int i = 0; i < shm->index_kandydaci; i++)
+    {
+        if (shm->LISTA_KANDYDACI[i].pid == pid)
+        {
+            index = i;
+            break;
+        }
+    }
+    semafor_v(SEMAFOR_MUTEX);
+
+    return index;
+}
+
+void wypisz_liste_rankingowa(PamiecDzielona *pamiec_shm)
+{
+    char msg_buffer[256];
+    int n = pamiec_shm->index_rankingowa;
+
+    // Lista rankingowa
+    snprintf(msg_buffer, sizeof(msg_buffer), "\n=== LISTA RANKINGOWA ===\n");
+    wypisz_wiadomosc(msg_buffer);
+
+    for (int i = 0; i < n; i++)
+    {
+        snprintf(msg_buffer, sizeof(msg_buffer), "%d. PID %d - %.2f\n",
+                 i + 1,
+                 pamiec_shm->LISTA_RANKINGOWA[i].pid,
+                 pamiec_shm->LISTA_RANKINGOWA[i].wynik_koncowy);
+        wypisz_wiadomosc(msg_buffer);
+    }
+
+    // Lista przyketych M najlepszych
+    snprintf(msg_buffer, sizeof(msg_buffer), "\n=== PRZYJĘCI (%d miejsc) ===\n", M);
+    wypisz_wiadomosc(msg_buffer);
+
+    for (int i = 0; i < M && i < n; i++)
+    {
+        snprintf(msg_buffer, sizeof(msg_buffer), "%d. PID %d - %.2f\n",
+                 i + 1,
+                 pamiec_shm->LISTA_RANKINGOWA[i].pid,
+                 pamiec_shm->LISTA_RANKINGOWA[i].wynik_koncowy);
+        wypisz_wiadomosc(msg_buffer);
     }
 }

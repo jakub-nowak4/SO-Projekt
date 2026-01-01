@@ -17,6 +17,7 @@ int main()
     semafor_p(SEMAFOR_MUTEX);
     pamiec_shm->index_kandydaci = 0;
     pamiec_shm->index_odrzuceni = 0;
+    pamiec_shm->index_rankingowa = 0;
     pamiec_shm->egzamin_trwa = false;
     pamiec_shm->pozostalo_kandydatow = LICZBA_KANDYDATOW;
     pamiec_shm->liczba_osob_w_A = 0;
@@ -27,10 +28,12 @@ int main()
     key_t klucz_msq_budynek = utworz_klucz(MSQ_KOLEJKA_BUDYNEK);
     key_t klucz_msq_A = utworz_klucz(MSQ_KOLEJKA_EGZAMIN_A);
     key_t klucz_msq_B = utworz_klucz(MSQ_KOLEJKA_EGZAMIN_B);
+    key_t klucz_msq_dziekan_komisja = utworz_klucz(MSQ_DZIEKAN_KOMISJA);
 
     int msqid_budynek = utworz_msq(klucz_msq_budynek);
     int msqid_A = utworz_msq(klucz_msq_A);
     int msqid_B = utworz_msq(klucz_msq_B);
+    int msqid_dziekan_komisja = utworz_msq(klucz_msq_dziekan_komisja);
 
     char msg_buffer[200];
 
@@ -167,6 +170,7 @@ int main()
     usun_msq(msqid_budynek);
     usun_msq(msqid_A);
     usun_msq(msqid_B);
+    usun_msq(msqid_dziekan_komisja);
 
     return 0;
 }

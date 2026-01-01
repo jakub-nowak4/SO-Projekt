@@ -1,6 +1,7 @@
 #include "egzamin.h"
 
 int msqid_B = -1;
+int msqid_dziekan_komisja = -1;
 int numery_czlonkow[LICZBA_CZLONKOW_B] = {0};
 PamiecDzielona *pamiec_shm;
 Sala_B miejsca[3] = {0};
@@ -25,6 +26,9 @@ int main()
 
     key_t klucz_msq_B = utworz_klucz(MSQ_KOLEJKA_EGZAMIN_B);
     msqid_B = utworz_msq(klucz_msq_B);
+
+    key_t klucz_msq_dziekan_komisja = utworz_klucz(MSQ_DZIEKAN_KOMISJA);
+    msqid_dziekan_komisja = utworz_msq(klucz_msq_dziekan_komisja);
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B] PID:%d | Czekam na rozpoczecie egzaminu\n", getpid());
     wypisz_wiadomosc(msg_buffer);
@@ -220,6 +224,13 @@ void *nadzorca(void *args)
 
                 snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B Nadzorca] PID:%d | Kandydat PID:%d otrzymal wynik koncowy za czesc praktyczna=%.2f.\n", getpid(), miejsca[i].pid, srednia);
                 wypisz_wiadomosc(msg_buffer);
+
+                MSG_WYNIK_KONCOWY_DZIEKAN wynik_dla_dziekana;
+                wynik_dla_dziekana.mtype = NADZORCA_PRZESYLA_WYNIK_DO_DZIEKANA;
+                wynik_dla_dziekana.komisja = 'B';
+                wynik_dla_dziekana.pid = miejsca[i].pid;
+                wynik_dla_dziekana.wynik_koncowy = srednia;
+                msq_send(msqid_dziekan_komisja, &wynik_dla_dziekana, sizeof(wynik_dla_dziekana));
 
                 memset(&miejsca[i], 0, sizeof(Sala_B));
 

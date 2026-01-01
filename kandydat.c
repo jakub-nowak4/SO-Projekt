@@ -143,14 +143,6 @@ int main()
             wypisz_wiadomosc(msg_buffer);
             czy_ide_do_B = true;
         }
-        else
-        {
-            czy_musze_zdawac = true;
-            // Tutaj trzeba sie zastanowic czy wystepuje taki przypadek
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Nadzorca Komisji A nie uznal mojego wyniku z egazminu. Czekam na pytania od Komisji A.\n", getpid());
-            wypisz_wiadomosc(msg_buffer);
-            czy_ide_do_B = false;
-        }
     }
     else
     {

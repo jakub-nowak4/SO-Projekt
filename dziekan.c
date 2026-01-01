@@ -24,7 +24,10 @@ int main()
     key_t klucz_msq_budynek = utworz_klucz(MSQ_KOLEJKA_BUDYNEK);
     int msqid_budynek = utworz_msq(klucz_msq_budynek);
 
-    snprintf(msg_buffer, sizeof(msg_buffer), "Utworzono PROCES Dziekan | PID: %d\n", getpid());
+    key_t klucz_msq_dziekan_komisja = utworz_klucz(MSQ_DZIEKAN_KOMISJA);
+    int msqid_dziekan_komisja = utworz_msq(klucz_msq_dziekan_komisja);
+
+    snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID: %d | Rozpoczynam prace.\n", getpid());
     wypisz_wiadomosc(msg_buffer);
 
     // Czekaj na start egzaminu o chwili T
@@ -35,7 +38,7 @@ int main()
 
     semafor_p(SEMAFOR_MUTEX);
     pamiec_shm->egzamin_trwa = true;
-    sprintf(msg_buffer, "[DZIEKAN] PID: %d | Rozpoczynam egzamin\n", getpid());
+    sprintf(msg_buffer, "[DZIEKAN] PID: %d | Rozpoczynam egzamin.\n", getpid());
     wypisz_wiadomosc(msg_buffer);
     semafor_v(SEMAFOR_MUTEX);
 
@@ -76,6 +79,7 @@ int main()
 
                 int index = pamiec_shm->index_kandydaci;
                 pamiec_shm->LISTA_KANDYDACI[index] = zgloszenie.kandydat;
+                pamiec_shm->LISTA_KANDYDACI[index].numer_na_liscie = index;
                 decyzja.numer_na_liscie = index;
                 pamiec_shm->index_kandydaci++;
 
@@ -104,8 +108,127 @@ int main()
             msq_receive(msqid_budynek, &potwierdzenie, sizeof(potwierdzenie), zgloszenie.kandydat.pid);
         }
 
+        MSG_WYNIK_KONCOWY_DZIEKAN wynik_koncowy_egzamin;
+        res = msq_receive_no_wait(msqid_dziekan_komisja, &wynik_koncowy_egzamin, sizeof(wynik_koncowy_egzamin), NADZORCA_PRZESYLA_WYNIK_DO_DZIEKANA);
+
+        if (res != -1)
+        {
+            pid_t kandydat_pid = wynik_koncowy_egzamin.pid;
+            float wynik = wynik_koncowy_egzamin.wynik_koncowy;
+
+            int index = znajdz_kandydata(kandydat_pid, pamiec_shm);
+
+            if (index == -1)
+            {
+                printf("dziekan.c | Nie znaleziono kandydta o podanym pid_t.\n");
+                exit(EXIT_FAILURE);
+            }
+
+            semafor_p(SEMAFOR_MUTEX);
+
+            if (wynik_koncowy_egzamin.komisja == 'A')
+            {
+                pamiec_shm->LISTA_KANDYDACI[index].wynik_a = wynik;
+            }
+            else
+            {
+                pamiec_shm->LISTA_KANDYDACI[index].wynik_b = wynik;
+            }
+
+            semafor_v(SEMAFOR_MUTEX);
+        }
+
         usleep(1000);
     }
+
+    // Pozostale wiadomosci
+    snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Odbieram pozostale wyniki z kolejki...\n");
+    wypisz_wiadomosc(msg_buffer);
+
+    int odebrane = 0;
+    while (true)
+    {
+        MSG_WYNIK_KONCOWY_DZIEKAN wynik_koncowy_egzamin;
+        int res = msq_receive_no_wait(msqid_dziekan_komisja, &wynik_koncowy_egzamin, sizeof(wynik_koncowy_egzamin), NADZORCA_PRZESYLA_WYNIK_DO_DZIEKANA);
+
+        if (res == -1)
+        {
+            break;
+        }
+
+        pid_t kandydat_pid = wynik_koncowy_egzamin.pid;
+        float wynik = wynik_koncowy_egzamin.wynik_koncowy;
+
+        int index = znajdz_kandydata(kandydat_pid, pamiec_shm);
+
+        if (index != -1)
+        {
+            semafor_p(SEMAFOR_MUTEX);
+
+            if (wynik_koncowy_egzamin.komisja == 'A')
+            {
+                pamiec_shm->LISTA_KANDYDACI[index].wynik_a = wynik;
+            }
+            else
+            {
+                pamiec_shm->LISTA_KANDYDACI[index].wynik_b = wynik;
+            }
+
+            semafor_v(SEMAFOR_MUTEX);
+            odebrane++;
+        }
+    }
+
+    snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Odebrano %d pozostalych wynikow.\n", odebrane);
+    wypisz_wiadomosc(msg_buffer);
+
+    // Dziekan tworzy liste rankingowa
+    semafor_p(SEMAFOR_MUTEX);
+
+    // Dziekan liczy wynik koncowy i segreguje kandydatów
+    int n = 0;
+    for (int i = 0; i < pamiec_shm->index_kandydaci; i++)
+    {
+        if (pamiec_shm->LISTA_KANDYDACI[i].wynik_a >= 30 &&
+            pamiec_shm->LISTA_KANDYDACI[i].wynik_b >= 30)
+        {
+            pamiec_shm->LISTA_KANDYDACI[i].wynik_koncowy =
+                (pamiec_shm->LISTA_KANDYDACI[i].wynik_a + pamiec_shm->LISTA_KANDYDACI[i].wynik_b) / 2;
+
+            pamiec_shm->LISTA_RANKINGOWA[n] = pamiec_shm->LISTA_KANDYDACI[i];
+            n++;
+        }
+        else
+        {
+            pamiec_shm->LISTA_KANDYDACI[i].wynik_koncowy = -1;
+
+            int idx_odrz = pamiec_shm->index_odrzuceni;
+            pamiec_shm->LISTA_ODRZUCONYCH[idx_odrz] = pamiec_shm->LISTA_KANDYDACI[i];
+            pamiec_shm->index_odrzuceni++;
+        }
+    }
+    pamiec_shm->index_rankingowa = n;
+
+    // Sortowanie listy rankingowej
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (pamiec_shm->LISTA_RANKINGOWA[j].wynik_koncowy <
+                pamiec_shm->LISTA_RANKINGOWA[j + 1].wynik_koncowy)
+            {
+                Kandydat temp = pamiec_shm->LISTA_RANKINGOWA[j];
+                pamiec_shm->LISTA_RANKINGOWA[j] = pamiec_shm->LISTA_RANKINGOWA[j + 1];
+                pamiec_shm->LISTA_RANKINGOWA[j + 1] = temp;
+            }
+        }
+    }
+
+    snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Na liscie rankingowej: %d kandydatow, odrzuconych: %d\n", n, pamiec_shm->index_odrzuceni);
+    wypisz_wiadomosc(msg_buffer);
+
+    wypisz_liste_rankingowa(pamiec_shm);
+    semafor_v(SEMAFOR_MUTEX);
 
     odlacz_shm(pamiec_shm);
 

@@ -47,19 +47,21 @@ typedef enum
 {
     MSQ_KOLEJKA_BUDYNEK = 8,
     MSQ_KOLEJKA_EGZAMIN_A = 9,
-    MSQ_KOLEJKA_EGZAMIN_B = 10
+    MSQ_KOLEJKA_EGZAMIN_B = 10,
+    MSQ_DZIEKAN_KOMISJA = 11
 } MSQ;
 
 typedef struct
 {
     pid_t pid;
+    int numer_na_liscie;
     Kandydat_Status status;
 
     bool czy_zdal_mature;
     bool czy_powtarza_egzamin;
 
-    int wynik_a;
-    int wynik_b;
+    float wynik_a;
+    float wynik_b;
     float wynik_koncowy;
 
 } Kandydat;
@@ -93,8 +95,10 @@ typedef struct
     bool egzamin_trwa;
     int index_kandydaci;
     int index_odrzuceni;
+    int index_rankingowa;
     Kandydat LISTA_KANDYDACI[LICZBA_KANDYDATOW];
     Kandydat LISTA_ODRZUCONYCH[LICZBA_KANDYDATOW];
+    Kandydat LISTA_RANKINGOWA[LICZBA_KANDYDATOW];
 
     int nastepny_do_komisja_A;
     int liczba_osob_w_A;
@@ -137,7 +141,8 @@ typedef enum
     KANDYDAT_PRZESYLA_MATURE = 100,
     KANDYDAT_WCHODZI_DO_A = 101,
     NADZORCA_KOMISJI_A_WERYFIKUJE_WYNIK_POWTARZAJACEGO = 102,
-    KANDYDAT_WCHODZI_DO_B = 103
+    KANDYDAT_WCHODZI_DO_B = 103,
+    NADZORCA_PRZESYLA_WYNIK_DO_DZIEKANA = 104
 
 } MSG_MTYPE;
 
@@ -221,10 +226,22 @@ typedef struct
 
 } MSG_WYNIK_KONCOWY;
 
+typedef struct
+{
+    long mtype;
+    float wynik_koncowy;
+    pid_t pid;
+    char komisja; // 'A' lub 'B'
+} MSG_WYNIK_KONCOWY_DZIEKAN;
+
 int utworz_msq(key_t klucz_msq);
 void msq_send(int msqid, void *msg, size_t msg_size);
 void msq_receive(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci);
 ssize_t msq_receive_no_wait(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci);
 void usun_msq(int msqid);
+
+int znajdz_kandydata(pid_t pid, PamiecDzielona *shm);
+
+void wypisz_liste_rankingowa(PamiecDzielona *pamiec_shm);
 
 #endif
