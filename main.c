@@ -3,6 +3,16 @@
 int main()
 {
     srand(time(NULL));
+
+    mkdir(LOGI_DIR, 0777);
+    const char *files[] = {LOGI_MAIN, LOGI_DZIEKAN, LOGI_KANDYDACI, LOGI_KOMISJA_A, LOGI_KOMISJA_B, LOGI_LISTA_RANKINGOWA, LOGI_LISTA_ODRZUCONYCH};
+    for (int i = 0; i < 7; i++)
+    {
+        int fd = open(files[i], O_WRONLY | O_CREAT | O_TRUNC, 0666);
+        if (fd != -1)
+            close(fd);
+    }
+
     // init
     key_t klucz_sem = utworz_klucz(66);
     utworz_semafory(klucz_sem);
@@ -35,19 +45,20 @@ int main()
     int msqid_B = utworz_msq(klucz_msq_B);
     int msqid_dziekan_komisja = utworz_msq(klucz_msq_dziekan_komisja);
 
-    char msg_buffer[200];
+    char msg_buffer[512];
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[main] Rozpoczynam symulacje EGZAMIN WSTĘPNY NA KIERUNEK INFORMATYKA\n");
-    wypisz_wiadomosc(msg_buffer);
+    // wypisz_wiadomosc(msg_buffer);
+    loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[main] DANE STARTOWE:\n");
-    wypisz_wiadomosc(msg_buffer);
+    loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[main] LICZBA MIEJSC: %d\n", M);
-    wypisz_wiadomosc(msg_buffer);
+    loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[main] LICZBA KANDYDATÓW: %d\n", LICZBA_KANDYDATOW);
-    wypisz_wiadomosc(msg_buffer);
+    loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     // Dziekan
     switch (fork())
@@ -84,13 +95,13 @@ int main()
         case 0:
             if (i == 0)
             {
-                usleep(100);
+                usleep(10000);
                 execl("./komisja_a", "komisja_a", NULL);
                 perror("execl() | Nie udalo sie urchomic programu komisja_a.");
             }
             else
             {
-                usleep(100);
+                usleep(10000);
                 execl("./komisja_b", "komisja_b", NULL);
                 perror("execl() | Nie udalo sie urchomic programu komisja_a.");
             }
@@ -103,7 +114,7 @@ int main()
     // Kandydaci
     for (int i = 0; i < LICZBA_KANDYDATOW; i++)
     {
-        usleep(rand() % (500000 - 100000 + 1) + 100000);
+        usleep(rand() % (50000 - 10000 + 1) + 10000);
         switch (fork())
         {
         case -1:
@@ -120,7 +131,7 @@ int main()
 
     sleep(1);
     snprintf(msg_buffer, sizeof(msg_buffer), "[main] Poprawnie utworzono wszytskie potrzebne procesy do działania symulacji\n");
-    wypisz_wiadomosc(msg_buffer);
+    loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     int status;
     pid_t pid_procesu;
@@ -130,17 +141,17 @@ int main()
         if (WIFEXITED(status))
         {
             snprintf(msg_buffer, sizeof(msg_buffer), "PROCES PID: %d zakonczył działanie z kodem: %d\n", pid_procesu, WEXITSTATUS(status));
-            wypisz_wiadomosc(msg_buffer);
+            loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
         }
         else if (WIFSIGNALED(status))
         {
             snprintf(msg_buffer, sizeof(msg_buffer), "PROCES PID: %d został przerwany sygnałem: %d\n", pid_procesu, WTERMSIG(status));
-            wypisz_wiadomosc(msg_buffer);
+            loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
         }
     }
 
     snprintf(msg_buffer, sizeof(msg_buffer), "Zakończono oczekiwanie na procesy.\n");
-    wypisz_wiadomosc(msg_buffer);
+    loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     semafor_p(SEMAFOR_MUTEX);
     int dopuszczonych = pamiec_shm->index_kandydaci;
@@ -149,7 +160,7 @@ int main()
     {
         Kandydat k = pamiec_shm->LISTA_KANDYDACI[i];
         snprintf(msg_buffer, sizeof(msg_buffer), "Index:%d PID:%d | Matura:%d Czy powtarza:%d\n", i, k.pid, k.czy_zdal_mature, k.czy_powtarza_egzamin);
-        wypisz_wiadomosc(msg_buffer);
+        loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
     }
 
     // Odrzuceni
@@ -159,7 +170,7 @@ int main()
     {
         Kandydat k = pamiec_shm->LISTA_ODRZUCONYCH[i];
         snprintf(msg_buffer, sizeof(msg_buffer), "Index:%d PID:%d | Matura:%d Czy powtarza:%d\n", i, k.pid, k.czy_zdal_mature, k.czy_powtarza_egzamin);
-        wypisz_wiadomosc(msg_buffer);
+        loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
     }
 
     semafor_v(SEMAFOR_MUTEX);

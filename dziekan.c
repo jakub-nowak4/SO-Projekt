@@ -11,7 +11,7 @@ int main()
         exit(EXIT_FAILURE);
     }
 
-    char msg_buffer[200];
+    char msg_buffer[512];
     PamiecDzielona *pamiec_shm;
 
     key_t klucz_sem = utworz_klucz(66);
@@ -28,7 +28,8 @@ int main()
     int msqid_dziekan_komisja = utworz_msq(klucz_msq_dziekan_komisja);
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID: %d | Rozpoczynam prace.\n", getpid());
-    wypisz_wiadomosc(msg_buffer);
+    // wypisz_wiadomosc(msg_buffer);
+    loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
     // Czekaj na start egzaminu o chwili T
     while (egzamin_start == false)
@@ -39,7 +40,7 @@ int main()
     semafor_p(SEMAFOR_MUTEX);
     pamiec_shm->egzamin_trwa = true;
     sprintf(msg_buffer, "[DZIEKAN] PID: %d | Rozpoczynam egzamin.\n", getpid());
-    wypisz_wiadomosc(msg_buffer);
+    loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
     semafor_v(SEMAFOR_MUTEX);
 
     // Czekaj na wiadomosci z FIFO
@@ -63,14 +64,14 @@ int main()
         if (res != -1)
         {
             snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Odebralem informacje o wyniku matury od Kandydata PID:%d\n", getpid(), zgloszenie.kandydat.pid);
-            wypisz_wiadomosc(msg_buffer);
+            loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
             MSG_DECYZJA decyzja;
 
             if (zgloszenie.kandydat.czy_zdal_mature)
             {
                 snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Po weryfikacji matury dopuszczam Kandydata PID:%d do dalszej czesci egzaminu\n", getpid(), zgloszenie.kandydat.pid);
-                wypisz_wiadomosc(msg_buffer);
+                loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
                 decyzja.mtype = zgloszenie.kandydat.pid;
                 decyzja.dopuszczony_do_egzamin = true;
@@ -88,7 +89,7 @@ int main()
             else
             {
                 snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Po weryfikacji matury nie dopuszczam Kandydata PID:%d do dalszej czesci egzaminu.\n", getpid(), zgloszenie.kandydat.pid);
-                wypisz_wiadomosc(msg_buffer);
+                loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
                 decyzja.mtype = zgloszenie.kandydat.pid;
                 decyzja.dopuszczony_do_egzamin = false;
@@ -143,7 +144,7 @@ int main()
 
     // Pozostale wiadomosci
     snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Odbieram pozostale wyniki z kolejki...\n");
-    wypisz_wiadomosc(msg_buffer);
+    loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
     int odebrane = 0;
     while (true)
@@ -180,7 +181,7 @@ int main()
     }
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Odebrano %d pozostalych wynikow.\n", odebrane);
-    wypisz_wiadomosc(msg_buffer);
+    loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
     // Dziekan tworzy liste rankingowa
     semafor_p(SEMAFOR_MUTEX);
@@ -225,7 +226,7 @@ int main()
     }
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Na liscie rankingowej: %d kandydatow, odrzuconych: %d\n", n, pamiec_shm->index_odrzuceni);
-    wypisz_wiadomosc(msg_buffer);
+    loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
     wypisz_liste_rankingowa(pamiec_shm);
     semafor_v(SEMAFOR_MUTEX);

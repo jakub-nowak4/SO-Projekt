@@ -7,6 +7,8 @@
 #include <errno.h>
 #include <string.h>
 #include <time.h>
+#include <fcntl.h>
+#include <sys/stat.h>
 
 #include <unistd.h>
 #include <signal.h>
@@ -23,6 +25,15 @@
 #define CZAS_OPRACOWANIE_PYTAN 5 // Czas Ti na opracownie pytan od komisji
 #define LICZBA_CZLONKOW_A 5
 #define LICZBA_CZLONKOW_B 3
+
+#define LOGI_DIR "logi"
+#define LOGI_MAIN "logi/logi_main.txt"
+#define LOGI_DZIEKAN "logi/logi_dziekan.txt"
+#define LOGI_KANDYDACI "logi/logi_kandydaci.txt"
+#define LOGI_KOMISJA_A "logi/logi_komisja_a.txt"
+#define LOGI_KOMISJA_B "logi/logi_komisja_b.txt"
+#define LOGI_LISTA_RANKINGOWA "logi/logi_lista_rankingowa.txt"
+#define LOGI_LISTA_ODRZUCONYCH "logi/logi_lista_odrzuconych.txt"
 
 extern int semafor_id;
 extern int shmid;
@@ -108,14 +119,21 @@ typedef struct
 
 typedef enum
 {
-    SEMAFOR_BUDYNEK,
     SEMAFOR_STD_OUT,
+    SEMAFOR_LOGI_MAIN,
+    SEMAFOR_LOGI_DZIEKAN,
+    SEMAFOR_LOGI_KANDYDACI,
+    SEMAFOR_LOGI_KOMISJA_A,
+    SEMAFOR_LOGI_KOMISJA_B,
+    SEMAFOR_LOGI_LISTA_RANKINGOWA,
+    SEMAFOR_LOGI_LISTA_ODRZUCONYCH,
     SEMAFOR_MUTEX,
     SEMAFOR_ODPOWIEDZ_A,
     SEMAFOR_ODPOWIEDZ_B,
 } Semafory;
 
 void pobierz_czas(struct tm *wynik);
+void loguj(int sem_index, char *file_path, char *msg);
 void wypisz_wiadomosc(char *msg);
 
 // ---- SEMAFORY ----
@@ -171,6 +189,11 @@ typedef struct
     pid_t pid;
     int numer_na_liscie;
 } MSG_KANDYDAT_WCHODZI_DO_A;
+
+typedef struct
+{
+    long mtype;
+} MSG_KANDYDAT_WCHODZI_DO_A_POTWIERDZENIE;
 
 typedef struct
 {
