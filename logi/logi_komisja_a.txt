@@ -1,0 +1,1525 @@
+20:10:54.296 | [KOMISJA A] PID:1067788 | Czekam na rozpoczecie egzaminu
+20:11:01.320 | [KOMISJA A] PID:1067788 | Komisja rozpoczyna prace
+20:11:01.324 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067807 do sali.
+20:11:02.324 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067807
+20:11:03.324 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067807
+20:11:03.325 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067807
+20:11:03.325 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067807
+20:11:03.326 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067807
+20:11:03.335 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067818 do sali.
+20:11:04.335 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067818
+20:11:04.336 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067807
+20:11:04.336 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067818
+20:11:04.337 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067807
+20:11:04.345 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067818
+20:11:04.345 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067807
+20:11:05.335 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067818
+20:11:05.335 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067807
+20:11:05.336 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067818
+20:11:05.345 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067807
+20:11:05.346 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067819 do sali.
+20:11:05.346 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067807 otrzymal wynik koncowy za czesc teorytyczna=31.80.
+20:11:05.346 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067807
+20:11:05.356 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067820 do sali.
+20:11:06.354 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067819
+20:11:06.355 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067818
+20:11:06.356 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067820
+20:11:06.356 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067818
+20:11:07.355 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067819
+20:11:07.356 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067818
+20:11:07.356 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067819
+20:11:07.356 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067819
+20:11:07.356 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067818
+20:11:07.357 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067818
+20:11:07.363 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067818 otrzymal wynik koncowy za czesc teorytyczna=43.00.
+20:11:07.363 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067818
+20:11:07.373 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067821 do sali.
+20:11:08.367 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067820
+20:11:09.367 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067820
+20:11:09.368 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067820
+20:11:09.372 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067820
+20:11:09.374 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067821
+20:11:09.378 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067821
+20:11:09.887 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067820
+20:11:10.379 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067821
+20:11:10.379 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067820
+20:11:10.383 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067821
+20:11:10.390 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067820
+20:11:11.378 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067821
+20:11:11.378 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067820
+20:11:11.385 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067819
+20:11:11.385 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067820
+20:11:11.385 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067820 otrzymal wynik koncowy za czesc teorytyczna=63.20.
+20:11:11.385 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067820
+20:11:11.395 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067822 do sali.
+20:11:12.404 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067822
+20:11:12.404 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067819
+20:11:12.405 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067822
+20:11:12.405 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067819
+20:11:13.395 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067822
+20:11:13.395 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067819
+20:11:13.398 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067822
+20:11:13.399 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067819
+20:11:13.399 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067822
+20:11:13.399 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067819
+20:11:13.406 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067819 otrzymal wynik koncowy za czesc teorytyczna=78.40.
+20:11:13.406 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067819
+20:11:13.409 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067821
+20:11:13.410 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067821
+20:11:13.410 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067821
+20:11:13.412 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067821
+20:11:13.416 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067823 do sali.
+20:11:13.416 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067821
+20:11:13.416 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067821 otrzymal wynik koncowy za czesc teorytyczna=67.00.
+20:11:13.416 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067821
+20:11:13.426 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067824 do sali.
+20:11:14.420 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067823
+20:11:14.421 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067822
+20:11:14.423 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067823
+20:11:14.423 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067822
+20:11:15.419 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067823
+20:11:15.420 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067822
+20:11:15.420 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067823
+20:11:15.421 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067822
+20:11:15.426 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067824
+20:11:15.427 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067822
+20:11:15.427 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067822 otrzymal wynik koncowy za czesc teorytyczna=32.20.
+20:11:15.427 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067822
+20:11:15.437 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067825 do sali.
+20:11:16.428 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067824
+20:11:16.431 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067824
+20:11:16.437 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067825
+20:11:17.431 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067824
+20:11:17.431 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067824
+20:11:18.438 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067825
+20:11:18.439 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067824
+20:11:18.441 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067825
+20:11:18.441 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067824
+20:11:18.442 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067825
+20:11:18.443 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067824
+20:11:18.448 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067823
+20:11:18.448 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067824
+20:11:19.441 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067825
+20:11:19.441 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067824
+20:11:19.444 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067824 otrzymal wynik koncowy za czesc teorytyczna=74.20.
+20:11:19.444 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067824
+20:11:19.447 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067823
+20:11:19.448 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067823
+20:11:19.448 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067823
+20:11:19.452 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067823
+20:11:19.455 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067826 do sali.
+20:11:19.455 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067823
+20:11:19.455 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067823 otrzymal wynik koncowy za czesc teorytyczna=77.80.
+20:11:19.455 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067823
+20:11:19.465 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067827 do sali.
+20:11:20.458 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067826
+20:11:20.458 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067825
+20:11:20.458 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067826
+20:11:20.458 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067825
+20:11:20.462 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067826
+20:11:20.468 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067826
+20:11:20.468 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067825
+20:11:20.468 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067825
+20:11:21.458 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067826
+20:11:21.459 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067825
+20:11:21.460 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067825 otrzymal wynik koncowy za czesc teorytyczna=52.60.
+20:11:21.460 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067825
+20:11:21.471 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067828 do sali.
+20:11:22.469 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067827
+20:11:22.470 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067826
+20:11:22.470 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067827
+20:11:22.471 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067826
+20:11:22.471 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067828
+20:11:22.471 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067826
+20:11:23.469 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067827
+20:11:23.469 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067826
+20:11:23.470 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067827
+20:11:23.470 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067826
+20:11:23.477 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067826 otrzymal wynik koncowy za czesc teorytyczna=56.60.
+20:11:23.477 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067826
+20:11:23.487 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067829 do sali.
+20:11:24.485 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067828
+20:11:25.480 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067828
+20:11:25.481 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067828
+20:11:25.491 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067828
+20:11:25.492 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067829
+20:11:25.496 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067829
+20:11:25.812 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067828
+20:11:26.491 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067829
+20:11:26.491 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067828
+20:11:26.502 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067829
+20:11:26.502 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067828
+20:11:27.502 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067829
+20:11:27.502 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067828
+20:11:27.502 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067827
+20:11:27.502 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067828
+20:11:27.503 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067828 otrzymal wynik koncowy za czesc teorytyczna=35.20.
+20:11:27.503 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067828
+20:11:27.513 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067830 do sali.
+20:11:28.515 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067830
+20:11:28.515 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067829
+20:11:29.513 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067830
+20:11:29.513 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067829
+20:11:29.516 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067830
+20:11:29.516 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067829
+20:11:29.518 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067830
+20:11:29.518 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067829
+20:11:29.522 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067830
+20:11:29.522 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067829
+20:11:29.523 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067829 otrzymal wynik koncowy za czesc teorytyczna=80.20.
+20:11:29.523 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067829
+20:11:29.524 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067827
+20:11:29.526 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067827
+20:11:29.528 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067827
+20:11:29.533 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067827
+20:11:29.533 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067831 do sali.
+20:11:29.534 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067827
+20:11:29.534 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067827 otrzymal wynik koncowy za czesc teorytyczna=20.40.
+20:11:29.534 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067827
+20:11:29.544 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067832 do sali.
+20:11:30.538 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067831
+20:11:30.539 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067830
+20:11:30.544 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067831
+20:11:30.544 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067830
+20:11:31.534 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067831
+20:11:31.534 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067830
+20:11:31.536 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067831
+20:11:31.536 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067830
+20:11:31.543 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067831
+20:11:31.543 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067830
+20:11:31.545 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067830 otrzymal wynik koncowy za czesc teorytyczna=65.60.
+20:11:31.545 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067830
+20:11:31.555 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067833 do sali.
+20:11:32.547 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067832
+20:11:32.547 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067831
+20:11:32.553 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067832
+20:11:32.553 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067831
+20:11:33.550 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067832
+20:11:33.550 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067831
+20:11:33.555 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067832
+20:11:33.555 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067831
+20:11:33.555 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067833
+20:11:33.555 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067831
+20:11:33.556 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067831 otrzymal wynik koncowy za czesc teorytyczna=24.40.
+20:11:33.556 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067831
+20:11:33.566 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067834 do sali.
+20:11:34.557 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067833
+20:11:34.565 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067833
+20:11:35.560 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067833
+20:11:35.562 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067833
+20:11:35.566 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067834
+20:11:36.568 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067834
+20:11:36.568 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067833
+20:11:36.572 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067834
+20:11:36.572 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067833
+20:11:36.575 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067834
+20:11:36.575 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067833
+20:11:37.571 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067834
+20:11:37.571 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067833
+20:11:37.580 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067832
+20:11:37.581 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067833
+20:11:37.581 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067833 otrzymal wynik koncowy za czesc teorytyczna=47.40.
+20:11:37.581 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067833
+20:11:37.591 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067835 do sali.
+20:11:38.591 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067835
+20:11:38.591 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067834
+20:11:39.592 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067835
+20:11:39.592 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067834
+20:11:39.593 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067835
+20:11:39.593 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067834
+20:11:39.596 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067835
+20:11:39.596 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067834
+20:11:39.597 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067835
+20:11:39.597 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067834
+20:11:39.602 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067834 otrzymal wynik koncowy za czesc teorytyczna=44.60.
+20:11:39.602 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067834
+20:11:39.603 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067832
+20:11:39.606 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067832
+20:11:39.608 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067832
+20:11:39.612 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067832
+20:11:39.612 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067837 do sali.
+20:11:39.613 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067832
+20:11:39.613 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067832 otrzymal wynik koncowy za czesc teorytyczna=40.60.
+20:11:39.613 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067832
+20:11:39.623 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067838 do sali.
+20:11:40.614 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067837
+20:11:40.614 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067835
+20:11:40.616 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067837
+20:11:40.624 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067837
+20:11:40.624 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067837
+20:11:40.624 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067835
+20:11:40.624 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067835
+20:11:40.624 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067835
+20:11:41.622 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067837
+20:11:41.622 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067835
+20:11:41.624 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067835 otrzymal wynik koncowy za czesc teorytyczna=46.60.
+20:11:41.624 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067835
+20:11:41.634 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067839 do sali.
+20:11:42.633 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067838
+20:11:42.633 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067837
+20:11:42.634 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067838
+20:11:42.634 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067837
+20:11:43.634 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067838
+20:11:43.634 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067838
+20:11:43.634 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067837
+20:11:43.634 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067837
+20:11:43.634 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067839
+20:11:43.634 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067837
+20:11:43.634 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067837 otrzymal wynik koncowy za czesc teorytyczna=34.20.
+20:11:43.634 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067837
+20:11:43.644 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067840 do sali.
+20:11:44.643 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067839
+20:11:44.644 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067839
+20:11:44.645 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067840
+20:11:45.643 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067839
+20:11:45.644 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067839
+20:11:45.653 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067840
+20:11:45.655 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067838
+20:11:46.028 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067838
+20:11:46.030 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067838
+20:11:46.654 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067840
+20:11:46.655 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067838
+20:11:47.654 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067840
+20:11:47.654 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067838
+20:11:47.663 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067840
+20:11:47.663 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067838
+20:11:47.670 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067838 otrzymal wynik koncowy za czesc teorytyczna=35.40.
+20:11:47.670 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067838
+20:11:47.673 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067839
+20:11:47.674 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067839
+20:11:47.676 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067839
+20:11:47.677 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067839
+20:11:47.680 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067841 do sali.
+20:11:47.680 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067839
+20:11:47.680 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067839 otrzymal wynik koncowy za czesc teorytyczna=52.00.
+20:11:47.680 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067839
+20:11:47.690 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067842 do sali.
+20:11:48.687 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067841
+20:11:48.688 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067840
+20:11:48.690 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067842
+20:11:48.690 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067840
+20:11:49.684 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067841
+20:11:49.684 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067840
+20:11:49.684 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067841
+20:11:49.684 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067840
+20:11:49.686 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067841
+20:11:49.686 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067840
+20:11:49.689 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067840 otrzymal wynik koncowy za czesc teorytyczna=54.80.
+20:11:49.690 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067840
+20:11:49.700 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067843 do sali.
+20:11:50.696 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067842
+20:11:50.700 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067843
+20:11:51.694 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067842
+20:11:51.694 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067842
+20:11:51.697 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067842
+20:11:51.707 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067843
+20:11:51.716 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067841
+20:11:51.827 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067841
+20:11:51.828 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067841
+20:11:52.704 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067843
+20:11:52.705 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067841
+20:11:52.705 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067843
+20:11:52.705 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067841
+20:11:53.707 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067843
+20:11:53.707 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067841
+20:11:53.708 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067841 otrzymal wynik koncowy za czesc teorytyczna=40.00.
+20:11:53.708 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067841
+20:11:53.716 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067842
+20:11:53.716 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067842
+20:11:53.717 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067842
+20:11:53.718 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067842
+20:11:53.718 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067844 do sali.
+20:11:53.719 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067842
+20:11:53.719 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067842 otrzymal wynik koncowy za czesc teorytyczna=27.80.
+20:11:53.719 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067842
+20:11:53.729 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067845 do sali.
+20:11:54.727 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067844
+20:11:54.727 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067844
+20:11:54.727 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067843
+20:11:54.727 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067843
+20:11:54.728 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067844
+20:11:54.728 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067843
+20:11:54.729 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067845
+20:11:54.729 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067843
+20:11:55.728 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067844
+20:11:55.729 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067843
+20:11:55.731 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067843 otrzymal wynik koncowy za czesc teorytyczna=59.80.
+20:11:55.731 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067843
+20:11:55.741 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067846 do sali.
+20:11:56.739 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067845
+20:11:56.739 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067845
+20:11:56.741 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067846
+20:11:57.739 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067845
+20:11:57.741 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067845
+20:11:57.749 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067846
+20:11:57.750 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067846
+20:11:57.751 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067844
+20:11:57.840 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067844
+20:11:57.841 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067844
+20:11:57.842 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067844
+20:11:58.749 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067846
+20:11:58.749 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067844
+20:11:58.751 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067846
+20:11:58.751 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067844
+20:11:58.760 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067844 otrzymal wynik koncowy za czesc teorytyczna=47.20.
+20:11:58.760 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067844
+20:11:58.761 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067845
+20:11:58.769 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067845
+20:11:58.769 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067845
+20:11:58.770 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067845
+20:11:58.770 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067847 do sali.
+20:11:58.770 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067845
+20:11:58.770 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067845 otrzymal wynik koncowy za czesc teorytyczna=43.20.
+20:11:58.770 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067845
+20:11:58.780 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067848 do sali.
+20:11:59.781 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067848
+20:11:59.781 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067846
+20:12:00.772 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067847
+20:12:00.772 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067846
+20:12:00.779 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067847
+20:12:00.779 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067846
+20:12:00.780 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067847
+20:12:00.780 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067846
+20:12:00.780 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067847
+20:12:00.780 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067846
+20:12:00.781 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067846 otrzymal wynik koncowy za czesc teorytyczna=49.00.
+20:12:00.781 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067846
+20:12:00.791 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067849 do sali.
+20:12:01.782 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067848
+20:12:01.790 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067848
+20:12:01.790 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067848
+20:12:01.791 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067849
+20:12:02.790 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067848
+20:12:02.800 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067849
+20:12:02.800 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067849
+20:12:03.779 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067848
+20:12:03.779 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067848
+20:12:03.792 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067849
+20:12:03.792 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067848
+20:12:03.802 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067847
+20:12:03.802 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067848
+20:12:04.800 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067849
+20:12:04.801 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067848
+20:12:04.801 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067848 otrzymal wynik koncowy za czesc teorytyczna=40.40.
+20:12:04.801 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067848
+20:12:04.802 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067847
+20:12:04.809 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067847
+20:12:04.809 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067847
+20:12:04.811 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067847
+20:12:04.811 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067850 do sali.
+20:12:04.811 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067847
+20:12:04.811 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067847 otrzymal wynik koncowy za czesc teorytyczna=37.40.
+20:12:04.811 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067847
+20:12:04.821 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067851 do sali.
+20:12:05.812 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067850
+20:12:05.821 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067850
+20:12:05.821 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067849
+20:12:05.821 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067849
+20:12:05.822 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067850
+20:12:05.822 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067849
+20:12:06.819 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067850
+20:12:06.820 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067849
+20:12:06.821 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067850
+20:12:06.821 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067849
+20:12:06.821 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067849 otrzymal wynik koncowy za czesc teorytyczna=59.40.
+20:12:06.821 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067849
+20:12:06.831 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067852 do sali.
+20:12:07.830 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067851
+20:12:07.830 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067850
+20:12:07.831 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067851
+20:12:07.831 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067851
+20:12:07.831 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067850
+20:12:07.831 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067850
+20:12:07.831 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067852
+20:12:07.831 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067850
+20:12:08.831 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067851
+20:12:08.831 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067850
+20:12:08.841 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067850 otrzymal wynik koncowy za czesc teorytyczna=78.60.
+20:12:08.841 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067850
+20:12:08.851 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067853 do sali.
+20:12:09.842 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067852
+20:12:09.851 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067852
+20:12:10.850 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067852
+20:12:10.851 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067852
+20:12:10.851 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067853
+20:12:10.861 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067853
+20:12:11.497 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067852
+20:12:11.852 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067853
+20:12:11.852 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067852
+20:12:11.861 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067853
+20:12:11.861 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067852
+20:12:12.861 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067853
+20:12:12.861 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067852
+20:12:12.861 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067851
+20:12:12.862 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067852
+20:12:12.862 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067852 otrzymal wynik koncowy za czesc teorytyczna=59.40.
+20:12:12.862 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067852
+20:12:12.872 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067854 do sali.
+20:12:13.872 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067854
+20:12:13.872 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067854
+20:12:13.872 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067851
+20:12:13.872 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067851
+20:12:14.872 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067854
+20:12:14.872 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067851
+20:12:14.881 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067854
+20:12:14.881 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067851
+20:12:14.881 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067854
+20:12:14.881 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067851
+20:12:14.891 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067851 otrzymal wynik koncowy za czesc teorytyczna=59.20.
+20:12:14.891 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067851
+20:12:14.891 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067853
+20:12:14.892 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067853
+20:12:14.893 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067853
+20:12:14.901 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067853
+20:12:14.902 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067855 do sali.
+20:12:14.902 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067853
+20:12:14.902 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067853 otrzymal wynik koncowy za czesc teorytyczna=52.80.
+20:12:14.902 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067853
+20:12:14.912 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067856 do sali.
+20:12:16.902 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067855
+20:12:16.902 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067854
+20:12:16.903 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067855
+20:12:16.903 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067854
+20:12:16.912 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067855
+20:12:16.912 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067855
+20:12:16.912 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067854
+20:12:16.912 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067854
+20:12:16.912 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067856
+20:12:16.912 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067854
+20:12:16.912 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067854 otrzymal wynik koncowy za czesc teorytyczna=25.40.
+20:12:16.912 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067854
+20:12:16.922 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067857 do sali.
+20:12:17.923 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067857
+20:12:18.913 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067856
+20:12:18.913 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067856
+20:12:18.922 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067856
+20:12:18.922 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067856
+20:12:18.933 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067855
+20:12:19.339 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067855
+20:12:20.923 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067857
+20:12:20.923 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067855
+20:12:20.923 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067857
+20:12:20.924 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067855
+20:12:20.932 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067857
+20:12:20.933 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067857
+20:12:20.933 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067855
+20:12:20.933 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067855
+20:12:20.939 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067855 otrzymal wynik koncowy za czesc teorytyczna=28.80.
+20:12:20.939 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067855
+20:12:20.943 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067856
+20:12:20.943 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067856
+20:12:20.943 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067856
+20:12:20.944 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067856
+20:12:20.949 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067858 do sali.
+20:12:20.949 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067856
+20:12:20.949 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067856 otrzymal wynik koncowy za czesc teorytyczna=53.60.
+20:12:20.949 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067856
+20:12:20.959 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067859 do sali.
+20:12:21.953 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067858
+20:12:21.954 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067857
+20:12:21.960 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067859
+20:12:21.960 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067857
+20:12:22.953 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067858
+20:12:22.954 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067858
+20:12:22.954 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067857
+20:12:22.954 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067857
+20:12:22.954 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067858
+20:12:22.954 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067857
+20:12:22.956 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067857 otrzymal wynik koncowy za czesc teorytyczna=31.00.
+20:12:22.956 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067857
+20:12:22.966 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067860 do sali.
+20:12:23.958 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067859
+20:12:23.964 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067859
+20:12:23.964 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067859
+20:12:23.964 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067859
+20:12:23.966 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067860
+20:12:24.969 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067860
+20:12:24.969 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067859
+20:12:24.975 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067860
+20:12:24.975 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067859
+20:12:25.975 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067860
+20:12:25.975 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067859
+20:12:25.975 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067860
+20:12:25.975 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067859
+20:12:25.977 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067858
+20:12:25.985 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067859
+20:12:25.985 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067859 otrzymal wynik koncowy za czesc teorytyczna=39.40.
+20:12:25.986 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067859
+20:12:25.996 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067861 do sali.
+20:12:26.996 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067861
+20:12:26.996 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067860
+20:12:27.001 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067861
+20:12:27.001 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067860
+20:12:27.004 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067861
+20:12:27.004 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067860
+20:12:27.006 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067861
+20:12:27.006 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067860
+20:12:28.006 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067861
+20:12:28.006 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067860
+20:12:28.015 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067860 otrzymal wynik koncowy za czesc teorytyczna=64.20.
+20:12:28.015 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067860
+20:12:28.016 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067858
+20:12:28.021 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067858
+20:12:28.023 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067858
+20:12:28.025 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067858
+20:12:28.025 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067862 do sali.
+20:12:28.025 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067858
+20:12:28.025 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067858 otrzymal wynik koncowy za czesc teorytyczna=72.80.
+20:12:28.025 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067858
+20:12:28.036 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067863 do sali.
+20:12:29.027 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067862
+20:12:29.027 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067861
+20:12:29.035 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067862
+20:12:29.035 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067861
+20:12:30.032 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067862
+20:12:30.032 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067861
+20:12:30.034 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067862
+20:12:30.034 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067861
+20:12:30.036 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067862
+20:12:30.036 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067861
+20:12:30.036 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067861 otrzymal wynik koncowy za czesc teorytyczna=65.40.
+20:12:30.036 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067861
+20:12:30.046 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1067867 do sali.
+20:12:31.038 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067863
+20:12:31.038 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067862
+20:12:31.044 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067863
+20:12:31.048 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067867
+20:12:31.048 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067862
+20:12:31.048 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067862
+20:12:32.042 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067863
+20:12:32.043 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067862
+20:12:32.046 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067863
+20:12:32.046 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067862
+20:12:32.048 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067862 otrzymal wynik koncowy za czesc teorytyczna=51.60.
+20:12:32.048 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067862
+20:12:32.058 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068064 do sali.
+20:12:33.057 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1067867
+20:12:33.058 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1067867
+20:12:34.053 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1067867
+20:12:34.058 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1067867
+20:12:34.058 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068064
+20:12:34.068 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068064
+20:12:34.805 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067867
+20:12:35.063 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068064
+20:12:35.063 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067867
+20:12:35.067 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068064
+20:12:35.067 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067867
+20:12:36.068 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068064
+20:12:36.068 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1067863
+20:12:36.069 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067867
+20:12:36.069 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067867
+20:12:36.069 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067867 otrzymal wynik koncowy za czesc teorytyczna=40.60.
+20:12:36.069 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067867
+20:12:36.080 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068065 do sali.
+20:12:37.087 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068065
+20:12:37.087 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067863
+20:12:38.080 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068065
+20:12:38.080 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1067863
+20:12:38.080 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068065
+20:12:38.081 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067863
+20:12:38.083 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068065
+20:12:38.083 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067863
+20:12:38.089 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068065
+20:12:38.089 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1067863
+20:12:38.090 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1067863 otrzymal wynik koncowy za czesc teorytyczna=39.40.
+20:12:38.090 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1067863
+20:12:38.091 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068064
+20:12:38.093 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068064
+20:12:38.096 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068064
+20:12:38.100 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068064
+20:12:38.100 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068066 do sali.
+20:12:38.100 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068064
+20:12:38.100 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068064 otrzymal wynik koncowy za czesc teorytyczna=56.40.
+20:12:38.100 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068064
+20:12:38.111 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068067 do sali.
+20:12:39.101 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068066
+20:12:39.101 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068065
+20:12:39.103 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068066
+20:12:39.104 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068065
+20:12:39.107 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068066
+20:12:39.107 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068065
+20:12:39.111 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068067
+20:12:39.111 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068065
+20:12:40.110 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068066
+20:12:40.110 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068065
+20:12:40.112 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068065 otrzymal wynik koncowy za czesc teorytyczna=51.20.
+20:12:40.112 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068065
+20:12:40.122 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068068 do sali.
+20:12:42.113 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068067
+20:12:42.115 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068067
+20:12:42.118 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068067
+20:12:42.120 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068067
+20:12:42.122 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068068
+20:12:43.125 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068068
+20:12:43.125 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068067
+20:12:43.129 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068068
+20:12:43.129 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068067
+20:12:43.131 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068068
+20:12:43.131 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068067
+20:12:43.133 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068066
+20:12:43.133 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068067
+20:12:44.123 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068068
+20:12:44.123 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068067
+20:12:44.126 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068067 otrzymal wynik koncowy za czesc teorytyczna=33.40.
+20:12:44.126 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068067
+20:12:44.130 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068066
+20:12:44.132 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068066
+20:12:44.133 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068066
+20:12:44.134 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068066
+20:12:44.136 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068069 do sali.
+20:12:44.136 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068066
+20:12:44.136 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068066 otrzymal wynik koncowy za czesc teorytyczna=53.60.
+20:12:44.136 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068066
+20:12:44.146 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068070 do sali.
+20:12:45.142 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068069
+20:12:45.142 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068068
+20:12:45.144 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068069
+20:12:45.144 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068068
+20:12:46.140 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068069
+20:12:46.140 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068068
+20:12:46.144 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068069
+20:12:46.144 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068068
+20:12:46.146 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068069
+20:12:46.148 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068068
+20:12:46.148 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068068 otrzymal wynik koncowy za czesc teorytyczna=46.80.
+20:12:46.148 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068068
+20:12:46.158 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068071 do sali.
+20:12:47.154 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068070
+20:12:47.154 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068069
+20:12:47.155 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068070
+20:12:47.155 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068069
+20:12:47.158 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068071
+20:12:47.158 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068069
+20:12:48.151 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068070
+20:12:48.151 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068069
+20:12:48.152 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068070
+20:12:48.153 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068069
+20:12:48.158 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068069 otrzymal wynik koncowy za czesc teorytyczna=40.60.
+20:12:48.159 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068069
+20:12:48.169 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068072 do sali.
+20:12:49.165 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068071
+20:12:50.161 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068071
+20:12:50.163 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068071
+20:12:50.165 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068071
+20:12:50.169 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068072
+20:12:50.175 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068072
+20:12:50.438 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068071
+20:12:52.171 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068072
+20:12:52.171 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068071
+20:12:52.173 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068072
+20:12:52.173 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068071
+20:12:52.175 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068072
+20:12:52.175 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068071
+20:12:52.179 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068070
+20:12:52.179 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068071
+20:12:52.179 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068071 otrzymal wynik koncowy za czesc teorytyczna=53.60.
+20:12:52.179 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068071
+20:12:52.189 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068073 do sali.
+20:12:53.192 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068073
+20:12:53.192 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068072
+20:12:53.193 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068073
+20:12:53.194 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068072
+20:12:53.195 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068073
+20:12:53.195 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068072
+20:12:54.190 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068073
+20:12:54.190 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068072
+20:12:54.195 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068073
+20:12:54.195 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068072
+20:12:54.200 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068072 otrzymal wynik koncowy za czesc teorytyczna=57.40.
+20:12:54.200 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068072
+20:12:54.201 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068070
+20:12:54.202 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068070
+20:12:54.204 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068070
+20:12:54.206 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068070
+20:12:54.210 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068074 do sali.
+20:12:54.210 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068070
+20:12:54.210 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068070 otrzymal wynik koncowy za czesc teorytyczna=54.80.
+20:12:54.210 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068070
+20:12:54.220 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068075 do sali.
+20:12:55.212 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068074
+20:12:55.212 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068073
+20:12:55.213 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068074
+20:12:55.213 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068073
+20:12:55.214 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068074
+20:12:55.214 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068073
+20:12:55.220 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068074
+20:12:55.221 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068073
+20:12:56.216 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068074
+20:12:56.216 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068073
+20:12:56.221 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068073 otrzymal wynik koncowy za czesc teorytyczna=37.60.
+20:12:56.221 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068073
+20:12:56.231 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068076 do sali.
+20:12:57.226 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068075
+20:12:57.226 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068074
+20:12:58.222 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068075
+20:12:58.222 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068074
+20:12:58.223 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068075
+20:12:58.223 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068074
+20:12:58.224 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068075
+20:12:58.224 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068074
+20:12:58.232 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068076
+20:12:58.232 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068074
+20:12:58.232 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068074 otrzymal wynik koncowy za czesc teorytyczna=55.00.
+20:12:58.232 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068074
+20:12:58.242 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068077 do sali.
+20:12:59.242 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068076
+20:13:00.233 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068076
+20:13:00.234 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068076
+20:13:00.235 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068076
+20:13:00.243 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068077
+20:13:00.253 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068077
+20:13:00.687 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068076
+20:13:01.244 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068077
+20:13:01.244 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068076
+20:13:01.246 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068077
+20:13:01.246 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068076
+20:13:01.253 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068075
+20:13:01.253 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068076
+20:13:02.244 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068077
+20:13:02.244 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068076
+20:13:02.253 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068076 otrzymal wynik koncowy za czesc teorytyczna=46.00.
+20:13:02.253 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068076
+20:13:02.254 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068075
+20:13:02.255 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068075
+20:13:02.255 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068075
+20:13:02.262 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068075
+20:13:02.263 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068078 do sali.
+20:13:02.263 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068075
+20:13:02.263 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068075 otrzymal wynik koncowy za czesc teorytyczna=35.20.
+20:13:02.263 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068075
+20:13:02.264 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068077
+20:13:02.265 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068077
+20:13:02.265 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068077
+20:13:02.272 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068077
+20:13:02.274 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068081 do sali.
+20:13:02.274 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068077
+20:13:02.274 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068077 otrzymal wynik koncowy za czesc teorytyczna=57.40.
+20:13:02.274 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068077
+20:13:02.284 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068082 do sali.
+20:13:03.274 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068078
+20:13:03.282 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068078
+20:13:03.284 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068078
+20:13:04.275 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068078
+20:13:04.275 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068078
+20:13:05.284 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068082
+20:13:05.284 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068078
+20:13:05.285 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068082
+20:13:05.285 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068078
+20:13:05.286 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068082
+20:13:05.286 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068078
+20:13:05.293 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068082
+20:13:05.293 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068078
+20:13:05.294 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068082
+20:13:05.294 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068078
+20:13:05.294 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068078 otrzymal wynik koncowy za czesc teorytyczna=55.40.
+20:13:05.294 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068078
+20:13:05.304 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068083 do sali.
+20:13:06.295 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068081
+20:13:06.296 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068082
+20:13:06.305 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068083
+20:13:06.305 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068082
+20:13:07.296 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068081
+20:13:07.296 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068082
+20:13:07.303 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068081
+20:13:07.303 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068082
+20:13:07.305 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068081
+20:13:07.305 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068082
+20:13:07.313 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068082 otrzymal wynik koncowy za czesc teorytyczna=47.20.
+20:13:07.314 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068082
+20:13:07.324 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068118 do sali.
+20:13:08.315 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068083
+20:13:08.316 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068083
+20:13:09.314 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068083
+20:13:09.323 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068083
+20:13:09.324 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068118
+20:13:09.325 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068118
+20:13:09.598 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068083
+20:13:10.325 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068118
+20:13:10.325 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068083
+20:13:10.326 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068118
+20:13:10.326 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068083
+20:13:11.334 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068118
+20:13:11.334 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068083
+20:13:11.334 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068081
+20:13:11.334 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068083
+20:13:11.334 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068083 otrzymal wynik koncowy za czesc teorytyczna=43.40.
+20:13:11.334 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068083
+20:13:11.344 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068151 do sali.
+20:13:13.345 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068151
+20:13:13.345 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068151
+20:13:13.345 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068081
+20:13:13.345 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068081
+20:13:13.346 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068151
+20:13:13.346 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068081
+20:13:13.346 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068151
+20:13:13.346 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068081
+20:13:13.354 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068151
+20:13:13.354 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068081
+20:13:13.355 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068081 otrzymal wynik koncowy za czesc teorytyczna=55.20.
+20:13:13.355 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068081
+20:13:13.356 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068118
+20:13:13.356 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068118
+20:13:13.364 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068118
+20:13:13.365 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068118
+20:13:13.365 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068167 do sali.
+20:13:13.365 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068118
+20:13:13.365 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068118 otrzymal wynik koncowy za czesc teorytyczna=39.80.
+20:13:13.365 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068118
+20:13:13.375 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068168 do sali.
+20:13:14.367 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068167
+20:13:14.367 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068151
+20:13:14.375 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068167
+20:13:14.375 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068151
+20:13:15.366 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068167
+20:13:15.366 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068151
+20:13:15.375 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068167
+20:13:15.375 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068151
+20:13:15.376 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068168
+20:13:15.376 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068151
+20:13:15.376 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068151 otrzymal wynik koncowy za czesc teorytyczna=64.00.
+20:13:15.376 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068151
+20:13:15.386 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068169 do sali.
+20:13:16.376 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068168
+20:13:16.385 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068168
+20:13:17.385 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068168
+20:13:17.386 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068168
+20:13:17.386 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068169
+20:13:17.387 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068169
+20:13:17.395 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068169
+20:13:18.203 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068168
+20:13:18.204 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068168
+20:13:18.395 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068169
+20:13:18.395 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068168
+20:13:18.396 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068169
+20:13:18.396 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068168
+20:13:19.396 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068167
+20:13:19.397 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068168
+20:13:19.397 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068168 otrzymal wynik koncowy za czesc teorytyczna=32.80.
+20:13:19.397 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068168
+20:13:19.405 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068169
+20:13:19.405 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068169
+20:13:19.406 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068169
+20:13:19.406 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068169
+20:13:19.407 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068170 do sali.
+20:13:19.407 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068169
+20:13:19.407 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068169 otrzymal wynik koncowy za czesc teorytyczna=86.60.
+20:13:19.407 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068169
+20:13:19.417 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068171 do sali.
+20:13:20.415 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068170
+20:13:20.415 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068170
+20:13:20.415 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068167
+20:13:20.416 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068167
+20:13:20.416 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068170
+20:13:20.416 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068167
+20:13:20.417 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068171
+20:13:20.417 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068167
+20:13:21.416 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068170
+20:13:21.416 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068167
+20:13:21.426 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068167 otrzymal wynik koncowy za czesc teorytyczna=49.20.
+20:13:21.426 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068167
+20:13:21.436 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068172 do sali.
+20:13:22.437 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068170
+20:13:23.435 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068171
+20:13:23.435 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068170
+20:13:23.435 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068171
+20:13:23.435 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068171
+20:13:23.435 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068170
+20:13:23.435 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068170
+20:13:23.436 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068171
+20:13:23.436 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068170
+20:13:23.447 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068172
+20:13:23.447 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068170
+20:13:23.447 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068170 otrzymal wynik koncowy za czesc teorytyczna=73.20.
+20:13:23.447 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068170
+20:13:23.457 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068173 do sali.
+20:13:24.455 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068172
+20:13:24.455 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068171
+20:13:24.455 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068172
+20:13:24.455 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068172
+20:13:24.455 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068171
+20:13:24.456 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068171
+20:13:24.457 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068173
+20:13:24.457 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068171
+20:13:25.457 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068172
+20:13:25.457 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068171
+20:13:25.458 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068171 otrzymal wynik koncowy za czesc teorytyczna=42.40.
+20:13:25.458 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068171
+20:13:25.468 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068174 do sali.
+20:13:26.466 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068173
+20:13:26.466 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068173
+20:13:26.466 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068172
+20:13:26.466 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068173
+20:13:26.466 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068172
+20:13:26.466 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068172
+20:13:27.467 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068173
+20:13:27.467 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068172
+20:13:27.468 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068174
+20:13:27.469 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068172
+20:13:27.469 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068172 otrzymal wynik koncowy za czesc teorytyczna=49.40.
+20:13:27.469 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068172
+20:13:27.479 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068178 do sali.
+20:13:28.476 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068174
+20:13:28.476 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068174
+20:13:28.476 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068173
+20:13:28.476 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068173
+20:13:28.478 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068174
+20:13:28.478 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068173
+20:13:29.476 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068174
+20:13:29.476 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068173
+20:13:29.479 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068178
+20:13:29.479 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068173
+20:13:29.479 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068173 otrzymal wynik koncowy za czesc teorytyczna=44.20.
+20:13:29.479 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068173
+20:13:29.489 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068182 do sali.
+20:13:30.489 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068182
+20:13:30.489 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068174
+20:13:31.486 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068178
+20:13:31.486 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068178
+20:13:31.486 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068178
+20:13:31.487 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068174
+20:13:31.487 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068174
+20:13:31.487 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068174
+20:13:31.487 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068178
+20:13:31.488 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068174
+20:13:31.490 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068174 otrzymal wynik koncowy za czesc teorytyczna=26.20.
+20:13:31.490 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068174
+20:13:31.500 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068183 do sali.
+20:13:32.497 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068182
+20:13:32.497 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068178
+20:13:32.500 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068183
+20:13:32.500 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068178
+20:13:33.497 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068182
+20:13:33.497 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068182
+20:13:33.497 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068178
+20:13:33.497 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068178
+20:13:33.498 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068182
+20:13:33.498 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068178
+20:13:33.501 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068178 otrzymal wynik koncowy za czesc teorytyczna=72.00.
+20:13:33.501 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068178
+20:13:33.511 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068184 do sali.
+20:13:34.507 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068183
+20:13:34.508 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068183
+20:13:34.508 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068182
+20:13:34.508 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068182
+20:13:34.512 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068184
+20:13:34.512 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068182
+20:13:35.507 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068183
+20:13:35.508 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068182
+20:13:35.509 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068183
+20:13:35.509 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068182
+20:13:35.518 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068182 otrzymal wynik koncowy za czesc teorytyczna=41.00.
+20:13:35.518 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068182
+20:13:35.528 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068185 do sali.
+20:13:36.519 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068184
+20:13:36.520 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068183
+20:13:36.522 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068184
+20:13:36.522 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068183
+20:13:37.522 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068184
+20:13:37.523 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068183
+20:13:37.528 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068184
+20:13:37.528 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068183
+20:13:37.529 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068185
+20:13:37.529 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068183
+20:13:37.529 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068183 otrzymal wynik koncowy za czesc teorytyczna=60.00.
+20:13:37.529 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068183
+20:13:37.539 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068186 do sali.
+20:13:38.532 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068185
+20:13:38.532 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068184
+20:13:38.533 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068185
+20:13:38.533 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068184
+20:13:38.539 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068186
+20:13:38.539 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068184
+20:13:39.531 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068185
+20:13:39.531 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068184
+20:13:39.538 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068185
+20:13:39.538 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068184
+20:13:39.543 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068184 otrzymal wynik koncowy za czesc teorytyczna=35.00.
+20:13:39.543 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068184
+20:13:39.553 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068187 do sali.
+20:13:40.545 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068186
+20:13:40.545 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068185
+20:13:40.549 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068186
+20:13:40.549 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068185
+20:13:40.553 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068187
+20:13:40.553 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068185
+20:13:41.545 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068186
+20:13:41.545 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068185
+20:13:41.552 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068186
+20:13:41.552 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068185
+20:13:41.557 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068185 otrzymal wynik koncowy za czesc teorytyczna=47.00.
+20:13:41.557 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068185
+20:13:41.567 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068188 do sali.
+20:13:42.562 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068187
+20:13:42.562 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068186
+20:13:42.563 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068187
+20:13:42.563 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068186
+20:13:42.565 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068187
+20:13:42.565 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068186
+20:13:43.558 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068187
+20:13:43.558 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068186
+20:13:43.567 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068188
+20:13:43.567 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068186
+20:13:43.567 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068186 otrzymal wynik koncowy za czesc teorytyczna=60.80.
+20:13:43.567 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068186
+20:13:43.577 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068189 do sali.
+20:13:44.578 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068189
+20:13:44.578 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068187
+20:13:45.568 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068188
+20:13:45.568 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068187
+20:13:45.576 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068188
+20:13:45.576 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068187
+20:13:45.576 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068188
+20:13:45.576 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068187
+20:13:45.578 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068188
+20:13:45.578 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068187
+20:13:45.582 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068187 otrzymal wynik koncowy za czesc teorytyczna=41.60.
+20:13:45.582 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068187
+20:13:45.593 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068190 do sali.
+20:13:47.586 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068189
+20:13:47.586 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068188
+20:13:47.586 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068189
+20:13:47.587 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068188
+20:13:47.588 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068189
+20:13:47.588 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068188
+20:13:47.588 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068189
+20:13:47.588 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068188
+20:13:47.593 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068190
+20:13:47.593 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068188
+20:13:47.593 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068188 otrzymal wynik koncowy za czesc teorytyczna=44.00.
+20:13:47.593 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068188
+20:13:47.603 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068193 do sali.
+20:13:48.597 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068190
+20:13:48.597 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068189
+20:13:48.597 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068190
+20:13:48.597 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068189
+20:13:48.599 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068190
+20:13:48.599 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068189
+20:13:48.603 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068193
+20:13:48.603 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068189
+20:13:49.598 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068190
+20:13:49.598 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068189
+20:13:49.602 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068189 otrzymal wynik koncowy za czesc teorytyczna=45.60.
+20:13:49.602 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068189
+20:13:49.612 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068244 do sali.
+20:13:50.606 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068193
+20:13:50.606 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068190
+20:13:50.607 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068193
+20:13:50.607 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068190
+20:13:50.609 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068193
+20:13:50.609 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068190
+20:13:51.606 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068193
+20:13:51.606 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068190
+20:13:51.612 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068244
+20:13:51.612 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068190
+20:13:51.612 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068190 otrzymal wynik koncowy za czesc teorytyczna=59.80.
+20:13:51.613 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068190
+20:13:51.623 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068275 do sali.
+20:13:52.618 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068244
+20:13:52.618 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068193
+20:13:52.619 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068244
+20:13:52.619 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068193
+20:13:53.616 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068244
+20:13:53.617 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068244
+20:13:53.617 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068193
+20:13:53.617 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068193
+20:13:53.623 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068275
+20:13:53.623 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068193
+20:13:53.623 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068193 otrzymal wynik koncowy za czesc teorytyczna=59.20.
+20:13:53.623 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068193
+20:13:53.633 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068341 do sali.
+20:13:54.627 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068275
+20:13:54.627 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068244
+20:13:55.627 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068275
+20:13:55.627 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068275
+20:13:55.627 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068244
+20:13:55.627 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068275
+20:13:55.627 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068244
+20:13:55.627 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068244
+20:13:55.634 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068341
+20:13:55.634 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068244
+20:13:55.634 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068244 otrzymal wynik koncowy za czesc teorytyczna=43.80.
+20:13:55.634 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068244
+20:13:55.644 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068342 do sali.
+20:13:56.638 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068341
+20:13:56.638 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068275
+20:13:57.638 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068341
+20:13:57.638 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068341
+20:13:57.638 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068275
+20:13:57.638 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068275
+20:13:57.639 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068341
+20:13:57.639 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068275
+20:13:57.644 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068342
+20:13:57.644 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068275
+20:13:57.644 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068275 otrzymal wynik koncowy za czesc teorytyczna=54.80.
+20:13:57.644 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068275
+20:13:57.655 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068343 do sali.
+20:13:58.647 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068342
+20:13:58.647 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068341
+20:13:58.648 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068342
+20:13:58.648 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068341
+20:13:58.649 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068342
+20:13:58.649 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068341
+20:13:58.655 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068343
+20:13:58.655 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068341
+20:13:59.648 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068342
+20:13:59.648 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068341
+20:13:59.652 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068341 otrzymal wynik koncowy za czesc teorytyczna=39.80.
+20:13:59.652 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068341
+20:13:59.662 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068344 do sali.
+20:14:00.656 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068343
+20:14:00.656 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068342
+20:14:00.658 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068343
+20:14:00.659 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068342
+20:14:00.662 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068344
+20:14:00.662 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068342
+20:14:01.653 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068343
+20:14:01.653 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068342
+20:14:01.656 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068343
+20:14:01.656 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068342
+20:14:01.664 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068342 otrzymal wynik koncowy za czesc teorytyczna=59.60.
+20:14:01.664 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068342
+20:14:01.674 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068345 do sali.
+20:14:02.674 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068345
+20:14:02.674 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068343
+20:14:03.665 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068344
+20:14:03.665 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068343
+20:14:03.666 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068344
+20:14:03.666 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068343
+20:14:03.668 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068344
+20:14:03.668 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068343
+20:14:03.673 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068344
+20:14:03.673 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068343
+20:14:03.677 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068343 otrzymal wynik koncowy za czesc teorytyczna=34.40.
+20:14:03.677 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068343
+20:14:03.687 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068346 do sali.
+20:14:04.683 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068345
+20:14:04.683 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068344
+20:14:04.685 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068345
+20:14:04.685 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068344
+20:14:04.686 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068345
+20:14:04.686 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068344
+20:14:04.687 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068346
+20:14:04.687 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068344
+20:14:05.679 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068345
+20:14:05.679 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068344
+20:14:05.679 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068344 otrzymal wynik koncowy za czesc teorytyczna=30.60.
+20:14:05.679 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068344
+20:14:05.690 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068347 do sali.
+20:14:06.688 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068346
+20:14:06.688 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068345
+20:14:06.689 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068346
+20:14:06.689 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068345
+20:14:06.690 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068347
+20:14:06.690 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068345
+20:14:07.686 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068346
+20:14:07.686 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068345
+20:14:07.688 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068346
+20:14:07.688 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068345
+20:14:07.692 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068345 otrzymal wynik koncowy za czesc teorytyczna=58.20.
+20:14:07.692 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068345
+20:14:07.702 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068348 do sali.
+20:14:08.696 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068347
+20:14:08.696 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068346
+20:14:08.701 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068347
+20:14:08.701 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068346
+20:14:09.693 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068347
+20:14:09.693 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068346
+20:14:09.698 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068347
+20:14:09.698 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068346
+20:14:09.702 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068348
+20:14:09.702 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068346
+20:14:09.702 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068346 otrzymal wynik koncowy za czesc teorytyczna=50.00.
+20:14:09.702 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068346
+20:14:09.712 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068349 do sali.
+20:14:10.703 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068348
+20:14:10.703 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068347
+20:14:10.707 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068348
+20:14:10.707 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068347
+20:14:10.709 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068348
+20:14:10.709 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068347
+20:14:10.712 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068348
+20:14:10.712 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068347
+20:14:10.712 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068349
+20:14:10.712 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068347
+20:14:10.712 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068347 otrzymal wynik koncowy za czesc teorytyczna=27.40.
+20:14:10.712 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068347
+20:14:10.723 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068350 do sali.
+20:14:11.713 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068349
+20:14:11.713 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068348
+20:14:11.717 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068349
+20:14:11.718 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068348
+20:14:11.723 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068350
+20:14:11.723 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068348
+20:14:12.719 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068349
+20:14:12.719 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068348
+20:14:12.722 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068349
+20:14:12.722 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068348
+20:14:12.728 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068348 otrzymal wynik koncowy za czesc teorytyczna=48.40.
+20:14:12.728 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068348
+20:14:12.738 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068351 do sali.
+20:14:13.732 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068350
+20:14:13.732 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068349
+20:14:14.728 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068350
+20:14:14.728 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068349
+20:14:14.729 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068350
+20:14:14.729 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068349
+20:14:14.733 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068350
+20:14:14.733 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068349
+20:14:14.738 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068351
+20:14:14.739 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068349
+20:14:14.739 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068349 otrzymal wynik koncowy za czesc teorytyczna=29.60.
+20:14:14.739 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068349
+20:14:14.749 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068352 do sali.
+20:14:15.743 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068351
+20:14:15.743 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068350
+20:14:15.749 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068352
+20:14:15.749 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068350
+20:14:16.739 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068351
+20:14:16.739 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068350
+20:14:16.744 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068351
+20:14:16.744 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068350
+20:14:16.749 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068351
+20:14:16.749 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068350
+20:14:16.758 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068350 otrzymal wynik koncowy za czesc teorytyczna=63.20.
+20:14:16.758 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068350
+20:14:16.769 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068353 do sali.
+20:14:17.759 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068352
+20:14:17.759 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068351
+20:14:17.760 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068352
+20:14:17.760 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068351
+20:14:18.762 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068352
+20:14:18.762 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068351
+20:14:18.764 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068352
+20:14:18.764 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068351
+20:14:18.769 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068353
+20:14:18.769 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068351
+20:14:18.769 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068351 otrzymal wynik koncowy za czesc teorytyczna=57.60.
+20:14:18.769 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068351
+20:14:18.779 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068354 do sali.
+20:14:19.775 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068353
+20:14:19.775 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068352
+20:14:19.778 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068353
+20:14:19.778 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068352
+20:14:19.779 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068353
+20:14:19.779 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068352
+20:14:20.773 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068353
+20:14:20.773 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068352
+20:14:20.779 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068354
+20:14:20.779 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068352
+20:14:20.779 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068352 otrzymal wynik koncowy za czesc teorytyczna=42.40.
+20:14:20.779 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068352
+20:14:20.790 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068355 do sali.
+20:14:21.787 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068354
+20:14:21.787 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068353
+20:14:21.787 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068354
+20:14:21.787 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068353
+20:14:22.783 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068354
+20:14:22.783 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068353
+20:14:22.784 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068354
+20:14:22.784 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068353
+20:14:22.790 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068355
+20:14:22.790 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068353
+20:14:22.790 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068353 otrzymal wynik koncowy za czesc teorytyczna=63.40.
+20:14:22.790 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068353
+20:14:22.800 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068356 do sali.
+20:14:23.793 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068355
+20:14:23.794 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068354
+20:14:23.794 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068355
+20:14:23.795 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068354
+20:14:23.800 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068356
+20:14:23.800 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068354
+20:14:24.796 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068355
+20:14:24.796 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068354
+20:14:24.796 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068355
+20:14:24.797 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068354
+20:14:24.800 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068354 otrzymal wynik koncowy za czesc teorytyczna=37.60.
+20:14:24.800 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068354
+20:14:24.810 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068357 do sali.
+20:14:25.803 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068356
+20:14:25.804 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068355
+20:14:25.807 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068356
+20:14:25.807 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068355
+20:14:26.806 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068356
+20:14:26.806 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068355
+20:14:26.806 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068356
+20:14:26.807 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068355
+20:14:26.810 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068357
+20:14:26.811 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068355
+20:14:26.811 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068355 otrzymal wynik koncowy za czesc teorytyczna=34.00.
+20:14:26.811 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068355
+20:14:26.821 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068358 do sali.
+20:14:28.814 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068357
+20:14:28.815 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068356
+20:14:28.816 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068357
+20:14:28.817 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068356
+20:14:28.817 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068357
+20:14:28.818 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068357
+20:14:28.818 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068356
+20:14:28.818 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068356
+20:14:28.821 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068358
+20:14:28.821 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068356
+20:14:28.821 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068356 otrzymal wynik koncowy za czesc teorytyczna=43.40.
+20:14:28.821 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068356
+20:14:28.832 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068359 do sali.
+20:14:29.827 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068358
+20:14:29.827 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068357
+20:14:29.829 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068358
+20:14:29.829 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068357
+20:14:29.829 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068358
+20:14:29.829 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068357
+20:14:29.832 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068359
+20:14:29.832 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068357
+20:14:30.826 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068358
+20:14:30.826 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068357
+20:14:30.832 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068357 otrzymal wynik koncowy za czesc teorytyczna=42.00.
+20:14:30.832 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068357
+20:14:30.843 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068360 do sali.
+20:14:31.837 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068359
+20:14:31.837 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068358
+20:14:31.840 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068359
+20:14:31.841 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068358
+20:14:32.838 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068359
+20:14:32.838 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068358
+20:14:32.839 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068359
+20:14:32.839 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068358
+20:14:32.843 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068360
+20:14:32.843 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068358
+20:14:32.843 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068358 otrzymal wynik koncowy za czesc teorytyczna=70.40.
+20:14:32.843 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068358
+20:14:32.853 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068361 do sali.
+20:14:33.848 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068360
+20:14:33.849 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068359
+20:14:33.851 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068360
+20:14:33.852 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068359
+20:14:34.847 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068360
+20:14:34.847 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068359
+20:14:34.849 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068360
+20:14:34.849 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068359
+20:14:34.853 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068361
+20:14:34.854 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068359
+20:14:34.854 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068359 otrzymal wynik koncowy za czesc teorytyczna=45.80.
+20:14:34.854 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068359
+20:14:34.864 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068362 do sali.
+20:14:35.864 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068362
+20:14:35.864 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068360
+20:14:36.858 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068361
+20:14:36.858 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068360
+20:14:36.858 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068361
+20:14:36.858 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068360
+20:14:36.860 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068361
+20:14:36.860 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068360
+20:14:36.861 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068361
+20:14:36.861 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068360
+20:14:36.870 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068360 otrzymal wynik koncowy za czesc teorytyczna=42.40.
+20:14:36.870 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068360
+20:14:36.881 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068366 do sali.
+20:14:38.871 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068362
+20:14:38.872 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068361
+20:14:38.879 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068362
+20:14:38.879 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068361
+20:14:38.879 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068362
+20:14:38.879 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068361
+20:14:38.880 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068362
+20:14:38.881 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068361
+20:14:38.881 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068366
+20:14:38.881 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068361
+20:14:38.881 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068361 otrzymal wynik koncowy za czesc teorytyczna=39.40.
+20:14:38.881 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068361
+20:14:38.891 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068370 do sali.
+20:14:39.882 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068366
+20:14:39.883 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068362
+20:14:39.889 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068366
+20:14:39.890 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068362
+20:14:40.889 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068366
+20:14:40.890 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068362
+20:14:40.891 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068366
+20:14:40.891 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068362
+20:14:40.892 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068370
+20:14:40.892 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068362
+20:14:40.892 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068362 otrzymal wynik koncowy za czesc teorytyczna=73.80.
+20:14:40.892 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068362
+20:14:40.902 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068371 do sali.
+20:14:41.901 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068370
+20:14:41.901 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068366
+20:14:41.902 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068370
+20:14:41.902 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068366
+20:14:41.903 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068371
+20:14:41.903 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068366
+20:14:42.894 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068370
+20:14:42.894 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068366
+20:14:42.900 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068370
+20:14:42.900 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068366
+20:14:42.901 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068366 otrzymal wynik koncowy za czesc teorytyczna=44.40.
+20:14:42.901 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068366
+20:14:42.911 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068372 do sali.
+20:14:43.901 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068371
+20:14:43.902 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068370
+20:14:43.911 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068372
+20:14:43.911 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068370
+20:14:44.904 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068371
+20:14:44.905 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068370
+20:14:44.907 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068371
+20:14:44.907 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068370
+20:14:44.911 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068371
+20:14:44.911 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068370
+20:14:44.918 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068370 otrzymal wynik koncowy za czesc teorytyczna=43.00.
+20:14:44.918 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068370
+20:14:44.928 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068373 do sali.
+20:14:45.922 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068372
+20:14:45.922 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068371
+20:14:45.926 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068372
+20:14:45.926 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068371
+20:14:45.928 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068372
+20:14:45.928 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068371
+20:14:46.927 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068372
+20:14:46.927 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068371
+20:14:46.928 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068373
+20:14:46.929 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068371
+20:14:46.929 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068371 otrzymal wynik koncowy za czesc teorytyczna=44.60.
+20:14:46.929 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068371
+20:14:46.939 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068374 do sali.
+20:14:47.937 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068373
+20:14:47.938 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068372
+20:14:47.939 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068374
+20:14:47.940 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068372
+20:14:48.933 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068373
+20:14:48.933 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068372
+20:14:48.936 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068373
+20:14:48.944 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068373
+20:14:48.944 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068372
+20:14:48.945 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068372
+20:14:48.946 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068372 otrzymal wynik koncowy za czesc teorytyczna=39.40.
+20:14:48.946 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068372
+20:14:48.957 | [NADZORCA A] PID:1067788 | Wpuściłem kandydata PID:1068375 do sali.
+20:14:49.947 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068374
+20:14:49.947 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068373
+20:14:49.955 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068374
+20:14:49.956 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068374
+20:14:49.956 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068373
+20:14:49.957 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068373
+20:14:49.957 | [KOMISJA A NADZORCA] PID:1067788 |Zadaje pytanie dla kandydata PID:1068375
+20:14:49.957 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068373
+20:14:50.954 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068374
+20:14:50.954 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068373
+20:14:50.963 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068373 otrzymal wynik koncowy za czesc teorytyczna=43.40.
+20:14:50.963 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068373
+20:14:51.614 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068374
+20:14:51.964 | [KOMISJA A CZLONEK 5] PID:1067788 | Zadaje pytanie dla kandydat PID:1068375
+20:14:51.964 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068374
+20:14:51.965 | [KOMISJA A CZLONEK 3] PID:1067788 | Zadaje pytanie dla kandydat PID:1068375
+20:14:51.965 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068374
+20:14:51.965 | [KOMISJA A CZLONEK 4] PID:1067788 | Zadaje pytanie dla kandydat PID:1068375
+20:14:51.966 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068374
+20:14:51.966 | [KOMISJA A CZLONEK 2] PID:1067788 | Zadaje pytanie dla kandydat PID:1068375
+20:14:51.967 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068374
+20:14:51.970 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068374 otrzymal wynik koncowy za czesc teorytyczna=21.20.
+20:14:51.970 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068374
+20:14:52.629 | [KOMISJA A NADZORCA] PID:1067788 |Otrzymalem odpowiedz od kandydat PID:1068375
+20:14:52.633 | [KOMISJA A CZLONEK 5] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068375
+20:14:52.634 | [KOMISJA A CZLONEK 3] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068375
+20:14:52.635 | [KOMISJA A CZLONEK 4] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068375
+20:14:52.636 | [KOMISJA A CZLONEK 2] PID:1067788 | Otrzymalem odpowiedz od kandydat PID:1068375
+20:14:52.639 | [KOMISJA A NADZORCA] PID:1067788 | Kandydat PID:1068375 otrzymal wynik koncowy za czesc teorytyczna=79.80.
+20:14:52.639 | [KOMISJA A NADZORCA] PID:1067788 | Przeyslam do Dziekana wynik kandydata PID:1068375
+20:14:58.056 | [KOMISJA A] PID:1067788 | Egzamin dobiegl konca
+20:14:58.060 | Komisja A kończy prace

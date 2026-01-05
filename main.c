@@ -61,7 +61,8 @@ int main()
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     // Dziekan
-    switch (fork())
+    pid_t pid_dziekan = fork();
+    switch (pid_dziekan)
     {
     case -1:
         perror("fork() | Nie udalo sie utworzyc procesu dziekan");
@@ -111,16 +112,23 @@ int main()
 
     sleep(1);
 
-    // Kandydaci
-    for (int i = 0; i < LICZBA_KANDYDATOW; i++)
+    int procent_wczesnych = rand() % 31 + 20;
+    int liczba_wczesnych = (LICZBA_KANDYDATOW * procent_wczesnych) / 100;
+
+    snprintf(msg_buffer, sizeof(msg_buffer), "[main] %d kandydatów (%d%%) przyszło PRZED rozpoczęciem egzaminu\n", liczba_wczesnych, procent_wczesnych);
+    loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
+
+    // Kandydaci ktorzy sa wczesniej
+    for (int i = 0; i < liczba_wczesnych; i++)
     {
-        usleep(rand() % (50000 - 10000 + 1) + 10000);
+        // Kandydaci przychodza w roznych odstepach czasu
+        usleep(rand() % 30000 + 5000); // 5-35ms
+
         switch (fork())
         {
         case -1:
             perror("fork() | Nie udalo sie utworzyc kandydata");
             exit(EXIT_FAILURE);
-            break;
 
         case 0:
             execl("./kandydat", "kandydat", NULL);
@@ -129,8 +137,45 @@ int main()
         }
     }
 
-    sleep(1);
-    snprintf(msg_buffer, sizeof(msg_buffer), "[main] Poprawnie utworzono wszytskie potrzebne procesy do działania symulacji\n");
+    snprintf(msg_buffer, sizeof(msg_buffer), "[main] Oczekiwanie na godzinę T (start egzaminu)...\n");
+    loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
+
+    sleep(GODZINA_ROZPOCZECIA_EGZAMINU);
+
+    snprintf(msg_buffer, sizeof(msg_buffer), "[main] Wysyłam sygnał SIGUSR1 do Dziekana (PID:%d) - rozpoczynam egzamin\n", pid_dziekan);
+    loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
+
+    if (kill(pid_dziekan, SIGUSR1) == -1)
+    {
+        perror("kill() | Nie udalo sie wyslac SIGUSR1 do dziekana");
+        exit(EXIT_FAILURE);
+    }
+
+    // Kandydaci spoznienieni
+    int liczba_spoznionych = LICZBA_KANDYDATOW - liczba_wczesnych;
+
+    snprintf(msg_buffer, sizeof(msg_buffer), "[main] %d kandydatów przychodzi W TRAKCIE egzaminu\n", liczba_spoznionych);
+    loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
+
+    for (int i = 0; i < liczba_spoznionych; i++)
+    {
+        // Spoznieni przychodza w wiekszych bardziej losowych odstepach
+        usleep(rand() % 80000 + 10000); // 10-90ms
+
+        switch (fork())
+        {
+        case -1:
+            perror("fork() | Nie udalo sie utworzyc kandydata");
+            exit(EXIT_FAILURE);
+
+        case 0:
+            execl("./kandydat", "kandydat", NULL);
+            perror("execl() | Nie udalo sie urchomic programu kandydat");
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    snprintf(msg_buffer, sizeof(msg_buffer), "[main] Utworzono wszystkich %d kandydatów\n", LICZBA_KANDYDATOW);
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     int status;

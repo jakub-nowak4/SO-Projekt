@@ -6,6 +6,7 @@
 #include <stdbool.h>
 #include <errno.h>
 #include <string.h>
+#define _POSIX_C_SOURCE 200809L
 #include <time.h>
 #include <fcntl.h>
 #include <sys/stat.h>
@@ -25,6 +26,7 @@
 #define CZAS_OPRACOWANIE_PYTAN 5 // Czas Ti na opracownie pytan od komisji
 #define LICZBA_CZLONKOW_A 5
 #define LICZBA_CZLONKOW_B 3
+#define GODZINA_ROZPOCZECIA_EGZAMINU 5
 
 #define LOGI_DIR "logi"
 #define LOGI_MAIN "logi/logi_main.txt"
@@ -167,7 +169,11 @@ typedef enum
 typedef struct
 {
     long mtype;
-    Kandydat kandydat;
+    pid_t pid;
+    bool czy_zdal_mature;
+    bool czy_powtarza_egzamin;
+    float wynik_a;
+
 } MSG_ZGLOSZENIE;
 
 typedef struct

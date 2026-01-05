@@ -28,20 +28,18 @@ int main()
 
     MSG_ZGLOSZENIE zgloszenie;
     zgloszenie.mtype = KANDYDAT_PRZESYLA_MATURE;
-    zgloszenie.kandydat = kandydat;
+    zgloszenie.pid = kandydat.pid;
+    zgloszenie.czy_zdal_mature = kandydat.czy_zdal_mature;
+    zgloszenie.czy_powtarza_egzamin = kandydat.czy_powtarza_egzamin;
+    zgloszenie.wynik_a = kandydat.wynik_a;
     msq_send(msqid_budynek, &zgloszenie, sizeof(zgloszenie));
 
     // Kandydat czeka na decyzje dziekana
     MSG_DECYZJA decyzja;
     msq_receive(msqid_budynek, &decyzja, sizeof(decyzja), getpid());
 
-    MSG_POTWIERDZENIE potwierdzenie;
-
     if (decyzja.numer_na_liscie == -1)
     {
-        potwierdzenie.mtype = getpid();
-        potwierdzenie.pid = getpid();
-        msq_send(msqid_budynek, &potwierdzenie, sizeof(potwierdzenie));
 
         semafor_p(SEMAFOR_MUTEX);
         pamiec_shm->pozostalo_kandydatow--;
@@ -58,13 +56,6 @@ int main()
         odlacz_shm(pamiec_shm);
         exit(EXIT_SUCCESS);
     }
-    else
-    {
-        potwierdzenie.mtype = getpid();
-        potwierdzenie.pid = getpid();
-
-        msq_send(msqid_budynek, &potwierdzenie, sizeof(potwierdzenie));
-    }
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.\n", getpid());
     loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
@@ -77,12 +68,12 @@ int main()
     while (true)
     {
         bool moja_kolej = false;
+        MSG_KANDYDAT_WCHODZI_DO_A zgloszenia_A;
 
         semafor_p(SEMAFOR_MUTEX);
 
         bool egzamin_trwa = pamiec_shm->egzamin_trwa;
         int aktualny = pamiec_shm->nastepny_do_komisja_A;
-        int osoby = pamiec_shm->liczba_osob_w_A;
 
         if (!egzamin_trwa)
         {
@@ -93,22 +84,22 @@ int main()
         if (aktualny == decyzja.numer_na_liscie)
         {
             moja_kolej = true;
-            MSG_KANDYDAT_WCHODZI_DO_A zgloszenia_A;
             zgloszenia_A.mtype = KANDYDAT_WCHODZI_DO_A;
             zgloszenia_A.numer_na_liscie = decyzja.numer_na_liscie;
             zgloszenia_A.pid = getpid();
-            msq_send(msqid_A, &zgloszenia_A, sizeof(zgloszenia_A));
-
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Czekam przed drzwiami Komisji A...\n", getpid());
-            loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
-
             pamiec_shm->nastepny_do_komisja_A++;
         }
 
         semafor_v(SEMAFOR_MUTEX);
 
+        // msq_send POZA sekcją krytyczną!
         if (moja_kolej)
         {
+            msq_send(msqid_A, &zgloszenia_A, sizeof(zgloszenia_A));
+
+            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Czekam przed drzwiami Komisji A...\n", getpid());
+            loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
+
             MSG_KANDYDAT_WCHODZI_DO_A_POTWIERDZENIE potwierdzenie;
             msq_receive(msqid_A, &potwierdzenie, sizeof(potwierdzenie), getpid());
 
@@ -235,10 +226,6 @@ int main()
 
         MSG_KANDYDAT_WCHODZI_DO_B_POTWIERDZENIE potwierdzenie_wejscia;
         msq_receive(msqid_B, &potwierdzenie_wejscia, sizeof(potwierdzenie_wejscia), getpid());
-
-        semafor_p(SEMAFOR_MUTEX);
-        pamiec_shm->liczba_osob_w_B++;
-        semafor_v(SEMAFOR_MUTEX);
 
         snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Wchodze na czesc praktyczna egzaminu do Komisji B.\n", getpid());
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);

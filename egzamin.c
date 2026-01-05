@@ -15,16 +15,29 @@ void pobierz_czas(struct tm *wynik)
     *wynik = *localtime(&now);
 }
 
+void pobierz_czas_precyzyjny(struct tm *wynik, int *ms)
+{
+    struct timespec ts;
+    clock_gettime(CLOCK_REALTIME, &ts);
+
+    *ms = ts.tv_nsec / 1000000;
+    localtime_r(&ts.tv_sec, wynik);
+}
+
 void loguj(int sem_index, char *file_path, char *msg)
 {
     struct tm czas;
+    int ms;
     char buffer[512];
-    pobierz_czas(&czas);
-
-    int len = snprintf(buffer, sizeof(buffer), "%02d:%02d:%02d | %s", czas.tm_hour, czas.tm_min, czas.tm_sec, msg);
+    int len;
 
     semafor_p(sem_index);
-    int fd = open(file_path, O_WRONLY | O_APPEND);
+
+    pobierz_czas_precyzyjny(&czas, &ms);
+
+    len = snprintf(buffer, sizeof(buffer), "%02d:%02d:%02d:%03d | %s", czas.tm_hour, czas.tm_min, czas.tm_sec, ms, msg);
+
+    int fd = open(file_path, O_WRONLY | O_APPEND | O_CREAT, 0644);
     if (fd != -1)
     {
         write(fd, buffer, len);
@@ -333,17 +346,28 @@ int utworz_msq(key_t klucz_msq)
 
 void msq_send(int msqid, void *msg, size_t msg_size)
 {
-    if (msgsnd(msqid, msg, msg_size - sizeof(long), 0) == -1)
+    size_t msgsz = msg_size - sizeof(long);
+
+    while (msgsnd(msqid, msg, msgsz, 0) == -1)
     {
-        perror("msgsnd() | Nie udalo sie wyslac wiadomosci.");
+        if (errno == EINTR)
+            continue;
+        if (errno == EIDRM || errno == EINVAL)
+        {
+            exit(EXIT_SUCCESS);
+        }
+        perror("msgsnd() | Krytyczny blad wysylania");
         exit(EXIT_FAILURE);
     }
 }
 
 void msq_receive(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci)
 {
+
     if (msgrcv(msqid, buffer, buffer_size - sizeof(long), typ_wiadomosci, 0) == -1)
     {
+        if (errno == EIDRM || errno == EINVAL)
+            exit(EXIT_SUCCESS);
         perror("msgrcv() | Nie udalo sie odberac wiadomosci.");
         exit(EXIT_FAILURE);
     }
@@ -404,21 +428,86 @@ int znajdz_kandydata(pid_t pid, PamiecDzielona *shm)
 void wypisz_liste_rankingowa(PamiecDzielona *shm)
 {
     char buffer[512];
-    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n========== LISTA RANKINGOWA (TOP M) ==========\n");
-    for (int i = 0; i < shm->index_rankingowa && i < M; i++)
+
+    // 1. PEŁNA LISTA RANKINGOWA
+    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n========== PEŁNA LISTA RANKINGOWA ==========\n");
+    snprintf(buffer, sizeof(buffer), "Liczba kandydatów na liście: %d\n\n", shm->index_rankingowa);
+    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
+
+    for (int i = 0; i < shm->index_rankingowa; i++)
     {
-        snprintf(buffer, sizeof(buffer), "Miejsce %d: PID %d | Wynik: %.2f (A: %.2f, B: %.2f)\n",
-                 i + 1, shm->LISTA_RANKINGOWA[i].pid, shm->LISTA_RANKINGOWA[i].wynik_koncowy,
-                 shm->LISTA_RANKINGOWA[i].wynik_a, shm->LISTA_RANKINGOWA[i].wynik_b);
+        snprintf(buffer, sizeof(buffer), "Miejsce %d: PID %d | Wynik: %.2f (A: %.2f, B: %.2f)\n", i + 1, shm->LISTA_RANKINGOWA[i].pid, shm->LISTA_RANKINGOWA[i].wynik_koncowy, shm->LISTA_RANKINGOWA[i].wynik_a, shm->LISTA_RANKINGOWA[i].wynik_b);
         loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
     }
 
+    // 2. LISTA PRZYJĘTYCH (TOP M)
+    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n========== LISTA PRZYJĘTYCH (TOP M) ==========\n");
+    int przyjętych = (shm->index_rankingowa < M) ? shm->index_rankingowa : M;
+    snprintf(buffer, sizeof(buffer), "Liczba miejsc: %d | Przyjętych: %d\n\n", M, przyjętych);
+    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
+
+    for (int i = 0; i < przyjętych; i++)
+    {
+        snprintf(buffer, sizeof(buffer), "Miejsce %d: PID %d | Wynik: %.2f (A: %.2f, B: %.2f) - PRZYJĘTY\n", i + 1, shm->LISTA_RANKINGOWA[i].pid, shm->LISTA_RANKINGOWA[i].wynik_koncowy, shm->LISTA_RANKINGOWA[i].wynik_a, shm->LISTA_RANKINGOWA[i].wynik_b);
+        loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
+    }
+
+    // 3. LISTA NIEPRZYJĘTYCH
+    if (shm->index_rankingowa > M)
+    {
+        loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n========== LISTA NIEPRZYJĘTYCH (brak miejsc) ==========\n");
+        int nieprzyjętych = shm->index_rankingowa - M;
+        snprintf(buffer, sizeof(buffer), "Liczba nieprzyjętych mimo zdanego egzaminu: %d\n\n", nieprzyjętych);
+        loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
+
+        for (int i = M; i < shm->index_rankingowa; i++)
+        {
+            snprintf(buffer, sizeof(buffer), "Miejsce %d: PID %d | Wynik: %.2f (A: %.2f, B: %.2f) - NIEPRZYJĘTY (brak miejsc)\n", i + 1, shm->LISTA_RANKINGOWA[i].pid, shm->LISTA_RANKINGOWA[i].wynik_koncowy, shm->LISTA_RANKINGOWA[i].wynik_a, shm->LISTA_RANKINGOWA[i].wynik_b);
+            loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
+        }
+    }
+
+    // 4. LISTA ODRZUCONYCH (nie zdali egzaminu)
     loguj(SEMAFOR_LOGI_LISTA_ODRZUCONYCH, LOGI_LISTA_ODRZUCONYCH, "\n========== LISTA ODRZUCONYCH ==========\n");
+    snprintf(buffer, sizeof(buffer), "Liczba odrzuconych: %d\n\n", shm->index_odrzuceni);
+    loguj(SEMAFOR_LOGI_LISTA_ODRZUCONYCH, LOGI_LISTA_ODRZUCONYCH, buffer);
+
     for (int i = 0; i < shm->index_odrzuceni; i++)
     {
-        snprintf(buffer, sizeof(buffer), "PID %d | Powod: %s\n",
-                 shm->LISTA_ODRZUCONYCH[i].pid,
-                 (!shm->LISTA_ODRZUCONYCH[i].czy_zdal_mature) ? "Brak matury" : "Zbyt niski wynik");
+        const char *powod;
+        if (!shm->LISTA_ODRZUCONYCH[i].czy_zdal_mature)
+        {
+            powod = "Brak matury";
+        }
+        else if (shm->LISTA_ODRZUCONYCH[i].wynik_a < 30)
+        {
+            powod = "Zbyt niski wynik A";
+        }
+        else if (shm->LISTA_ODRZUCONYCH[i].wynik_b < 30)
+        {
+            powod = "Zbyt niski wynik B";
+        }
+        else
+        {
+            powod = "Zbyt niski wynik";
+        }
+
+        snprintf(buffer, sizeof(buffer), "PID %d | A: %.2f | B: %.2f | Powod: %s\n", shm->LISTA_ODRZUCONYCH[i].pid, shm->LISTA_ODRZUCONYCH[i].wynik_a >= 0 ? shm->LISTA_ODRZUCONYCH[i].wynik_a : 0.0f, shm->LISTA_ODRZUCONYCH[i].wynik_b >= 0 ? shm->LISTA_ODRZUCONYCH[i].wynik_b : 0.0f, powod);
         loguj(SEMAFOR_LOGI_LISTA_ODRZUCONYCH, LOGI_LISTA_ODRZUCONYCH, buffer);
     }
+
+    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n========== PODSUMOWANIE ==========\n");
+    snprintf(buffer, sizeof(buffer),
+             "Kandydatów łącznie: %d\n"
+             "Zdało egzamin (lista rankingowa): %d\n"
+             "Przyjętych (TOP %d): %d\n"
+             "Nieprzyjętych (brak miejsc): %d\n"
+             "Odrzuconych (nie zdali): %d\n",
+             shm->index_kandydaci + shm->index_odrzuceni,
+             shm->index_rankingowa,
+             M,
+             przyjętych,
+             (shm->index_rankingowa > M) ? shm->index_rankingowa - M : 0,
+             shm->index_odrzuceni);
+    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
 }

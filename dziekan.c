@@ -63,50 +63,58 @@ int main()
         // Dziekan sprawdza wynik matury kandydata
         if (res != -1)
         {
-            snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Odebralem informacje o wyniku matury od Kandydata PID:%d\n", getpid(), zgloszenie.kandydat.pid);
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Odebralem informacje o wyniku matury od Kandydata PID:%d\n", getpid(), zgloszenie.pid);
             loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
             MSG_DECYZJA decyzja;
+            decyzja.mtype = zgloszenie.pid;
 
-            if (zgloszenie.kandydat.czy_zdal_mature)
+            if (zgloszenie.czy_zdal_mature)
             {
-                snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Po weryfikacji matury dopuszczam Kandydata PID:%d do dalszej czesci egzaminu\n", getpid(), zgloszenie.kandydat.pid);
-                loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
-                decyzja.mtype = zgloszenie.kandydat.pid;
                 decyzja.dopuszczony_do_egzamin = true;
 
                 semafor_p(SEMAFOR_MUTEX);
 
                 int index = pamiec_shm->index_kandydaci;
-                pamiec_shm->LISTA_KANDYDACI[index] = zgloszenie.kandydat;
+                pamiec_shm->LISTA_KANDYDACI[index].pid = zgloszenie.pid;
                 pamiec_shm->LISTA_KANDYDACI[index].numer_na_liscie = index;
+                pamiec_shm->LISTA_KANDYDACI[index].status = WERYFIKACJA_MATURY;
+                pamiec_shm->LISTA_KANDYDACI[index].czy_zdal_mature = zgloszenie.czy_zdal_mature;
+                pamiec_shm->LISTA_KANDYDACI[index].czy_powtarza_egzamin = zgloszenie.czy_powtarza_egzamin;
+                pamiec_shm->LISTA_KANDYDACI[index].wynik_a = zgloszenie.wynik_a;
+                pamiec_shm->LISTA_KANDYDACI[index].wynik_b = -1;
+                pamiec_shm->LISTA_KANDYDACI[index].wynik_koncowy = -1;
+
                 decyzja.numer_na_liscie = index;
                 pamiec_shm->index_kandydaci++;
 
                 semafor_v(SEMAFOR_MUTEX);
+
+                snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Po weryfikacji matury dopuszczam Kandydata PID:%d do dalszej czesci egzaminu\n", getpid(), zgloszenie.pid);
+                loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
             }
             else
             {
-                snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Po weryfikacji matury nie dopuszczam Kandydata PID:%d do dalszej czesci egzaminu.\n", getpid(), zgloszenie.kandydat.pid);
-                loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
-
-                decyzja.mtype = zgloszenie.kandydat.pid;
                 decyzja.dopuszczony_do_egzamin = false;
                 decyzja.numer_na_liscie = -1;
 
                 semafor_p(SEMAFOR_MUTEX);
-
                 int index = pamiec_shm->index_odrzuceni;
-                pamiec_shm->LISTA_ODRZUCONYCH[index] = zgloszenie.kandydat;
+                pamiec_shm->LISTA_ODRZUCONYCH[index].pid = zgloszenie.pid;
+                pamiec_shm->LISTA_ODRZUCONYCH[index].czy_zdal_mature = false;
+                pamiec_shm->LISTA_ODRZUCONYCH[index].czy_powtarza_egzamin = false;
+                pamiec_shm->LISTA_ODRZUCONYCH[index].wynik_a = -1;
+                pamiec_shm->LISTA_ODRZUCONYCH[index].wynik_b = -1;
+                pamiec_shm->LISTA_ODRZUCONYCH[index].wynik_koncowy = -1;
                 pamiec_shm->index_odrzuceni++;
-
                 semafor_v(SEMAFOR_MUTEX);
+
+                snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Odrzucam kandydata PID:%d (brak matury)\n", getpid(), zgloszenie.pid);
+                loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
             }
 
             msq_send(msqid_budynek, &decyzja, sizeof(decyzja));
-            MSG_POTWIERDZENIE potwierdzenie;
-            msq_receive(msqid_budynek, &potwierdzenie, sizeof(potwierdzenie), zgloszenie.kandydat.pid);
         }
 
         MSG_WYNIK_KONCOWY_DZIEKAN wynik_koncowy_egzamin;

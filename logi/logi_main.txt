@@ -1,0 +1,278 @@
+20:10:53.285 | [main] Rozpoczynam symulacje EGZAMIN WSTĘPNY NA KIERUNEK INFORMATYKA
+20:10:53.286 | [main] DANE STARTOWE:
+20:10:53.286 | [main] LICZBA MIEJSC: 12
+20:10:53.286 | [main] LICZBA KANDYDATÓW: 120
+20:10:55.286 | [main] 48 kandydatów (40%) przyszło PRZED rozpoczęciem egzaminu
+20:10:56.310 | [main] Oczekiwanie na godzinę T (start egzaminu)...
+20:11:01.310 | [main] Wysyłam sygnał SIGUSR1 do Dziekana (PID:1067779) - rozpoczynam egzamin
+20:11:01.311 | [main] 72 kandydatów przychodzi W TRAKCIE egzaminu
+20:11:05.015 | [main] Utworzono wszystkich 120 kandydatów
+20:11:05.015 | PROCES PID: 1067836 zakonczył działanie z kodem: 0
+20:11:05.015 | PROCES PID: 1068079 zakonczył działanie z kodem: 0
+20:11:05.016 | PROCES PID: 1068080 zakonczył działanie z kodem: 0
+20:11:07.373 | PROCES PID: 1067807 zakonczył działanie z kodem: 0
+20:11:09.389 | PROCES PID: 1067818 zakonczył działanie z kodem: 0
+20:11:13.399 | PROCES PID: 1067820 zakonczył działanie z kodem: 0
+20:11:17.423 | PROCES PID: 1067819 zakonczył działanie z kodem: 0
+20:11:19.443 | PROCES PID: 1067821 zakonczył działanie z kodem: 0
+20:11:21.465 | PROCES PID: 1067822 zakonczył działanie z kodem: 0
+20:11:24.486 | PROCES PID: 1067824 zakonczył działanie z kodem: 0
+20:11:26.506 | PROCES PID: 1067825 zakonczył działanie z kodem: 0
+20:11:29.510 | PROCES PID: 1067826 zakonczył działanie z kodem: 0
+20:11:29.534 | PROCES PID: 1067827 zakonczył działanie z kodem: 0
+20:11:32.535 | PROCES PID: 1067828 zakonczył działanie z kodem: 0
+20:11:33.556 | PROCES PID: 1067831 zakonczył działanie z kodem: 0
+20:11:34.556 | PROCES PID: 1067829 zakonczył działanie z kodem: 0
+20:11:34.566 | PROCES PID: 1067823 zakonczył działanie z kodem: 0
+20:11:36.584 | PROCES PID: 1067830 zakonczył działanie z kodem: 0
+20:11:39.595 | PROCES PID: 1067833 zakonczył działanie z kodem: 0
+20:11:41.625 | PROCES PID: 1067834 zakonczył działanie z kodem: 0
+20:11:43.646 | PROCES PID: 1067832 zakonczył działanie z kodem: 0
+20:11:45.666 | PROCES PID: 1067837 zakonczył działanie z kodem: 0
+20:11:47.687 | PROCES PID: 1067835 zakonczył działanie z kodem: 0
+20:11:48.707 | PROCES PID: 1067838 zakonczył działanie z kodem: 0
+20:11:50.728 | PROCES PID: 1067839 zakonczył działanie z kodem: 0
+20:11:52.749 | PROCES PID: 1067840 zakonczył działanie z kodem: 0
+20:11:53.719 | PROCES PID: 1067842 zakonczył działanie z kodem: 0
+20:11:55.749 | PROCES PID: 1067841 zakonczył działanie z kodem: 0
+20:11:57.770 | PROCES PID: 1067843 zakonczył działanie z kodem: 0
+20:12:01.791 | PROCES PID: 1067844 zakonczył działanie z kodem: 0
+20:12:03.812 | PROCES PID: 1067845 zakonczył działanie z kodem: 0
+20:12:07.822 | PROCES PID: 1067846 zakonczył działanie z kodem: 0
+20:12:09.832 | PROCES PID: 1067848 zakonczył działanie z kodem: 0
+20:12:11.841 | PROCES PID: 1067847 zakonczył działanie z kodem: 0
+20:12:14.872 | PROCES PID: 1067850 zakonczył działanie z kodem: 0
+20:12:14.882 | PROCES PID: 1067849 zakonczył działanie z kodem: 0
+20:12:16.904 | PROCES PID: 1067852 zakonczył działanie z kodem: 0
+20:12:16.912 | PROCES PID: 1067854 zakonczył działanie z kodem: 0
+20:12:18.924 | PROCES PID: 1067851 zakonczył działanie z kodem: 0
+20:12:20.939 | PROCES PID: 1067855 zakonczył działanie z kodem: 0
+20:12:20.952 | PROCES PID: 1067853 zakonczył działanie z kodem: 0
+20:12:22.983 | PROCES PID: 1067856 zakonczył działanie z kodem: 0
+20:12:25.014 | PROCES PID: 1067857 zakonczył działanie z kodem: 0
+20:12:27.010 | PROCES PID: 1067859 zakonczył działanie z kodem: 0
+20:12:32.030 | PROCES PID: 1067860 zakonczył działanie z kodem: 0
+20:12:33.051 | PROCES PID: 1067858 zakonczył działanie z kodem: 0
+20:12:35.072 | PROCES PID: 1067861 zakonczył działanie z kodem: 0
+20:12:38.095 | PROCES PID: 1067862 zakonczył działanie z kodem: 0
+20:12:40.106 | PROCES PID: 1067867 zakonczył działanie z kodem: 0
+20:12:42.116 | PROCES PID: 1067863 zakonczył działanie z kodem: 0
+20:12:45.138 | PROCES PID: 1068065 zakonczył działanie z kodem: 0
+20:12:45.149 | PROCES PID: 1068064 zakonczył działanie z kodem: 0
+20:12:47.169 | PROCES PID: 1068066 zakonczył działanie z kodem: 0
+20:12:49.191 | PROCES PID: 1068067 zakonczył działanie z kodem: 0
+20:12:51.211 | PROCES PID: 1068069 zakonczył działanie z kodem: 0
+20:12:54.189 | PROCES PID: 1068068 zakonczył działanie z kodem: 0
+20:12:56.220 | PROCES PID: 1068071 zakonczył działanie z kodem: 0
+20:12:59.247 | PROCES PID: 1068072 zakonczył działanie z kodem: 0
+20:13:01.268 | PROCES PID: 1068073 zakonczył działanie z kodem: 0
+20:13:04.258 | PROCES PID: 1068074 zakonczył działanie z kodem: 0
+20:13:07.277 | PROCES PID: 1068076 zakonczył działanie z kodem: 0
+20:13:09.287 | PROCES PID: 1068075 zakonczył działanie z kodem: 0
+20:13:09.297 | PROCES PID: 1068070 zakonczył działanie z kodem: 0
+20:13:12.318 | PROCES PID: 1068077 zakonczył działanie z kodem: 0
+20:13:14.339 | PROCES PID: 1068078 zakonczył działanie z kodem: 0
+20:13:16.359 | PROCES PID: 1068083 zakonczył działanie z kodem: 0
+20:13:19.378 | PROCES PID: 1068081 zakonczył działanie z kodem: 0
+20:13:21.399 | PROCES PID: 1068118 zakonczył działanie z kodem: 0
+20:13:23.410 | PROCES PID: 1068151 zakonczył działanie z kodem: 0
+20:13:24.430 | PROCES PID: 1068168 zakonczył działanie z kodem: 0
+20:13:26.451 | PROCES PID: 1068169 zakonczył działanie z kodem: 0
+20:13:28.471 | PROCES PID: 1068167 zakonczył działanie z kodem: 0
+20:13:30.491 | PROCES PID: 1068170 zakonczył działanie z kodem: 0
+20:13:31.490 | PROCES PID: 1068174 zakonczył działanie z kodem: 0
+20:13:32.511 | PROCES PID: 1068171 zakonczył działanie z kodem: 0
+20:13:34.522 | PROCES PID: 1068172 zakonczył działanie z kodem: 0
+20:13:36.539 | PROCES PID: 1068173 zakonczył działanie z kodem: 0
+20:13:38.559 | PROCES PID: 1068178 zakonczył działanie z kodem: 0
+20:13:39.580 | PROCES PID: 1068182 zakonczył działanie z kodem: 0
+20:13:41.601 | PROCES PID: 1068183 zakonczył działanie z kodem: 0
+20:13:43.625 | PROCES PID: 1068184 zakonczył działanie z kodem: 0
+20:13:45.647 | PROCES PID: 1068185 zakonczył działanie z kodem: 0
+20:13:47.668 | PROCES PID: 1068186 zakonczył działanie z kodem: 0
+20:13:49.688 | PROCES PID: 1068187 zakonczył działanie z kodem: 0
+20:13:51.699 | PROCES PID: 1068188 zakonczył działanie z kodem: 0
+20:13:53.718 | PROCES PID: 1068189 zakonczył działanie z kodem: 0
+20:13:55.739 | PROCES PID: 1068190 zakonczył działanie z kodem: 0
+20:13:57.759 | PROCES PID: 1068193 zakonczył działanie z kodem: 0
+20:13:59.776 | PROCES PID: 1068244 zakonczył działanie z kodem: 0
+20:14:01.796 | PROCES PID: 1068275 zakonczył działanie z kodem: 0
+20:14:03.820 | PROCES PID: 1068341 zakonczył działanie z kodem: 0
+20:14:05.843 | PROCES PID: 1068342 zakonczył działanie z kodem: 0
+20:14:07.854 | PROCES PID: 1068343 zakonczył działanie z kodem: 0
+20:14:09.874 | PROCES PID: 1068344 zakonczył działanie z kodem: 0
+20:14:10.713 | PROCES PID: 1068347 zakonczył działanie z kodem: 0
+20:14:11.885 | PROCES PID: 1068345 zakonczył działanie z kodem: 0
+20:14:14.739 | PROCES PID: 1068349 zakonczył działanie z kodem: 0
+20:14:14.745 | PROCES PID: 1068346 zakonczył działanie z kodem: 0
+20:14:16.763 | PROCES PID: 1068348 zakonczył działanie z kodem: 0
+20:14:17.783 | PROCES PID: 1068350 zakonczył działanie z kodem: 0
+20:14:19.803 | PROCES PID: 1068082 zakonczył działanie z kodem: 0
+20:14:22.792 | PROCES PID: 1068351 zakonczył działanie z kodem: 0
+20:14:24.814 | PROCES PID: 1068352 zakonczył działanie z kodem: 0
+20:14:28.817 | PROCES PID: 1068354 zakonczył działanie z kodem: 0
+20:14:28.827 | PROCES PID: 1068353 zakonczył działanie z kodem: 0
+20:14:31.855 | PROCES PID: 1068356 zakonczył działanie z kodem: 0
+20:14:34.875 | PROCES PID: 1068355 zakonczył działanie z kodem: 0
+20:14:36.896 | PROCES PID: 1068358 zakonczył działanie z kodem: 0
+20:14:38.916 | PROCES PID: 1068359 zakonczył działanie z kodem: 0
+20:14:39.937 | PROCES PID: 1068360 zakonczył działanie z kodem: 0
+20:14:42.905 | PROCES PID: 1068361 zakonczył działanie z kodem: 0
+20:14:44.921 | PROCES PID: 1068362 zakonczył działanie z kodem: 0
+20:14:46.944 | PROCES PID: 1068366 zakonczył działanie z kodem: 0
+20:14:48.970 | PROCES PID: 1068370 zakonczył działanie z kodem: 0
+20:14:50.986 | PROCES PID: 1068371 zakonczył działanie z kodem: 0
+20:14:51.970 | PROCES PID: 1068374 zakonczył działanie z kodem: 0
+20:14:52.996 | PROCES PID: 1068372 zakonczył działanie z kodem: 0
+20:14:55.016 | PROCES PID: 1068373 zakonczył działanie z kodem: 0
+20:14:57.034 | PROCES PID: 1068375 zakonczył działanie z kodem: 0
+20:14:58.051 | PROCES PID: 1068357 zakonczył działanie z kodem: 0
+20:14:58.054 | PROCES PID: 1067779 zakonczył działanie z kodem: 0
+20:14:58.060 | PROCES PID: 1067788 zakonczył działanie z kodem: 0
+20:14:58.061 | PROCES PID: 1067789 zakonczył działanie z kodem: 0
+20:14:58.061 | Zakończono oczekiwanie na procesy.
+20:14:58.061 | Index:0 PID:1067807 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:1 PID:1067818 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:2 PID:1067819 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:3 PID:1067820 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:4 PID:1067821 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:5 PID:1067822 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:6 PID:1067823 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:7 PID:1067824 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:8 PID:1067825 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:9 PID:1067826 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:10 PID:1067827 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:11 PID:1067828 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:12 PID:1067829 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:13 PID:1067830 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:14 PID:1067831 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:15 PID:1067832 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:16 PID:1067833 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:17 PID:1067834 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:18 PID:1067835 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:19 PID:1067837 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:20 PID:1067838 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:21 PID:1067839 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:22 PID:1067840 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:23 PID:1067841 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:24 PID:1067842 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:25 PID:1067843 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:26 PID:1067844 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:27 PID:1067845 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:28 PID:1067846 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:29 PID:1067847 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:30 PID:1067848 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:31 PID:1067849 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:32 PID:1067850 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:33 PID:1067851 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:34 PID:1067852 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:35 PID:1067853 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:36 PID:1067854 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:37 PID:1067855 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:38 PID:1067856 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:39 PID:1067857 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:40 PID:1067858 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:41 PID:1067859 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:42 PID:1067860 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:43 PID:1067861 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:44 PID:1067862 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:45 PID:1067863 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:46 PID:1067867 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:47 PID:1068064 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:48 PID:1068065 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:49 PID:1068066 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:50 PID:1068067 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:51 PID:1068068 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:52 PID:1068069 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:53 PID:1068070 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:54 PID:1068071 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:55 PID:1068072 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:56 PID:1068073 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:57 PID:1068074 | Matura:1 Czy powtarza:0
+20:14:58.061 | Index:58 PID:1068075 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:59 PID:1068076 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:60 PID:1068077 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:61 PID:1068078 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:62 PID:1068081 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:63 PID:1068082 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:64 PID:1068083 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:65 PID:1068118 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:66 PID:1068151 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:67 PID:1068167 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:68 PID:1068168 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:69 PID:1068169 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:70 PID:1068170 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:71 PID:1068171 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:72 PID:1068172 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:73 PID:1068173 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:74 PID:1068174 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:75 PID:1068178 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:76 PID:1068182 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:77 PID:1068183 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:78 PID:1068184 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:79 PID:1068185 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:80 PID:1068186 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:81 PID:1068187 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:82 PID:1068188 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:83 PID:1068189 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:84 PID:1068190 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:85 PID:1068193 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:86 PID:1068244 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:87 PID:1068275 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:88 PID:1068341 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:89 PID:1068342 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:90 PID:1068343 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:91 PID:1068344 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:92 PID:1068345 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:93 PID:1068346 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:94 PID:1068347 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:95 PID:1068348 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:96 PID:1068349 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:97 PID:1068350 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:98 PID:1068351 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:99 PID:1068352 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:100 PID:1068353 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:101 PID:1068354 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:102 PID:1068355 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:103 PID:1068356 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:104 PID:1068357 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:105 PID:1068358 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:106 PID:1068359 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:107 PID:1068360 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:108 PID:1068361 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:109 PID:1068362 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:110 PID:1068366 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:111 PID:1068370 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:112 PID:1068371 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:113 PID:1068372 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:114 PID:1068373 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:115 PID:1068374 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:116 PID:1068375 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:0 PID:1067836 | Matura:0 Czy powtarza:0
+20:14:58.062 | Index:1 PID:1068079 | Matura:0 Czy powtarza:0
+20:14:58.062 | Index:2 PID:1068080 | Matura:0 Czy powtarza:0
+20:14:58.062 | Index:3 PID:1067827 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:4 PID:1067828 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:5 PID:1067829 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:6 PID:1067831 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:7 PID:1067837 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:8 PID:1067842 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:9 PID:1067846 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:10 PID:1067850 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:11 PID:1067853 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:12 PID:1067854 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:13 PID:1067855 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:14 PID:1067860 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:15 PID:1067861 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:16 PID:1067867 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:17 PID:1068067 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:18 PID:1068068 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:19 PID:1068074 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:20 PID:1068174 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:21 PID:1068189 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:22 PID:1068342 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:23 PID:1068346 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:24 PID:1068347 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:25 PID:1068349 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:26 PID:1068370 | Matura:1 Czy powtarza:0
+20:14:58.062 | Index:27 PID:1068374 | Matura:1 Czy powtarza:0

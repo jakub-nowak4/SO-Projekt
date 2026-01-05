@@ -1,0 +1,245 @@
+20:10:53.286 | [Dziekan] PID: 1067779 | Rozpoczynam prace.
+20:11:01.311 | [DZIEKAN] PID: 1067779 | Rozpoczynam egzamin.
+20:11:01.311 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067807
+20:11:01.311 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067807 do dalszej czesci egzaminu
+20:11:01.313 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067818
+20:11:01.313 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067818 do dalszej czesci egzaminu
+20:11:01.314 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067819
+20:11:01.315 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067819 do dalszej czesci egzaminu
+20:11:01.316 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067820
+20:11:01.316 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067820 do dalszej czesci egzaminu
+20:11:01.317 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067821
+20:11:01.318 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067821 do dalszej czesci egzaminu
+20:11:01.319 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067822
+20:11:01.322 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067822 do dalszej czesci egzaminu
+20:11:01.326 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067823
+20:11:01.326 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067823 do dalszej czesci egzaminu
+20:11:01.328 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067824
+20:11:01.328 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067824 do dalszej czesci egzaminu
+20:11:01.330 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067825
+20:11:01.330 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067825 do dalszej czesci egzaminu
+20:11:01.331 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067826
+20:11:01.331 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067826 do dalszej czesci egzaminu
+20:11:01.332 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067827
+20:11:01.332 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067827 do dalszej czesci egzaminu
+20:11:01.333 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067828
+20:11:01.333 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067828 do dalszej czesci egzaminu
+20:11:01.334 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067829
+20:11:01.335 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067829 do dalszej czesci egzaminu
+20:11:01.336 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067830
+20:11:01.336 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067830 do dalszej czesci egzaminu
+20:11:01.337 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067831
+20:11:01.337 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067831 do dalszej czesci egzaminu
+20:11:01.338 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067832
+20:11:01.339 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067832 do dalszej czesci egzaminu
+20:11:01.340 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067833
+20:11:01.340 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067833 do dalszej czesci egzaminu
+20:11:01.341 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067834
+20:11:01.341 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067834 do dalszej czesci egzaminu
+20:11:01.342 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067835
+20:11:01.342 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067835 do dalszej czesci egzaminu
+20:11:01.344 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067836
+20:11:01.344 | [Dziekan] PID:1067779 | Odrzucam kandydata PID:1067836 (brak matury)
+20:11:01.345 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067837
+20:11:01.345 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067837 do dalszej czesci egzaminu
+20:11:01.346 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067838
+20:11:01.346 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067838 do dalszej czesci egzaminu
+20:11:01.347 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067839
+20:11:01.347 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067839 do dalszej czesci egzaminu
+20:11:01.348 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067840
+20:11:01.348 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067840 do dalszej czesci egzaminu
+20:11:01.349 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067841
+20:11:01.349 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067841 do dalszej czesci egzaminu
+20:11:01.350 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067842
+20:11:01.350 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067842 do dalszej czesci egzaminu
+20:11:01.352 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067843
+20:11:01.352 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067843 do dalszej czesci egzaminu
+20:11:01.353 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067844
+20:11:01.353 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067844 do dalszej czesci egzaminu
+20:11:01.354 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067845
+20:11:01.354 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067845 do dalszej czesci egzaminu
+20:11:01.355 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067846
+20:11:01.355 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067846 do dalszej czesci egzaminu
+20:11:01.356 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067847
+20:11:01.356 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067847 do dalszej czesci egzaminu
+20:11:01.357 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067848
+20:11:01.357 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067848 do dalszej czesci egzaminu
+20:11:01.358 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067849
+20:11:01.358 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067849 do dalszej czesci egzaminu
+20:11:01.360 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067850
+20:11:01.360 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067850 do dalszej czesci egzaminu
+20:11:01.361 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067851
+20:11:01.361 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067851 do dalszej czesci egzaminu
+20:11:01.362 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067852
+20:11:01.362 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067852 do dalszej czesci egzaminu
+20:11:01.363 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067853
+20:11:01.363 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067853 do dalszej czesci egzaminu
+20:11:01.364 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067854
+20:11:01.364 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067854 do dalszej czesci egzaminu
+20:11:01.365 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067855
+20:11:01.365 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067855 do dalszej czesci egzaminu
+20:11:01.366 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067856
+20:11:01.366 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067856 do dalszej czesci egzaminu
+20:11:01.368 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067857
+20:11:01.368 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067857 do dalszej czesci egzaminu
+20:11:01.369 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067858
+20:11:01.369 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067858 do dalszej czesci egzaminu
+20:11:01.370 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067859
+20:11:01.370 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067859 do dalszej czesci egzaminu
+20:11:01.371 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067860
+20:11:01.371 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067860 do dalszej czesci egzaminu
+20:11:01.372 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067861
+20:11:01.372 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067861 do dalszej czesci egzaminu
+20:11:01.373 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067862
+20:11:01.373 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067862 do dalszej czesci egzaminu
+20:11:01.374 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067863
+20:11:01.374 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067863 do dalszej czesci egzaminu
+20:11:01.375 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1067867
+20:11:01.375 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1067867 do dalszej czesci egzaminu
+20:11:01.376 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068064
+20:11:01.377 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068064 do dalszej czesci egzaminu
+20:11:01.382 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068065
+20:11:01.382 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068065 do dalszej czesci egzaminu
+20:11:01.393 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068066
+20:11:01.393 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068066 do dalszej czesci egzaminu
+20:11:01.420 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068067
+20:11:01.420 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068067 do dalszej czesci egzaminu
+20:11:01.465 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068068
+20:11:01.465 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068068 do dalszej czesci egzaminu
+20:11:01.537 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068069
+20:11:01.537 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068069 do dalszej czesci egzaminu
+20:11:01.553 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068070
+20:11:01.553 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068070 do dalszej czesci egzaminu
+20:11:01.601 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068071
+20:11:01.601 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068071 do dalszej czesci egzaminu
+20:11:01.626 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068072
+20:11:01.627 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068072 do dalszej czesci egzaminu
+20:11:01.649 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068073
+20:11:01.649 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068073 do dalszej czesci egzaminu
+20:11:01.666 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068074
+20:11:01.666 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068074 do dalszej czesci egzaminu
+20:11:01.738 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068075
+20:11:01.738 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068075 do dalszej czesci egzaminu
+20:11:01.823 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068076
+20:11:01.824 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068076 do dalszej czesci egzaminu
+20:11:01.841 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068077
+20:11:01.841 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068077 do dalszej czesci egzaminu
+20:11:01.872 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068078
+20:11:01.872 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068078 do dalszej czesci egzaminu
+20:11:01.943 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068079
+20:11:01.943 | [Dziekan] PID:1067779 | Odrzucam kandydata PID:1068079 (brak matury)
+20:11:02.006 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068080
+20:11:02.006 | [Dziekan] PID:1067779 | Odrzucam kandydata PID:1068080 (brak matury)
+20:11:02.035 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068081
+20:11:02.035 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068081 do dalszej czesci egzaminu
+20:11:02.095 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068082
+20:11:02.095 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068082 do dalszej czesci egzaminu
+20:11:02.155 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068083
+20:11:02.155 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068083 do dalszej czesci egzaminu
+20:11:02.202 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068118
+20:11:02.202 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068118 do dalszej czesci egzaminu
+20:11:02.233 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068151
+20:11:02.233 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068151 do dalszej czesci egzaminu
+20:11:02.251 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068167
+20:11:02.251 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068167 do dalszej czesci egzaminu
+20:11:02.271 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068168
+20:11:02.271 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068168 do dalszej czesci egzaminu
+20:11:02.315 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068169
+20:11:02.315 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068169 do dalszej czesci egzaminu
+20:11:02.393 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068170
+20:11:02.393 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068170 do dalszej czesci egzaminu
+20:11:02.471 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068171
+20:11:02.471 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068171 do dalszej czesci egzaminu
+20:11:02.485 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068172
+20:11:02.485 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068172 do dalszej czesci egzaminu
+20:11:02.524 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068173
+20:11:02.524 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068173 do dalszej czesci egzaminu
+20:11:02.556 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068174
+20:11:02.556 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068174 do dalszej czesci egzaminu
+20:11:02.639 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068178
+20:11:02.640 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068178 do dalszej czesci egzaminu
+20:11:02.670 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068182
+20:11:02.670 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068182 do dalszej czesci egzaminu
+20:11:02.718 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068183
+20:11:02.718 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068183 do dalszej czesci egzaminu
+20:11:02.805 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068184
+20:11:02.805 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068184 do dalszej czesci egzaminu
+20:11:02.889 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068185
+20:11:02.889 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068185 do dalszej czesci egzaminu
+20:11:02.924 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068186
+20:11:02.924 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068186 do dalszej czesci egzaminu
+20:11:02.991 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068187
+20:11:02.991 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068187 do dalszej czesci egzaminu
+20:11:03.083 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068188
+20:11:03.083 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068188 do dalszej czesci egzaminu
+20:11:03.158 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068189
+20:11:03.158 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068189 do dalszej czesci egzaminu
+20:11:03.196 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068190
+20:11:03.196 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068190 do dalszej czesci egzaminu
+20:11:03.255 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068193
+20:11:03.255 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068193 do dalszej czesci egzaminu
+20:11:03.292 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068244
+20:11:03.292 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068244 do dalszej czesci egzaminu
+20:11:03.311 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068275
+20:11:03.311 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068275 do dalszej czesci egzaminu
+20:11:03.366 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068341
+20:11:03.366 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068341 do dalszej czesci egzaminu
+20:11:03.450 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068342
+20:11:03.450 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068342 do dalszej czesci egzaminu
+20:11:03.526 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068343
+20:11:03.526 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068343 do dalszej czesci egzaminu
+20:11:03.594 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068344
+20:11:03.594 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068344 do dalszej czesci egzaminu
+20:11:03.686 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068345
+20:11:03.686 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068345 do dalszej czesci egzaminu
+20:11:03.738 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068346
+20:11:03.738 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068346 do dalszej czesci egzaminu
+20:11:03.815 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068347
+20:11:03.816 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068347 do dalszej czesci egzaminu
+20:11:03.875 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068348
+20:11:03.875 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068348 do dalszej czesci egzaminu
+20:11:03.886 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068349
+20:11:03.887 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068349 do dalszej czesci egzaminu
+20:11:03.903 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068350
+20:11:03.903 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068350 do dalszej czesci egzaminu
+20:11:03.925 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068351
+20:11:03.925 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068351 do dalszej czesci egzaminu
+20:11:03.985 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068352
+20:11:03.985 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068352 do dalszej czesci egzaminu
+20:11:04.032 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068353
+20:11:04.032 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068353 do dalszej czesci egzaminu
+20:11:04.122 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068354
+20:11:04.122 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068354 do dalszej czesci egzaminu
+20:11:04.206 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068355
+20:11:04.206 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068355 do dalszej czesci egzaminu
+20:11:04.292 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068356
+20:11:04.292 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068356 do dalszej czesci egzaminu
+20:11:04.365 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068357
+20:11:04.365 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068357 do dalszej czesci egzaminu
+20:11:04.427 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068358
+20:11:04.427 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068358 do dalszej czesci egzaminu
+20:11:04.510 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068359
+20:11:04.510 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068359 do dalszej czesci egzaminu
+20:11:04.562 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068360
+20:11:04.562 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068360 do dalszej czesci egzaminu
+20:11:04.617 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068361
+20:11:04.617 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068361 do dalszej czesci egzaminu
+20:11:04.692 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068362
+20:11:04.692 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068362 do dalszej czesci egzaminu
+20:11:04.736 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068366
+20:11:04.736 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068366 do dalszej czesci egzaminu
+20:11:04.816 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068370
+20:11:04.816 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068370 do dalszej czesci egzaminu
+20:11:04.827 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068371
+20:11:04.827 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068371 do dalszej czesci egzaminu
+20:11:04.907 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068372
+20:11:04.907 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068372 do dalszej czesci egzaminu
+20:11:04.928 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068373
+20:11:04.928 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068373 do dalszej czesci egzaminu
+20:11:04.967 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068374
+20:11:04.967 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068374 do dalszej czesci egzaminu
+20:11:05.016 | [Dziekan] PID:1067779 | Odebralem informacje o wyniku matury od Kandydata PID:1068375
+20:11:05.016 | [Dziekan] PID:1067779 | Po weryfikacji matury dopuszczam Kandydata PID:1068375 do dalszej czesci egzaminu
+20:14:58.052 | [DZIEKAN] Odbieram pozostale wyniki z kolejki...
+20:14:58.052 | [DZIEKAN] Odebrano 1 pozostalych wynikow.
+20:14:58.052 | [DZIEKAN] Na liscie rankingowej: 92 kandydatow, odrzuconych: 28

@@ -1,0 +1,1707 @@
+20:10:55.301 | [Kandydat] PID:1067807 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.315 | [Kandydat] PID:1067818 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.343 | [Kandydat] PID:1067819 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.362 | [Kandydat] PID:1067820 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.380 | [Kandydat] PID:1067821 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.412 | [Kandydat] PID:1067822 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.421 | [Kandydat] PID:1067823 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.439 | [Kandydat] PID:1067824 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.456 | [Kandydat] PID:1067825 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.484 | [Kandydat] PID:1067826 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.495 | [Kandydat] PID:1067827 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.511 | [Kandydat] PID:1067828 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.518 | [Kandydat] PID:1067829 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.540 | [Kandydat] PID:1067830 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.560 | [Kandydat] PID:1067831 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.586 | [Kandydat] PID:1067832 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.598 | [Kandydat] PID:1067833 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.618 | [Kandydat] PID:1067834 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.650 | [Kandydat] PID:1067835 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.674 | [Kandydat] PID:1067836 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.702 | [Kandydat] PID:1067837 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.725 | [Kandydat] PID:1067838 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.742 | [Kandydat] PID:1067839 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.768 | [Kandydat] PID:1067840 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.793 | [Kandydat] PID:1067841 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.800 | [Kandydat] PID:1067842 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.824 | [Kandydat] PID:1067843 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.857 | [Kandydat] PID:1067844 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.882 | [Kandydat] PID:1067845 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.904 | [Kandydat] PID:1067846 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.935 | [Kandydat] PID:1067847 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.969 | [Kandydat] PID:1067848 | Ustawia sie w kolejce przed budynkiem.
+20:10:55.977 | [Kandydat] PID:1067849 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.006 | [Kandydat] PID:1067850 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.031 | [Kandydat] PID:1067851 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.057 | [Kandydat] PID:1067852 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.083 | [Kandydat] PID:1067853 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.111 | [Kandydat] PID:1067854 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.121 | [Kandydat] PID:1067855 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.135 | [Kandydat] PID:1067856 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.162 | [Kandydat] PID:1067857 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.184 | [Kandydat] PID:1067858 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.209 | [Kandydat] PID:1067859 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.238 | [Kandydat] PID:1067860 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.253 | [Kandydat] PID:1067861 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.263 | [Kandydat] PID:1067862 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.289 | [Kandydat] PID:1067863 | Ustawia sie w kolejce przed budynkiem.
+20:10:56.310 | [Kandydat] PID:1067867 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.312 | [KANDYDAT] PID:1067807 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.312 | [KANDYDAT] PID:1067807 | Czekam przed drzwiami Komisji A...
+20:11:01.313 | [KANDYDAT] PID:1067818 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.314 | [KANDYDAT] PID:1067818 | Czekam przed drzwiami Komisji A...
+20:11:01.315 | [KANDYDAT] PID:1067819 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.315 | [KANDYDAT] PID:1067819 | Czekam przed drzwiami Komisji A...
+20:11:01.317 | [KANDYDAT] PID:1067820 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.317 | [KANDYDAT] PID:1067820 | Czekam przed drzwiami Komisji A...
+20:11:01.318 | [KANDYDAT] PID:1067821 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.319 | [KANDYDAT] PID:1067821 | Czekam przed drzwiami Komisji A...
+20:11:01.323 | [KANDYDAT] PID:1067822 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.324 | [KANDYDAT] PID:1067822 | Czekam przed drzwiami Komisji A...
+20:11:01.325 | [KANDYDAT] PID:1067807 | Wszedłem do sali A
+20:11:01.325 | [KANDYDAT] PID:1067807 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:01.327 | [KANDYDAT] PID:1067823 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.327 | [KANDYDAT] PID:1067823 | Czekam przed drzwiami Komisji A...
+20:11:01.329 | [KANDYDAT] PID:1067824 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.329 | [KANDYDAT] PID:1067824 | Czekam przed drzwiami Komisji A...
+20:11:01.330 | [KANDYDAT] PID:1067825 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.330 | [KANDYDAT] PID:1067825 | Czekam przed drzwiami Komisji A...
+20:11:01.331 | [KANDYDAT] PID:1067826 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.331 | [KANDYDAT] PID:1067826 | Czekam przed drzwiami Komisji A...
+20:11:01.332 | [KANDYDAT] PID:1067827 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.333 | [KANDYDAT] PID:1067827 | Czekam przed drzwiami Komisji A...
+20:11:01.333 | [KANDYDAT] PID:1067828 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.333 | [KANDYDAT] PID:1067828 | Czekam przed drzwiami Komisji A...
+20:11:01.335 | [KANDYDAT] PID:1067829 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.335 | [KANDYDAT] PID:1067829 | Czekam przed drzwiami Komisji A...
+20:11:01.336 | [KANDYDAT] PID:1067830 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.336 | [KANDYDAT] PID:1067830 | Czekam przed drzwiami Komisji A...
+20:11:01.337 | [KANDYDAT] PID:1067831 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.337 | [KANDYDAT] PID:1067831 | Czekam przed drzwiami Komisji A...
+20:11:01.339 | [KANDYDAT] PID:1067832 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.339 | [KANDYDAT] PID:1067832 | Czekam przed drzwiami Komisji A...
+20:11:01.340 | [KANDYDAT] PID:1067833 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.340 | [KANDYDAT] PID:1067833 | Czekam przed drzwiami Komisji A...
+20:11:01.341 | [KANDYDAT] PID:1067834 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.341 | [KANDYDAT] PID:1067834 | Czekam przed drzwiami Komisji A...
+20:11:01.343 | [KANDYDAT] PID:1067835 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.343 | [KANDYDAT] PID:1067835 | Czekam przed drzwiami Komisji A...
+20:11:01.344 | [KANDYDAT] PID:1067836 | Otrzymalem decyzje od dziekana i koncze udzial w egzaminie.
+20:11:01.345 | [KANDYDAT] PID:1067837 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.345 | [KANDYDAT] PID:1067837 | Czekam przed drzwiami Komisji A...
+20:11:01.346 | [KANDYDAT] PID:1067838 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.346 | [KANDYDAT] PID:1067838 | Czekam przed drzwiami Komisji A...
+20:11:01.347 | [KANDYDAT] PID:1067839 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.347 | [KANDYDAT] PID:1067839 | Czekam przed drzwiami Komisji A...
+20:11:01.348 | [KANDYDAT] PID:1067840 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.348 | [KANDYDAT] PID:1067840 | Czekam przed drzwiami Komisji A...
+20:11:01.349 | [KANDYDAT] PID:1067841 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.349 | [KANDYDAT] PID:1067841 | Czekam przed drzwiami Komisji A...
+20:11:01.350 | [KANDYDAT] PID:1067842 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.351 | [KANDYDAT] PID:1067842 | Czekam przed drzwiami Komisji A...
+20:11:01.352 | [KANDYDAT] PID:1067843 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.352 | [KANDYDAT] PID:1067843 | Czekam przed drzwiami Komisji A...
+20:11:01.353 | [KANDYDAT] PID:1067844 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.353 | [KANDYDAT] PID:1067844 | Czekam przed drzwiami Komisji A...
+20:11:01.354 | [KANDYDAT] PID:1067845 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.354 | [KANDYDAT] PID:1067845 | Czekam przed drzwiami Komisji A...
+20:11:01.355 | [KANDYDAT] PID:1067846 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.355 | [KANDYDAT] PID:1067846 | Czekam przed drzwiami Komisji A...
+20:11:01.356 | [KANDYDAT] PID:1067847 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.356 | [KANDYDAT] PID:1067847 | Czekam przed drzwiami Komisji A...
+20:11:01.356 | [Kandydat] PID:1068064 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.357 | [KANDYDAT] PID:1067848 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.357 | [KANDYDAT] PID:1067848 | Czekam przed drzwiami Komisji A...
+20:11:01.359 | [KANDYDAT] PID:1067849 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.359 | [KANDYDAT] PID:1067849 | Czekam przed drzwiami Komisji A...
+20:11:01.360 | [KANDYDAT] PID:1067850 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.360 | [KANDYDAT] PID:1067850 | Czekam przed drzwiami Komisji A...
+20:11:01.361 | [KANDYDAT] PID:1067851 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.361 | [KANDYDAT] PID:1067851 | Czekam przed drzwiami Komisji A...
+20:11:01.362 | [KANDYDAT] PID:1067852 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.362 | [KANDYDAT] PID:1067852 | Czekam przed drzwiami Komisji A...
+20:11:01.363 | [KANDYDAT] PID:1067853 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.363 | [KANDYDAT] PID:1067853 | Czekam przed drzwiami Komisji A...
+20:11:01.364 | [KANDYDAT] PID:1067854 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.364 | [KANDYDAT] PID:1067854 | Czekam przed drzwiami Komisji A...
+20:11:01.365 | [KANDYDAT] PID:1067855 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.365 | [KANDYDAT] PID:1067855 | Czekam przed drzwiami Komisji A...
+20:11:01.366 | [KANDYDAT] PID:1067856 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.366 | [KANDYDAT] PID:1067856 | Czekam przed drzwiami Komisji A...
+20:11:01.368 | [KANDYDAT] PID:1067857 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.368 | [KANDYDAT] PID:1067857 | Czekam przed drzwiami Komisji A...
+20:11:01.369 | [KANDYDAT] PID:1067858 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.369 | [KANDYDAT] PID:1067858 | Czekam przed drzwiami Komisji A...
+20:11:01.370 | [KANDYDAT] PID:1067859 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.370 | [KANDYDAT] PID:1067859 | Czekam przed drzwiami Komisji A...
+20:11:01.371 | [KANDYDAT] PID:1067860 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.371 | [KANDYDAT] PID:1067860 | Czekam przed drzwiami Komisji A...
+20:11:01.372 | [KANDYDAT] PID:1067861 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.372 | [KANDYDAT] PID:1067861 | Czekam przed drzwiami Komisji A...
+20:11:01.373 | [KANDYDAT] PID:1067862 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.373 | [KANDYDAT] PID:1067862 | Czekam przed drzwiami Komisji A...
+20:11:01.374 | [KANDYDAT] PID:1067863 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.374 | [KANDYDAT] PID:1067863 | Czekam przed drzwiami Komisji A...
+20:11:01.375 | [KANDYDAT] PID:1067867 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.375 | [KANDYDAT] PID:1067867 | Czekam przed drzwiami Komisji A...
+20:11:01.377 | [KANDYDAT] PID:1068064 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.377 | [KANDYDAT] PID:1068064 | Czekam przed drzwiami Komisji A...
+20:11:01.381 | [Kandydat] PID:1068065 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.382 | [KANDYDAT] PID:1068065 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.382 | [KANDYDAT] PID:1068065 | Czekam przed drzwiami Komisji A...
+20:11:01.392 | [Kandydat] PID:1068066 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.393 | [KANDYDAT] PID:1068066 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.393 | [KANDYDAT] PID:1068066 | Czekam przed drzwiami Komisji A...
+20:11:01.420 | [Kandydat] PID:1068067 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.420 | [KANDYDAT] PID:1068067 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.421 | [KANDYDAT] PID:1068067 | Czekam przed drzwiami Komisji A...
+20:11:01.464 | [Kandydat] PID:1068068 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.465 | [KANDYDAT] PID:1068068 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.465 | [KANDYDAT] PID:1068068 | Czekam przed drzwiami Komisji A...
+20:11:01.537 | [Kandydat] PID:1068069 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.537 | [KANDYDAT] PID:1068069 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.537 | [KANDYDAT] PID:1068069 | Czekam przed drzwiami Komisji A...
+20:11:01.552 | [Kandydat] PID:1068070 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.553 | [KANDYDAT] PID:1068070 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.553 | [KANDYDAT] PID:1068070 | Czekam przed drzwiami Komisji A...
+20:11:01.601 | [Kandydat] PID:1068071 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.601 | [KANDYDAT] PID:1068071 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.601 | [KANDYDAT] PID:1068071 | Czekam przed drzwiami Komisji A...
+20:11:01.625 | [Kandydat] PID:1068072 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.627 | [KANDYDAT] PID:1068072 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.627 | [KANDYDAT] PID:1068072 | Czekam przed drzwiami Komisji A...
+20:11:01.649 | [Kandydat] PID:1068073 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.649 | [KANDYDAT] PID:1068073 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.650 | [KANDYDAT] PID:1068073 | Czekam przed drzwiami Komisji A...
+20:11:01.665 | [Kandydat] PID:1068074 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.666 | [KANDYDAT] PID:1068074 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.666 | [KANDYDAT] PID:1068074 | Czekam przed drzwiami Komisji A...
+20:11:01.737 | [Kandydat] PID:1068075 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.738 | [KANDYDAT] PID:1068075 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.738 | [KANDYDAT] PID:1068075 | Czekam przed drzwiami Komisji A...
+20:11:01.823 | [Kandydat] PID:1068076 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.824 | [KANDYDAT] PID:1068076 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.824 | [KANDYDAT] PID:1068076 | Czekam przed drzwiami Komisji A...
+20:11:01.841 | [Kandydat] PID:1068077 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.841 | [KANDYDAT] PID:1068077 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.841 | [KANDYDAT] PID:1068077 | Czekam przed drzwiami Komisji A...
+20:11:01.872 | [Kandydat] PID:1068078 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.872 | [KANDYDAT] PID:1068078 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:01.872 | [KANDYDAT] PID:1068078 | Czekam przed drzwiami Komisji A...
+20:11:01.942 | [Kandydat] PID:1068079 | Ustawia sie w kolejce przed budynkiem.
+20:11:01.943 | [KANDYDAT] PID:1068079 | Otrzymalem decyzje od dziekana i koncze udzial w egzaminie.
+20:11:02.005 | [Kandydat] PID:1068080 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.007 | [KANDYDAT] PID:1068080 | Otrzymalem decyzje od dziekana i koncze udzial w egzaminie.
+20:11:02.034 | [Kandydat] PID:1068081 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.035 | [KANDYDAT] PID:1068081 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.035 | [KANDYDAT] PID:1068081 | Czekam przed drzwiami Komisji A...
+20:11:02.094 | [Kandydat] PID:1068082 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.096 | [KANDYDAT] PID:1068082 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.096 | [KANDYDAT] PID:1068082 | Czekam przed drzwiami Komisji A...
+20:11:02.155 | [Kandydat] PID:1068083 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.155 | [KANDYDAT] PID:1068083 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.155 | [KANDYDAT] PID:1068083 | Czekam przed drzwiami Komisji A...
+20:11:02.202 | [Kandydat] PID:1068118 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.202 | [KANDYDAT] PID:1068118 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.203 | [KANDYDAT] PID:1068118 | Czekam przed drzwiami Komisji A...
+20:11:02.232 | [Kandydat] PID:1068151 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.233 | [KANDYDAT] PID:1068151 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.233 | [KANDYDAT] PID:1068151 | Czekam przed drzwiami Komisji A...
+20:11:02.250 | [Kandydat] PID:1068167 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.251 | [KANDYDAT] PID:1068167 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.251 | [KANDYDAT] PID:1068167 | Czekam przed drzwiami Komisji A...
+20:11:02.271 | [Kandydat] PID:1068168 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.271 | [KANDYDAT] PID:1068168 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.271 | [KANDYDAT] PID:1068168 | Czekam przed drzwiami Komisji A...
+20:11:02.314 | [Kandydat] PID:1068169 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.315 | [KANDYDAT] PID:1068169 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.315 | [KANDYDAT] PID:1068169 | Czekam przed drzwiami Komisji A...
+20:11:02.392 | [Kandydat] PID:1068170 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.394 | [KANDYDAT] PID:1068170 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.394 | [KANDYDAT] PID:1068170 | Czekam przed drzwiami Komisji A...
+20:11:02.470 | [Kandydat] PID:1068171 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.471 | [KANDYDAT] PID:1068171 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.472 | [KANDYDAT] PID:1068171 | Czekam przed drzwiami Komisji A...
+20:11:02.483 | [Kandydat] PID:1068172 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.485 | [KANDYDAT] PID:1068172 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.485 | [KANDYDAT] PID:1068172 | Czekam przed drzwiami Komisji A...
+20:11:02.523 | [Kandydat] PID:1068173 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.524 | [KANDYDAT] PID:1068173 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.525 | [KANDYDAT] PID:1068173 | Czekam przed drzwiami Komisji A...
+20:11:02.555 | [Kandydat] PID:1068174 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.556 | [KANDYDAT] PID:1068174 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.556 | [KANDYDAT] PID:1068174 | Czekam przed drzwiami Komisji A...
+20:11:02.639 | [Kandydat] PID:1068178 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.640 | [KANDYDAT] PID:1068178 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.640 | [KANDYDAT] PID:1068178 | Czekam przed drzwiami Komisji A...
+20:11:02.669 | [Kandydat] PID:1068182 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.670 | [KANDYDAT] PID:1068182 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.670 | [KANDYDAT] PID:1068182 | Czekam przed drzwiami Komisji A...
+20:11:02.717 | [Kandydat] PID:1068183 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.718 | [KANDYDAT] PID:1068183 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.718 | [KANDYDAT] PID:1068183 | Czekam przed drzwiami Komisji A...
+20:11:02.803 | [Kandydat] PID:1068184 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.805 | [KANDYDAT] PID:1068184 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.805 | [KANDYDAT] PID:1068184 | Czekam przed drzwiami Komisji A...
+20:11:02.888 | [Kandydat] PID:1068185 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.889 | [KANDYDAT] PID:1068185 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.890 | [KANDYDAT] PID:1068185 | Czekam przed drzwiami Komisji A...
+20:11:02.924 | [Kandydat] PID:1068186 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.924 | [KANDYDAT] PID:1068186 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.925 | [KANDYDAT] PID:1068186 | Czekam przed drzwiami Komisji A...
+20:11:02.991 | [Kandydat] PID:1068187 | Ustawia sie w kolejce przed budynkiem.
+20:11:02.991 | [KANDYDAT] PID:1068187 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:02.991 | [KANDYDAT] PID:1068187 | Czekam przed drzwiami Komisji A...
+20:11:03.082 | [Kandydat] PID:1068188 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.083 | [KANDYDAT] PID:1068188 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.083 | [KANDYDAT] PID:1068188 | Czekam przed drzwiami Komisji A...
+20:11:03.157 | [Kandydat] PID:1068189 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.158 | [KANDYDAT] PID:1068189 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.158 | [KANDYDAT] PID:1068189 | Czekam przed drzwiami Komisji A...
+20:11:03.195 | [Kandydat] PID:1068190 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.196 | [KANDYDAT] PID:1068190 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.196 | [KANDYDAT] PID:1068190 | Czekam przed drzwiami Komisji A...
+20:11:03.254 | [Kandydat] PID:1068193 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.255 | [KANDYDAT] PID:1068193 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.255 | [KANDYDAT] PID:1068193 | Czekam przed drzwiami Komisji A...
+20:11:03.291 | [Kandydat] PID:1068244 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.292 | [KANDYDAT] PID:1068244 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.292 | [KANDYDAT] PID:1068244 | Czekam przed drzwiami Komisji A...
+20:11:03.310 | [Kandydat] PID:1068275 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.311 | [KANDYDAT] PID:1068275 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.312 | [KANDYDAT] PID:1068275 | Czekam przed drzwiami Komisji A...
+20:11:03.326 | [KANDYDAT] PID:1067807 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:03.335 | [KANDYDAT] PID:1067818 | Wszedłem do sali A
+20:11:03.335 | [KANDYDAT] PID:1067818 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:03.366 | [Kandydat] PID:1068341 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.366 | [KANDYDAT] PID:1068341 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.367 | [KANDYDAT] PID:1068341 | Czekam przed drzwiami Komisji A...
+20:11:03.449 | [Kandydat] PID:1068342 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.450 | [KANDYDAT] PID:1068342 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.450 | [KANDYDAT] PID:1068342 | Czekam przed drzwiami Komisji A...
+20:11:03.525 | [Kandydat] PID:1068343 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.527 | [KANDYDAT] PID:1068343 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.527 | [KANDYDAT] PID:1068343 | Czekam przed drzwiami Komisji A...
+20:11:03.594 | [Kandydat] PID:1068344 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.594 | [KANDYDAT] PID:1068344 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.594 | [KANDYDAT] PID:1068344 | Czekam przed drzwiami Komisji A...
+20:11:03.685 | [Kandydat] PID:1068345 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.687 | [KANDYDAT] PID:1068345 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.687 | [KANDYDAT] PID:1068345 | Czekam przed drzwiami Komisji A...
+20:11:03.737 | [Kandydat] PID:1068346 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.738 | [KANDYDAT] PID:1068346 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.738 | [KANDYDAT] PID:1068346 | Czekam przed drzwiami Komisji A...
+20:11:03.814 | [Kandydat] PID:1068347 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.816 | [KANDYDAT] PID:1068347 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.816 | [KANDYDAT] PID:1068347 | Czekam przed drzwiami Komisji A...
+20:11:03.873 | [Kandydat] PID:1068348 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.875 | [KANDYDAT] PID:1068348 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.875 | [KANDYDAT] PID:1068348 | Czekam przed drzwiami Komisji A...
+20:11:03.885 | [Kandydat] PID:1068349 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.887 | [KANDYDAT] PID:1068349 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.887 | [KANDYDAT] PID:1068349 | Czekam przed drzwiami Komisji A...
+20:11:03.902 | [Kandydat] PID:1068350 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.904 | [KANDYDAT] PID:1068350 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.904 | [KANDYDAT] PID:1068350 | Czekam przed drzwiami Komisji A...
+20:11:03.924 | [Kandydat] PID:1068351 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.925 | [KANDYDAT] PID:1068351 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.925 | [KANDYDAT] PID:1068351 | Czekam przed drzwiami Komisji A...
+20:11:03.983 | [Kandydat] PID:1068352 | Ustawia sie w kolejce przed budynkiem.
+20:11:03.985 | [KANDYDAT] PID:1068352 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:03.985 | [KANDYDAT] PID:1068352 | Czekam przed drzwiami Komisji A...
+20:11:04.031 | [Kandydat] PID:1068353 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.032 | [KANDYDAT] PID:1068353 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.032 | [KANDYDAT] PID:1068353 | Czekam przed drzwiami Komisji A...
+20:11:04.121 | [Kandydat] PID:1068354 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.122 | [KANDYDAT] PID:1068354 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.122 | [KANDYDAT] PID:1068354 | Czekam przed drzwiami Komisji A...
+20:11:04.205 | [Kandydat] PID:1068355 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.206 | [KANDYDAT] PID:1068355 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.206 | [KANDYDAT] PID:1068355 | Czekam przed drzwiami Komisji A...
+20:11:04.261 | [KANDYDAT] PID:1067807 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:04.261 | [KANDYDAT] PID:1067807 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:04.291 | [Kandydat] PID:1068356 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.292 | [KANDYDAT] PID:1068356 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.293 | [KANDYDAT] PID:1068356 | Czekam przed drzwiami Komisji A...
+20:11:04.364 | [Kandydat] PID:1068357 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.365 | [KANDYDAT] PID:1068357 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.365 | [KANDYDAT] PID:1068357 | Czekam przed drzwiami Komisji A...
+20:11:04.427 | [Kandydat] PID:1068358 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.428 | [KANDYDAT] PID:1068358 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.428 | [KANDYDAT] PID:1068358 | Czekam przed drzwiami Komisji A...
+20:11:04.509 | [Kandydat] PID:1068359 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.510 | [KANDYDAT] PID:1068359 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.510 | [KANDYDAT] PID:1068359 | Czekam przed drzwiami Komisji A...
+20:11:04.561 | [Kandydat] PID:1068360 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.562 | [KANDYDAT] PID:1068360 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.563 | [KANDYDAT] PID:1068360 | Czekam przed drzwiami Komisji A...
+20:11:04.615 | [Kandydat] PID:1068361 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.617 | [KANDYDAT] PID:1068361 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.617 | [KANDYDAT] PID:1068361 | Czekam przed drzwiami Komisji A...
+20:11:04.691 | [Kandydat] PID:1068362 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.692 | [KANDYDAT] PID:1068362 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.692 | [KANDYDAT] PID:1068362 | Czekam przed drzwiami Komisji A...
+20:11:04.735 | [Kandydat] PID:1068366 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.736 | [KANDYDAT] PID:1068366 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.736 | [KANDYDAT] PID:1068366 | Czekam przed drzwiami Komisji A...
+20:11:04.815 | [Kandydat] PID:1068370 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.816 | [KANDYDAT] PID:1068370 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.817 | [KANDYDAT] PID:1068370 | Czekam przed drzwiami Komisji A...
+20:11:04.826 | [Kandydat] PID:1068371 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.827 | [KANDYDAT] PID:1068371 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.827 | [KANDYDAT] PID:1068371 | Czekam przed drzwiami Komisji A...
+20:11:04.906 | [Kandydat] PID:1068372 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.907 | [KANDYDAT] PID:1068372 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.907 | [KANDYDAT] PID:1068372 | Czekam przed drzwiami Komisji A...
+20:11:04.928 | [Kandydat] PID:1068373 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.928 | [KANDYDAT] PID:1068373 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.928 | [KANDYDAT] PID:1068373 | Czekam przed drzwiami Komisji A...
+20:11:04.966 | [Kandydat] PID:1068374 | Ustawia sie w kolejce przed budynkiem.
+20:11:04.967 | [KANDYDAT] PID:1068374 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:04.967 | [KANDYDAT] PID:1068374 | Czekam przed drzwiami Komisji A...
+20:11:05.016 | [Kandydat] PID:1068375 | Ustawia sie w kolejce przed budynkiem.
+20:11:05.016 | [KANDYDAT] PID:1068375 | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.
+20:11:05.016 | [KANDYDAT] PID:1068375 | Czekam przed drzwiami Komisji A...
+20:11:05.336 | [KANDYDAT] PID:1067818 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:05.346 | [KANDYDAT] PID:1067819 | Wszedłem do sali A
+20:11:05.346 | [KANDYDAT] PID:1067819 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:05.346 | [KANDYDAT] PID:1067807 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 31.80. Ustawiam sie w kolejsce do Komisji B.
+20:11:05.354 | [KANDYDAT] PID:1067807 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:05.354 | [KANDYDAT] PID:1067807 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:05.356 | [KANDYDAT] PID:1067820 | Wszedłem do sali A
+20:11:05.356 | [KANDYDAT] PID:1067820 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:05.899 | [KANDYDAT] PID:1067818 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:05.900 | [KANDYDAT] PID:1067818 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:07.356 | [KANDYDAT] PID:1067807 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:07.358 | [KANDYDAT] PID:1067807 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:07.358 | [KANDYDAT] PID:1067807 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:07.363 | [KANDYDAT] PID:1067818 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 43.00. Ustawiam sie w kolejsce do Komisji B.
+20:11:07.372 | [KANDYDAT] PID:1067818 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:07.372 | [KANDYDAT] PID:1067818 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:07.372 | [KANDYDAT] PID:1067807 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 72.67. Czekam az Dziekan oglosi liste rankingowa.
+20:11:07.373 | [KANDYDAT] PID:1067821 | Wszedłem do sali A
+20:11:07.374 | [KANDYDAT] PID:1067821 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:09.372 | [KANDYDAT] PID:1067820 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:09.377 | [KANDYDAT] PID:1067818 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:09.379 | [KANDYDAT] PID:1067818 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:09.379 | [KANDYDAT] PID:1067818 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:09.389 | [KANDYDAT] PID:1067818 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 32.00. Czekam az Dziekan oglosi liste rankingowa.
+20:11:09.881 | [KANDYDAT] PID:1067820 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:09.882 | [KANDYDAT] PID:1067820 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:11.378 | [KANDYDAT] PID:1067821 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:11.385 | [KANDYDAT] PID:1067819 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:11.385 | [KANDYDAT] PID:1067820 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 63.20. Ustawiam sie w kolejsce do Komisji B.
+20:11:11.388 | [KANDYDAT] PID:1067820 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:11.389 | [KANDYDAT] PID:1067820 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:11.395 | [KANDYDAT] PID:1067822 | Wszedłem do sali A
+20:11:11.395 | [KANDYDAT] PID:1067822 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:11.558 | [KANDYDAT] PID:1067819 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:11.558 | [KANDYDAT] PID:1067819 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:11.812 | [KANDYDAT] PID:1067821 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:13.389 | [KANDYDAT] PID:1067820 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:13.389 | [KANDYDAT] PID:1067820 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:13.389 | [KANDYDAT] PID:1067820 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:13.399 | [KANDYDAT] PID:1067820 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 78.00. Czekam az Dziekan oglosi liste rankingowa.
+20:11:13.399 | [KANDYDAT] PID:1067822 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:13.406 | [KANDYDAT] PID:1067819 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 78.40. Ustawiam sie w kolejsce do Komisji B.
+20:11:13.406 | [KANDYDAT] PID:1067821 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:13.409 | [KANDYDAT] PID:1067819 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:13.409 | [KANDYDAT] PID:1067819 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:13.416 | [KANDYDAT] PID:1067823 | Wszedłem do sali A
+20:11:13.416 | [KANDYDAT] PID:1067823 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:13.416 | [KANDYDAT] PID:1067821 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 67.00. Ustawiam sie w kolejsce do Komisji B.
+20:11:13.426 | [KANDYDAT] PID:1067824 | Wszedłem do sali A
+20:11:13.426 | [KANDYDAT] PID:1067824 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:13.711 | [KANDYDAT] PID:1067822 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:13.711 | [KANDYDAT] PID:1067822 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:15.419 | [KANDYDAT] PID:1067819 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:15.420 | [KANDYDAT] PID:1067821 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:15.420 | [KANDYDAT] PID:1067821 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:15.422 | [KANDYDAT] PID:1067819 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:15.422 | [KANDYDAT] PID:1067819 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:15.427 | [KANDYDAT] PID:1067822 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 32.20. Ustawiam sie w kolejsce do Komisji B.
+20:11:15.437 | [KANDYDAT] PID:1067825 | Wszedłem do sali A
+20:11:15.437 | [KANDYDAT] PID:1067825 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:17.422 | [KANDYDAT] PID:1067819 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 34.67. Czekam az Dziekan oglosi liste rankingowa.
+20:11:17.431 | [KANDYDAT] PID:1067824 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:17.432 | [KANDYDAT] PID:1067822 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:17.432 | [KANDYDAT] PID:1067822 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:17.835 | [KANDYDAT] PID:1067824 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:17.835 | [KANDYDAT] PID:1067824 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:18.448 | [KANDYDAT] PID:1067823 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:19.195 | [KANDYDAT] PID:1067823 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:19.427 | [KANDYDAT] PID:1067821 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:19.429 | [KANDYDAT] PID:1067821 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:19.429 | [KANDYDAT] PID:1067821 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:19.441 | [KANDYDAT] PID:1067825 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:19.443 | [KANDYDAT] PID:1067821 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 80.00. Czekam az Dziekan oglosi liste rankingowa.
+20:11:19.445 | [KANDYDAT] PID:1067824 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 74.20. Ustawiam sie w kolejsce do Komisji B.
+20:11:19.445 | [KANDYDAT] PID:1067823 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:19.453 | [KANDYDAT] PID:1067824 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:19.453 | [KANDYDAT] PID:1067824 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:19.455 | [KANDYDAT] PID:1067826 | Wszedłem do sali A
+20:11:19.455 | [KANDYDAT] PID:1067826 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:19.455 | [KANDYDAT] PID:1067823 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 77.80. Ustawiam sie w kolejsce do Komisji B.
+20:11:19.465 | [KANDYDAT] PID:1067827 | Wszedłem do sali A
+20:11:19.465 | [KANDYDAT] PID:1067827 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:20.052 | [KANDYDAT] PID:1067825 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:20.052 | [KANDYDAT] PID:1067825 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:21.448 | [KANDYDAT] PID:1067822 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:21.450 | [KANDYDAT] PID:1067822 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:21.450 | [KANDYDAT] PID:1067822 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:21.458 | [KANDYDAT] PID:1067826 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:21.460 | [KANDYDAT] PID:1067825 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 52.60. Ustawiam sie w kolejsce do Komisji B.
+20:11:21.464 | [KANDYDAT] PID:1067822 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 54.67. Czekam az Dziekan oglosi liste rankingowa.
+20:11:21.464 | [KANDYDAT] PID:1067823 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:21.464 | [KANDYDAT] PID:1067823 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:21.471 | [KANDYDAT] PID:1067828 | Wszedłem do sali A
+20:11:21.471 | [KANDYDAT] PID:1067828 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:21.474 | [KANDYDAT] PID:1067825 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:21.474 | [KANDYDAT] PID:1067825 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:21.906 | [KANDYDAT] PID:1067826 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:21.906 | [KANDYDAT] PID:1067826 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:23.470 | [KANDYDAT] PID:1067824 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:23.471 | [KANDYDAT] PID:1067824 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:23.471 | [KANDYDAT] PID:1067824 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:23.477 | [KANDYDAT] PID:1067826 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 56.60. Ustawiam sie w kolejsce do Komisji B.
+20:11:23.487 | [KANDYDAT] PID:1067829 | Wszedłem do sali A
+20:11:23.487 | [KANDYDAT] PID:1067829 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:24.486 | [KANDYDAT] PID:1067824 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 44.67. Czekam az Dziekan oglosi liste rankingowa.
+20:11:24.496 | [KANDYDAT] PID:1067826 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:24.496 | [KANDYDAT] PID:1067826 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:25.486 | [KANDYDAT] PID:1067828 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:25.811 | [KANDYDAT] PID:1067828 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:25.812 | [KANDYDAT] PID:1067828 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:26.491 | [KANDYDAT] PID:1067825 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:26.492 | [KANDYDAT] PID:1067825 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:26.492 | [KANDYDAT] PID:1067825 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:26.506 | [KANDYDAT] PID:1067825 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 50.00. Czekam az Dziekan oglosi liste rankingowa.
+20:11:27.502 | [KANDYDAT] PID:1067829 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:27.502 | [KANDYDAT] PID:1067827 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:27.503 | [KANDYDAT] PID:1067828 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 35.20. Ustawiam sie w kolejsce do Komisji B.
+20:11:27.509 | [KANDYDAT] PID:1067828 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:27.509 | [KANDYDAT] PID:1067828 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:27.513 | [KANDYDAT] PID:1067830 | Wszedłem do sali A
+20:11:27.513 | [KANDYDAT] PID:1067830 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:28.129 | [KANDYDAT] PID:1067829 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:28.129 | [KANDYDAT] PID:1067829 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:28.148 | [KANDYDAT] PID:1067827 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:28.511 | [KANDYDAT] PID:1067826 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:28.513 | [KANDYDAT] PID:1067826 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:28.513 | [KANDYDAT] PID:1067826 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:29.509 | [KANDYDAT] PID:1067826 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 56.33. Czekam az Dziekan oglosi liste rankingowa.
+20:11:29.522 | [KANDYDAT] PID:1067830 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:29.523 | [KANDYDAT] PID:1067829 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 80.20. Ustawiam sie w kolejsce do Komisji B.
+20:11:29.523 | [KANDYDAT] PID:1067827 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:29.530 | [KANDYDAT] PID:1067829 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:29.530 | [KANDYDAT] PID:1067829 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:29.533 | [KANDYDAT] PID:1067831 | Wszedłem do sali A
+20:11:29.534 | [KANDYDAT] PID:1067831 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:29.534 | [KANDYDAT] PID:1067827 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 20.40. Moj wynik jest za niski aby przystapic do kolejnego etapu egzaminu.
+20:11:29.544 | [KANDYDAT] PID:1067832 | Wszedłem do sali A
+20:11:29.544 | [KANDYDAT] PID:1067832 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:30.201 | [KANDYDAT] PID:1067830 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:30.201 | [KANDYDAT] PID:1067830 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:31.510 | [KANDYDAT] PID:1067828 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:31.513 | [KANDYDAT] PID:1067828 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:31.513 | [KANDYDAT] PID:1067828 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:31.543 | [KANDYDAT] PID:1067831 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:31.545 | [KANDYDAT] PID:1067830 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 65.60. Ustawiam sie w kolejsce do Komisji B.
+20:11:31.555 | [KANDYDAT] PID:1067833 | Wszedłem do sali A
+20:11:31.555 | [KANDYDAT] PID:1067833 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:31.827 | [KANDYDAT] PID:1067831 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:31.828 | [KANDYDAT] PID:1067831 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:32.535 | [KANDYDAT] PID:1067828 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 22.67. Moj wynik jest za niski - koncze egzamin.
+20:11:32.545 | [KANDYDAT] PID:1067830 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:32.545 | [KANDYDAT] PID:1067830 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:33.556 | [KANDYDAT] PID:1067831 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 24.40. Moj wynik jest za niski aby przystapic do kolejnego etapu egzaminu.
+20:11:33.566 | [KANDYDAT] PID:1067834 | Wszedłem do sali A
+20:11:33.566 | [KANDYDAT] PID:1067834 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:34.536 | [KANDYDAT] PID:1067829 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:34.537 | [KANDYDAT] PID:1067829 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:34.537 | [KANDYDAT] PID:1067829 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:34.538 | [KANDYDAT] PID:1067823 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:34.541 | [KANDYDAT] PID:1067823 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:34.556 | [KANDYDAT] PID:1067829 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 11.33. Moj wynik jest za niski - koncze egzamin.
+20:11:34.556 | [KANDYDAT] PID:1067823 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:34.566 | [KANDYDAT] PID:1067823 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 61.00. Czekam az Dziekan oglosi liste rankingowa.
+20:11:35.562 | [KANDYDAT] PID:1067833 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:35.827 | [KANDYDAT] PID:1067833 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:35.827 | [KANDYDAT] PID:1067833 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:36.569 | [KANDYDAT] PID:1067830 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:36.571 | [KANDYDAT] PID:1067830 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:36.571 | [KANDYDAT] PID:1067830 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:36.583 | [KANDYDAT] PID:1067830 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 45.67. Czekam az Dziekan oglosi liste rankingowa.
+20:11:37.571 | [KANDYDAT] PID:1067834 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:37.580 | [KANDYDAT] PID:1067832 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:37.581 | [KANDYDAT] PID:1067833 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 47.40. Ustawiam sie w kolejsce do Komisji B.
+20:11:37.583 | [KANDYDAT] PID:1067833 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:37.583 | [KANDYDAT] PID:1067833 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:37.591 | [KANDYDAT] PID:1067835 | Wszedłem do sali A
+20:11:37.591 | [KANDYDAT] PID:1067835 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:37.646 | [KANDYDAT] PID:1067834 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:37.646 | [KANDYDAT] PID:1067834 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:38.553 | [KANDYDAT] PID:1067832 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:39.583 | [KANDYDAT] PID:1067833 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:39.586 | [KANDYDAT] PID:1067833 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:39.586 | [KANDYDAT] PID:1067833 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:39.594 | [KANDYDAT] PID:1067833 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 41.33. Czekam az Dziekan oglosi liste rankingowa.
+20:11:39.597 | [KANDYDAT] PID:1067835 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:39.602 | [KANDYDAT] PID:1067834 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 44.60. Ustawiam sie w kolejsce do Komisji B.
+20:11:39.602 | [KANDYDAT] PID:1067832 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:39.604 | [KANDYDAT] PID:1067834 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:39.604 | [KANDYDAT] PID:1067834 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:39.612 | [KANDYDAT] PID:1067837 | Wszedłem do sali A
+20:11:39.613 | [KANDYDAT] PID:1067837 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:39.613 | [KANDYDAT] PID:1067832 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 40.60. Ustawiam sie w kolejsce do Komisji B.
+20:11:39.623 | [KANDYDAT] PID:1067838 | Wszedłem do sali A
+20:11:39.623 | [KANDYDAT] PID:1067838 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:39.722 | [KANDYDAT] PID:1067835 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:39.722 | [KANDYDAT] PID:1067835 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:41.609 | [KANDYDAT] PID:1067834 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:41.611 | [KANDYDAT] PID:1067834 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:41.611 | [KANDYDAT] PID:1067834 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:41.615 | [KANDYDAT] PID:1067832 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:41.615 | [KANDYDAT] PID:1067832 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:41.622 | [KANDYDAT] PID:1067837 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:41.624 | [KANDYDAT] PID:1067835 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 46.60. Ustawiam sie w kolejsce do Komisji B.
+20:11:41.625 | [KANDYDAT] PID:1067835 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:41.625 | [KANDYDAT] PID:1067835 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:41.625 | [KANDYDAT] PID:1067834 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 52.00. Czekam az Dziekan oglosi liste rankingowa.
+20:11:41.634 | [KANDYDAT] PID:1067839 | Wszedłem do sali A
+20:11:41.634 | [KANDYDAT] PID:1067839 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:41.662 | [KANDYDAT] PID:1067837 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:41.662 | [KANDYDAT] PID:1067837 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:43.634 | [KANDYDAT] PID:1067837 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 34.20. Ustawiam sie w kolejsce do Komisji B.
+20:11:43.635 | [KANDYDAT] PID:1067832 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:43.637 | [KANDYDAT] PID:1067832 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:43.637 | [KANDYDAT] PID:1067832 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:43.644 | [KANDYDAT] PID:1067840 | Wszedłem do sali A
+20:11:43.644 | [KANDYDAT] PID:1067840 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:43.645 | [KANDYDAT] PID:1067837 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:43.645 | [KANDYDAT] PID:1067837 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:43.645 | [KANDYDAT] PID:1067832 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 42.33. Czekam az Dziekan oglosi liste rankingowa.
+20:11:45.644 | [KANDYDAT] PID:1067839 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:45.655 | [KANDYDAT] PID:1067838 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:45.656 | [KANDYDAT] PID:1067837 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:45.659 | [KANDYDAT] PID:1067837 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:45.659 | [KANDYDAT] PID:1067837 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:45.666 | [KANDYDAT] PID:1067837 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 18.33. Moj wynik jest za niski - koncze egzamin.
+20:11:46.024 | [KANDYDAT] PID:1067838 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:46.024 | [KANDYDAT] PID:1067838 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:46.510 | [KANDYDAT] PID:1067839 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:47.663 | [KANDYDAT] PID:1067840 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:47.670 | [KANDYDAT] PID:1067838 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 35.40. Ustawiam sie w kolejsce do Komisji B.
+20:11:47.670 | [KANDYDAT] PID:1067839 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:47.676 | [KANDYDAT] PID:1067835 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:47.677 | [KANDYDAT] PID:1067835 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:47.677 | [KANDYDAT] PID:1067835 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:47.680 | [KANDYDAT] PID:1067841 | Wszedłem do sali A
+20:11:47.680 | [KANDYDAT] PID:1067841 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:47.680 | [KANDYDAT] PID:1067839 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 52.00. Ustawiam sie w kolejsce do Komisji B.
+20:11:47.686 | [KANDYDAT] PID:1067838 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:47.686 | [KANDYDAT] PID:1067838 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:47.686 | [KANDYDAT] PID:1067835 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 66.67. Czekam az Dziekan oglosi liste rankingowa.
+20:11:47.690 | [KANDYDAT] PID:1067842 | Wszedłem do sali A
+20:11:47.690 | [KANDYDAT] PID:1067842 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:47.697 | [KANDYDAT] PID:1067839 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:47.697 | [KANDYDAT] PID:1067839 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:48.288 | [KANDYDAT] PID:1067840 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:48.288 | [KANDYDAT] PID:1067840 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:48.697 | [KANDYDAT] PID:1067838 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:48.698 | [KANDYDAT] PID:1067838 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:48.698 | [KANDYDAT] PID:1067838 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:48.707 | [KANDYDAT] PID:1067838 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 69.33. Czekam az Dziekan oglosi liste rankingowa.
+20:11:49.690 | [KANDYDAT] PID:1067840 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 54.80. Ustawiam sie w kolejsce do Komisji B.
+20:11:49.700 | [KANDYDAT] PID:1067843 | Wszedłem do sali A
+20:11:49.700 | [KANDYDAT] PID:1067843 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:50.717 | [KANDYDAT] PID:1067839 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:50.719 | [KANDYDAT] PID:1067839 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:50.719 | [KANDYDAT] PID:1067839 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:50.727 | [KANDYDAT] PID:1067840 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:50.727 | [KANDYDAT] PID:1067840 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:50.728 | [KANDYDAT] PID:1067839 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 56.67. Czekam az Dziekan oglosi liste rankingowa.
+20:11:51.697 | [KANDYDAT] PID:1067842 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:51.716 | [KANDYDAT] PID:1067841 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:51.825 | [KANDYDAT] PID:1067841 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:51.825 | [KANDYDAT] PID:1067841 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:52.302 | [KANDYDAT] PID:1067842 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:52.736 | [KANDYDAT] PID:1067840 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:52.738 | [KANDYDAT] PID:1067840 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:52.738 | [KANDYDAT] PID:1067840 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:52.749 | [KANDYDAT] PID:1067840 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 75.67. Czekam az Dziekan oglosi liste rankingowa.
+20:11:53.707 | [KANDYDAT] PID:1067843 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:53.708 | [KANDYDAT] PID:1067841 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 40.00. Ustawiam sie w kolejsce do Komisji B.
+20:11:53.708 | [KANDYDAT] PID:1067842 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:53.718 | [KANDYDAT] PID:1067841 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:53.718 | [KANDYDAT] PID:1067841 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:53.718 | [KANDYDAT] PID:1067844 | Wszedłem do sali A
+20:11:53.718 | [KANDYDAT] PID:1067844 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:53.719 | [KANDYDAT] PID:1067842 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 27.80. Moj wynik jest za niski aby przystapic do kolejnego etapu egzaminu.
+20:11:53.729 | [KANDYDAT] PID:1067845 | Wszedłem do sali A
+20:11:53.729 | [KANDYDAT] PID:1067845 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:53.786 | [KANDYDAT] PID:1067843 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:53.786 | [KANDYDAT] PID:1067843 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:55.726 | [KANDYDAT] PID:1067841 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:55.730 | [KANDYDAT] PID:1067841 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:55.730 | [KANDYDAT] PID:1067841 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:55.731 | [KANDYDAT] PID:1067843 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 59.80. Ustawiam sie w kolejsce do Komisji B.
+20:11:55.739 | [KANDYDAT] PID:1067843 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:55.739 | [KANDYDAT] PID:1067843 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:55.741 | [KANDYDAT] PID:1067846 | Wszedłem do sali A
+20:11:55.741 | [KANDYDAT] PID:1067846 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:55.749 | [KANDYDAT] PID:1067841 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 47.33. Czekam az Dziekan oglosi liste rankingowa.
+20:11:57.741 | [KANDYDAT] PID:1067845 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:57.751 | [KANDYDAT] PID:1067844 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:57.759 | [KANDYDAT] PID:1067843 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:11:57.762 | [KANDYDAT] PID:1067843 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:11:57.762 | [KANDYDAT] PID:1067843 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:57.770 | [KANDYDAT] PID:1067843 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 56.67. Czekam az Dziekan oglosi liste rankingowa.
+20:11:57.838 | [KANDYDAT] PID:1067844 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:57.838 | [KANDYDAT] PID:1067844 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:57.952 | [KANDYDAT] PID:1067845 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:58.751 | [KANDYDAT] PID:1067846 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:11:58.760 | [KANDYDAT] PID:1067844 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 47.20. Ustawiam sie w kolejsce do Komisji B.
+20:11:58.760 | [KANDYDAT] PID:1067845 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:58.769 | [KANDYDAT] PID:1067844 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:58.769 | [KANDYDAT] PID:1067844 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:11:58.770 | [KANDYDAT] PID:1067847 | Wszedłem do sali A
+20:11:58.770 | [KANDYDAT] PID:1067847 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:58.770 | [KANDYDAT] PID:1067845 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 43.20. Ustawiam sie w kolejsce do Komisji B.
+20:11:58.780 | [KANDYDAT] PID:1067848 | Wszedłem do sali A
+20:11:58.780 | [KANDYDAT] PID:1067848 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:11:59.041 | [KANDYDAT] PID:1067846 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:11:59.041 | [KANDYDAT] PID:1067846 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:11:59.779 | [KANDYDAT] PID:1067845 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:11:59.779 | [KANDYDAT] PID:1067845 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:00.769 | [KANDYDAT] PID:1067844 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:00.771 | [KANDYDAT] PID:1067844 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:00.771 | [KANDYDAT] PID:1067844 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:00.781 | [KANDYDAT] PID:1067846 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 49.00. Ustawiam sie w kolejsce do Komisji B.
+20:12:00.789 | [KANDYDAT] PID:1067846 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:00.789 | [KANDYDAT] PID:1067846 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:00.791 | [KANDYDAT] PID:1067849 | Wszedłem do sali A
+20:12:00.791 | [KANDYDAT] PID:1067849 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:01.791 | [KANDYDAT] PID:1067844 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 57.67. Czekam az Dziekan oglosi liste rankingowa.
+20:12:02.790 | [KANDYDAT] PID:1067848 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:03.777 | [KANDYDAT] PID:1067848 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:03.777 | [KANDYDAT] PID:1067848 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:03.801 | [KANDYDAT] PID:1067845 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:03.802 | [KANDYDAT] PID:1067847 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:03.802 | [KANDYDAT] PID:1067845 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:03.802 | [KANDYDAT] PID:1067845 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:03.811 | [KANDYDAT] PID:1067845 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 62.00. Czekam az Dziekan oglosi liste rankingowa.
+20:12:04.176 | [KANDYDAT] PID:1067847 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:04.800 | [KANDYDAT] PID:1067849 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:04.801 | [KANDYDAT] PID:1067848 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 40.40. Ustawiam sie w kolejsce do Komisji B.
+20:12:04.801 | [KANDYDAT] PID:1067847 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:04.811 | [KANDYDAT] PID:1067848 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:04.811 | [KANDYDAT] PID:1067848 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:04.811 | [KANDYDAT] PID:1067850 | Wszedłem do sali A
+20:12:04.811 | [KANDYDAT] PID:1067850 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:04.811 | [KANDYDAT] PID:1067847 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 37.40. Ustawiam sie w kolejsce do Komisji B.
+20:12:04.821 | [KANDYDAT] PID:1067851 | Wszedłem do sali A
+20:12:04.821 | [KANDYDAT] PID:1067851 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:05.068 | [KANDYDAT] PID:1067849 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:05.068 | [KANDYDAT] PID:1067849 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:05.821 | [KANDYDAT] PID:1067847 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:05.821 | [KANDYDAT] PID:1067847 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:05.821 | [KANDYDAT] PID:1067846 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:05.824 | [KANDYDAT] PID:1067846 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:05.824 | [KANDYDAT] PID:1067846 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:06.821 | [KANDYDAT] PID:1067850 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:06.821 | [KANDYDAT] PID:1067849 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 59.40. Ustawiam sie w kolejsce do Komisji B.
+20:12:06.831 | [KANDYDAT] PID:1067852 | Wszedłem do sali A
+20:12:06.831 | [KANDYDAT] PID:1067852 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:07.448 | [KANDYDAT] PID:1067850 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:07.448 | [KANDYDAT] PID:1067850 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:07.821 | [KANDYDAT] PID:1067846 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 22.00. Moj wynik jest za niski - koncze egzamin.
+20:12:07.832 | [KANDYDAT] PID:1067849 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:07.832 | [KANDYDAT] PID:1067849 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:08.831 | [KANDYDAT] PID:1067848 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:08.832 | [KANDYDAT] PID:1067848 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:08.832 | [KANDYDAT] PID:1067848 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:08.841 | [KANDYDAT] PID:1067850 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 78.60. Ustawiam sie w kolejsce do Komisji B.
+20:12:08.851 | [KANDYDAT] PID:1067853 | Wszedłem do sali A
+20:12:08.851 | [KANDYDAT] PID:1067853 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:09.832 | [KANDYDAT] PID:1067848 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 35.33. Czekam az Dziekan oglosi liste rankingowa.
+20:12:09.842 | [KANDYDAT] PID:1067850 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:09.842 | [KANDYDAT] PID:1067850 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:10.841 | [KANDYDAT] PID:1067847 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:10.842 | [KANDYDAT] PID:1067847 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:10.842 | [KANDYDAT] PID:1067847 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:10.850 | [KANDYDAT] PID:1067852 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:11.496 | [KANDYDAT] PID:1067852 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:11.496 | [KANDYDAT] PID:1067852 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:11.841 | [KANDYDAT] PID:1067847 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 50.00. Czekam az Dziekan oglosi liste rankingowa.
+20:12:12.861 | [KANDYDAT] PID:1067853 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:12.862 | [KANDYDAT] PID:1067851 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:12.862 | [KANDYDAT] PID:1067852 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 59.40. Ustawiam sie w kolejsce do Komisji B.
+20:12:12.872 | [KANDYDAT] PID:1067854 | Wszedłem do sali A
+20:12:12.872 | [KANDYDAT] PID:1067854 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:12.872 | [KANDYDAT] PID:1067852 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:12.872 | [KANDYDAT] PID:1067852 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:13.182 | [KANDYDAT] PID:1067851 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:13.182 | [KANDYDAT] PID:1067851 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:13.308 | [KANDYDAT] PID:1067853 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:13.851 | [KANDYDAT] PID:1067850 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:13.851 | [KANDYDAT] PID:1067850 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:13.852 | [KANDYDAT] PID:1067850 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:14.861 | [KANDYDAT] PID:1067849 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:14.864 | [KANDYDAT] PID:1067849 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:14.872 | [KANDYDAT] PID:1067850 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 18.67. Moj wynik jest za niski - koncze egzamin.
+20:12:14.872 | [KANDYDAT] PID:1067849 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:14.881 | [KANDYDAT] PID:1067854 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:14.882 | [KANDYDAT] PID:1067849 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 64.67. Czekam az Dziekan oglosi liste rankingowa.
+20:12:14.891 | [KANDYDAT] PID:1067851 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 59.20. Ustawiam sie w kolejsce do Komisji B.
+20:12:14.892 | [KANDYDAT] PID:1067853 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:14.892 | [KANDYDAT] PID:1067851 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:14.892 | [KANDYDAT] PID:1067851 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:14.902 | [KANDYDAT] PID:1067855 | Wszedłem do sali A
+20:12:14.902 | [KANDYDAT] PID:1067855 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:14.902 | [KANDYDAT] PID:1067853 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 52.80. Ustawiam sie w kolejsce do Komisji B.
+20:12:14.912 | [KANDYDAT] PID:1067856 | Wszedłem do sali A
+20:12:14.912 | [KANDYDAT] PID:1067856 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:15.492 | [KANDYDAT] PID:1067854 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:15.492 | [KANDYDAT] PID:1067854 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:15.903 | [KANDYDAT] PID:1067853 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:15.904 | [KANDYDAT] PID:1067853 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:16.892 | [KANDYDAT] PID:1067852 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:16.895 | [KANDYDAT] PID:1067852 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:16.895 | [KANDYDAT] PID:1067852 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:16.904 | [KANDYDAT] PID:1067852 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 50.67. Czekam az Dziekan oglosi liste rankingowa.
+20:12:16.912 | [KANDYDAT] PID:1067854 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 25.40. Moj wynik jest za niski aby przystapic do kolejnego etapu egzaminu.
+20:12:16.922 | [KANDYDAT] PID:1067857 | Wszedłem do sali A
+20:12:16.922 | [KANDYDAT] PID:1067857 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:18.913 | [KANDYDAT] PID:1067851 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:18.915 | [KANDYDAT] PID:1067851 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:18.915 | [KANDYDAT] PID:1067851 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:18.922 | [KANDYDAT] PID:1067856 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:18.924 | [KANDYDAT] PID:1067851 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 55.67. Czekam az Dziekan oglosi liste rankingowa.
+20:12:18.933 | [KANDYDAT] PID:1067855 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:19.337 | [KANDYDAT] PID:1067855 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:19.337 | [KANDYDAT] PID:1067855 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:19.670 | [KANDYDAT] PID:1067856 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:20.932 | [KANDYDAT] PID:1067857 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:20.933 | [KANDYDAT] PID:1067853 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:20.935 | [KANDYDAT] PID:1067853 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:20.935 | [KANDYDAT] PID:1067853 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:20.939 | [KANDYDAT] PID:1067855 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 28.80. Moj wynik jest za niski aby przystapic do kolejnego etapu egzaminu.
+20:12:20.939 | [KANDYDAT] PID:1067856 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:20.949 | [KANDYDAT] PID:1067858 | Wszedłem do sali A
+20:12:20.949 | [KANDYDAT] PID:1067858 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:20.949 | [KANDYDAT] PID:1067856 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 53.60. Ustawiam sie w kolejsce do Komisji B.
+20:12:20.952 | [KANDYDAT] PID:1067856 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:20.952 | [KANDYDAT] PID:1067853 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 27.33. Moj wynik jest za niski - koncze egzamin.
+20:12:20.952 | [KANDYDAT] PID:1067856 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:20.959 | [KANDYDAT] PID:1067859 | Wszedłem do sali A
+20:12:20.959 | [KANDYDAT] PID:1067859 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:21.244 | [KANDYDAT] PID:1067857 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:21.244 | [KANDYDAT] PID:1067857 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:22.956 | [KANDYDAT] PID:1067857 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 31.00. Ustawiam sie w kolejsce do Komisji B.
+20:12:22.962 | [KANDYDAT] PID:1067856 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:22.965 | [KANDYDAT] PID:1067856 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:22.965 | [KANDYDAT] PID:1067856 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:22.966 | [KANDYDAT] PID:1067860 | Wszedłem do sali A
+20:12:22.966 | [KANDYDAT] PID:1067860 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:22.973 | [KANDYDAT] PID:1067857 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:22.973 | [KANDYDAT] PID:1067857 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:22.983 | [KANDYDAT] PID:1067856 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 49.00. Czekam az Dziekan oglosi liste rankingowa.
+20:12:23.965 | [KANDYDAT] PID:1067859 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:24.473 | [KANDYDAT] PID:1067859 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:24.473 | [KANDYDAT] PID:1067859 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:24.993 | [KANDYDAT] PID:1067857 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:24.995 | [KANDYDAT] PID:1067857 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:24.995 | [KANDYDAT] PID:1067857 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:25.014 | [KANDYDAT] PID:1067857 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 67.67. Czekam az Dziekan oglosi liste rankingowa.
+20:12:25.975 | [KANDYDAT] PID:1067860 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:25.985 | [KANDYDAT] PID:1067858 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:25.986 | [KANDYDAT] PID:1067859 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 39.40. Ustawiam sie w kolejsce do Komisji B.
+20:12:25.989 | [KANDYDAT] PID:1067859 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:25.989 | [KANDYDAT] PID:1067859 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:25.996 | [KANDYDAT] PID:1067861 | Wszedłem do sali A
+20:12:25.996 | [KANDYDAT] PID:1067861 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:26.158 | [KANDYDAT] PID:1067860 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:26.158 | [KANDYDAT] PID:1067860 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:26.419 | [KANDYDAT] PID:1067858 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:26.999 | [KANDYDAT] PID:1067859 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:26.999 | [KANDYDAT] PID:1067859 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:26.999 | [KANDYDAT] PID:1067859 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:27.010 | [KANDYDAT] PID:1067859 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 40.00. Czekam az Dziekan oglosi liste rankingowa.
+20:12:28.006 | [KANDYDAT] PID:1067861 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:28.015 | [KANDYDAT] PID:1067860 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 64.20. Ustawiam sie w kolejsce do Komisji B.
+20:12:28.015 | [KANDYDAT] PID:1067858 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:28.019 | [KANDYDAT] PID:1067860 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:28.019 | [KANDYDAT] PID:1067860 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:28.025 | [KANDYDAT] PID:1067862 | Wszedłem do sali A
+20:12:28.026 | [KANDYDAT] PID:1067858 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 72.80. Ustawiam sie w kolejsce do Komisji B.
+20:12:28.026 | [KANDYDAT] PID:1067862 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:28.036 | [KANDYDAT] PID:1067863 | Wszedłem do sali A
+20:12:28.036 | [KANDYDAT] PID:1067863 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:28.560 | [KANDYDAT] PID:1067861 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:28.561 | [KANDYDAT] PID:1067861 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:30.027 | [KANDYDAT] PID:1067860 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:30.030 | [KANDYDAT] PID:1067860 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:30.030 | [KANDYDAT] PID:1067860 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:30.030 | [KANDYDAT] PID:1067858 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:30.031 | [KANDYDAT] PID:1067858 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:30.036 | [KANDYDAT] PID:1067862 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:30.036 | [KANDYDAT] PID:1067861 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 65.40. Ustawiam sie w kolejsce do Komisji B.
+20:12:30.046 | [KANDYDAT] PID:1067867 | Wszedłem do sali A
+20:12:30.047 | [KANDYDAT] PID:1067867 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:30.194 | [KANDYDAT] PID:1067862 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:30.194 | [KANDYDAT] PID:1067862 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:32.030 | [KANDYDAT] PID:1067860 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 23.67. Moj wynik jest za niski - koncze egzamin.
+20:12:32.040 | [KANDYDAT] PID:1067861 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:32.040 | [KANDYDAT] PID:1067861 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:32.048 | [KANDYDAT] PID:1067862 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 51.60. Ustawiam sie w kolejsce do Komisji B.
+20:12:32.058 | [KANDYDAT] PID:1068064 | Wszedłem do sali A
+20:12:32.058 | [KANDYDAT] PID:1068064 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:33.037 | [KANDYDAT] PID:1067858 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:33.039 | [KANDYDAT] PID:1067858 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:33.039 | [KANDYDAT] PID:1067858 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:33.051 | [KANDYDAT] PID:1067862 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:33.051 | [KANDYDAT] PID:1067858 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 62.00. Czekam az Dziekan oglosi liste rankingowa.
+20:12:33.051 | [KANDYDAT] PID:1067862 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:34.058 | [KANDYDAT] PID:1067867 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:34.801 | [KANDYDAT] PID:1067867 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:34.802 | [KANDYDAT] PID:1067867 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:35.058 | [KANDYDAT] PID:1067861 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:35.059 | [KANDYDAT] PID:1067861 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:35.060 | [KANDYDAT] PID:1067861 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:35.071 | [KANDYDAT] PID:1067861 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 25.33. Moj wynik jest za niski - koncze egzamin.
+20:12:36.068 | [KANDYDAT] PID:1068064 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:36.068 | [KANDYDAT] PID:1067863 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:36.079 | [KANDYDAT] PID:1067867 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 40.60. Ustawiam sie w kolejsce do Komisji B.
+20:12:36.080 | [KANDYDAT] PID:1068065 | Wszedłem do sali A
+20:12:36.080 | [KANDYDAT] PID:1068065 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:36.084 | [KANDYDAT] PID:1067867 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:36.084 | [KANDYDAT] PID:1067867 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:36.186 | [KANDYDAT] PID:1067863 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:36.186 | [KANDYDAT] PID:1067863 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:37.060 | [KANDYDAT] PID:1068064 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:37.078 | [KANDYDAT] PID:1067862 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:37.079 | [KANDYDAT] PID:1067862 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:37.079 | [KANDYDAT] PID:1067862 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:38.089 | [KANDYDAT] PID:1068065 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:38.090 | [KANDYDAT] PID:1067863 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 39.40. Ustawiam sie w kolejsce do Komisji B.
+20:12:38.090 | [KANDYDAT] PID:1068064 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:38.094 | [KANDYDAT] PID:1067863 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:38.094 | [KANDYDAT] PID:1067862 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 51.00. Czekam az Dziekan oglosi liste rankingowa.
+20:12:38.095 | [KANDYDAT] PID:1067863 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:38.100 | [KANDYDAT] PID:1068066 | Wszedłem do sali A
+20:12:38.100 | [KANDYDAT] PID:1068066 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:38.100 | [KANDYDAT] PID:1068064 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 56.40. Ustawiam sie w kolejsce do Komisji B.
+20:12:38.105 | [KANDYDAT] PID:1068064 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:38.105 | [KANDYDAT] PID:1068064 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:38.111 | [KANDYDAT] PID:1068067 | Wszedłem do sali A
+20:12:38.111 | [KANDYDAT] PID:1068067 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:38.775 | [KANDYDAT] PID:1068065 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:38.775 | [KANDYDAT] PID:1068065 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:39.097 | [KANDYDAT] PID:1067867 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:39.100 | [KANDYDAT] PID:1067867 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:39.100 | [KANDYDAT] PID:1067867 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:40.105 | [KANDYDAT] PID:1067867 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 23.67. Moj wynik jest za niski - koncze egzamin.
+20:12:40.112 | [KANDYDAT] PID:1068065 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 51.20. Ustawiam sie w kolejsce do Komisji B.
+20:12:40.115 | [KANDYDAT] PID:1068065 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:40.115 | [KANDYDAT] PID:1068065 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:40.122 | [KANDYDAT] PID:1068068 | Wszedłem do sali A
+20:12:40.123 | [KANDYDAT] PID:1068068 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:41.109 | [KANDYDAT] PID:1067863 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:41.110 | [KANDYDAT] PID:1067863 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:41.110 | [KANDYDAT] PID:1067863 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:42.116 | [KANDYDAT] PID:1067863 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 54.00. Czekam az Dziekan oglosi liste rankingowa.
+20:12:42.120 | [KANDYDAT] PID:1068067 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:42.870 | [KANDYDAT] PID:1068067 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:42.870 | [KANDYDAT] PID:1068067 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:43.133 | [KANDYDAT] PID:1068066 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:43.263 | [KANDYDAT] PID:1068066 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:44.116 | [KANDYDAT] PID:1068065 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:44.117 | [KANDYDAT] PID:1068065 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:44.117 | [KANDYDAT] PID:1068065 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:44.123 | [KANDYDAT] PID:1068068 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:44.126 | [KANDYDAT] PID:1068067 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 33.40. Ustawiam sie w kolejsce do Komisji B.
+20:12:44.126 | [KANDYDAT] PID:1068066 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:44.129 | [KANDYDAT] PID:1068067 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:44.129 | [KANDYDAT] PID:1068067 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:44.136 | [KANDYDAT] PID:1068069 | Wszedłem do sali A
+20:12:44.136 | [KANDYDAT] PID:1068069 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:44.136 | [KANDYDAT] PID:1068066 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 53.60. Ustawiam sie w kolejsce do Komisji B.
+20:12:44.146 | [KANDYDAT] PID:1068070 | Wszedłem do sali A
+20:12:44.146 | [KANDYDAT] PID:1068070 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:44.861 | [KANDYDAT] PID:1068068 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:44.861 | [KANDYDAT] PID:1068068 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:45.135 | [KANDYDAT] PID:1068064 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:45.137 | [KANDYDAT] PID:1068064 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:45.138 | [KANDYDAT] PID:1068065 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 31.33. Czekam az Dziekan oglosi liste rankingowa.
+20:12:45.138 | [KANDYDAT] PID:1068064 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:45.148 | [KANDYDAT] PID:1068066 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:45.148 | [KANDYDAT] PID:1068066 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:45.149 | [KANDYDAT] PID:1068064 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 62.00. Czekam az Dziekan oglosi liste rankingowa.
+20:12:46.146 | [KANDYDAT] PID:1068069 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:46.148 | [KANDYDAT] PID:1068068 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 46.80. Ustawiam sie w kolejsce do Komisji B.
+20:12:46.158 | [KANDYDAT] PID:1068071 | Wszedłem do sali A
+20:12:46.158 | [KANDYDAT] PID:1068071 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:46.557 | [KANDYDAT] PID:1068069 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:46.557 | [KANDYDAT] PID:1068069 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:47.159 | [KANDYDAT] PID:1068066 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:47.161 | [KANDYDAT] PID:1068066 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:47.161 | [KANDYDAT] PID:1068066 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:47.169 | [KANDYDAT] PID:1068068 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:47.169 | [KANDYDAT] PID:1068068 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:47.169 | [KANDYDAT] PID:1068066 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 40.67. Czekam az Dziekan oglosi liste rankingowa.
+20:12:48.159 | [KANDYDAT] PID:1068069 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 40.60. Ustawiam sie w kolejsce do Komisji B.
+20:12:48.169 | [KANDYDAT] PID:1068072 | Wszedłem do sali A
+20:12:48.169 | [KANDYDAT] PID:1068072 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:48.189 | [KANDYDAT] PID:1068069 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:48.189 | [KANDYDAT] PID:1068069 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:49.177 | [KANDYDAT] PID:1068067 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:49.179 | [KANDYDAT] PID:1068067 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:49.179 | [KANDYDAT] PID:1068067 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:49.190 | [KANDYDAT] PID:1068067 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 26.67. Moj wynik jest za niski - koncze egzamin.
+20:12:50.165 | [KANDYDAT] PID:1068071 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:50.430 | [KANDYDAT] PID:1068071 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:50.430 | [KANDYDAT] PID:1068071 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:51.197 | [KANDYDAT] PID:1068069 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:51.197 | [KANDYDAT] PID:1068069 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:51.197 | [KANDYDAT] PID:1068069 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:51.211 | [KANDYDAT] PID:1068069 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 65.00. Czekam az Dziekan oglosi liste rankingowa.
+20:12:52.175 | [KANDYDAT] PID:1068072 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:52.179 | [KANDYDAT] PID:1068070 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:52.179 | [KANDYDAT] PID:1068071 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 53.60. Ustawiam sie w kolejsce do Komisji B.
+20:12:52.189 | [KANDYDAT] PID:1068071 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:52.189 | [KANDYDAT] PID:1068071 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:52.189 | [KANDYDAT] PID:1068073 | Wszedłem do sali A
+20:12:52.189 | [KANDYDAT] PID:1068073 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:52.233 | [KANDYDAT] PID:1068072 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:52.233 | [KANDYDAT] PID:1068072 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:52.833 | [KANDYDAT] PID:1068070 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:53.218 | [KANDYDAT] PID:1068068 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:53.218 | [KANDYDAT] PID:1068068 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:53.218 | [KANDYDAT] PID:1068068 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:54.189 | [KANDYDAT] PID:1068068 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 23.00. Moj wynik jest za niski - koncze egzamin.
+20:12:54.195 | [KANDYDAT] PID:1068073 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:54.200 | [KANDYDAT] PID:1068072 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 57.40. Ustawiam sie w kolejsce do Komisji B.
+20:12:54.200 | [KANDYDAT] PID:1068070 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:54.209 | [KANDYDAT] PID:1068072 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:54.210 | [KANDYDAT] PID:1068072 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:54.210 | [KANDYDAT] PID:1068074 | Wszedłem do sali A
+20:12:54.210 | [KANDYDAT] PID:1068074 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:54.210 | [KANDYDAT] PID:1068070 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 54.80. Ustawiam sie w kolejsce do Komisji B.
+20:12:54.220 | [KANDYDAT] PID:1068075 | Wszedłem do sali A
+20:12:54.220 | [KANDYDAT] PID:1068075 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:54.667 | [KANDYDAT] PID:1068073 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:54.667 | [KANDYDAT] PID:1068073 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:55.220 | [KANDYDAT] PID:1068070 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:55.220 | [KANDYDAT] PID:1068070 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:56.196 | [KANDYDAT] PID:1068071 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:56.197 | [KANDYDAT] PID:1068071 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:56.197 | [KANDYDAT] PID:1068071 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:56.216 | [KANDYDAT] PID:1068074 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:12:56.220 | [KANDYDAT] PID:1068071 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 70.67. Czekam az Dziekan oglosi liste rankingowa.
+20:12:56.221 | [KANDYDAT] PID:1068073 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 37.60. Ustawiam sie w kolejsce do Komisji B.
+20:12:56.230 | [KANDYDAT] PID:1068073 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:56.230 | [KANDYDAT] PID:1068073 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:12:56.231 | [KANDYDAT] PID:1068076 | Wszedłem do sali A
+20:12:56.232 | [KANDYDAT] PID:1068076 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:56.811 | [KANDYDAT] PID:1068074 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:12:56.811 | [KANDYDAT] PID:1068074 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:58.227 | [KANDYDAT] PID:1068072 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:12:58.229 | [KANDYDAT] PID:1068072 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:12:58.229 | [KANDYDAT] PID:1068072 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:12:58.232 | [KANDYDAT] PID:1068074 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 55.00. Ustawiam sie w kolejsce do Komisji B.
+20:12:58.242 | [KANDYDAT] PID:1068077 | Wszedłem do sali A
+20:12:58.242 | [KANDYDAT] PID:1068077 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:12:59.247 | [KANDYDAT] PID:1068072 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 44.00. Czekam az Dziekan oglosi liste rankingowa.
+20:12:59.257 | [KANDYDAT] PID:1068074 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:12:59.257 | [KANDYDAT] PID:1068074 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:00.235 | [KANDYDAT] PID:1068076 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:00.684 | [KANDYDAT] PID:1068076 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:00.684 | [KANDYDAT] PID:1068076 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:01.251 | [KANDYDAT] PID:1068073 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:01.252 | [KANDYDAT] PID:1068073 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:01.252 | [KANDYDAT] PID:1068073 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:01.253 | [KANDYDAT] PID:1068075 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:01.268 | [KANDYDAT] PID:1068073 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 71.33. Czekam az Dziekan oglosi liste rankingowa.
+20:13:01.534 | [KANDYDAT] PID:1068075 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:02.244 | [KANDYDAT] PID:1068077 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:02.250 | [KANDYDAT] PID:1068077 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:02.253 | [KANDYDAT] PID:1068076 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 46.00. Ustawiam sie w kolejsce do Komisji B.
+20:13:02.253 | [KANDYDAT] PID:1068075 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:02.257 | [KANDYDAT] PID:1068076 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:02.257 | [KANDYDAT] PID:1068076 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:02.263 | [KANDYDAT] PID:1068078 | Wszedłem do sali A
+20:13:02.263 | [KANDYDAT] PID:1068078 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:02.264 | [KANDYDAT] PID:1068075 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 35.20. Ustawiam sie w kolejsce do Komisji B.
+20:13:02.264 | [KANDYDAT] PID:1068077 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:02.274 | [KANDYDAT] PID:1068081 | Wszedłem do sali A
+20:13:02.274 | [KANDYDAT] PID:1068081 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:02.274 | [KANDYDAT] PID:1068077 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 57.40. Ustawiam sie w kolejsce do Komisji B.
+20:13:02.277 | [KANDYDAT] PID:1068074 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:02.278 | [KANDYDAT] PID:1068074 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:02.278 | [KANDYDAT] PID:1068074 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:02.284 | [KANDYDAT] PID:1068082 | Wszedłem do sali A
+20:13:02.284 | [KANDYDAT] PID:1068082 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:04.257 | [KANDYDAT] PID:1068074 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 23.67. Moj wynik jest za niski - koncze egzamin.
+20:13:04.268 | [KANDYDAT] PID:1068075 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:04.268 | [KANDYDAT] PID:1068075 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:04.275 | [KANDYDAT] PID:1068078 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:04.823 | [KANDYDAT] PID:1068078 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:04.824 | [KANDYDAT] PID:1068078 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:05.294 | [KANDYDAT] PID:1068082 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:05.294 | [KANDYDAT] PID:1068078 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 55.40. Ustawiam sie w kolejsce do Komisji B.
+20:13:05.304 | [KANDYDAT] PID:1068083 | Wszedłem do sali A
+20:13:05.305 | [KANDYDAT] PID:1068083 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:06.195 | [KANDYDAT] PID:1068082 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:06.195 | [KANDYDAT] PID:1068082 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:06.262 | [KANDYDAT] PID:1068076 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:06.263 | [KANDYDAT] PID:1068076 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:06.264 | [KANDYDAT] PID:1068076 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:07.276 | [KANDYDAT] PID:1068076 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 51.00. Czekam az Dziekan oglosi liste rankingowa.
+20:13:07.287 | [KANDYDAT] PID:1068077 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:07.287 | [KANDYDAT] PID:1068077 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:07.314 | [KANDYDAT] PID:1068082 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 47.20. Ustawiam sie w kolejsce do Komisji B.
+20:13:07.324 | [KANDYDAT] PID:1068118 | Wszedłem do sali A
+20:13:07.324 | [KANDYDAT] PID:1068118 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:08.281 | [KANDYDAT] PID:1068075 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:08.284 | [KANDYDAT] PID:1068075 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:08.284 | [KANDYDAT] PID:1068075 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:09.279 | [KANDYDAT] PID:1068070 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:09.280 | [KANDYDAT] PID:1068070 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:09.287 | [KANDYDAT] PID:1068075 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 72.00. Czekam az Dziekan oglosi liste rankingowa.
+20:13:09.287 | [KANDYDAT] PID:1068070 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:09.297 | [KANDYDAT] PID:1068078 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:09.297 | [KANDYDAT] PID:1068078 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:09.297 | [KANDYDAT] PID:1068070 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 52.33. Czekam az Dziekan oglosi liste rankingowa.
+20:13:09.307 | [KANDYDAT] PID:1068082 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:09.307 | [KANDYDAT] PID:1068082 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:09.323 | [KANDYDAT] PID:1068083 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:09.589 | [KANDYDAT] PID:1068083 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:09.589 | [KANDYDAT] PID:1068083 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:11.306 | [KANDYDAT] PID:1068077 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:11.306 | [KANDYDAT] PID:1068077 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:11.306 | [KANDYDAT] PID:1068077 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:11.334 | [KANDYDAT] PID:1068118 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:11.334 | [KANDYDAT] PID:1068081 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:11.334 | [KANDYDAT] PID:1068083 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 43.40. Ustawiam sie w kolejsce do Komisji B.
+20:13:11.344 | [KANDYDAT] PID:1068151 | Wszedłem do sali A
+20:13:11.345 | [KANDYDAT] PID:1068151 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:11.392 | [KANDYDAT] PID:1068081 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:11.392 | [KANDYDAT] PID:1068081 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:11.623 | [KANDYDAT] PID:1068118 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:12.318 | [KANDYDAT] PID:1068077 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 38.33. Czekam az Dziekan oglosi liste rankingowa.
+20:13:12.328 | [KANDYDAT] PID:1068083 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:12.328 | [KANDYDAT] PID:1068083 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:13.354 | [KANDYDAT] PID:1068151 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:13.355 | [KANDYDAT] PID:1068081 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 55.20. Ustawiam sie w kolejsce do Komisji B.
+20:13:13.355 | [KANDYDAT] PID:1068118 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:13.365 | [KANDYDAT] PID:1068167 | Wszedłem do sali A
+20:13:13.365 | [KANDYDAT] PID:1068167 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:13.365 | [KANDYDAT] PID:1068118 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 39.80. Ustawiam sie w kolejsce do Komisji B.
+20:13:13.375 | [KANDYDAT] PID:1068168 | Wszedłem do sali A
+20:13:13.375 | [KANDYDAT] PID:1068168 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:13.568 | [KANDYDAT] PID:1068151 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:13.568 | [KANDYDAT] PID:1068151 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:14.325 | [KANDYDAT] PID:1068078 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:14.328 | [KANDYDAT] PID:1068078 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:14.328 | [KANDYDAT] PID:1068078 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:14.339 | [KANDYDAT] PID:1068078 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 47.00. Czekam az Dziekan oglosi liste rankingowa.
+20:13:14.349 | [KANDYDAT] PID:1068081 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:14.349 | [KANDYDAT] PID:1068081 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:15.376 | [KANDYDAT] PID:1068151 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 64.00. Ustawiam sie w kolejsce do Komisji B.
+20:13:15.386 | [KANDYDAT] PID:1068169 | Wszedłem do sali A
+20:13:15.386 | [KANDYDAT] PID:1068169 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:16.341 | [KANDYDAT] PID:1068083 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:16.341 | [KANDYDAT] PID:1068083 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:16.342 | [KANDYDAT] PID:1068083 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:16.359 | [KANDYDAT] PID:1068083 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 54.67. Czekam az Dziekan oglosi liste rankingowa.
+20:13:16.369 | [KANDYDAT] PID:1068118 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:16.369 | [KANDYDAT] PID:1068118 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:17.386 | [KANDYDAT] PID:1068168 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:18.199 | [KANDYDAT] PID:1068168 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:18.199 | [KANDYDAT] PID:1068168 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:18.361 | [KANDYDAT] PID:1068081 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:18.363 | [KANDYDAT] PID:1068081 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:18.363 | [KANDYDAT] PID:1068081 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:18.396 | [KANDYDAT] PID:1068169 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:19.187 | [KANDYDAT] PID:1068169 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:19.378 | [KANDYDAT] PID:1068081 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 77.00. Czekam az Dziekan oglosi liste rankingowa.
+20:13:19.388 | [KANDYDAT] PID:1068151 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:19.388 | [KANDYDAT] PID:1068151 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:19.396 | [KANDYDAT] PID:1068167 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:19.397 | [KANDYDAT] PID:1068169 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:19.397 | [KANDYDAT] PID:1068168 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 32.80. Ustawiam sie w kolejsce do Komisji B.
+20:13:19.407 | [KANDYDAT] PID:1068170 | Wszedłem do sali A
+20:13:19.407 | [KANDYDAT] PID:1068170 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:19.407 | [KANDYDAT] PID:1068169 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 86.60. Ustawiam sie w kolejsce do Komisji B.
+20:13:19.417 | [KANDYDAT] PID:1068171 | Wszedłem do sali A
+20:13:19.417 | [KANDYDAT] PID:1068171 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:19.755 | [KANDYDAT] PID:1068167 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:19.755 | [KANDYDAT] PID:1068167 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:20.381 | [KANDYDAT] PID:1068118 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:20.384 | [KANDYDAT] PID:1068118 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:20.384 | [KANDYDAT] PID:1068118 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:21.399 | [KANDYDAT] PID:1068118 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 64.33. Czekam az Dziekan oglosi liste rankingowa.
+20:13:21.409 | [KANDYDAT] PID:1068168 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:21.409 | [KANDYDAT] PID:1068168 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:21.426 | [KANDYDAT] PID:1068167 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 49.20. Ustawiam sie w kolejsce do Komisji B.
+20:13:21.436 | [KANDYDAT] PID:1068172 | Wszedłem do sali A
+20:13:21.436 | [KANDYDAT] PID:1068172 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:22.403 | [KANDYDAT] PID:1068151 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:22.405 | [KANDYDAT] PID:1068151 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:22.405 | [KANDYDAT] PID:1068151 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:22.437 | [KANDYDAT] PID:1068170 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:23.190 | [KANDYDAT] PID:1068170 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:23.190 | [KANDYDAT] PID:1068170 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:23.409 | [KANDYDAT] PID:1068151 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 48.33. Czekam az Dziekan oglosi liste rankingowa.
+20:13:23.420 | [KANDYDAT] PID:1068169 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:23.420 | [KANDYDAT] PID:1068169 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:23.436 | [KANDYDAT] PID:1068171 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:23.447 | [KANDYDAT] PID:1068170 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 73.20. Ustawiam sie w kolejsce do Komisji B.
+20:13:23.457 | [KANDYDAT] PID:1068173 | Wszedłem do sali A
+20:13:23.457 | [KANDYDAT] PID:1068173 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:23.713 | [KANDYDAT] PID:1068171 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:23.713 | [KANDYDAT] PID:1068171 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:24.412 | [KANDYDAT] PID:1068168 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:24.415 | [KANDYDAT] PID:1068168 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:24.415 | [KANDYDAT] PID:1068168 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:24.430 | [KANDYDAT] PID:1068168 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 47.00. Czekam az Dziekan oglosi liste rankingowa.
+20:13:24.440 | [KANDYDAT] PID:1068167 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:24.440 | [KANDYDAT] PID:1068167 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:25.457 | [KANDYDAT] PID:1068172 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:25.458 | [KANDYDAT] PID:1068171 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 42.40. Ustawiam sie w kolejsce do Komisji B.
+20:13:25.468 | [KANDYDAT] PID:1068174 | Wszedłem do sali A
+20:13:25.468 | [KANDYDAT] PID:1068174 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:26.361 | [KANDYDAT] PID:1068172 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:26.362 | [KANDYDAT] PID:1068172 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:26.433 | [KANDYDAT] PID:1068169 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:26.434 | [KANDYDAT] PID:1068169 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:26.434 | [KANDYDAT] PID:1068169 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:26.451 | [KANDYDAT] PID:1068169 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 67.67. Czekam az Dziekan oglosi liste rankingowa.
+20:13:26.461 | [KANDYDAT] PID:1068170 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:26.461 | [KANDYDAT] PID:1068170 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:27.467 | [KANDYDAT] PID:1068173 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:27.469 | [KANDYDAT] PID:1068172 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 49.40. Ustawiam sie w kolejsce do Komisji B.
+20:13:27.479 | [KANDYDAT] PID:1068178 | Wszedłem do sali A
+20:13:27.479 | [KANDYDAT] PID:1068178 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:28.236 | [KANDYDAT] PID:1068173 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:28.236 | [KANDYDAT] PID:1068173 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:28.453 | [KANDYDAT] PID:1068167 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:28.456 | [KANDYDAT] PID:1068167 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:28.456 | [KANDYDAT] PID:1068167 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:28.471 | [KANDYDAT] PID:1068167 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 48.00. Czekam az Dziekan oglosi liste rankingowa.
+20:13:28.481 | [KANDYDAT] PID:1068171 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:28.481 | [KANDYDAT] PID:1068171 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:29.474 | [KANDYDAT] PID:1068170 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:29.476 | [KANDYDAT] PID:1068174 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:29.477 | [KANDYDAT] PID:1068170 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:29.477 | [KANDYDAT] PID:1068170 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:29.479 | [KANDYDAT] PID:1068173 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 44.20. Ustawiam sie w kolejsce do Komisji B.
+20:13:29.489 | [KANDYDAT] PID:1068182 | Wszedłem do sali A
+20:13:29.489 | [KANDYDAT] PID:1068182 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:30.389 | [KANDYDAT] PID:1068174 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:30.389 | [KANDYDAT] PID:1068174 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:30.490 | [KANDYDAT] PID:1068170 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 50.33. Czekam az Dziekan oglosi liste rankingowa.
+20:13:30.501 | [KANDYDAT] PID:1068172 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:30.501 | [KANDYDAT] PID:1068172 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:31.487 | [KANDYDAT] PID:1068178 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:31.490 | [KANDYDAT] PID:1068174 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 26.20. Moj wynik jest za niski aby przystapic do kolejnego etapu egzaminu.
+20:13:31.493 | [KANDYDAT] PID:1068171 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:31.493 | [KANDYDAT] PID:1068171 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:31.493 | [KANDYDAT] PID:1068171 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:31.500 | [KANDYDAT] PID:1068183 | Wszedłem do sali A
+20:13:31.500 | [KANDYDAT] PID:1068183 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:31.686 | [KANDYDAT] PID:1068178 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:31.686 | [KANDYDAT] PID:1068178 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:32.511 | [KANDYDAT] PID:1068171 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 64.33. Czekam az Dziekan oglosi liste rankingowa.
+20:13:32.521 | [KANDYDAT] PID:1068173 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:32.522 | [KANDYDAT] PID:1068173 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:33.498 | [KANDYDAT] PID:1068182 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:33.501 | [KANDYDAT] PID:1068178 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 72.00. Ustawiam sie w kolejsce do Komisji B.
+20:13:33.511 | [KANDYDAT] PID:1068184 | Wszedłem do sali A
+20:13:33.511 | [KANDYDAT] PID:1068184 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:33.514 | [KANDYDAT] PID:1068172 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:33.517 | [KANDYDAT] PID:1068172 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:33.517 | [KANDYDAT] PID:1068172 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:33.601 | [KANDYDAT] PID:1068182 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:33.601 | [KANDYDAT] PID:1068182 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:34.522 | [KANDYDAT] PID:1068172 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 47.33. Czekam az Dziekan oglosi liste rankingowa.
+20:13:34.532 | [KANDYDAT] PID:1068178 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:34.532 | [KANDYDAT] PID:1068178 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:35.509 | [KANDYDAT] PID:1068183 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:35.518 | [KANDYDAT] PID:1068182 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 41.00. Ustawiam sie w kolejsce do Komisji B.
+20:13:35.526 | [KANDYDAT] PID:1068173 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:35.528 | [KANDYDAT] PID:1068185 | Wszedłem do sali A
+20:13:35.529 | [KANDYDAT] PID:1068185 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:35.529 | [KANDYDAT] PID:1068173 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:35.529 | [KANDYDAT] PID:1068173 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:35.684 | [KANDYDAT] PID:1068183 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:35.684 | [KANDYDAT] PID:1068183 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:36.538 | [KANDYDAT] PID:1068173 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 48.00. Czekam az Dziekan oglosi liste rankingowa.
+20:13:36.549 | [KANDYDAT] PID:1068182 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:36.549 | [KANDYDAT] PID:1068182 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:37.528 | [KANDYDAT] PID:1068184 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:37.529 | [KANDYDAT] PID:1068183 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 60.00. Ustawiam sie w kolejsce do Komisji B.
+20:13:37.539 | [KANDYDAT] PID:1068186 | Wszedłem do sali A
+20:13:37.539 | [KANDYDAT] PID:1068186 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:37.772 | [KANDYDAT] PID:1068184 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:37.773 | [KANDYDAT] PID:1068184 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:38.544 | [KANDYDAT] PID:1068178 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:38.545 | [KANDYDAT] PID:1068178 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:38.545 | [KANDYDAT] PID:1068178 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:38.559 | [KANDYDAT] PID:1068178 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 79.33. Czekam az Dziekan oglosi liste rankingowa.
+20:13:38.569 | [KANDYDAT] PID:1068183 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:38.569 | [KANDYDAT] PID:1068183 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:39.538 | [KANDYDAT] PID:1068185 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:39.543 | [KANDYDAT] PID:1068184 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 35.00. Ustawiam sie w kolejsce do Komisji B.
+20:13:39.553 | [KANDYDAT] PID:1068187 | Wszedłem do sali A
+20:13:39.553 | [KANDYDAT] PID:1068187 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:39.565 | [KANDYDAT] PID:1068182 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:39.567 | [KANDYDAT] PID:1068182 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:39.567 | [KANDYDAT] PID:1068182 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:39.580 | [KANDYDAT] PID:1068182 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 82.67. Czekam az Dziekan oglosi liste rankingowa.
+20:13:39.590 | [KANDYDAT] PID:1068184 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:39.590 | [KANDYDAT] PID:1068184 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:39.794 | [KANDYDAT] PID:1068185 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:39.795 | [KANDYDAT] PID:1068185 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:40.585 | [KANDYDAT] PID:1068183 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:40.588 | [KANDYDAT] PID:1068183 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:40.588 | [KANDYDAT] PID:1068183 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:41.552 | [KANDYDAT] PID:1068186 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:41.557 | [KANDYDAT] PID:1068185 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 47.00. Ustawiam sie w kolejsce do Komisji B.
+20:13:41.567 | [KANDYDAT] PID:1068188 | Wszedłem do sali A
+20:13:41.567 | [KANDYDAT] PID:1068188 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:41.601 | [KANDYDAT] PID:1068183 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 47.67. Czekam az Dziekan oglosi liste rankingowa.
+20:13:41.611 | [KANDYDAT] PID:1068185 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:41.611 | [KANDYDAT] PID:1068185 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:41.897 | [KANDYDAT] PID:1068186 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:41.897 | [KANDYDAT] PID:1068186 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:43.558 | [KANDYDAT] PID:1068187 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:43.567 | [KANDYDAT] PID:1068186 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 60.80. Ustawiam sie w kolejsce do Komisji B.
+20:13:43.577 | [KANDYDAT] PID:1068189 | Wszedłem do sali A
+20:13:43.578 | [KANDYDAT] PID:1068189 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:43.609 | [KANDYDAT] PID:1068184 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:43.612 | [KANDYDAT] PID:1068184 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:43.612 | [KANDYDAT] PID:1068184 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:43.624 | [KANDYDAT] PID:1068184 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 60.33. Czekam az Dziekan oglosi liste rankingowa.
+20:13:43.634 | [KANDYDAT] PID:1068186 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:43.634 | [KANDYDAT] PID:1068186 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:43.734 | [KANDYDAT] PID:1068187 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:43.734 | [KANDYDAT] PID:1068187 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:45.578 | [KANDYDAT] PID:1068188 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:45.583 | [KANDYDAT] PID:1068187 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 41.60. Ustawiam sie w kolejsce do Komisji B.
+20:13:45.593 | [KANDYDAT] PID:1068190 | Wszedłem do sali A
+20:13:45.593 | [KANDYDAT] PID:1068190 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:45.630 | [KANDYDAT] PID:1068185 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:45.632 | [KANDYDAT] PID:1068185 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:45.632 | [KANDYDAT] PID:1068185 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:45.647 | [KANDYDAT] PID:1068185 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 32.00. Czekam az Dziekan oglosi liste rankingowa.
+20:13:45.657 | [KANDYDAT] PID:1068187 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:45.657 | [KANDYDAT] PID:1068187 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:46.436 | [KANDYDAT] PID:1068188 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:46.436 | [KANDYDAT] PID:1068188 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:47.588 | [KANDYDAT] PID:1068189 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:47.593 | [KANDYDAT] PID:1068188 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 44.00. Ustawiam sie w kolejsce do Komisji B.
+20:13:47.603 | [KANDYDAT] PID:1068193 | Wszedłem do sali A
+20:13:47.603 | [KANDYDAT] PID:1068193 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:47.650 | [KANDYDAT] PID:1068186 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:47.653 | [KANDYDAT] PID:1068186 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:47.653 | [KANDYDAT] PID:1068186 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:47.668 | [KANDYDAT] PID:1068186 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 83.00. Czekam az Dziekan oglosi liste rankingowa.
+20:13:47.678 | [KANDYDAT] PID:1068188 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:47.678 | [KANDYDAT] PID:1068188 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:48.541 | [KANDYDAT] PID:1068189 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:48.541 | [KANDYDAT] PID:1068189 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:49.598 | [KANDYDAT] PID:1068190 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:49.602 | [KANDYDAT] PID:1068189 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 45.60. Ustawiam sie w kolejsce do Komisji B.
+20:13:49.612 | [KANDYDAT] PID:1068244 | Wszedłem do sali A
+20:13:49.612 | [KANDYDAT] PID:1068244 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:49.671 | [KANDYDAT] PID:1068187 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:49.672 | [KANDYDAT] PID:1068187 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:49.672 | [KANDYDAT] PID:1068187 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:49.688 | [KANDYDAT] PID:1068187 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 44.00. Czekam az Dziekan oglosi liste rankingowa.
+20:13:49.698 | [KANDYDAT] PID:1068189 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:49.698 | [KANDYDAT] PID:1068189 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:50.016 | [KANDYDAT] PID:1068190 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:50.016 | [KANDYDAT] PID:1068190 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:50.691 | [KANDYDAT] PID:1068188 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:50.692 | [KANDYDAT] PID:1068188 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:50.693 | [KANDYDAT] PID:1068188 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:51.606 | [KANDYDAT] PID:1068193 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:51.613 | [KANDYDAT] PID:1068190 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 59.80. Ustawiam sie w kolejsce do Komisji B.
+20:13:51.623 | [KANDYDAT] PID:1068275 | Wszedłem do sali A
+20:13:51.623 | [KANDYDAT] PID:1068275 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:51.699 | [KANDYDAT] PID:1068188 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 71.67. Czekam az Dziekan oglosi liste rankingowa.
+20:13:51.709 | [KANDYDAT] PID:1068190 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:51.709 | [KANDYDAT] PID:1068190 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:51.961 | [KANDYDAT] PID:1068193 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:51.961 | [KANDYDAT] PID:1068193 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:53.617 | [KANDYDAT] PID:1068244 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:53.623 | [KANDYDAT] PID:1068193 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 59.20. Ustawiam sie w kolejsce do Komisji B.
+20:13:53.633 | [KANDYDAT] PID:1068341 | Wszedłem do sali A
+20:13:53.633 | [KANDYDAT] PID:1068341 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:53.702 | [KANDYDAT] PID:1068189 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:53.704 | [KANDYDAT] PID:1068189 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:53.704 | [KANDYDAT] PID:1068189 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:53.718 | [KANDYDAT] PID:1068189 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 25.33. Moj wynik jest za niski - koncze egzamin.
+20:13:53.728 | [KANDYDAT] PID:1068193 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:53.728 | [KANDYDAT] PID:1068193 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:53.733 | [KANDYDAT] PID:1068244 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:53.733 | [KANDYDAT] PID:1068244 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:55.627 | [KANDYDAT] PID:1068275 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:55.634 | [KANDYDAT] PID:1068244 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 43.80. Ustawiam sie w kolejsce do Komisji B.
+20:13:55.644 | [KANDYDAT] PID:1068342 | Wszedłem do sali A
+20:13:55.644 | [KANDYDAT] PID:1068342 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:55.722 | [KANDYDAT] PID:1068190 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:55.723 | [KANDYDAT] PID:1068190 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:55.723 | [KANDYDAT] PID:1068190 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:55.738 | [KANDYDAT] PID:1068190 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 64.33. Czekam az Dziekan oglosi liste rankingowa.
+20:13:55.749 | [KANDYDAT] PID:1068244 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:55.749 | [KANDYDAT] PID:1068244 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:55.810 | [KANDYDAT] PID:1068275 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:55.810 | [KANDYDAT] PID:1068275 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:57.639 | [KANDYDAT] PID:1068341 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:57.644 | [KANDYDAT] PID:1068275 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 54.80. Ustawiam sie w kolejsce do Komisji B.
+20:13:57.655 | [KANDYDAT] PID:1068343 | Wszedłem do sali A
+20:13:57.655 | [KANDYDAT] PID:1068343 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:57.743 | [KANDYDAT] PID:1068193 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:57.745 | [KANDYDAT] PID:1068193 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:57.745 | [KANDYDAT] PID:1068193 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:57.759 | [KANDYDAT] PID:1068193 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 47.00. Czekam az Dziekan oglosi liste rankingowa.
+20:13:57.769 | [KANDYDAT] PID:1068275 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:57.769 | [KANDYDAT] PID:1068275 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:13:58.389 | [KANDYDAT] PID:1068341 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:13:58.389 | [KANDYDAT] PID:1068341 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:59.648 | [KANDYDAT] PID:1068342 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:13:59.652 | [KANDYDAT] PID:1068341 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 39.80. Ustawiam sie w kolejsce do Komisji B.
+20:13:59.662 | [KANDYDAT] PID:1068344 | Wszedłem do sali A
+20:13:59.662 | [KANDYDAT] PID:1068344 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:13:59.763 | [KANDYDAT] PID:1068244 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:13:59.764 | [KANDYDAT] PID:1068244 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:13:59.765 | [KANDYDAT] PID:1068244 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:13:59.776 | [KANDYDAT] PID:1068244 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 41.67. Czekam az Dziekan oglosi liste rankingowa.
+20:13:59.786 | [KANDYDAT] PID:1068341 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:13:59.786 | [KANDYDAT] PID:1068341 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:00.504 | [KANDYDAT] PID:1068342 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:00.504 | [KANDYDAT] PID:1068342 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:01.656 | [KANDYDAT] PID:1068343 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:01.664 | [KANDYDAT] PID:1068342 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 59.60. Ustawiam sie w kolejsce do Komisji B.
+20:14:01.674 | [KANDYDAT] PID:1068345 | Wszedłem do sali A
+20:14:01.674 | [KANDYDAT] PID:1068345 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:01.783 | [KANDYDAT] PID:1068275 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:01.784 | [KANDYDAT] PID:1068275 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:01.784 | [KANDYDAT] PID:1068275 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:01.796 | [KANDYDAT] PID:1068275 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 67.67. Czekam az Dziekan oglosi liste rankingowa.
+20:14:01.806 | [KANDYDAT] PID:1068342 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:01.806 | [KANDYDAT] PID:1068342 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:01.917 | [KANDYDAT] PID:1068343 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:01.917 | [KANDYDAT] PID:1068343 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:03.673 | [KANDYDAT] PID:1068344 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:03.677 | [KANDYDAT] PID:1068343 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 34.40. Ustawiam sie w kolejsce do Komisji B.
+20:14:03.687 | [KANDYDAT] PID:1068346 | Wszedłem do sali A
+20:14:03.687 | [KANDYDAT] PID:1068346 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:03.804 | [KANDYDAT] PID:1068341 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:03.805 | [KANDYDAT] PID:1068341 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:03.805 | [KANDYDAT] PID:1068341 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:03.819 | [KANDYDAT] PID:1068341 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 44.67. Czekam az Dziekan oglosi liste rankingowa.
+20:14:03.830 | [KANDYDAT] PID:1068343 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:03.830 | [KANDYDAT] PID:1068343 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:04.339 | [KANDYDAT] PID:1068344 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:04.339 | [KANDYDAT] PID:1068344 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:05.679 | [KANDYDAT] PID:1068345 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:05.679 | [KANDYDAT] PID:1068344 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 30.60. Ustawiam sie w kolejsce do Komisji B.
+20:14:05.690 | [KANDYDAT] PID:1068347 | Wszedłem do sali A
+20:14:05.690 | [KANDYDAT] PID:1068347 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:05.825 | [KANDYDAT] PID:1068342 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:05.828 | [KANDYDAT] PID:1068342 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:05.828 | [KANDYDAT] PID:1068342 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:05.843 | [KANDYDAT] PID:1068342 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 29.33. Moj wynik jest za niski - koncze egzamin.
+20:14:05.853 | [KANDYDAT] PID:1068344 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:05.853 | [KANDYDAT] PID:1068344 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:05.855 | [KANDYDAT] PID:1068345 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:05.855 | [KANDYDAT] PID:1068345 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:06.846 | [KANDYDAT] PID:1068343 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:06.846 | [KANDYDAT] PID:1068343 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:06.846 | [KANDYDAT] PID:1068343 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:07.688 | [KANDYDAT] PID:1068346 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:07.692 | [KANDYDAT] PID:1068345 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 58.20. Ustawiam sie w kolejsce do Komisji B.
+20:14:07.702 | [KANDYDAT] PID:1068348 | Wszedłem do sali A
+20:14:07.702 | [KANDYDAT] PID:1068348 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:07.854 | [KANDYDAT] PID:1068343 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 77.00. Czekam az Dziekan oglosi liste rankingowa.
+20:14:07.864 | [KANDYDAT] PID:1068345 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:07.864 | [KANDYDAT] PID:1068345 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:08.486 | [KANDYDAT] PID:1068346 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:08.486 | [KANDYDAT] PID:1068346 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:09.698 | [KANDYDAT] PID:1068347 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:09.702 | [KANDYDAT] PID:1068346 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 50.00. Ustawiam sie w kolejsce do Komisji B.
+20:14:09.712 | [KANDYDAT] PID:1068349 | Wszedłem do sali A
+20:14:09.712 | [KANDYDAT] PID:1068349 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:09.842 | [KANDYDAT] PID:1068347 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:09.842 | [KANDYDAT] PID:1068347 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:09.859 | [KANDYDAT] PID:1068344 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:09.860 | [KANDYDAT] PID:1068344 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:09.860 | [KANDYDAT] PID:1068344 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:09.874 | [KANDYDAT] PID:1068344 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 32.67. Czekam az Dziekan oglosi liste rankingowa.
+20:14:09.884 | [KANDYDAT] PID:1068346 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:09.884 | [KANDYDAT] PID:1068346 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:10.712 | [KANDYDAT] PID:1068348 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:10.712 | [KANDYDAT] PID:1068347 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 27.40. Moj wynik jest za niski aby przystapic do kolejnego etapu egzaminu.
+20:14:10.723 | [KANDYDAT] PID:1068350 | Wszedłem do sali A
+20:14:10.723 | [KANDYDAT] PID:1068350 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:10.734 | [KANDYDAT] PID:1068348 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:10.734 | [KANDYDAT] PID:1068348 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:10.880 | [KANDYDAT] PID:1068345 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:10.883 | [KANDYDAT] PID:1068345 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:10.883 | [KANDYDAT] PID:1068345 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:11.885 | [KANDYDAT] PID:1068345 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 31.00. Czekam az Dziekan oglosi liste rankingowa.
+20:14:12.722 | [KANDYDAT] PID:1068349 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:12.728 | [KANDYDAT] PID:1068348 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 48.40. Ustawiam sie w kolejsce do Komisji B.
+20:14:12.735 | [KANDYDAT] PID:1068348 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:12.735 | [KANDYDAT] PID:1068348 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:12.738 | [KANDYDAT] PID:1068351 | Wszedłem do sali A
+20:14:12.738 | [KANDYDAT] PID:1068351 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:13.095 | [KANDYDAT] PID:1068349 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:13.095 | [KANDYDAT] PID:1068349 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:13.885 | [KANDYDAT] PID:1068346 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:13.887 | [KANDYDAT] PID:1068346 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:13.887 | [KANDYDAT] PID:1068346 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:14.733 | [KANDYDAT] PID:1068350 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:14.739 | [KANDYDAT] PID:1068349 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 29.60. Moj wynik jest za niski aby przystapic do kolejnego etapu egzaminu.
+20:14:14.745 | [KANDYDAT] PID:1068346 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 22.00. Moj wynik jest za niski - koncze egzamin.
+20:14:14.749 | [KANDYDAT] PID:1068352 | Wszedłem do sali A
+20:14:14.749 | [KANDYDAT] PID:1068352 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:14.813 | [KANDYDAT] PID:1068350 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:14.813 | [KANDYDAT] PID:1068350 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:16.745 | [KANDYDAT] PID:1068348 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:16.747 | [KANDYDAT] PID:1068348 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:16.747 | [KANDYDAT] PID:1068348 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:16.749 | [KANDYDAT] PID:1068351 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:16.758 | [KANDYDAT] PID:1068350 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 63.20. Ustawiam sie w kolejsce do Komisji B.
+20:14:16.762 | [KANDYDAT] PID:1068350 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:16.762 | [KANDYDAT] PID:1068350 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:16.762 | [KANDYDAT] PID:1068348 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 80.00. Czekam az Dziekan oglosi liste rankingowa.
+20:14:16.769 | [KANDYDAT] PID:1068353 | Wszedłem do sali A
+20:14:16.769 | [KANDYDAT] PID:1068353 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:17.260 | [KANDYDAT] PID:1068351 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:17.260 | [KANDYDAT] PID:1068351 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:17.773 | [KANDYDAT] PID:1068350 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:17.775 | [KANDYDAT] PID:1068350 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:17.775 | [KANDYDAT] PID:1068350 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:17.783 | [KANDYDAT] PID:1068350 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 77.33. Czekam az Dziekan oglosi liste rankingowa.
+20:14:18.764 | [KANDYDAT] PID:1068352 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:18.769 | [KANDYDAT] PID:1068351 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 57.60. Ustawiam sie w kolejsce do Komisji B.
+20:14:18.772 | [KANDYDAT] PID:1068351 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:18.772 | [KANDYDAT] PID:1068351 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:18.779 | [KANDYDAT] PID:1068354 | Wszedłem do sali A
+20:14:18.779 | [KANDYDAT] PID:1068354 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:19.704 | [KANDYDAT] PID:1068352 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:19.704 | [KANDYDAT] PID:1068352 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:19.786 | [KANDYDAT] PID:1068082 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:19.788 | [KANDYDAT] PID:1068082 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:19.788 | [KANDYDAT] PID:1068082 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:19.802 | [KANDYDAT] PID:1068082 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 40.33. Czekam az Dziekan oglosi liste rankingowa.
+20:14:20.773 | [KANDYDAT] PID:1068353 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:20.779 | [KANDYDAT] PID:1068352 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 42.40. Ustawiam sie w kolejsce do Komisji B.
+20:14:20.782 | [KANDYDAT] PID:1068352 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:20.782 | [KANDYDAT] PID:1068352 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:20.790 | [KANDYDAT] PID:1068355 | Wszedłem do sali A
+20:14:20.790 | [KANDYDAT] PID:1068355 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:20.807 | [KANDYDAT] PID:1068351 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:20.809 | [KANDYDAT] PID:1068351 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:20.809 | [KANDYDAT] PID:1068351 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:21.350 | [KANDYDAT] PID:1068353 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:21.350 | [KANDYDAT] PID:1068353 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:22.784 | [KANDYDAT] PID:1068354 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:22.790 | [KANDYDAT] PID:1068353 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 63.40. Ustawiam sie w kolejsce do Komisji B.
+20:14:22.792 | [KANDYDAT] PID:1068353 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:22.792 | [KANDYDAT] PID:1068353 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:22.792 | [KANDYDAT] PID:1068351 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 77.33. Czekam az Dziekan oglosi liste rankingowa.
+20:14:22.800 | [KANDYDAT] PID:1068356 | Wszedłem do sali A
+20:14:22.800 | [KANDYDAT] PID:1068356 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:23.266 | [KANDYDAT] PID:1068354 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:23.266 | [KANDYDAT] PID:1068354 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:24.796 | [KANDYDAT] PID:1068352 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:24.796 | [KANDYDAT] PID:1068355 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:24.797 | [KANDYDAT] PID:1068352 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:24.797 | [KANDYDAT] PID:1068352 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:24.800 | [KANDYDAT] PID:1068354 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 37.60. Ustawiam sie w kolejsce do Komisji B.
+20:14:24.803 | [KANDYDAT] PID:1068354 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:24.803 | [KANDYDAT] PID:1068354 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:24.810 | [KANDYDAT] PID:1068357 | Wszedłem do sali A
+20:14:24.810 | [KANDYDAT] PID:1068357 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:24.814 | [KANDYDAT] PID:1068352 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 34.00. Czekam az Dziekan oglosi liste rankingowa.
+20:14:25.515 | [KANDYDAT] PID:1068355 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:25.515 | [KANDYDAT] PID:1068355 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:26.807 | [KANDYDAT] PID:1068356 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:26.811 | [KANDYDAT] PID:1068355 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 34.00. Ustawiam sie w kolejsce do Komisji B.
+20:14:26.814 | [KANDYDAT] PID:1068355 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:26.814 | [KANDYDAT] PID:1068355 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:26.821 | [KANDYDAT] PID:1068354 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:26.821 | [KANDYDAT] PID:1068358 | Wszedłem do sali A
+20:14:26.821 | [KANDYDAT] PID:1068358 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:26.823 | [KANDYDAT] PID:1068354 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:26.823 | [KANDYDAT] PID:1068354 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:26.827 | [KANDYDAT] PID:1068353 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:26.830 | [KANDYDAT] PID:1068353 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:27.116 | [KANDYDAT] PID:1068356 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:27.116 | [KANDYDAT] PID:1068356 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:28.816 | [KANDYDAT] PID:1068354 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 51.33. Czekam az Dziekan oglosi liste rankingowa.
+20:14:28.817 | [KANDYDAT] PID:1068353 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:28.818 | [KANDYDAT] PID:1068357 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:28.822 | [KANDYDAT] PID:1068356 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 43.40. Ustawiam sie w kolejsce do Komisji B.
+20:14:28.826 | [KANDYDAT] PID:1068356 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:28.827 | [KANDYDAT] PID:1068356 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:28.827 | [KANDYDAT] PID:1068353 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 68.33. Czekam az Dziekan oglosi liste rankingowa.
+20:14:28.832 | [KANDYDAT] PID:1068359 | Wszedłem do sali A
+20:14:28.832 | [KANDYDAT] PID:1068359 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:29.636 | [KANDYDAT] PID:1068357 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:29.636 | [KANDYDAT] PID:1068357 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:30.826 | [KANDYDAT] PID:1068358 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:30.832 | [KANDYDAT] PID:1068356 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:30.833 | [KANDYDAT] PID:1068357 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 42.00. Ustawiam sie w kolejsce do Komisji B.
+20:14:30.833 | [KANDYDAT] PID:1068356 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:30.833 | [KANDYDAT] PID:1068356 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:30.839 | [KANDYDAT] PID:1068357 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:30.839 | [KANDYDAT] PID:1068357 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:30.843 | [KANDYDAT] PID:1068360 | Wszedłem do sali A
+20:14:30.843 | [KANDYDAT] PID:1068360 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:31.121 | [KANDYDAT] PID:1068358 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:31.122 | [KANDYDAT] PID:1068358 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:31.854 | [KANDYDAT] PID:1068356 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 79.00. Czekam az Dziekan oglosi liste rankingowa.
+20:14:32.839 | [KANDYDAT] PID:1068359 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:32.843 | [KANDYDAT] PID:1068358 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 70.40. Ustawiam sie w kolejsce do Komisji B.
+20:14:32.853 | [KANDYDAT] PID:1068361 | Wszedłem do sali A
+20:14:32.853 | [KANDYDAT] PID:1068361 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:32.875 | [KANDYDAT] PID:1068358 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:32.875 | [KANDYDAT] PID:1068358 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:33.518 | [KANDYDAT] PID:1068359 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:33.518 | [KANDYDAT] PID:1068359 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:33.856 | [KANDYDAT] PID:1068355 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:33.859 | [KANDYDAT] PID:1068355 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:33.859 | [KANDYDAT] PID:1068355 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:34.849 | [KANDYDAT] PID:1068360 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:34.854 | [KANDYDAT] PID:1068359 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 45.80. Ustawiam sie w kolejsce do Komisji B.
+20:14:34.864 | [KANDYDAT] PID:1068362 | Wszedłem do sali A
+20:14:34.864 | [KANDYDAT] PID:1068362 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:34.875 | [KANDYDAT] PID:1068355 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 57.33. Czekam az Dziekan oglosi liste rankingowa.
+20:14:34.885 | [KANDYDAT] PID:1068359 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:34.885 | [KANDYDAT] PID:1068359 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:35.228 | [KANDYDAT] PID:1068360 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:35.229 | [KANDYDAT] PID:1068360 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:36.861 | [KANDYDAT] PID:1068361 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:36.870 | [KANDYDAT] PID:1068360 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 42.40. Ustawiam sie w kolejsce do Komisji B.
+20:14:36.881 | [KANDYDAT] PID:1068366 | Wszedłem do sali A
+20:14:36.881 | [KANDYDAT] PID:1068366 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:36.884 | [KANDYDAT] PID:1068358 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:36.886 | [KANDYDAT] PID:1068358 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:36.886 | [KANDYDAT] PID:1068358 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:36.895 | [KANDYDAT] PID:1068358 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 52.67. Czekam az Dziekan oglosi liste rankingowa.
+20:14:36.905 | [KANDYDAT] PID:1068360 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:36.906 | [KANDYDAT] PID:1068360 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:37.369 | [KANDYDAT] PID:1068361 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:37.370 | [KANDYDAT] PID:1068361 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:37.904 | [KANDYDAT] PID:1068359 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:37.906 | [KANDYDAT] PID:1068359 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:37.906 | [KANDYDAT] PID:1068359 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:38.881 | [KANDYDAT] PID:1068362 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:38.881 | [KANDYDAT] PID:1068361 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 39.40. Ustawiam sie w kolejsce do Komisji B.
+20:14:38.891 | [KANDYDAT] PID:1068370 | Wszedłem do sali A
+20:14:38.891 | [KANDYDAT] PID:1068370 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:38.916 | [KANDYDAT] PID:1068359 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 42.67. Czekam az Dziekan oglosi liste rankingowa.
+20:14:38.926 | [KANDYDAT] PID:1068361 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:38.926 | [KANDYDAT] PID:1068361 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:39.307 | [KANDYDAT] PID:1068362 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:39.307 | [KANDYDAT] PID:1068362 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:39.916 | [KANDYDAT] PID:1068360 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:39.917 | [KANDYDAT] PID:1068360 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:39.917 | [KANDYDAT] PID:1068360 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:39.937 | [KANDYDAT] PID:1068360 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 61.67. Czekam az Dziekan oglosi liste rankingowa.
+20:14:40.891 | [KANDYDAT] PID:1068366 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:40.892 | [KANDYDAT] PID:1068362 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 73.80. Ustawiam sie w kolejsce do Komisji B.
+20:14:40.895 | [KANDYDAT] PID:1068362 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:40.895 | [KANDYDAT] PID:1068362 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:40.903 | [KANDYDAT] PID:1068371 | Wszedłem do sali A
+20:14:40.903 | [KANDYDAT] PID:1068371 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:41.459 | [KANDYDAT] PID:1068366 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:41.459 | [KANDYDAT] PID:1068366 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:41.947 | [KANDYDAT] PID:1068361 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:41.950 | [KANDYDAT] PID:1068361 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:41.950 | [KANDYDAT] PID:1068361 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:42.900 | [KANDYDAT] PID:1068370 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:42.901 | [KANDYDAT] PID:1068366 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 44.40. Ustawiam sie w kolejsce do Komisji B.
+20:14:42.905 | [KANDYDAT] PID:1068361 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 35.67. Czekam az Dziekan oglosi liste rankingowa.
+20:14:42.911 | [KANDYDAT] PID:1068372 | Wszedłem do sali A
+20:14:42.911 | [KANDYDAT] PID:1068372 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:42.915 | [KANDYDAT] PID:1068366 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:42.915 | [KANDYDAT] PID:1068366 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:43.793 | [KANDYDAT] PID:1068370 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:43.793 | [KANDYDAT] PID:1068370 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:43.913 | [KANDYDAT] PID:1068362 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:43.917 | [KANDYDAT] PID:1068362 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:43.917 | [KANDYDAT] PID:1068362 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:44.911 | [KANDYDAT] PID:1068371 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:44.918 | [KANDYDAT] PID:1068370 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 43.00. Ustawiam sie w kolejsce do Komisji B.
+20:14:44.921 | [KANDYDAT] PID:1068362 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 60.67. Czekam az Dziekan oglosi liste rankingowa.
+20:14:44.928 | [KANDYDAT] PID:1068373 | Wszedłem do sali A
+20:14:44.928 | [KANDYDAT] PID:1068373 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:44.931 | [KANDYDAT] PID:1068370 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:44.931 | [KANDYDAT] PID:1068370 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:45.017 | [KANDYDAT] PID:1068371 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:45.017 | [KANDYDAT] PID:1068371 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:46.927 | [KANDYDAT] PID:1068372 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:46.929 | [KANDYDAT] PID:1068371 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 44.60. Ustawiam sie w kolejsce do Komisji B.
+20:14:46.931 | [KANDYDAT] PID:1068366 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:46.933 | [KANDYDAT] PID:1068366 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:46.933 | [KANDYDAT] PID:1068366 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:46.939 | [KANDYDAT] PID:1068374 | Wszedłem do sali A
+20:14:46.939 | [KANDYDAT] PID:1068374 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:46.943 | [KANDYDAT] PID:1068366 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 89.00. Czekam az Dziekan oglosi liste rankingowa.
+20:14:46.954 | [KANDYDAT] PID:1068371 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:46.954 | [KANDYDAT] PID:1068371 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:47.080 | [KANDYDAT] PID:1068372 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:47.080 | [KANDYDAT] PID:1068372 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:48.938 | [KANDYDAT] PID:1068373 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:48.946 | [KANDYDAT] PID:1068372 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 39.40. Ustawiam sie w kolejsce do Komisji B.
+20:14:48.952 | [KANDYDAT] PID:1068370 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:48.953 | [KANDYDAT] PID:1068370 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:48.954 | [KANDYDAT] PID:1068370 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:48.957 | [KANDYDAT] PID:1068375 | Wszedłem do sali A
+20:14:48.957 | [KANDYDAT] PID:1068375 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.
+20:14:48.970 | [KANDYDAT] PID:1068370 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 27.67. Moj wynik jest za niski - koncze egzamin.
+20:14:48.980 | [KANDYDAT] PID:1068372 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:48.980 | [KANDYDAT] PID:1068372 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:49.772 | [KANDYDAT] PID:1068373 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:49.772 | [KANDYDAT] PID:1068373 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:50.954 | [KANDYDAT] PID:1068374 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:50.963 | [KANDYDAT] PID:1068373 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 43.40. Ustawiam sie w kolejsce do Komisji B.
+20:14:50.972 | [KANDYDAT] PID:1068371 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:50.974 | [KANDYDAT] PID:1068371 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:50.974 | [KANDYDAT] PID:1068371 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:50.985 | [KANDYDAT] PID:1068371 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 54.00. Czekam az Dziekan oglosi liste rankingowa.
+20:14:50.996 | [KANDYDAT] PID:1068373 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:50.996 | [KANDYDAT] PID:1068373 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:51.613 | [KANDYDAT] PID:1068374 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:51.613 | [KANDYDAT] PID:1068374 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:51.966 | [KANDYDAT] PID:1068375 | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.
+20:14:51.970 | [KANDYDAT] PID:1068374 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 21.20. Moj wynik jest za niski aby przystapic do kolejnego etapu egzaminu.
+20:14:51.993 | [KANDYDAT] PID:1068372 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:51.995 | [KANDYDAT] PID:1068372 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:51.995 | [KANDYDAT] PID:1068372 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:52.626 | [KANDYDAT] PID:1068375 | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.
+20:14:52.627 | [KANDYDAT] PID:1068375 | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:52.640 | [KANDYDAT] PID:1068375 | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: 79.80. Ustawiam sie w kolejsce do Komisji B.
+20:14:52.996 | [KANDYDAT] PID:1068372 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 57.33. Czekam az Dziekan oglosi liste rankingowa.
+20:14:53.006 | [KANDYDAT] PID:1068375 | Wchodze na czesc praktyczna egzaminu do Komisji B.
+20:14:53.006 | [KANDYDAT] PID:1068375 | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.
+20:14:54.998 | [KANDYDAT] PID:1068373 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:54.999 | [KANDYDAT] PID:1068373 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:54.999 | [KANDYDAT] PID:1068373 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:55.015 | [KANDYDAT] PID:1068373 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 64.67. Czekam az Dziekan oglosi liste rankingowa.
+20:14:57.018 | [KANDYDAT] PID:1068375 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:57.020 | [KANDYDAT] PID:1068375 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:57.020 | [KANDYDAT] PID:1068375 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:57.034 | [KANDYDAT] PID:1068375 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 63.67. Czekam az Dziekan oglosi liste rankingowa.
+20:14:58.039 | [KANDYDAT] PID:1068357 | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.
+20:14:58.042 | [KANDYDAT] PID:1068357 | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.
+20:14:58.042 | [KANDYDAT] PID:1068357 | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc teorytyczna egzaminu.
+20:14:58.051 | [KANDYDAT] PID:1068357 | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: 31.00. Czekam az Dziekan oglosi liste rankingowa.
