@@ -92,7 +92,6 @@ int main()
 
         semafor_v(SEMAFOR_MUTEX);
 
-        // msq_send POZA sekcją krytyczną!
         if (moja_kolej)
         {
             msq_send(msqid_A, &zgloszenia_A, sizeof(zgloszenia_A));

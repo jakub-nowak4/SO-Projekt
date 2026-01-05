@@ -159,7 +159,6 @@ int main()
 
     for (int i = 0; i < liczba_spoznionych; i++)
     {
-        // Spoznieni przychodza w wiekszych bardziej losowych odstepach
         usleep(rand() % 80000 + 10000); // 10-90ms
 
         switch (fork())

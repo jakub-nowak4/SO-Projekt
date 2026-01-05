@@ -35,7 +35,7 @@ void loguj(int sem_index, char *file_path, char *msg)
 
     pobierz_czas_precyzyjny(&czas, &ms);
 
-    len = snprintf(buffer, sizeof(buffer), "%02d:%02d:%02d:%03d | %s", czas.tm_hour, czas.tm_min, czas.tm_sec, ms, msg);
+    len = snprintf(buffer, sizeof(buffer), "%02d:%02d:%02d:%02d | %s", czas.tm_hour, czas.tm_min, czas.tm_sec, ms / 10, msg);
 
     int fd = open(file_path, O_WRONLY | O_APPEND | O_CREAT, 0644);
     if (fd != -1)

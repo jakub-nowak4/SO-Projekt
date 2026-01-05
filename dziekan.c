@@ -28,7 +28,6 @@ int main()
     int msqid_dziekan_komisja = utworz_msq(klucz_msq_dziekan_komisja);
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID: %d | Rozpoczynam prace.\n", getpid());
-    // wypisz_wiadomosc(msg_buffer);
     loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
     // Czekaj na start egzaminu o chwili T

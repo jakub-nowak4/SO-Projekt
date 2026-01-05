@@ -35,7 +35,6 @@ int main()
     snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B] PID:%d | Czekam na rozpoczecie egzaminu\n", getpid());
     loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
 
-    // Oczekiwanie na start
     while (true)
     {
         semafor_p(SEMAFOR_MUTEX);
