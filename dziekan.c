@@ -1,13 +1,25 @@
 #include "egzamin.h"
 
 void start_egzamin(int sigNum);
+void handler_ewakuacji_dziekan(int sigNum);
+
 volatile sig_atomic_t egzamin_start = false; // kompilator zawsze czyta z pamięci
+volatile sig_atomic_t ewakuacja_zarzadzona = false;
 
 int main()
 {
+
+    signal(SIGINT, SIG_IGN);
+
     if (signal(SIGUSR1, start_egzamin) == SIG_ERR)
     {
-        perror("signal() | Nie udalo sie dodac signal handler.");
+        perror("signal() | Nie udalo sie dodac signal handler SIGUSR1.");
+        exit(EXIT_FAILURE);
+    }
+
+    if (signal(SIGUSR2, handler_ewakuacji_dziekan) == SIG_ERR)
+    {
+        perror("signal() | Nie udalo sie dodac signal handler SIGUSR2.");
         exit(EXIT_FAILURE);
     }
 
@@ -36,6 +48,23 @@ int main()
         pause();
     }
 
+    // Sprawdz czy ewakuacja przed startem
+    if (ewakuacja_zarzadzona)
+    {
+        snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] PID: %d | EWAKUACJA przed rozpoczeciem egzaminu!\n", getpid());
+        loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
+
+        semafor_p(SEMAFOR_MUTEX);
+        pamiec_shm->ewakuacja = true;
+        pamiec_shm->egzamin_trwa = false;
+        semafor_v(SEMAFOR_MUTEX);
+
+        kill(0, SIGUSR2);
+
+        odlacz_shm(pamiec_shm);
+        return 0;
+    }
+
     semafor_p(SEMAFOR_MUTEX);
     pamiec_shm->egzamin_trwa = true;
     sprintf(msg_buffer, "[DZIEKAN] PID: %d | Rozpoczynam egzamin.\n", getpid());
@@ -45,6 +74,23 @@ int main()
     // Czekaj na wiadomosci z FIFO
     while (true)
     {
+
+        // Sprawdz ewakuacje
+        if (ewakuacja_zarzadzona)
+        {
+            snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] PID: %d | !!! EWAKUACJA !!! Przerywam egzamin!\n", getpid());
+            loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
+
+            semafor_p(SEMAFOR_MUTEX);
+            pamiec_shm->ewakuacja = true;
+            pamiec_shm->egzamin_trwa = false;
+            semafor_v(SEMAFOR_MUTEX);
+
+            kill(0, SIGUSR2);
+
+            break;
+        }
+
         ssize_t res;
 
         semafor_p(SEMAFOR_MUTEX);
@@ -149,6 +195,23 @@ int main()
         usleep(1000);
     }
 
+    semafor_p(SEMAFOR_MUTEX);
+    bool byla_ewakuacja = pamiec_shm->ewakuacja;
+    semafor_v(SEMAFOR_MUTEX);
+
+    if (byla_ewakuacja)
+    {
+        snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Publikuje liste ewakuacyjna...\n");
+        loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
+
+        semafor_p(SEMAFOR_MUTEX);
+        wypisz_liste_ewakuacja(pamiec_shm);
+        semafor_v(SEMAFOR_MUTEX);
+
+        odlacz_shm(pamiec_shm);
+        return 0;
+    }
+
     // Pozostale wiadomosci
     snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Odbieram pozostale wyniki z kolejki...\n");
     loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
@@ -247,4 +310,10 @@ void start_egzamin(int sigNum)
 {
     (void)sigNum;
     egzamin_start = true;
+}
+
+void handler_ewakuacji_dziekan(int sigNum)
+{
+    (void)sigNum;
+    ewakuacja_zarzadzona = true;
 }

@@ -13,7 +13,11 @@ void *czlonek(void *args);
 
 int main()
 {
-    char msg_buffer[200];
+
+    signal(SIGINT, SIG_IGN);
+    ustaw_handler_ewakuacji();
+
+    char msg_buffer[512];
 
     srand(time(NULL) ^ getpid());
 
@@ -37,19 +41,23 @@ int main()
 
     while (true)
     {
+        if (ewakuacja_aktywna)
+            break;
+
         semafor_p(SEMAFOR_MUTEX);
         bool egzamin_trwa = pamiec_shm->egzamin_trwa;
         semafor_v(SEMAFOR_MUTEX);
 
         if (egzamin_trwa)
-        {
             break;
-        }
-        usleep(10000);
+        usleep(1000);
     }
 
-    snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B] PID%d | Komisja rozpoczyna prace.\n", getpid());
-    loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
+    if (!ewakuacja_aktywna)
+    {
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B] PID:%d | Komisja rozpoczyna prace.\n", getpid());
+        loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
+    }
 
     pthread_t czlonkowie_komisji[LICZBA_CZLONKOW_B];
     for (int i = 0; i < LICZBA_CZLONKOW_B; i++)
@@ -75,6 +83,11 @@ int main()
 
     while (true)
     {
+        if (ewakuacja_aktywna)
+        {
+            break;
+        }
+
         semafor_p(SEMAFOR_MUTEX);
         bool egzamin_trwa = pamiec_shm->egzamin_trwa;
         semafor_v(SEMAFOR_MUTEX);
@@ -86,8 +99,16 @@ int main()
         usleep(10000);
     }
 
-    snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B] PID:%d | Komisja konczy prace.\n", getpid());
-    loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
+    if (ewakuacja_aktywna)
+    {
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B] PID:%d | EWAKUACJA!\n", getpid());
+        loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
+    }
+    else
+    {
+        snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B] PID:%d | Komisja konczy prace.\n", getpid());
+        loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
+    }
 
     for (int i = 0; i < LICZBA_CZLONKOW_B; i++)
     {
@@ -108,10 +129,15 @@ void *nadzorca(void *args)
 {
     int numer_czlonka = *(int *)args;
     ssize_t res;
-    char msg_buffer[200];
+    char msg_buffer[512];
 
     while (true)
     {
+        if (ewakuacja_aktywna)
+        {
+            break;
+        }
+
         semafor_p(SEMAFOR_MUTEX);
         bool egzamin_trwa = pamiec_shm->egzamin_trwa;
         int liczba_osob = pamiec_shm->liczba_osob_w_B;
@@ -139,6 +165,7 @@ void *nadzorca(void *args)
                         miejsca[i].pid = zgloszenie_B.pid;
                         miejsca[i].numer_na_liscie = zgloszenie_B.numer_na_liscie;
                         miejsca[i].liczba_ocen = 0;
+                        miejsca[i].odpowiada = false;
 
                         for (int j = 0; j < LICZBA_CZLONKOW_B; j++)
                         {
@@ -168,14 +195,26 @@ void *nadzorca(void *args)
             }
         }
 
-        if (semafor_wartosc(SEMAFOR_ODPOWIEDZ_B) > 0)
+        pthread_mutex_lock(&mutex);
+        bool ktos_teraz_odpowiada = false;
+        for (int i = 0; i < 3; i++)
+        {
+            if (miejsca[i].odpowiada)
+            {
+                ktos_teraz_odpowiada = true;
+                break;
+            }
+        }
+        pthread_mutex_unlock(&mutex);
+
+        if (semafor_wartosc(SEMAFOR_ODPOWIEDZ_B) > 0 && !ktos_teraz_odpowiada)
         {
             pid_t kandydat_pid = 0;
             pthread_mutex_lock(&mutex);
             for (int i = 0; i < 3; i++)
             {
 
-                if (miejsca[i].pid != 0 && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
+                if (miejsca[i].pid != 0 && !miejsca[i].odpowiada && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
                 {
                     kandydat_pid = miejsca[i].pid;
                     miejsca[i].czy_dostal_pytanie[numer_czlonka] = true;
@@ -186,7 +225,7 @@ void *nadzorca(void *args)
 
             if (kandydat_pid != 0)
             {
-                usleep((rand() % 2 + 1) * 1000000);
+                usleep(CZAS_PYTANIE);
 
                 MSG_PYTANIE pytanie;
                 pytanie.mtype = kandydat_pid;
@@ -207,6 +246,8 @@ void *nadzorca(void *args)
             {
                 if (odpowiedz.pid == miejsca[i].pid)
                 {
+                    miejsca[i].odpowiada = true;
+
                     int ocena = rand() % 101;
                     miejsca[i].oceny[numer_czlonka] = ocena;
                     miejsca[i].liczba_ocen++;
@@ -294,6 +335,11 @@ void *czlonek(void *args)
 
     while (true)
     {
+        if (ewakuacja_aktywna)
+        {
+            break;
+        }
+
         semafor_p(SEMAFOR_MUTEX);
         bool egzamin_trwa = pamiec_shm->egzamin_trwa;
         semafor_v(SEMAFOR_MUTEX);
@@ -303,7 +349,19 @@ void *czlonek(void *args)
             break;
         }
 
-        if (semafor_wartosc(SEMAFOR_ODPOWIEDZ_B) > 0)
+        pthread_mutex_lock(&mutex);
+        bool ktos_teraz_odpowiada = false;
+        for (int i = 0; i < 3; i++)
+        {
+            if (miejsca[i].odpowiada)
+            {
+                ktos_teraz_odpowiada = true;
+                break;
+            }
+        }
+        pthread_mutex_unlock(&mutex);
+
+        if (semafor_wartosc(SEMAFOR_ODPOWIEDZ_B) > 0 && !ktos_teraz_odpowiada)
         {
             pid_t kandydat_pid = 0;
             pthread_mutex_lock(&mutex);
@@ -311,7 +369,7 @@ void *czlonek(void *args)
             for (int i = 0; i < 3; i++)
             {
 
-                if (miejsca[i].pid != 0 && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
+                if (miejsca[i].pid != 0 && !miejsca[i].odpowiada && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
                 {
                     kandydat_pid = miejsca[i].pid;
                     miejsca[i].czy_dostal_pytanie[numer_czlonka] = true;
@@ -322,7 +380,7 @@ void *czlonek(void *args)
 
             if (kandydat_pid != 0)
             {
-                usleep((rand() % 2 + 1) * 1000000);
+                usleep(rand() % CZAS_PYTANIE);
 
                 MSG_PYTANIE pytanie;
                 pytanie.mtype = kandydat_pid;

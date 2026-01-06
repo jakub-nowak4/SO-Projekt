@@ -3,6 +3,28 @@
 int semafor_id = -1;
 int shmid = -1;
 
+volatile sig_atomic_t ewakuacja_aktywna = 0;
+
+void handler_ewakuacji(int sigNum)
+{
+    (void)sigNum;
+    ewakuacja_aktywna = 1;
+}
+
+void ustaw_handler_ewakuacji(void)
+{
+    struct sigaction sa;
+    sa.sa_handler = handler_ewakuacji;
+    sigemptyset(&sa.sa_mask);
+    sa.sa_flags = 0;
+
+    if (sigaction(SIGUSR2, &sa, NULL) == -1)
+    {
+        perror("sigaction() | Nie udalo sie ustawic handlera SIGUSR2");
+        exit(EXIT_FAILURE);
+    }
+}
+
 void pobierz_czas(struct tm *wynik)
 {
     if (wynik == NULL)
@@ -237,8 +259,14 @@ void semafor_p(int semNum)
     buffer.sem_op = -1;
     buffer.sem_flg = SEM_UNDO;
 
-    if (semop(semafor_id, &buffer, 1) == -1)
+    while (semop(semafor_id, &buffer, 1) == -1)
     {
+        if (errno == EINTR)
+        {
+            if (ewakuacja_aktywna)
+                return;
+            continue;
+        }
         perror("semop() | Nie udalo sie wykonac operacji semafor P");
         exit(EXIT_FAILURE);
     }
@@ -253,6 +281,8 @@ void semafor_v(int semNum)
 
     if (semop(semafor_id, &buffer, 1) == -1)
     {
+        if (errno == EINTR)
+            return;
         perror("semop() | Nie udalo sie wykonac operacji semafor V");
         exit(EXIT_FAILURE);
     }
@@ -348,13 +378,18 @@ void msq_send(int msqid, void *msg, size_t msg_size)
 {
     size_t msgsz = msg_size - sizeof(long);
 
-    while (msgsnd(msqid, msg, msgsz, 0) == -1)
+    while (msgsnd(msqid, msg, msgsz, IPC_NOWAIT) == -1)
     {
         if (errno == EINTR)
             continue;
         if (errno == EIDRM || errno == EINVAL)
         {
             exit(EXIT_SUCCESS);
+        }
+        if (errno == EAGAIN)
+        {
+            usleep(100);
+            continue;
         }
         perror("msgsnd() | Krytyczny blad wysylania");
         exit(EXIT_FAILURE);
@@ -363,12 +398,17 @@ void msq_send(int msqid, void *msg, size_t msg_size)
 
 void msq_receive(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci)
 {
-
-    if (msgrcv(msqid, buffer, buffer_size - sizeof(long), typ_wiadomosci, 0) == -1)
+    while (msgrcv(msqid, buffer, buffer_size - sizeof(long), typ_wiadomosci, 0) == -1)
     {
+        if (errno == EINTR)
+        {
+            if (ewakuacja_aktywna)
+                return;
+            continue;
+        }
         if (errno == EIDRM || errno == EINVAL)
             exit(EXIT_SUCCESS);
-        perror("msgrcv() | Nie udalo sie odberac wiadomosci.");
+        perror("msgrcv() | Nie udalo sie odebrac wiadomosci.");
         exit(EXIT_FAILURE);
     }
 }
@@ -382,9 +422,13 @@ ssize_t msq_receive_no_wait(int msqid, void *buffer, size_t buffer_size, long ty
         {
             return res;
         }
+        else if (errno == EINTR)
+        {
+            return -1;
+        }
         else
         {
-            perror("msgrcv() | Nie udalo sie odberac wiadomosci.");
+            perror("msgrcv() | Nie udalo sie odebrac wiadomosci.");
             exit(EXIT_FAILURE);
         }
     }
@@ -508,6 +552,65 @@ void wypisz_liste_rankingowa(PamiecDzielona *shm)
              M,
              przyjętych,
              (shm->index_rankingowa > M) ? shm->index_rankingowa - M : 0,
+             shm->index_odrzuceni);
+    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
+}
+
+void wypisz_liste_ewakuacja(PamiecDzielona *shm)
+{
+    char buffer[512];
+
+    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n!!!!!!!!! EWAKUACJA - EGZAMIN PRZERWANY !!!!!!!!!\n");
+    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n========== LISTA KANDYDATOW BIORACYCH UDZIAL W EGZAMINIE ==========\n");
+
+    snprintf(buffer, sizeof(buffer), "Liczba kandydatow dopuszczonych do egzaminu: %d\n\n", shm->index_kandydaci);
+    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
+
+    for (int i = 0; i < shm->index_kandydaci; i++)
+    {
+        Kandydat *k = &shm->LISTA_KANDYDACI[i];
+        const char *status_str;
+
+        if (k->wynik_a >= 0 && k->wynik_b >= 0)
+        {
+            status_str = "Ukonczyl obie czesci";
+        }
+        else if (k->wynik_a >= 0)
+        {
+            status_str = "Ukonczyl czesc A";
+        }
+        else
+        {
+            status_str = "W trakcie egzaminu";
+        }
+
+        snprintf(buffer, sizeof(buffer),
+                 "PID %d | Nr listy: %d | A: %.2f | B: %.2f | Status: %s\n",
+                 k->pid,
+                 k->numer_na_liscie,
+                 k->wynik_a >= 0 ? k->wynik_a : 0.0f,
+                 k->wynik_b >= 0 ? k->wynik_b : 0.0f,
+                 status_str);
+        loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
+    }
+
+    // Lista odrzuconych (bez matury)
+    loguj(SEMAFOR_LOGI_LISTA_ODRZUCONYCH, LOGI_LISTA_ODRZUCONYCH, "\n========== LISTA ODRZUCONYCH (przed ewakuacja) ==========\n");
+    snprintf(buffer, sizeof(buffer), "Liczba odrzuconych: %d\n\n", shm->index_odrzuceni);
+    loguj(SEMAFOR_LOGI_LISTA_ODRZUCONYCH, LOGI_LISTA_ODRZUCONYCH, buffer);
+
+    for (int i = 0; i < shm->index_odrzuceni; i++)
+    {
+        snprintf(buffer, sizeof(buffer), "PID %d | Powod: Brak matury\n", shm->LISTA_ODRZUCONYCH[i].pid);
+        loguj(SEMAFOR_LOGI_LISTA_ODRZUCONYCH, LOGI_LISTA_ODRZUCONYCH, buffer);
+    }
+
+    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n========== PODSUMOWANIE EWAKUACJI ==========\n");
+    snprintf(buffer, sizeof(buffer),
+             "Kandydatow dopuszczonych: %d\n"
+             "Kandydatow odrzuconych (brak matury): %d\n"
+             "Egzamin zostal przerwany z powodu ewakuacji.\n",
+             shm->index_kandydaci,
              shm->index_odrzuceni);
     loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
 }

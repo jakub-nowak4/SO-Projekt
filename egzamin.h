@@ -1,12 +1,13 @@
 #ifndef EGZAMIN_H
 #define EGZAMIN_H
 
+#define _POSIX_C_SOURCE 200809L
+#define _DEFAULT_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <errno.h>
 #include <string.h>
-#define _POSIX_C_SOURCE 200809L
 #include <time.h>
 #include <fcntl.h>
 #include <sys/stat.h>
@@ -21,12 +22,13 @@
 #include <sys/ipc.h>
 #include <pthread.h>
 
-#define M 12 // W docelowej symulacji M = 120
+#define M 120 // W docelowej symulacji M = 120
 #define LICZBA_KANDYDATOW (10 * M)
-#define CZAS_OPRACOWANIE_PYTAN 5 // Czas Ti na opracownie pytan od komisji
+#define CZAS_PYTANIE 15000
+#define CZAS_OPRACOWANIE_PYTAN 5000 // Czas Ti na opracownie pytan od komisji
 #define LICZBA_CZLONKOW_A 5
 #define LICZBA_CZLONKOW_B 3
-#define GODZINA_ROZPOCZECIA_EGZAMINU 5
+#define GODZINA_ROZPOCZECIA_EGZAMINU 2
 
 #define LOGI_DIR "logi"
 #define LOGI_MAIN "logi/logi_main.txt"
@@ -39,6 +41,7 @@
 
 extern int semafor_id;
 extern int shmid;
+extern volatile sig_atomic_t ewakuacja_aktywna;
 
 typedef enum
 {
@@ -87,6 +90,7 @@ typedef struct
     int oceny[LICZBA_CZLONKOW_A];
     int liczba_ocen;
     float wynik_koncowy_za_A;
+    bool odpowiada;
 } Sala_A;
 
 typedef struct
@@ -97,6 +101,7 @@ typedef struct
     int oceny[LICZBA_CZLONKOW_B];
     int liczba_ocen;
     float wynik_koncowy_za_B;
+    bool odpowiada;
 } Sala_B;
 
 bool losuj_czy_zdal_matura();
@@ -106,6 +111,7 @@ void init_kandydat(pid_t pid, Kandydat *k);
 typedef struct
 {
     bool egzamin_trwa;
+    bool ewakuacja;
     int index_kandydaci;
     int index_odrzuceni;
     int index_rankingowa;
@@ -117,6 +123,9 @@ typedef struct
     int liczba_osob_w_A;
     int liczba_osob_w_B;
     int pozostalo_kandydatow;
+
+    pid_t odpowiadajacy_A;
+    pid_t odpowiadajacy_B;
 } PamiecDzielona;
 
 typedef enum
@@ -272,5 +281,8 @@ void usun_msq(int msqid);
 int znajdz_kandydata(pid_t pid, PamiecDzielona *shm);
 
 void wypisz_liste_rankingowa(PamiecDzielona *pamiec_shm);
+void wypisz_liste_ewakuacja(PamiecDzielona *pamiec_shm);
+
+void ustaw_handler_ewakuacji(void);
 
 #endif
