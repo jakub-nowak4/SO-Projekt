@@ -11,6 +11,7 @@ int msqid_A = -1;
 int msqid_dziekan_komisja = -1;
 PamiecDzielona *pamiec_shm;
 Sala_A miejsca[3] = {0};
+bool kandydat_gotowy[3] = {false};
 int numery_czlonkow[LICZBA_CZLONKOW_A] = {0};
 
 int main()
@@ -142,8 +143,9 @@ void *nadzorca(void *args)
 
             if (rozmiar_odpowiedz != -1)
             {
-                bool znaleziono = false;
+                int slot = -1;
 
+                semafor_p(SEMAFOR_MUTEX);
                 pthread_mutex_lock(&mutex);
                 for (int i = 0; i < 3; i++)
                 {
@@ -159,26 +161,45 @@ void *nadzorca(void *args)
                             miejsca[i].oceny[j] = 0;
                         }
 
-                        znaleziono = true;
+                        kandydat_gotowy[i] = false;
+                        pamiec_shm->liczba_osob_w_A++;
+                        slot = i;
                         break;
                     }
                 }
                 pthread_mutex_unlock(&mutex);
+                semafor_v(SEMAFOR_MUTEX);
 
-                if (znaleziono)
+                // Komunikat musi byc wysylany poza sekcja krytyczna jakb kolejka byla zapelniona
+                if (slot != -1)
                 {
-                    semafor_p(SEMAFOR_MUTEX);
-                    pamiec_shm->liczba_osob_w_A++;
-                    semafor_v(SEMAFOR_MUTEX);
-
                     MSG_KANDYDAT_WCHODZI_DO_A_POTWIERDZENIE ok;
                     ok.mtype = MTYPE_A_POTWIERDZENIE + prosba.pid;
                     msq_send(msqid_A, &ok, sizeof(ok));
+
+                    // NIE ustawiamy kandydat_gotowy tutaj - czekamy na potwierdzenie od kandydata
 
                     snprintf(msg_buffer, sizeof(msg_buffer), "[NADZORCA A] PID:%d | Wpuscilem kandydata PID:%d do sali.\n", getpid(), prosba.pid);
                     loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
                 }
             }
+        }
+
+        // Odbieramy potwierdzenie gotowości od kandydata
+        MSG_KANDYDAT_GOTOWY gotowy;
+        rozmiar_odpowiedz = msq_receive_no_wait(msqid_A, &gotowy, sizeof(gotowy), KANDYDAT_GOTOWY_A);
+        if (rozmiar_odpowiedz != -1)
+        {
+            pthread_mutex_lock(&mutex);
+            for (int i = 0; i < 3; i++)
+            {
+                if (miejsca[i].pid == gotowy.pid)
+                {
+                    kandydat_gotowy[i] = true;
+                    break;
+                }
+            }
+            pthread_mutex_unlock(&mutex);
         }
 
         MSG_KANDYDAT_POWTARZA weryfikacja;
@@ -195,19 +216,19 @@ void *nadzorca(void *args)
 
             if (weryfikacja_odpowiedz.zgoda)
             {
+                semafor_p(SEMAFOR_MUTEX);
                 pthread_mutex_lock(&mutex);
                 for (int i = 0; i < 3; i++)
                 {
                     if (miejsca[i].pid == weryfikacja.pid)
                     {
                         memset(&miejsca[i], 0, sizeof(Sala_A));
+                        kandydat_gotowy[i] = false;
+                        pamiec_shm->liczba_osob_w_A--;
                         break;
                     }
                 }
                 pthread_mutex_unlock(&mutex);
-
-                semafor_p(SEMAFOR_MUTEX);
-                pamiec_shm->liczba_osob_w_A--;
                 semafor_v(SEMAFOR_MUTEX);
 
                 MSG_WYNIK_KONCOWY_DZIEKAN wynik_dla_dziekana;
@@ -228,7 +249,7 @@ void *nadzorca(void *args)
 
             for (int i = 0; i < 3; i++)
             {
-                if (miejsca[i].pid != 0 && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
+                if (miejsca[i].pid != 0 && kandydat_gotowy[i] && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
                 {
                     kandydat_pid = miejsca[i].pid;
                     miejsca[i].czy_dostal_pytanie[numer_czlonka] = true;
@@ -283,6 +304,7 @@ void *nadzorca(void *args)
         pid_t kandydat_do_oceny = 0;
         float srednia_do_wyslania = 0.0f;
 
+        semafor_p(SEMAFOR_MUTEX);
         pthread_mutex_lock(&mutex);
         for (int i = 0; i < 3; i++)
         {
@@ -300,10 +322,13 @@ void *nadzorca(void *args)
                 srednia_do_wyslania = srednia;
 
                 memset(&miejsca[i], 0, sizeof(Sala_A));
+                kandydat_gotowy[i] = false;
+                pamiec_shm->liczba_osob_w_A--;
                 break;
             }
         }
         pthread_mutex_unlock(&mutex);
+        semafor_v(SEMAFOR_MUTEX);
 
         if (kandydat_do_oceny != 0)
         {
@@ -326,10 +351,6 @@ void *nadzorca(void *args)
 
             snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA A NADZORCA] PID:%d | Przeyslam do Dziekana wynik kandydata PID:%d\n", getpid(), kandydat_do_oceny);
             loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
-
-            semafor_p(SEMAFOR_MUTEX);
-            pamiec_shm->liczba_osob_w_A--;
-            semafor_v(SEMAFOR_MUTEX);
         }
 
         // usleep(10000);
@@ -362,7 +383,7 @@ void *czlonek(void *args)
             pthread_mutex_lock(&mutex);
             for (int i = 0; i < 3; i++)
             {
-                if (miejsca[i].pid != 0 && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
+                if (miejsca[i].pid != 0 && kandydat_gotowy[i] && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
                 {
                     kandydat_pid = miejsca[i].pid;
                     miejsca[i].czy_dostal_pytanie[numer_czlonka] = true;

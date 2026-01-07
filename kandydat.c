@@ -132,6 +132,12 @@ int main()
 
     if (czy_musze_zdawac)
     {
+        // Kandydat wysla do nadzorcy komunikat ze jest gotowy na zadawanie pytan co skutkuje ustawieniem flagi gotowosci w komisji
+        MSG_KANDYDAT_GOTOWY gotowy;
+        gotowy.mtype = KANDYDAT_GOTOWY_A;
+        gotowy.pid = moj_pid;
+        msq_send(msqid_A, &gotowy, sizeof(gotowy));
+
         snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.\n", moj_pid);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
@@ -204,6 +210,12 @@ int main()
 
         snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Wchodze na czesc praktyczna egzaminu do Komisji B.\n", moj_pid);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
+
+        // Kandydat wysla do nadzorcy komunikat ze jest gotowy na zadawanie pytan co skutkuje ustawieniem flagi gotowosci w komisji - jak w A
+        MSG_KANDYDAT_GOTOWY gotowy_B;
+        gotowy_B.mtype = KANDYDAT_GOTOWY_B;
+        gotowy_B.pid = moj_pid;
+        msq_send(msqid_B, &gotowy_B, sizeof(gotowy_B));
 
         snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.\n", moj_pid);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);

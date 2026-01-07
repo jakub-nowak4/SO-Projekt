@@ -132,27 +132,15 @@ int main()
         {
             pid_t kandydat_pid = wynik_koncowy_egzamin.pid;
             float wynik = wynik_koncowy_egzamin.wynik_koncowy;
+            char komisja = wynik_koncowy_egzamin.komisja;
 
-            int index = znajdz_kandydata(kandydat_pid, pamiec_shm);
+            bool sukces = zaktualizuj_wynik_kandydata(kandydat_pid, komisja, wynik, pamiec_shm);
 
-            if (index == -1)
+            if (!sukces)
             {
-                printf("dziekan.c | Nie znaleziono kandydta o podanym pid_t.\n");
-            }
-            else
-            {
-                semafor_p(SEMAFOR_MUTEX);
-
-                if (wynik_koncowy_egzamin.komisja == 'A')
-                {
-                    pamiec_shm->LISTA_KANDYDACI[index].wynik_a = wynik;
-                }
-                else
-                {
-                    pamiec_shm->LISTA_KANDYDACI[index].wynik_b = wynik;
-                }
-
-                semafor_v(SEMAFOR_MUTEX);
+                char error_msg[256];
+                int len = snprintf(error_msg, sizeof(error_msg), "dziekan.c | Nie znaleziono kandydata o podanym pid_t: %d\n", kandydat_pid);
+                write(STDERR_FILENO, error_msg, len);
             }
         }
 
@@ -175,24 +163,19 @@ int main()
 
         pid_t kandydat_pid = wynik_koncowy_egzamin.pid;
         float wynik = wynik_koncowy_egzamin.wynik_koncowy;
+        char komisja = wynik_koncowy_egzamin.komisja;
 
-        int index = znajdz_kandydata(kandydat_pid, pamiec_shm);
+        bool sukces = zaktualizuj_wynik_kandydata(kandydat_pid, komisja, wynik, pamiec_shm);
 
-        if (index != -1)
+        if (sukces)
         {
-            semafor_p(SEMAFOR_MUTEX);
-
-            if (wynik_koncowy_egzamin.komisja == 'A')
-            {
-                pamiec_shm->LISTA_KANDYDACI[index].wynik_a = wynik;
-            }
-            else
-            {
-                pamiec_shm->LISTA_KANDYDACI[index].wynik_b = wynik;
-            }
-
-            semafor_v(SEMAFOR_MUTEX);
             odebrane++;
+        }
+        else
+        {
+            char error_msg[256];
+            int len = snprintf(error_msg, sizeof(error_msg), "dziekan.c | Nie znaleziono kandydata o podanym pid_t: %d (odbiór pozostałych)\n", kandydat_pid);
+            write(STDERR_FILENO, error_msg, len);
         }
     }
 

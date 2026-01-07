@@ -7,6 +7,7 @@ int msqid_dziekan_komisja = -1;
 int numery_czlonkow[LICZBA_CZLONKOW_B] = {0};
 PamiecDzielona *pamiec_shm;
 Sala_B miejsca[3] = {0};
+bool kandydat_gotowy[3] = {false, false, false};
 
 pthread_mutex_t mutex;
 
@@ -136,8 +137,9 @@ void *nadzorca(void *args)
 
             if (res != -1)
             {
-                bool znaleziono = false;
+                int slot = -1;
 
+                semafor_p(SEMAFOR_MUTEX);
                 pthread_mutex_lock(&mutex);
                 for (int i = 0; i < 3; i++)
                 {
@@ -153,18 +155,18 @@ void *nadzorca(void *args)
                             miejsca[i].oceny[j] = 0;
                         }
 
-                        znaleziono = true;
+                        kandydat_gotowy[i] = false;
+                        pamiec_shm->liczba_osob_w_B++;
+                        slot = i;
                         break;
                     }
                 }
                 pthread_mutex_unlock(&mutex);
+                semafor_v(SEMAFOR_MUTEX);
 
-                if (znaleziono)
+                // Komunikat musi byc wysylany poza sekcja krytyczna jakb kolejka byla zapelniona
+                if (slot != -1)
                 {
-                    semafor_p(SEMAFOR_MUTEX);
-                    pamiec_shm->liczba_osob_w_B++;
-                    semafor_v(SEMAFOR_MUTEX);
-
                     MSG_KANDYDAT_WCHODZI_DO_B_POTWIERDZENIE potwierdzenie;
                     potwierdzenie.mtype = MTYPE_B_POTWIERDZENIE + zgloszenie_B.pid;
                     msq_send(msqid_B, &potwierdzenie, sizeof(potwierdzenie));
@@ -175,13 +177,30 @@ void *nadzorca(void *args)
             }
         }
 
+        // Odbieramy potwierdzenie gotowości od kandydata
+        MSG_KANDYDAT_GOTOWY gotowy;
+        ssize_t gotowy_res = msq_receive_no_wait(msqid_B, &gotowy, sizeof(gotowy), KANDYDAT_GOTOWY_B);
+        if (gotowy_res != -1)
+        {
+            pthread_mutex_lock(&mutex);
+            for (int i = 0; i < 3; i++)
+            {
+                if (miejsca[i].pid == gotowy.pid)
+                {
+                    kandydat_gotowy[i] = true;
+                    break;
+                }
+            }
+            pthread_mutex_unlock(&mutex);
+        }
+
         if (semafor_wartosc(SEMAFOR_ODPOWIEDZ_B) > 0)
         {
             pid_t kandydat_pid = 0;
             pthread_mutex_lock(&mutex);
             for (int i = 0; i < 3; i++)
             {
-                if (miejsca[i].pid != 0 && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
+                if (miejsca[i].pid != 0 && kandydat_gotowy[i] && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
                 {
                     kandydat_pid = miejsca[i].pid;
                     miejsca[i].czy_dostal_pytanie[numer_czlonka] = true;
@@ -237,6 +256,7 @@ void *nadzorca(void *args)
         float srednia_do_wyslania = 0.0f;
         int numer_na_liscie_kandydata = -1;
 
+        semafor_p(SEMAFOR_MUTEX);
         pthread_mutex_lock(&mutex);
         for (int i = 0; i < 3; i++)
         {
@@ -255,10 +275,13 @@ void *nadzorca(void *args)
                 numer_na_liscie_kandydata = miejsca[i].numer_na_liscie;
 
                 memset(&miejsca[i], 0, sizeof(Sala_B));
+                kandydat_gotowy[i] = false;
+                pamiec_shm->liczba_osob_w_B--;
                 break;
             }
         }
         pthread_mutex_unlock(&mutex);
+        semafor_v(SEMAFOR_MUTEX);
 
         if (kandydat_do_oceny != 0)
         {
@@ -282,10 +305,6 @@ void *nadzorca(void *args)
             msq_send(msqid_dziekan_komisja, &wynik_dla_dziekana, sizeof(wynik_dla_dziekana));
             snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B NADZORCA] PID:%d | Przeyslam do Dziekana wynik kandydata PID:%d\n", getpid(), kandydat_do_oceny);
             loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
-
-            semafor_p(SEMAFOR_MUTEX);
-            pamiec_shm->liczba_osob_w_B--;
-            semafor_v(SEMAFOR_MUTEX);
         }
 
         // usleep(10000);
@@ -319,7 +338,7 @@ void *czlonek(void *args)
 
             for (int i = 0; i < 3; i++)
             {
-                if (miejsca[i].pid != 0 && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
+                if (miejsca[i].pid != 0 && kandydat_gotowy[i] && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
                 {
                     kandydat_pid = miejsca[i].pid;
                     miejsca[i].czy_dostal_pytanie[numer_czlonka] = true;

@@ -420,28 +420,36 @@ void usun_msq(int msqid)
     }
 }
 
-int znajdz_kandydata(pid_t pid, PamiecDzielona *shm)
+bool zaktualizuj_wynik_kandydata(pid_t pid, char komisja, float wynik, PamiecDzielona *shm)
 {
     if (shm == NULL)
     {
-        printf("znajdz_index() | Przekazano pusty wskaznik\n");
+        printf("zaktualizuj_wynik_kandydata() | Przekazano pusty wskaznik\n");
         exit(EXIT_FAILURE);
     }
 
-    int index = -1;
+    bool znaleziono = false;
 
     semafor_p(SEMAFOR_MUTEX);
     for (int i = 0; i < shm->index_kandydaci; i++)
     {
         if (shm->LISTA_KANDYDACI[i].pid == pid)
         {
-            index = i;
+            if (komisja == 'A')
+            {
+                shm->LISTA_KANDYDACI[i].wynik_a = wynik;
+            }
+            else if (komisja == 'B')
+            {
+                shm->LISTA_KANDYDACI[i].wynik_b = wynik;
+            }
+            znaleziono = true;
             break;
         }
     }
     semafor_v(SEMAFOR_MUTEX);
 
-    return index;
+    return znaleziono;
 }
 
 void wypisz_liste_rankingowa(PamiecDzielona *shm)
@@ -518,7 +526,7 @@ void wypisz_liste_rankingowa(PamiecDzielona *shm)
              "Przyjetych (TOP %d): %d\n"
              "Nieprzyjetych (brak miejsc): %d\n"
              "Odrzuconych (nie zdali): %d\n",
-             shm->index_kandydaci + shm->index_odrzuceni,
+             shm->index_rankingowa + shm->index_odrzuceni,
              shm->index_rankingowa,
              M,
              przyjetych,

@@ -22,7 +22,7 @@
 #include <sys/ipc.h>
 #include <pthread.h>
 
-#define M 300
+#define M 600
 #define POJEMNOSC_BUDYNKU 100
 #define LICZBA_KANDYDATOW (10 * M)
 #define CZAS_OPRACOWANIE_PYTAN 5
@@ -36,10 +36,12 @@
 #define MTYPE_A_PYTANIE 22000
 #define MTYPE_A_WYNIK 23000
 #define MTYPE_A_WYNIK_KONCOWY 24000
+#define KANDYDAT_GOTOWY_A 25000
 #define MTYPE_B_POTWIERDZENIE 30000
 #define MTYPE_B_PYTANIE 31000
 #define MTYPE_B_WYNIK 32000
 #define MTYPE_B_WYNIK_KONCOWY 33000
+#define KANDYDAT_GOTOWY_B 34000
 
 #define LOGI_DIR "logi"
 #define LOGI_MAIN "logi/logi_main.txt"
@@ -204,6 +206,12 @@ typedef struct
 {
     long mtype;
     pid_t pid;
+} MSG_KANDYDAT_GOTOWY;
+
+typedef struct
+{
+    long mtype;
+    pid_t pid;
     float wynik_a;
 } MSG_KANDYDAT_POWTARZA;
 
@@ -253,7 +261,7 @@ void msq_receive(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosc
 ssize_t msq_receive_no_wait(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci);
 void usun_msq(int msqid);
 
-int znajdz_kandydata(pid_t pid, PamiecDzielona *shm);
+bool zaktualizuj_wynik_kandydata(pid_t pid, char komisja, float wynik, PamiecDzielona *shm);
 void wypisz_liste_rankingowa(PamiecDzielona *pamiec_shm);
 
 #endif
