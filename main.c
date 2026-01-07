@@ -29,7 +29,7 @@ int main()
     pamiec_shm->index_odrzuceni = 0;
     pamiec_shm->index_rankingowa = 0;
     pamiec_shm->egzamin_trwa = false;
-    pamiec_shm->pozostalo_kandydatow = LICZBA_KANDYDATOW;
+    pamiec_shm->kandydatow_procesow = LICZBA_KANDYDATOW;
     pamiec_shm->liczba_osob_w_A = 0;
     pamiec_shm->liczba_osob_w_B = 0;
     pamiec_shm->nastepny_do_komisja_A = 0;
@@ -74,10 +74,6 @@ int main()
         exit(EXIT_FAILURE);
     }
 
-    sleep(1);
-
-    // Komisj A oraz B
-
     for (int i = 0; i < 2; i++)
     {
         switch (fork())
@@ -96,13 +92,13 @@ int main()
         case 0:
             if (i == 0)
             {
-                usleep(10000);
+                // usleep(10000);
                 execl("./komisja_a", "komisja_a", NULL);
                 perror("execl() | Nie udalo sie urchomic programu komisja_a.");
             }
             else
             {
-                usleep(10000);
+                // usleep(10000);
                 execl("./komisja_b", "komisja_b", NULL);
                 perror("execl() | Nie udalo sie urchomic programu komisja_a.");
             }
@@ -110,19 +106,10 @@ int main()
         }
     }
 
-    sleep(1);
-
-    int procent_wczesnych = rand() % 31 + 20;
-    int liczba_wczesnych = (LICZBA_KANDYDATOW * procent_wczesnych) / 100;
-
-    snprintf(msg_buffer, sizeof(msg_buffer), "[main] %d kandydatów (%d%%) przyszło PRZED rozpoczęciem egzaminu\n", liczba_wczesnych, procent_wczesnych);
-    loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
-
-    // Kandydaci ktorzy sa wczesniej
-    for (int i = 0; i < liczba_wczesnych; i++)
+    for (int i = 0; i < LICZBA_KANDYDATOW; i++)
     {
         // Kandydaci przychodza w roznych odstepach czasu
-        usleep(rand() % 30000 + 5000); // 5-35ms
+        // usleep(rand() % 30000 + 5000); // 5-35ms
 
         switch (fork())
         {
@@ -137,10 +124,14 @@ int main()
         }
     }
 
+    semafor_p(SEMAFOR_DZIEKAN_GOTOWY);
+    semafor_p(SEMAFOR_KOMISJA_A_GOTOWA);
+    semafor_p(SEMAFOR_KOMISJA_B_GOTOWA);
+
     snprintf(msg_buffer, sizeof(msg_buffer), "[main] Oczekiwanie na godzinę T (start egzaminu)...\n");
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
-    sleep(GODZINA_ROZPOCZECIA_EGZAMINU);
+    // sleep(GODZINA_ROZPOCZECIA_EGZAMINU);
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[main] Wysyłam sygnał SIGUSR1 do Dziekana (PID:%d) - rozpoczynam egzamin\n", pid_dziekan);
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
@@ -149,29 +140,6 @@ int main()
     {
         perror("kill() | Nie udalo sie wyslac SIGUSR1 do dziekana");
         exit(EXIT_FAILURE);
-    }
-
-    // Kandydaci spoznienieni
-    int liczba_spoznionych = LICZBA_KANDYDATOW - liczba_wczesnych;
-
-    snprintf(msg_buffer, sizeof(msg_buffer), "[main] %d kandydatów przychodzi W TRAKCIE egzaminu\n", liczba_spoznionych);
-    loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
-
-    for (int i = 0; i < liczba_spoznionych; i++)
-    {
-        usleep(rand() % 80000 + 10000); // 10-90ms
-
-        switch (fork())
-        {
-        case -1:
-            perror("fork() | Nie udalo sie utworzyc kandydata");
-            exit(EXIT_FAILURE);
-
-        case 0:
-            execl("./kandydat", "kandydat", NULL);
-            perror("execl() | Nie udalo sie urchomic programu kandydat");
-            exit(EXIT_FAILURE);
-        }
     }
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[main] Utworzono wszystkich %d kandydatów\n", LICZBA_KANDYDATOW);
@@ -196,28 +164,6 @@ int main()
 
     snprintf(msg_buffer, sizeof(msg_buffer), "Zakończono oczekiwanie na procesy.\n");
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
-
-    semafor_p(SEMAFOR_MUTEX);
-    int dopuszczonych = pamiec_shm->index_kandydaci;
-
-    for (int i = 0; i < dopuszczonych; i++)
-    {
-        Kandydat k = pamiec_shm->LISTA_KANDYDACI[i];
-        snprintf(msg_buffer, sizeof(msg_buffer), "Index:%d PID:%d | Matura:%d Czy powtarza:%d\n", i, k.pid, k.czy_zdal_mature, k.czy_powtarza_egzamin);
-        loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
-    }
-
-    // Odrzuceni
-    int odrzuconych = pamiec_shm->index_odrzuceni;
-
-    for (int i = 0; i < odrzuconych; i++)
-    {
-        Kandydat k = pamiec_shm->LISTA_ODRZUCONYCH[i];
-        snprintf(msg_buffer, sizeof(msg_buffer), "Index:%d PID:%d | Matura:%d Czy powtarza:%d\n", i, k.pid, k.czy_zdal_mature, k.czy_powtarza_egzamin);
-        loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
-    }
-
-    semafor_v(SEMAFOR_MUTEX);
 
     usun_semafory();
     odlacz_shm(pamiec_shm);

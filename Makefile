@@ -28,3 +28,4 @@ komisja_b: komisja_b.c egzamin.c egzamin.h
 clean:
 	rm -f $(PROGS)
 	rm -r logi
+	ipcrm -a

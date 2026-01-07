@@ -1,7 +1,8 @@
 #include "egzamin.h"
 
 void start_egzamin(int sigNum);
-volatile sig_atomic_t egzamin_start = false; // kompilator zawsze czyta z pamięci
+volatile sig_atomic_t egzamin_start = false;
+volatile sig_atomic_t egzamin_aktywny = true;
 
 int main()
 {
@@ -17,6 +18,8 @@ int main()
     key_t klucz_sem = utworz_klucz(66);
     utworz_semafory(klucz_sem);
 
+    semafor_v(SEMAFOR_DZIEKAN_GOTOWY);
+
     key_t klucz_shm = utworz_klucz(77);
     utworz_shm(klucz_shm);
     dolacz_shm(&pamiec_shm);
@@ -30,7 +33,6 @@ int main()
     snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID: %d | Rozpoczynam prace.\n", getpid());
     loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
-    // Czekaj na start egzaminu o chwili T
     while (egzamin_start == false)
     {
         pause();
@@ -42,49 +44,49 @@ int main()
     loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
     semafor_v(SEMAFOR_MUTEX);
 
-    // Czekaj na wiadomosci z FIFO
-    while (true)
+    while (egzamin_aktywny)
     {
         ssize_t res;
 
         semafor_p(SEMAFOR_MUTEX);
-        bool egzamin_trwa = pamiec_shm->egzamin_trwa;
+        int procesow = pamiec_shm->kandydatow_procesow;
         semafor_v(SEMAFOR_MUTEX);
 
-        if (!egzamin_trwa)
+        if (procesow == 0)
         {
+            egzamin_aktywny = false;
             break;
         }
 
         MSG_ZGLOSZENIE zgloszenie;
         res = msq_receive_no_wait(msqid_budynek, &zgloszenie, sizeof(zgloszenie), KANDYDAT_PRZESYLA_MATURE);
 
-        // Dziekan sprawdza wynik matury kandydata
         if (res != -1)
         {
             snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Odebralem informacje o wyniku matury od Kandydata PID:%d\n", getpid(), zgloszenie.pid);
             loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
             MSG_DECYZJA decyzja;
-            decyzja.mtype = zgloszenie.pid;
+            decyzja.mtype = MTYPE_BUDYNEK_DECYZJA + zgloszenie.pid;
 
-            if (zgloszenie.czy_zdal_mature)
+            if (zgloszenie.matura)
             {
-
                 decyzja.dopuszczony_do_egzamin = true;
 
                 semafor_p(SEMAFOR_MUTEX);
 
                 int index = pamiec_shm->index_kandydaci;
-                pamiec_shm->LISTA_KANDYDACI[index].pid = zgloszenie.pid;
-                pamiec_shm->LISTA_KANDYDACI[index].numer_na_liscie = index;
-                pamiec_shm->LISTA_KANDYDACI[index].status = WERYFIKACJA_MATURY;
-                pamiec_shm->LISTA_KANDYDACI[index].czy_zdal_mature = zgloszenie.czy_zdal_mature;
-                pamiec_shm->LISTA_KANDYDACI[index].czy_powtarza_egzamin = zgloszenie.czy_powtarza_egzamin;
-                pamiec_shm->LISTA_KANDYDACI[index].wynik_a = zgloszenie.wynik_a;
-                pamiec_shm->LISTA_KANDYDACI[index].wynik_b = -1;
-                pamiec_shm->LISTA_KANDYDACI[index].wynik_koncowy = -1;
 
+                Kandydat nowy_kandydat;
+                nowy_kandydat.pid = zgloszenie.pid;
+                nowy_kandydat.numer_na_liscie = index;
+                nowy_kandydat.czy_zdal_mature = zgloszenie.matura;
+                nowy_kandydat.czy_powtarza_egzamin = zgloszenie.czy_powtarza_egzamin;
+                nowy_kandydat.wynik_a = zgloszenie.czy_powtarza_egzamin ? zgloszenie.wynik_a : -1.0f;
+                nowy_kandydat.wynik_b = -1.0f;
+                nowy_kandydat.wynik_koncowy = -1.0f;
+
+                pamiec_shm->LISTA_KANDYDACI[index] = nowy_kandydat;
                 decyzja.numer_na_liscie = index;
                 pamiec_shm->index_kandydaci++;
 
@@ -99,14 +101,21 @@ int main()
                 decyzja.numer_na_liscie = -1;
 
                 semafor_p(SEMAFOR_MUTEX);
+
                 int index = pamiec_shm->index_odrzuceni;
-                pamiec_shm->LISTA_ODRZUCONYCH[index].pid = zgloszenie.pid;
-                pamiec_shm->LISTA_ODRZUCONYCH[index].czy_zdal_mature = false;
-                pamiec_shm->LISTA_ODRZUCONYCH[index].czy_powtarza_egzamin = false;
-                pamiec_shm->LISTA_ODRZUCONYCH[index].wynik_a = -1;
-                pamiec_shm->LISTA_ODRZUCONYCH[index].wynik_b = -1;
-                pamiec_shm->LISTA_ODRZUCONYCH[index].wynik_koncowy = -1;
+
+                Kandydat odrzucony;
+                odrzucony.pid = zgloszenie.pid;
+                odrzucony.numer_na_liscie = -1;
+                odrzucony.czy_zdal_mature = false;
+                odrzucony.czy_powtarza_egzamin = false;
+                odrzucony.wynik_a = -1.0f;
+                odrzucony.wynik_b = -1.0f;
+                odrzucony.wynik_koncowy = -1.0f;
+
+                pamiec_shm->LISTA_ODRZUCONYCH[index] = odrzucony;
                 pamiec_shm->index_odrzuceni++;
+
                 semafor_v(SEMAFOR_MUTEX);
 
                 snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Odrzucam kandydata PID:%d (brak matury)\n", getpid(), zgloszenie.pid);
@@ -129,27 +138,27 @@ int main()
             if (index == -1)
             {
                 printf("dziekan.c | Nie znaleziono kandydta o podanym pid_t.\n");
-                exit(EXIT_FAILURE);
-            }
-
-            semafor_p(SEMAFOR_MUTEX);
-
-            if (wynik_koncowy_egzamin.komisja == 'A')
-            {
-                pamiec_shm->LISTA_KANDYDACI[index].wynik_a = wynik;
             }
             else
             {
-                pamiec_shm->LISTA_KANDYDACI[index].wynik_b = wynik;
-            }
+                semafor_p(SEMAFOR_MUTEX);
 
-            semafor_v(SEMAFOR_MUTEX);
+                if (wynik_koncowy_egzamin.komisja == 'A')
+                {
+                    pamiec_shm->LISTA_KANDYDACI[index].wynik_a = wynik;
+                }
+                else
+                {
+                    pamiec_shm->LISTA_KANDYDACI[index].wynik_b = wynik;
+                }
+
+                semafor_v(SEMAFOR_MUTEX);
+            }
         }
 
-        usleep(1000);
+        // usleep(1000);
     }
 
-    // Pozostale wiadomosci
     snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Odbieram pozostale wyniki z kolejki...\n");
     loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
@@ -190,10 +199,8 @@ int main()
     snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Odebrano %d pozostalych wynikow.\n", odebrane);
     loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
-    // Dziekan tworzy liste rankingowa
     semafor_p(SEMAFOR_MUTEX);
 
-    // Dziekan liczy wynik koncowy i segreguje kandydatów
     int n = 0;
     for (int i = 0; i < pamiec_shm->index_kandydaci; i++)
     {
@@ -217,7 +224,6 @@ int main()
     }
     pamiec_shm->index_rankingowa = n;
 
-    // Sortowanie listy rankingowej
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n - i - 1; j++)

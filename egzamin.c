@@ -87,37 +87,6 @@ bool losuj_czy_powtarza_egzamin()
     return (los < 2) ? true : false;
 }
 
-void init_kandydat(pid_t pid, Kandydat *k)
-{
-
-    k->pid = pid;
-    k->numer_na_liscie = -1;
-    k->status = KOLEJKA_PRZED_BUDYNKIEM;
-
-    k->czy_zdal_mature = losuj_czy_zdal_matura();
-
-    if (k->czy_zdal_mature)
-    {
-        k->czy_powtarza_egzamin = losuj_czy_powtarza_egzamin();
-    }
-    else
-    {
-        k->czy_powtarza_egzamin = false;
-    }
-
-    if (k->czy_powtarza_egzamin)
-    {
-        k->wynik_a = rand() % (100 - 30 + 1) + 30;
-    }
-    else
-    {
-        k->wynik_a = -1;
-    }
-
-    k->wynik_b = -1;
-    k->wynik_koncowy = -1;
-}
-
 key_t utworz_klucz(int arg)
 {
     key_t klucz = ftok(".", arg);
@@ -132,12 +101,12 @@ key_t utworz_klucz(int arg)
 
 void utworz_semafory(key_t klucz_sem)
 {
-    semafor_id = semget(klucz_sem, 11, IPC_CREAT | IPC_EXCL | 0600);
+    semafor_id = semget(klucz_sem, 15, IPC_CREAT | IPC_EXCL | 0600);
     if (semafor_id == -1)
     {
         if (errno == EEXIST)
         {
-            semafor_id = semget(klucz_sem, 11, 0600);
+            semafor_id = semget(klucz_sem, 15, 0600);
             if (semafor_id == -1)
             {
                 perror("semget() | Nie udalo sie przylaczyc do zbioru semaforow");
@@ -152,7 +121,6 @@ void utworz_semafory(key_t klucz_sem)
     }
     else
     {
-
         if (semctl(semafor_id, SEMAFOR_STD_OUT, SETVAL, 1) == -1)
         {
             perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_STD_OUT");
@@ -218,6 +186,30 @@ void utworz_semafory(key_t klucz_sem)
             perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_LOGI_LISTA_ODRZUCONYCH");
             exit(EXIT_FAILURE);
         }
+
+        if (semctl(semafor_id, SEMAFOR_DZIEKAN_GOTOWY, SETVAL, 0) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_DZIEKAN_GOTOWY");
+            exit(EXIT_FAILURE);
+        }
+
+        if (semctl(semafor_id, SEMAFOR_KOMISJA_A_GOTOWA, SETVAL, 0) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_KOMISJA_A_GOTOWA");
+            exit(EXIT_FAILURE);
+        }
+
+        if (semctl(semafor_id, SEMAFOR_KOMISJA_B_GOTOWA, SETVAL, 0) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_KOMISJA_B_GOTOWA");
+            exit(EXIT_FAILURE);
+        }
+
+        if (semctl(semafor_id, SEMAFOR_KOLEJKA_PRZED_BUDYNKIEM, SETVAL, POJEMNOSC_BUDYNKU) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_KOLEJKA_PRZED_BUDYNKIEM");
+            exit(EXIT_FAILURE);
+        }
     }
 }
 
@@ -263,7 +255,7 @@ int semafor_wartosc(int semNum)
     int wartosc = semctl(semafor_id, semNum, GETVAL);
     if (wartosc == -1)
     {
-        perror("semop() | Nie udalo sie odczytac wartosci semafora");
+        perror("semctl() | Nie udalo sie pobrac wartosci semafora");
         exit(EXIT_FAILURE);
     }
 
@@ -348,22 +340,49 @@ void msq_send(int msqid, void *msg, size_t msg_size)
 {
     size_t msgsz = msg_size - sizeof(long);
 
-    while (msgsnd(msqid, msg, msgsz, 0) == -1)
+    int max_liczba_prob = 50;
+    int czas_oczekiwania = 100000;
+    int proby = 0;
+
+    while (proby < max_liczba_prob)
     {
-        if (errno == EINTR)
+        if (msgsnd(msqid, msg, msgsz, 0) == 0)
+        {
+            return;
+        }
+
+        if (errno == EAGAIN)
+        {
+            if (proby >= max_liczba_prob)
+            {
+                const char *msg = "Kolejka jest przepelniona\n";
+                write(2, msg, strlen(msg));
+                exit(EXIT_FAILURE);
+            }
+
+            // usleep(czas_oczekiwania);
+            proby++;
             continue;
+        }
+
+        if (errno == EINTR)
+        {
+            continue;
+        }
+
         if (errno == EIDRM || errno == EINVAL)
         {
-            exit(EXIT_SUCCESS);
+            return;
         }
-        perror("msgsnd() | Krytyczny blad wysylania");
+
+        const char *msg = "Blad krytyczny wysylania wiadomosci\n";
+        write(2, msg, strlen(msg));
         exit(EXIT_FAILURE);
     }
 }
 
 void msq_receive(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci)
 {
-
     if (msgrcv(msqid, buffer, buffer_size - sizeof(long), typ_wiadomosci, 0) == -1)
     {
         if (errno == EIDRM || errno == EINVAL)
@@ -429,9 +448,8 @@ void wypisz_liste_rankingowa(PamiecDzielona *shm)
 {
     char buffer[512];
 
-    // 1. PEŁNA LISTA RANKINGOWA
-    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n========== PEŁNA LISTA RANKINGOWA ==========\n");
-    snprintf(buffer, sizeof(buffer), "Liczba kandydatów na liście: %d\n\n", shm->index_rankingowa);
+    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n========== PELNA LISTA RANKINGOWA ==========\n");
+    snprintf(buffer, sizeof(buffer), "Liczba kandydatow na liscie: %d\n\n", shm->index_rankingowa);
     loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
 
     for (int i = 0; i < shm->index_rankingowa; i++)
@@ -440,34 +458,31 @@ void wypisz_liste_rankingowa(PamiecDzielona *shm)
         loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
     }
 
-    // 2. LISTA PRZYJĘTYCH (TOP M)
-    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n========== LISTA PRZYJĘTYCH (TOP M) ==========\n");
-    int przyjętych = (shm->index_rankingowa < M) ? shm->index_rankingowa : M;
-    snprintf(buffer, sizeof(buffer), "Liczba miejsc: %d | Przyjętych: %d\n\n", M, przyjętych);
+    loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n========== LISTA PRZYJETYCH (TOP M) ==========\n");
+    int przyjetych = (shm->index_rankingowa < M) ? shm->index_rankingowa : M;
+    snprintf(buffer, sizeof(buffer), "Liczba miejsc: %d | Przyjetych: %d\n\n", M, przyjetych);
     loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
 
-    for (int i = 0; i < przyjętych; i++)
+    for (int i = 0; i < przyjetych; i++)
     {
-        snprintf(buffer, sizeof(buffer), "Miejsce %d: PID %d | Wynik: %.2f (A: %.2f, B: %.2f) - PRZYJĘTY\n", i + 1, shm->LISTA_RANKINGOWA[i].pid, shm->LISTA_RANKINGOWA[i].wynik_koncowy, shm->LISTA_RANKINGOWA[i].wynik_a, shm->LISTA_RANKINGOWA[i].wynik_b);
+        snprintf(buffer, sizeof(buffer), "Miejsce %d: PID %d | Wynik: %.2f (A: %.2f, B: %.2f) - PRZYJETY\n", i + 1, shm->LISTA_RANKINGOWA[i].pid, shm->LISTA_RANKINGOWA[i].wynik_koncowy, shm->LISTA_RANKINGOWA[i].wynik_a, shm->LISTA_RANKINGOWA[i].wynik_b);
         loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
     }
 
-    // 3. LISTA NIEPRZYJĘTYCH
     if (shm->index_rankingowa > M)
     {
-        loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n========== LISTA NIEPRZYJĘTYCH (brak miejsc) ==========\n");
-        int nieprzyjętych = shm->index_rankingowa - M;
-        snprintf(buffer, sizeof(buffer), "Liczba nieprzyjętych mimo zdanego egzaminu: %d\n\n", nieprzyjętych);
+        loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n========== LISTA NIEPRZYJETYCH (brak miejsc) ==========\n");
+        int nieprzyjetych = shm->index_rankingowa - M;
+        snprintf(buffer, sizeof(buffer), "Liczba nieprzyjetych mimo zdanego egzaminu: %d\n\n", nieprzyjetych);
         loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
 
         for (int i = M; i < shm->index_rankingowa; i++)
         {
-            snprintf(buffer, sizeof(buffer), "Miejsce %d: PID %d | Wynik: %.2f (A: %.2f, B: %.2f) - NIEPRZYJĘTY (brak miejsc)\n", i + 1, shm->LISTA_RANKINGOWA[i].pid, shm->LISTA_RANKINGOWA[i].wynik_koncowy, shm->LISTA_RANKINGOWA[i].wynik_a, shm->LISTA_RANKINGOWA[i].wynik_b);
+            snprintf(buffer, sizeof(buffer), "Miejsce %d: PID %d | Wynik: %.2f (A: %.2f, B: %.2f) - NIEPRZYJETY (brak miejsc)\n", i + 1, shm->LISTA_RANKINGOWA[i].pid, shm->LISTA_RANKINGOWA[i].wynik_koncowy, shm->LISTA_RANKINGOWA[i].wynik_a, shm->LISTA_RANKINGOWA[i].wynik_b);
             loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
         }
     }
 
-    // 4. LISTA ODRZUCONYCH (nie zdali egzaminu)
     loguj(SEMAFOR_LOGI_LISTA_ODRZUCONYCH, LOGI_LISTA_ODRZUCONYCH, "\n========== LISTA ODRZUCONYCH ==========\n");
     snprintf(buffer, sizeof(buffer), "Liczba odrzuconych: %d\n\n", shm->index_odrzuceni);
     loguj(SEMAFOR_LOGI_LISTA_ODRZUCONYCH, LOGI_LISTA_ODRZUCONYCH, buffer);
@@ -498,15 +513,15 @@ void wypisz_liste_rankingowa(PamiecDzielona *shm)
 
     loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, "\n========== PODSUMOWANIE ==========\n");
     snprintf(buffer, sizeof(buffer),
-             "Kandydatów łącznie: %d\n"
-             "Zdało egzamin (lista rankingowa): %d\n"
-             "Przyjętych (TOP %d): %d\n"
-             "Nieprzyjętych (brak miejsc): %d\n"
+             "Kandydatow lacznie: %d\n"
+             "Zdalo egzamin (lista rankingowa): %d\n"
+             "Przyjetych (TOP %d): %d\n"
+             "Nieprzyjetych (brak miejsc): %d\n"
              "Odrzuconych (nie zdali): %d\n",
              shm->index_kandydaci + shm->index_odrzuceni,
              shm->index_rankingowa,
              M,
-             przyjętych,
+             przyjetych,
              (shm->index_rankingowa > M) ? shm->index_rankingowa - M : 0,
              shm->index_odrzuceni);
     loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
