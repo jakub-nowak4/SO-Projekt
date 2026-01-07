@@ -2,6 +2,7 @@
 
 pid_t grupa_procesow = 0;
 pid_t pid_dziekan = 0;
+volatile sig_atomic_t licznik_zakonczonych = 0;
 
 void handler_sigint(int sig)
 {
@@ -12,11 +13,34 @@ void handler_sigint(int sig)
     }
 }
 
+void handler_sigchld(int sig)
+{
+    (void)sig;
+    int saved_errno = errno;
+
+    while (waitpid(-1, NULL, WNOHANG) > 0)
+    {
+        licznik_zakonczonych++;
+    }
+
+    errno = saved_errno; // Przypsujemy stare errno pomijamu te ze nie ma wiecej dzieci
+}
+
 int main()
 {
     srand(time(NULL));
 
     signal(SIGUSR2, SIG_IGN);
+
+    struct sigaction sa_chld;
+    sa_chld.sa_handler = handler_sigchld;
+    sigemptyset(&sa_chld.sa_mask);
+    sa_chld.sa_flags = SA_RESTART | SA_NOCLDSTOP;
+    if (sigaction(SIGCHLD, &sa_chld, NULL) == -1)
+    {
+        perror("sigaction(SIGCHLD)");
+        exit(EXIT_FAILURE);
+    }
 
     mkdir(LOGI_DIR, 0777);
     const char *files[] = {LOGI_MAIN, LOGI_DZIEKAN, LOGI_KANDYDACI, LOGI_KOMISJA_A, LOGI_KOMISJA_B, LOGI_LISTA_RANKINGOWA, LOGI_LISTA_ODRZUCONYCH};
@@ -242,18 +266,23 @@ int main()
         loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
     }
 
+    int oczekiwane_procesy = utworzonych_kandydatow + 3;
+
+    snprintf(msg_buffer, sizeof(msg_buffer), "[main] Oczekuje na zakonczenie %d procesow...\n", oczekiwane_procesy);
+    loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
+
     int status;
     pid_t pid_procesu;
-    int zakonczonych = 0;
+    int zebrane_w_petli = 0;
 
-    while ((pid_procesu = wait(&status)) > 0)
+    while ((pid_procesu = waitpid(-1, &status, 0)) > 0)
     {
-        zakonczonych++;
+        zebrane_w_petli++;
         if (WIFEXITED(status))
         {
-            if (zakonczonych % 100 == 0 || pid_procesu == pid_dziekan)
+            if (zebrane_w_petli % 100 == 0 || pid_procesu == pid_dziekan)
             {
-                snprintf(msg_buffer, sizeof(msg_buffer), "PROCES PID: %d zakonczyl dzialanie z kodem: %d (zakonczonych: %d)\n", pid_procesu, WEXITSTATUS(status), zakonczonych);
+                snprintf(msg_buffer, sizeof(msg_buffer), "PROCES PID: %d zakonczyl dzialanie z kodem: %d (zebrane: %d)\n", pid_procesu, WEXITSTATUS(status), zebrane_w_petli);
                 loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
             }
         }
@@ -264,7 +293,8 @@ int main()
         }
     }
 
-    snprintf(msg_buffer, sizeof(msg_buffer), "Zakończono oczekiwanie na procesy (zakonczonych: %d).\n", zakonczonych);
+    int wszystkie_zebrane = zebrane_w_petli + (int)licznik_zakonczonych;
+    snprintf(msg_buffer, sizeof(msg_buffer), "Zakończono oczekiwanie na procesy (zebrane w petli: %d, przez handler: %d, lacznie: %d).\n", zebrane_w_petli, (int)licznik_zakonczonych, wszystkie_zebrane);
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     // Sprawdz czy byla ewakuacja

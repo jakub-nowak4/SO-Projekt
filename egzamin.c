@@ -25,6 +25,24 @@ void ustaw_handler_ewakuacji(void)
     }
 }
 
+bool sprawdz_ewakuacje(PamiecDzielona *shm)
+{
+    if (ewakuacja_aktywna)
+        return true;
+
+    if (shm != NULL)
+    {
+        semafor_p(SEMAFOR_MUTEX);
+        bool ewakuacja = shm->ewakuacja;
+        semafor_v(SEMAFOR_MUTEX);
+
+        if (ewakuacja)
+            return true;
+    }
+
+    return false;
+}
+
 void pobierz_czas(struct tm *wynik)
 {
     if (wynik == NULL)
@@ -547,7 +565,7 @@ void wypisz_liste_rankingowa(PamiecDzielona *shm)
              "Przyjętych (TOP %d): %d\n"
              "Nieprzyjętych (brak miejsc): %d\n"
              "Odrzuconych (nie zdali): %d\n",
-             shm->index_kandydaci + shm->index_odrzuceni,
+             shm->index_rankingowa + shm->index_odrzuceni,
              shm->index_rankingowa,
              M,
              przyjętych,

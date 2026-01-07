@@ -43,13 +43,13 @@ int main()
     loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
     // Czekaj na start egzaminu o chwili T
-    while (egzamin_start == false)
+    while (egzamin_start == false && ewakuacja_zarzadzona == false)
     {
         pause();
     }
 
     // Sprawdz czy ewakuacja przed startem
-    if (ewakuacja_zarzadzona)
+    if (ewakuacja_zarzadzona && !egzamin_start)
     {
         snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] PID: %d | EWAKUACJA przed rozpoczeciem egzaminu!\n", getpid());
         loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);

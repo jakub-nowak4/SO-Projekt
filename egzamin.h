@@ -22,7 +22,7 @@
 #include <sys/ipc.h>
 #include <pthread.h>
 
-#define M 120 // W docelowej symulacji M = 120
+#define M 12 // W docelowej symulacji M = 120
 #define LICZBA_KANDYDATOW (10 * M)
 #define CZAS_PYTANIE 15000
 #define CZAS_OPRACOWANIE_PYTAN 5000 // Czas Ti na opracownie pytan od komisji
@@ -284,5 +284,6 @@ void wypisz_liste_rankingowa(PamiecDzielona *pamiec_shm);
 void wypisz_liste_ewakuacja(PamiecDzielona *pamiec_shm);
 
 void ustaw_handler_ewakuacji(void);
+bool sprawdz_ewakuacje(PamiecDzielona *shm);
 
 #endif

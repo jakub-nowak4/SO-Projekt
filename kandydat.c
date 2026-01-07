@@ -2,7 +2,6 @@
 
 int main()
 {
-
     signal(SIGINT, SIG_IGN);
     ustaw_handler_ewakuacji();
 
@@ -18,11 +17,8 @@ int main()
     utworz_shm(klucz_shm);
     dolacz_shm(&pamiec_shm);
 
-    semafor_p(SEMAFOR_MUTEX);
-    bool juz_ewakuacja = pamiec_shm->ewakuacja;
-    semafor_v(SEMAFOR_MUTEX);
-
-    if (juz_ewakuacja)
+    // Sprawdz ewakuacje zaraz po starcie
+    if (sprawdz_ewakuacje(pamiec_shm))
     {
         odlacz_shm(pamiec_shm);
         exit(EXIT_SUCCESS);
@@ -33,8 +29,6 @@ int main()
 
     Kandydat kandydat;
     init_kandydat(getpid(), &kandydat);
-
-    // Kandydat ustawia sie przed budynkiem
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | Ustawia sie w kolejce przed budynkiem.\n", getpid());
     loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
@@ -51,7 +45,7 @@ int main()
     MSG_DECYZJA decyzja;
     while (true)
     {
-        if (ewakuacja_aktywna)
+        if (sprawdz_ewakuacje(pamiec_shm))
         {
             snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA - opuszczam kolejke przed budynkiem!\n", getpid());
             loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
@@ -68,7 +62,7 @@ int main()
         usleep(1000);
     }
 
-    if (ewakuacja_aktywna)
+    if (sprawdz_ewakuacje(pamiec_shm))
     {
         snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA - opuszczam budynek!\n", getpid());
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
@@ -78,14 +72,12 @@ int main()
 
     if (decyzja.numer_na_liscie == -1)
     {
-
         semafor_p(SEMAFOR_MUTEX);
         pamiec_shm->pozostalo_kandydatow--;
         if (pamiec_shm->pozostalo_kandydatow == 0)
         {
             pamiec_shm->egzamin_trwa = false;
         }
-
         semafor_v(SEMAFOR_MUTEX);
 
         snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem decyzje od dziekana i koncze udzial w egzaminie.\n", getpid());
@@ -105,7 +97,7 @@ int main()
 
     while (true)
     {
-        if (ewakuacja_aktywna)
+        if (sprawdz_ewakuacje(pamiec_shm))
         {
             snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA w kolejce A!\n", getpid());
             loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
@@ -148,7 +140,7 @@ int main()
             MSG_KANDYDAT_WCHODZI_DO_A_POTWIERDZENIE potwierdzenie;
             while (true)
             {
-                if (ewakuacja_aktywna)
+                if (sprawdz_ewakuacje(pamiec_shm))
                 {
                     snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA przy wejsciu A!\n", getpid());
                     loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
@@ -190,7 +182,7 @@ int main()
         MSG_KANDYDAT_POWTARZA_ODPOWIEDZ_NADZORCY weryfikacja_odpowiedz;
         while (true)
         {
-            if (ewakuacja_aktywna)
+            if (sprawdz_ewakuacje(pamiec_shm))
             {
                 snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA przy weryfikacji!\n", getpid());
                 loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
@@ -223,12 +215,13 @@ int main()
         // Czekam na pytania od komisji A
         snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.\n", getpid());
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
+
         for (int i = 0; i < LICZBA_CZLONKOW_A; i++)
         {
             MSG_PYTANIE pytanie;
             while (true)
             {
-                if (ewakuacja_aktywna)
+                if (sprawdz_ewakuacje(pamiec_shm))
                 {
                     snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA przy pytaniach A!\n", getpid());
                     loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
@@ -237,9 +230,7 @@ int main()
                 }
                 ssize_t res = msq_receive_no_wait(msqid_A, &pytanie, sizeof(pytanie), getpid());
                 if (res != -1)
-                {
                     break;
-                }
                 usleep(1000);
             }
         }
@@ -254,7 +245,7 @@ int main()
 
         semafor_p(SEMAFOR_ODPOWIEDZ_A);
 
-        if (ewakuacja_aktywna)
+        if (sprawdz_ewakuacje(pamiec_shm))
         {
             semafor_v(SEMAFOR_ODPOWIEDZ_A);
             snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA przed odpowiadaniem A!\n", getpid());
@@ -275,12 +266,12 @@ int main()
         snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.\n", getpid());
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < LICZBA_CZLONKOW_A; i++)
         {
             MSG_WYNIK wynik;
             while (true)
             {
-                if (ewakuacja_aktywna)
+                if (sprawdz_ewakuacje(pamiec_shm))
                 {
                     semafor_v(SEMAFOR_ODPOWIEDZ_A);
                     snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA przy ocenach A!\n", getpid());
@@ -298,7 +289,7 @@ int main()
         MSG_WYNIK_KONCOWY wynik_koncowy;
         while (true)
         {
-            if (ewakuacja_aktywna)
+            if (sprawdz_ewakuacje(pamiec_shm))
             {
                 semafor_v(SEMAFOR_ODPOWIEDZ_A);
                 snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA przy wyniku A!\n", getpid());
@@ -313,7 +304,7 @@ int main()
         }
         semafor_v(SEMAFOR_ODPOWIEDZ_A);
 
-        if (ewakuacja_aktywna)
+        if (sprawdz_ewakuacje(pamiec_shm))
         {
             snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA przed B!\n", getpid());
             loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
@@ -350,7 +341,6 @@ int main()
 
     if (czy_ide_do_B)
     {
-
         key_t klucz_msq_B = utworz_klucz(MSQ_KOLEJKA_EGZAMIN_B);
         int msqid_B = utworz_msq(klucz_msq_B);
 
@@ -364,7 +354,7 @@ int main()
         MSG_KANDYDAT_WCHODZI_DO_B_POTWIERDZENIE potwierdzenie_wejscia;
         while (true)
         {
-            if (ewakuacja_aktywna)
+            if (sprawdz_ewakuacje(pamiec_shm))
             {
                 snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA przy wejsciu B!\n", getpid());
                 loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
@@ -388,7 +378,7 @@ int main()
             MSG_PYTANIE pytanie_B;
             while (true)
             {
-                if (ewakuacja_aktywna)
+                if (sprawdz_ewakuacje(pamiec_shm))
                 {
                     snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA przy pytaniach B!\n", getpid());
                     loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
@@ -412,7 +402,7 @@ int main()
 
         semafor_p(SEMAFOR_ODPOWIEDZ_B);
 
-        if (ewakuacja_aktywna)
+        if (sprawdz_ewakuacje(pamiec_shm))
         {
             semafor_v(SEMAFOR_ODPOWIEDZ_B);
             snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA przed odpowiadaniem B!\n", getpid());
@@ -437,7 +427,7 @@ int main()
             MSG_WYNIK wynik_B;
             while (true)
             {
-                if (ewakuacja_aktywna)
+                if (sprawdz_ewakuacje(pamiec_shm))
                 {
                     semafor_v(SEMAFOR_ODPOWIEDZ_B);
                     snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA przy ocenach B!\n", getpid());
@@ -458,7 +448,7 @@ int main()
         MSG_WYNIK_KONCOWY wynik_koncowy_B;
         while (true)
         {
-            if (ewakuacja_aktywna)
+            if (sprawdz_ewakuacje(pamiec_shm))
             {
                 semafor_v(SEMAFOR_ODPOWIEDZ_B);
                 snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | EWAKUACJA przy wyniku B!\n", getpid());
