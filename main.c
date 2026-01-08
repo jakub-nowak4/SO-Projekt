@@ -2,6 +2,14 @@
 
 int main()
 {
+    // Sprawdzenie limitu POJEMNOSC_BUDYNKU
+    if (POJEMNOSC_BUDYNKU >= MAX_POJEMNOSC_BUDYNKU)
+    {
+        fprintf(stderr, "BLAD: POJEMNOSC_BUDYNKU (%d) musi byc < %d!\n", POJEMNOSC_BUDYNKU, MAX_POJEMNOSC_BUDYNKU);
+        fprintf(stderr, "Zmniejsz wartosc POJEMNOSC_BUDYNKU w egzamin.h\n");
+        exit(EXIT_FAILURE);
+    }
+
     srand(time(NULL));
 
     mkdir(LOGI_DIR, 0777);
