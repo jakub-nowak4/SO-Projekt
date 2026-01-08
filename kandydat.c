@@ -147,7 +147,7 @@ int main()
                     odlacz_shm(pamiec_shm);
                     exit(EXIT_SUCCESS);
                 }
-                ssize_t res = msq_receive_no_wait(msqid_A, &potwierdzenie, sizeof(potwierdzenie), getpid());
+                ssize_t res = msq_receive_no_wait(msqid_A, &potwierdzenie, sizeof(potwierdzenie), getpid() + MTYPE_OFFSET_POTWIERDZENIE_A);
                 if (res != -1)
                 {
                     break;
@@ -228,7 +228,7 @@ int main()
                     odlacz_shm(pamiec_shm);
                     exit(EXIT_SUCCESS);
                 }
-                ssize_t res = msq_receive_no_wait(msqid_A, &pytanie, sizeof(pytanie), getpid());
+                ssize_t res = msq_receive_no_wait(msqid_A, &pytanie, sizeof(pytanie), getpid() + MTYPE_OFFSET_PYTANIE);
                 if (res != -1)
                     break;
                 usleep(1000);
@@ -279,7 +279,7 @@ int main()
                     odlacz_shm(pamiec_shm);
                     exit(EXIT_SUCCESS);
                 }
-                ssize_t res = msq_receive_no_wait(msqid_A, &wynik, sizeof(wynik), getpid());
+                ssize_t res = msq_receive_no_wait(msqid_A, &wynik, sizeof(wynik), getpid() + MTYPE_OFFSET_WYNIK);
                 if (res != -1)
                     break;
                 usleep(1000);
@@ -297,7 +297,7 @@ int main()
                 odlacz_shm(pamiec_shm);
                 exit(EXIT_SUCCESS);
             }
-            ssize_t res = msq_receive_no_wait(msqid_A, &wynik_koncowy, sizeof(wynik_koncowy), getpid());
+            ssize_t res = msq_receive_no_wait(msqid_A, &wynik_koncowy, sizeof(wynik_koncowy), getpid() + MTYPE_OFFSET_WYNIK_KONCOWY);
             if (res != -1)
                 break;
             usleep(1000);
@@ -361,7 +361,7 @@ int main()
                 odlacz_shm(pamiec_shm);
                 exit(EXIT_SUCCESS);
             }
-            ssize_t res = msq_receive_no_wait(msqid_B, &potwierdzenie_wejscia, sizeof(potwierdzenie_wejscia), getpid());
+            ssize_t res = msq_receive_no_wait(msqid_B, &potwierdzenie_wejscia, sizeof(potwierdzenie_wejscia), getpid() + MTYPE_OFFSET_POTWIERDZENIE_B);
             if (res != -1)
                 break;
             usleep(1000);
@@ -385,7 +385,7 @@ int main()
                     odlacz_shm(pamiec_shm);
                     exit(EXIT_SUCCESS);
                 }
-                ssize_t res = msq_receive_no_wait(msqid_B, &pytanie_B, sizeof(pytanie_B), getpid());
+                ssize_t res = msq_receive_no_wait(msqid_B, &pytanie_B, sizeof(pytanie_B), getpid() + MTYPE_OFFSET_PYTANIE);
                 if (res != -1)
                     break;
                 usleep(1000);
@@ -435,7 +435,7 @@ int main()
                     odlacz_shm(pamiec_shm);
                     exit(EXIT_SUCCESS);
                 }
-                ssize_t res = msq_receive_no_wait(msqid_B, &wynik_B, sizeof(wynik_B), getpid());
+                ssize_t res = msq_receive_no_wait(msqid_B, &wynik_B, sizeof(wynik_B), getpid() + MTYPE_OFFSET_WYNIK);
                 if (res != -1)
                 {
                     break;
@@ -456,7 +456,7 @@ int main()
                 odlacz_shm(pamiec_shm);
                 exit(EXIT_SUCCESS);
             }
-            ssize_t res = msq_receive_no_wait(msqid_B, &wynik_koncowy_B, sizeof(wynik_koncowy_B), getpid());
+            ssize_t res = msq_receive_no_wait(msqid_B, &wynik_koncowy_B, sizeof(wynik_koncowy_B), getpid() + MTYPE_OFFSET_WYNIK_KONCOWY);
             if (res != -1)
             {
                 break;

@@ -45,6 +45,8 @@ int main()
     snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B] PID:%d | Czekam na rozpoczecie egzaminu\n", getpid());
     loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
 
+    semafor_v(SEMAFOR_KOMISJA_B_GOTOWA);
+
     // Czekaj na start egzaminu lub ewakuacje
     while (true)
     {
@@ -200,7 +202,7 @@ void *nadzorca(void *args)
                     semafor_v(SEMAFOR_MUTEX);
 
                     MSG_KANDYDAT_WCHODZI_DO_B_POTWIERDZENIE potwierdzenie;
-                    potwierdzenie.mtype = zgloszenie_B.pid;
+                    potwierdzenie.mtype = zgloszenie_B.pid + MTYPE_OFFSET_POTWIERDZENIE_B;
                     msq_send(msqid_B, &potwierdzenie, sizeof(potwierdzenie));
 
                     snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B NADZORCA] PID:%d | Do sali wchodzi kandydat PID:%d\n", getpid(), zgloszenie_B.pid);
@@ -243,7 +245,7 @@ void *nadzorca(void *args)
                 usleep(CZAS_PYTANIE);
 
                 MSG_PYTANIE pytanie;
-                pytanie.mtype = kandydat_pid;
+                pytanie.mtype = kandydat_pid + MTYPE_OFFSET_PYTANIE;
                 pytanie.pid = kandydat_pid;
                 msq_send(msqid_B, &pytanie, sizeof(pytanie));
 
@@ -269,7 +271,7 @@ void *nadzorca(void *args)
                     miejsca[i].liczba_ocen++;
 
                     MSG_WYNIK wynik;
-                    wynik.mtype = odpowiedz.pid;
+                    wynik.mtype = odpowiedz.pid + MTYPE_OFFSET_WYNIK;
                     wynik.numer_czlonka_komisj = numer_czlonka;
                     wynik.ocena = ocena;
 
@@ -312,7 +314,7 @@ void *nadzorca(void *args)
         if (kandydat_do_oceny != 0)
         {
             MSG_WYNIK_KONCOWY wynik_koncowy;
-            wynik_koncowy.mtype = kandydat_do_oceny;
+            wynik_koncowy.mtype = kandydat_do_oceny + MTYPE_OFFSET_WYNIK_KONCOWY;
             wynik_koncowy.wynik_koncowy = srednia_do_wyslania;
             wynik_koncowy.czy_zdal = (srednia_do_wyslania >= 30 && srednia_do_wyslania <= 100);
 
@@ -398,7 +400,7 @@ void *czlonek(void *args)
                 usleep(rand() % CZAS_PYTANIE);
 
                 MSG_PYTANIE pytanie;
-                pytanie.mtype = kandydat_pid;
+                pytanie.mtype = kandydat_pid + MTYPE_OFFSET_PYTANIE;
                 pytanie.pid = kandydat_pid;
                 msq_send(msqid_B, &pytanie, sizeof(pytanie));
 
@@ -422,7 +424,7 @@ void *czlonek(void *args)
                     miejsca[i].liczba_ocen++;
 
                     MSG_WYNIK wynik;
-                    wynik.mtype = odpowiedz.pid;
+                    wynik.mtype = odpowiedz.pid + MTYPE_OFFSET_WYNIK;
                     wynik.numer_czlonka_komisj = numer_czlonka;
                     wynik.ocena = ocena;
 

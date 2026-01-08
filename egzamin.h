@@ -30,6 +30,13 @@
 #define LICZBA_CZLONKOW_B 3
 #define GODZINA_ROZPOCZECIA_EGZAMINU 2
 
+// Potrzebne aby uniknac sytuacji pomylenia mtype i odberania nie tego komunikatu
+#define MTYPE_OFFSET_POTWIERDZENIE_A 100000
+#define MTYPE_OFFSET_PYTANIE 200000
+#define MTYPE_OFFSET_WYNIK 300000
+#define MTYPE_OFFSET_WYNIK_KONCOWY 400000
+#define MTYPE_OFFSET_POTWIERDZENIE_B 500000
+
 #define LOGI_DIR "logi"
 #define LOGI_MAIN "logi/logi_main.txt"
 #define LOGI_DZIEKAN "logi/logi_dziekan.txt"
@@ -141,6 +148,9 @@ typedef enum
     SEMAFOR_MUTEX,
     SEMAFOR_ODPOWIEDZ_A,
     SEMAFOR_ODPOWIEDZ_B,
+    SEMAFOR_DZIEKAN_GOTOWY,
+    SEMAFOR_KOMISJA_A_GOTOWA,
+    SEMAFOR_KOMISJA_B_GOTOWA
 } Semafory;
 
 void pobierz_czas(struct tm *wynik);

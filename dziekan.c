@@ -42,6 +42,8 @@ int main()
     snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID: %d | Rozpoczynam prace.\n", getpid());
     loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
+    semafor_v(SEMAFOR_DZIEKAN_GOTOWY);
+
     // Czekaj na start egzaminu o chwili T
     while (egzamin_start == false && ewakuacja_zarzadzona == false)
     {

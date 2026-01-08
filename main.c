@@ -124,7 +124,7 @@ int main()
 
     signal(SIGINT, handler_sigint);
 
-    sleep(1);
+    semafor_p(SEMAFOR_DZIEKAN_GOTOWY);
 
     // Komisj A oraz B
     for (int i = 0; i < 2; i++)
@@ -160,7 +160,8 @@ int main()
         }
     }
 
-    sleep(1);
+    semafor_p(SEMAFOR_KOMISJA_A_GOTOWA);
+    semafor_p(SEMAFOR_KOMISJA_B_GOTOWA);
 
     int procent_wczesnych = rand() % 31 + 20;
     int liczba_wczesnych = (LICZBA_KANDYDATOW * procent_wczesnych) / 100;

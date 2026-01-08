@@ -172,12 +172,12 @@ key_t utworz_klucz(int arg)
 
 void utworz_semafory(key_t klucz_sem)
 {
-    semafor_id = semget(klucz_sem, 11, IPC_CREAT | IPC_EXCL | 0600);
+    semafor_id = semget(klucz_sem, 14, IPC_CREAT | IPC_EXCL | 0600);
     if (semafor_id == -1)
     {
         if (errno == EEXIST)
         {
-            semafor_id = semget(klucz_sem, 11, 0600);
+            semafor_id = semget(klucz_sem, 14, 0600);
             if (semafor_id == -1)
             {
                 perror("semget() | Nie udalo sie przylaczyc do zbioru semaforow");
@@ -256,6 +256,21 @@ void utworz_semafory(key_t klucz_sem)
         if (semctl(semafor_id, SEMAFOR_LOGI_LISTA_ODRZUCONYCH, SETVAL, 1) == -1)
         {
             perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_LOGI_LISTA_ODRZUCONYCH");
+            exit(EXIT_FAILURE);
+        }
+        if (semctl(semafor_id, SEMAFOR_DZIEKAN_GOTOWY, SETVAL, 0) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_DZIEKAN_GOTOWY");
+            exit(EXIT_FAILURE);
+        }
+        if (semctl(semafor_id, SEMAFOR_KOMISJA_A_GOTOWA, SETVAL, 0) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_KOMISJA_A_GOTOWA");
+            exit(EXIT_FAILURE);
+        }
+        if (semctl(semafor_id, SEMAFOR_KOMISJA_B_GOTOWA, SETVAL, 0) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_KOMISJA_B_GOTOWA");
             exit(EXIT_FAILURE);
         }
     }
