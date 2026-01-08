@@ -325,7 +325,7 @@ void *nadzorca(void *args)
             wynik_dla_dziekana.wynik_koncowy = srednia_do_wyslania;
 
             msq_send(msqid_B, &wynik_koncowy, sizeof(wynik_koncowy));
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B Nadzorca] PID:%d | Kandydat PID:%d otrzymal wynik=%.2f.\n", getpid(), kandydat_do_oceny, srednia_do_wyslania);
+            snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B NADZORCA] PID:%d | Kandydat PID:%d otrzymal wynik=%.2f.\n", getpid(), kandydat_do_oceny, srednia_do_wyslania);
             loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
 
             msq_send(msqid_dziekan_komisja, &wynik_dla_dziekana, sizeof(wynik_dla_dziekana));

@@ -23,6 +23,13 @@ void ustaw_handler_ewakuacji(void)
         perror("sigaction() | Nie udalo sie ustawic handlera SIGUSR2");
         exit(EXIT_FAILURE);
     }
+
+    // SIGTERM - wysylany gdy rodzic umiera (prctl PR_SET_PDEATHSIG)
+    if (sigaction(SIGTERM, &sa, NULL) == -1)
+    {
+        perror("sigaction() | Nie udalo sie ustawic handlera SIGTERM");
+        exit(EXIT_FAILURE);
+    }
 }
 
 bool sprawdz_ewakuacje(PamiecDzielona *shm)
@@ -68,15 +75,14 @@ void loguj(int sem_index, char *file_path, char *msg)
 {
     struct tm czas;
     int ms;
-    char buffer[512];
+    char buffer[1024];
     int len;
-
-    semafor_p(sem_index);
 
     pobierz_czas_precyzyjny(&czas, &ms);
 
-    len = snprintf(buffer, sizeof(buffer), "%02d:%02d:%02d:%02d | %s", czas.tm_hour, czas.tm_min, czas.tm_sec, ms / 10, msg);
+    len = snprintf(buffer, sizeof(buffer), "%02d:%02d:%02d:%02d | %s\n", czas.tm_hour, czas.tm_min, czas.tm_sec, ms / 10, msg);
 
+    semafor_p(sem_index);
     int fd = open(file_path, O_WRONLY | O_APPEND | O_CREAT, 0644);
     if (fd != -1)
     {
@@ -86,7 +92,45 @@ void loguj(int sem_index, char *file_path, char *msg)
     semafor_v(sem_index);
 
     semafor_p(SEMAFOR_STD_OUT);
-    write(STDOUT_FILENO, buffer, len);
+
+    printf("%02d:%02d:%02d:%02d | ", czas.tm_hour, czas.tm_min, czas.tm_sec, ms / 10);
+
+    if (strstr(msg, "[DZIEKAN]"))
+    {
+        printf("%s%s%s", COLOR_BOLD, COLOR_MAGENTA, msg);
+    }
+    else if (strstr(msg, "[KANDYDAT]"))
+    {
+        printf("%s%s", COLOR_CYAN, msg);
+    }
+    else if (strstr(msg, "KOMISJA A") || strstr(msg, "NADZORCA A"))
+    {
+        printf("%s%s", COLOR_GREEN, msg);
+    }
+    else if (strstr(msg, "KOMISJA B") || strstr(msg, "NADZORCA B"))
+    {
+        printf("%s%s", COLOR_YELLOW, msg);
+    }
+    else if (strstr(msg, "=========="))
+    {
+        printf("%s%s%s", COLOR_BOLD, COLOR_BLUE, msg);
+    }
+    else if (strstr(msg, "[main]"))
+    {
+        printf("%s%s", COLOR_WHITE, msg);
+    }
+    else if (strstr(msg, "Powod: Zbyt niski") || strstr(msg, "Odrzucam") || strstr(msg, "Powod: Brak matury"))
+    {
+        printf("%s%s", COLOR_RED, msg);
+    }
+    else
+    {
+        printf("%s", msg);
+    }
+
+    printf("%s\n", COLOR_RESET);
+    fflush(stdout);
+
     semafor_v(SEMAFOR_STD_OUT);
 }
 
@@ -646,4 +690,33 @@ void wypisz_liste_ewakuacja(PamiecDzielona *shm)
              shm->index_kandydaci,
              shm->index_odrzuceni);
     loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
+}
+
+void cleanup_all_ipc(void)
+{
+    if (semafor_id != -1)
+    {
+        semctl(semafor_id, 0, IPC_RMID);
+        semafor_id = -1;
+    }
+
+    if (shmid != -1)
+    {
+        shmctl(shmid, IPC_RMID, NULL);
+        shmid = -1;
+    }
+
+    int msq_keys[] = {MSQ_KOLEJKA_BUDYNEK, MSQ_KOLEJKA_EGZAMIN_A, MSQ_KOLEJKA_EGZAMIN_B, MSQ_DZIEKAN_KOMISJA};
+    for (int i = 0; i < 4; i++)
+    {
+        key_t klucz = ftok(".", msq_keys[i]);
+        if (klucz != -1)
+        {
+            int msqid = msgget(klucz, 0);
+            if (msqid != -1)
+            {
+                msgctl(msqid, IPC_RMID, NULL);
+            }
+        }
+    }
 }

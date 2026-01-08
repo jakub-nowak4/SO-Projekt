@@ -2,9 +2,11 @@
 
 void start_egzamin(int sigNum);
 void handler_ewakuacji_dziekan(int sigNum);
+void handler_sigterm_dziekan(int sigNum);
 
 volatile sig_atomic_t egzamin_start = false; // kompilator zawsze czyta z pamięci
 volatile sig_atomic_t ewakuacja_zarzadzona = false;
+volatile sig_atomic_t rodzic_umarl = false;
 
 int main()
 {
@@ -20,6 +22,12 @@ int main()
     if (signal(SIGUSR2, handler_ewakuacji_dziekan) == SIG_ERR)
     {
         perror("signal() | Nie udalo sie dodac signal handler SIGUSR2.");
+        exit(EXIT_FAILURE);
+    }
+
+    if (signal(SIGTERM, handler_sigterm_dziekan) == SIG_ERR)
+    {
+        perror("signal() | Nie udalo sie dodac signal handler SIGTERM.");
         exit(EXIT_FAILURE);
     }
 
@@ -39,7 +47,7 @@ int main()
     key_t klucz_msq_dziekan_komisja = utworz_klucz(MSQ_DZIEKAN_KOMISJA);
     int msqid_dziekan_komisja = utworz_msq(klucz_msq_dziekan_komisja);
 
-    snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID: %d | Rozpoczynam prace.\n", getpid());
+    snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] PID: %d | Rozpoczynam prace.\n", getpid());
     loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
     semafor_v(SEMAFOR_DZIEKAN_GOTOWY);
@@ -53,6 +61,16 @@ int main()
     // Sprawdz czy ewakuacja przed startem
     if (ewakuacja_zarzadzona && !egzamin_start)
     {
+        if (rodzic_umarl)
+        {
+            snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] PID: %d | Rodzic umarl przed startem - sprzatam zasoby IPC\n", getpid());
+            loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
+
+            odlacz_shm(pamiec_shm);
+            cleanup_all_ipc();
+            _exit(0);
+        }
+
         snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] PID: %d | EWAKUACJA przed rozpoczeciem egzaminu!\n", getpid());
         loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
@@ -64,6 +82,7 @@ int main()
         kill(0, SIGUSR2);
 
         odlacz_shm(pamiec_shm);
+
         return 0;
     }
 
@@ -80,6 +99,16 @@ int main()
         // Sprawdz ewakuacje
         if (ewakuacja_zarzadzona)
         {
+            if (rodzic_umarl)
+            {
+                snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] PID: %d | Rodzic umarl - sprzatam zasoby IPC\n", getpid());
+                loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
+
+                odlacz_shm(pamiec_shm);
+                cleanup_all_ipc();
+                _exit(0);
+            }
+
             snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] PID: %d | !!! EWAKUACJA !!! Przerywam egzamin!\n", getpid());
             loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
@@ -110,7 +139,7 @@ int main()
         // Dziekan sprawdza wynik matury kandydata
         if (res != -1)
         {
-            snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Odebralem informacje o wyniku matury od Kandydata PID:%d\n", getpid(), zgloszenie.pid);
+            snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] PID:%d | Odebralem informacje o wyniku matury od Kandydata PID:%d\n", getpid(), zgloszenie.pid);
             loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
             MSG_DECYZJA decyzja;
@@ -138,7 +167,7 @@ int main()
 
                 semafor_v(SEMAFOR_MUTEX);
 
-                snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Po weryfikacji matury dopuszczam Kandydata PID:%d do dalszej czesci egzaminu\n", getpid(), zgloszenie.pid);
+                snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] PID:%d | Po weryfikacji matury dopuszczam Kandydata PID:%d do dalszej czesci egzaminu\n", getpid(), zgloszenie.pid);
                 loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
             }
             else
@@ -157,7 +186,7 @@ int main()
                 pamiec_shm->index_odrzuceni++;
                 semafor_v(SEMAFOR_MUTEX);
 
-                snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Odrzucam kandydata PID:%d (brak matury)\n", getpid(), zgloszenie.pid);
+                snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] PID:%d | Odrzucam kandydata PID:%d (brak matury)\n", getpid(), zgloszenie.pid);
                 loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
             }
 
@@ -211,6 +240,7 @@ int main()
         semafor_v(SEMAFOR_MUTEX);
 
         odlacz_shm(pamiec_shm);
+
         return 0;
     }
 
@@ -305,6 +335,11 @@ int main()
 
     odlacz_shm(pamiec_shm);
 
+    if (rodzic_umarl)
+    {
+        cleanup_all_ipc();
+    }
+
     return 0;
 }
 
@@ -318,4 +353,11 @@ void handler_ewakuacji_dziekan(int sigNum)
 {
     (void)sigNum;
     ewakuacja_zarzadzona = true;
+}
+
+void handler_sigterm_dziekan(int sigNum)
+{
+    (void)sigNum;
+    ewakuacja_zarzadzona = true;
+    rodzic_umarl = true;
 }

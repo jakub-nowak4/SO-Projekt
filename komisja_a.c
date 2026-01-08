@@ -137,7 +137,7 @@ int main()
         }
     }
 
-    snprintf(msg_buffer, sizeof(msg_buffer), "Komisja A konczy prace\n");
+    snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA A] PID:%d | Koniec pracy\n", getpid());
     loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
 
     pthread_mutex_destroy(&mutex);
@@ -212,7 +212,7 @@ void *nadzorca(void *args)
                     ok.mtype = prosba.pid + MTYPE_OFFSET_POTWIERDZENIE_A;
                     msq_send(msqid_A, &ok, sizeof(ok));
 
-                    snprintf(msg_buffer, sizeof(msg_buffer), "[NADZORCA A] PID:%d | Wpuscilem kandydata PID:%d do sali.\n", getpid(), prosba.pid);
+                    snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA A NADZORCA] PID:%d | Wpuscilem kandydata PID:%d do sali.\n", getpid(), prosba.pid);
                     loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
                 }
             }

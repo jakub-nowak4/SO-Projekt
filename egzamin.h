@@ -20,6 +20,7 @@
 #include <sys/shm.h>
 #include <sys/msg.h>
 #include <sys/ipc.h>
+#include <sys/prctl.h>
 #include <pthread.h>
 
 #define M 12 // W docelowej symulacji M = 120
@@ -45,6 +46,16 @@
 #define LOGI_KOMISJA_B "logi/logi_komisja_b.txt"
 #define LOGI_LISTA_RANKINGOWA "logi/logi_lista_rankingowa.txt"
 #define LOGI_LISTA_ODRZUCONYCH "logi/logi_lista_odrzuconych.txt"
+
+#define COLOR_RESET "\x1b[0m"
+#define COLOR_BOLD "\x1b[1m"
+#define COLOR_RED "\x1b[31m"
+#define COLOR_GREEN "\x1b[32m"
+#define COLOR_YELLOW "\x1b[33m"
+#define COLOR_BLUE "\x1b[34m"
+#define COLOR_MAGENTA "\x1b[35m"
+#define COLOR_CYAN "\x1b[36m"
+#define COLOR_WHITE "\x1b[37m"
 
 extern int semafor_id;
 extern int shmid;
@@ -295,5 +306,6 @@ void wypisz_liste_ewakuacja(PamiecDzielona *pamiec_shm);
 
 void ustaw_handler_ewakuacji(void);
 bool sprawdz_ewakuacje(PamiecDzielona *shm);
+void cleanup_all_ipc(void);
 
 #endif

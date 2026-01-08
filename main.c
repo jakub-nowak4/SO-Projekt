@@ -2,7 +2,15 @@
 
 pid_t grupa_procesow = 0;
 pid_t pid_dziekan = 0;
+pid_t pid_komisja_a = 0;
+pid_t pid_komisja_b = 0;
 volatile sig_atomic_t licznik_zakonczonych = 0;
+volatile sig_atomic_t krytyczny_proces_umarl = 0;
+
+int msqid_budynek = -1;
+int msqid_A = -1;
+int msqid_B = -1;
+int msqid_dziekan_komisja = -1;
 
 void handler_sigint(int sig)
 {
@@ -17,13 +25,24 @@ void handler_sigchld(int sig)
 {
     (void)sig;
     int saved_errno = errno;
+    int status;
+    pid_t pid;
 
-    while (waitpid(-1, NULL, WNOHANG) > 0)
+    while ((pid = waitpid(-1, &status, WNOHANG)) > 0)
     {
         licznik_zakonczonych++;
+
+        if (pid == pid_dziekan || pid == pid_komisja_a || pid == pid_komisja_b)
+        {
+            if (WIFSIGNALED(status))
+            {
+                krytyczny_proces_umarl = 1;
+                kill(0, SIGUSR2);
+            }
+        }
     }
 
-    errno = saved_errno; // Przypsujemy stare errno pomijamu te ze nie ma wiecej dzieci
+    errno = saved_errno;
 }
 
 int main()
@@ -58,6 +77,28 @@ int main()
         exit(EXIT_FAILURE);
     }
 
+    // Zmienne w lokalnym zasiegu - potrzebne do sprzatniecia pozostalych zasbow po kill -9 -1
+    {
+        key_t k;
+        int id;
+
+        k = ftok(".", 66);
+        if (k != -1 && (id = semget(k, 0, 0)) != -1)
+            semctl(id, 0, IPC_RMID);
+
+        k = ftok(".", 77);
+        if (k != -1 && (id = shmget(k, 0, 0)) != -1)
+            shmctl(id, IPC_RMID, NULL);
+
+        int keys[] = {MSQ_KOLEJKA_BUDYNEK, MSQ_KOLEJKA_EGZAMIN_A, MSQ_KOLEJKA_EGZAMIN_B, MSQ_DZIEKAN_KOMISJA};
+        for (int i = 0; i < 4; i++)
+        {
+            k = ftok(".", keys[i]);
+            if (k != -1 && (id = msgget(k, 0)) != -1)
+                msgctl(id, IPC_RMID, NULL);
+        }
+    }
+
     // init
     key_t klucz_sem = utworz_klucz(66);
     utworz_semafory(klucz_sem);
@@ -88,10 +129,10 @@ int main()
     key_t klucz_msq_B = utworz_klucz(MSQ_KOLEJKA_EGZAMIN_B);
     key_t klucz_msq_dziekan_komisja = utworz_klucz(MSQ_DZIEKAN_KOMISJA);
 
-    int msqid_budynek = utworz_msq(klucz_msq_budynek);
-    int msqid_A = utworz_msq(klucz_msq_A);
-    int msqid_B = utworz_msq(klucz_msq_B);
-    int msqid_dziekan_komisja = utworz_msq(klucz_msq_dziekan_komisja);
+    msqid_budynek = utworz_msq(klucz_msq_budynek);
+    msqid_A = utworz_msq(klucz_msq_A);
+    msqid_B = utworz_msq(klucz_msq_B);
+    msqid_dziekan_komisja = utworz_msq(klucz_msq_dziekan_komisja);
 
     char msg_buffer[512];
 
@@ -116,6 +157,7 @@ int main()
         exit(EXIT_FAILURE);
 
     case 0:
+        prctl(PR_SET_PDEATHSIG, SIGTERM);
         setpgid(0, grupa_procesow);
         execl("./dziekan", "dziekan", NULL);
         perror("execl() | Nie udalo sie urchomic programu dziekan.");
@@ -126,10 +168,11 @@ int main()
 
     semafor_p(SEMAFOR_DZIEKAN_GOTOWY);
 
-    // Komisj A oraz B
+    // Komisja A oraz B
     for (int i = 0; i < 2; i++)
     {
-        switch (fork())
+        pid_t pid_komisja = fork();
+        switch (pid_komisja)
         {
         case -1:
             if (i == 0)
@@ -143,6 +186,7 @@ int main()
             exit(EXIT_FAILURE);
 
         case 0:
+            prctl(PR_SET_PDEATHSIG, SIGTERM);
             setpgid(0, grupa_procesow);
             if (i == 0)
             {
@@ -157,6 +201,13 @@ int main()
                 perror("execl() | Nie udalo sie urchomic programu komisja_b.");
             }
             exit(EXIT_FAILURE);
+
+        default:
+            if (i == 0)
+                pid_komisja_a = pid_komisja;
+            else
+                pid_komisja_b = pid_komisja;
+            break;
         }
     }
 
@@ -193,6 +244,7 @@ int main()
             exit(EXIT_FAILURE);
 
         case 0:
+            prctl(PR_SET_PDEATHSIG, SIGTERM);
             setpgid(0, grupa_procesow);
             execl("./kandydat", "kandydat", NULL);
             perror("execl() | Nie udalo sie urchomic programu kandydat");
@@ -250,6 +302,7 @@ int main()
                 exit(EXIT_FAILURE);
 
             case 0:
+                prctl(PR_SET_PDEATHSIG, SIGTERM);
                 setpgid(0, grupa_procesow);
                 execl("./kandydat", "kandydat", NULL);
                 perror("execl() | Nie udalo sie urchomic programu kandydat");
@@ -298,7 +351,12 @@ int main()
     snprintf(msg_buffer, sizeof(msg_buffer), "Zakończono oczekiwanie na procesy (zebrane w petli: %d, przez handler: %d, lacznie: %d).\n", zebrane_w_petli, (int)licznik_zakonczonych, wszystkie_zebrane);
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
-    // Sprawdz czy byla ewakuacja
+    if (krytyczny_proces_umarl)
+    {
+        snprintf(msg_buffer, sizeof(msg_buffer), "[main] !!! KRYTYCZNY PROCES (dziekan/komisja) ZOSTAL ZABITY - AWARYJNE ZAKONCZENIE !!!\n");
+        loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
+    }
+
     semafor_p(SEMAFOR_MUTEX);
     byla_ewakuacja = pamiec_shm->ewakuacja;
     semafor_v(SEMAFOR_MUTEX);
