@@ -25,8 +25,8 @@
 
 #define M 12 // W docelowej symulacji M = 120
 #define LICZBA_KANDYDATOW (10 * M)
-#define CZAS_PYTANIE 15000
-#define CZAS_OPRACOWANIE_PYTAN 5000 // Czas Ti na opracownie pytan od komisji
+#define CZAS_PYTANIE 1500000
+#define CZAS_OPRACOWANIE_PYTAN 1000000
 #define LICZBA_CZLONKOW_A 5
 #define LICZBA_CZLONKOW_B 3
 #define GODZINA_ROZPOCZECIA_EGZAMINU 2
