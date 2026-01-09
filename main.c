@@ -12,6 +12,8 @@ int main()
 
     srand(time(NULL));
 
+    setpgid(0, 0);
+
     mkdir(LOGI_DIR, 0777);
     const char *files[] = {LOGI_MAIN, LOGI_DZIEKAN, LOGI_KANDYDACI, LOGI_KOMISJA_A, LOGI_KOMISJA_B, LOGI_LISTA_RANKINGOWA, LOGI_LISTA_ODRZUCONYCH};
     for (int i = 0; i < 7; i++)
@@ -77,6 +79,7 @@ int main()
         exit(EXIT_FAILURE);
 
     case 0:
+        setpgid(0, getppid());
         execl("./dziekan", "dziekan", NULL);
         perror("execl() | Nie udalo sie urchomic programu dziekan.");
         exit(EXIT_FAILURE);
@@ -100,12 +103,14 @@ int main()
         case 0:
             if (i == 0)
             {
+                setpgid(0, getppid());
                 // usleep(10000);
                 execl("./komisja_a", "komisja_a", NULL);
                 perror("execl() | Nie udalo sie urchomic programu komisja_a.");
             }
             else
             {
+                setpgid(0, getppid());
                 // usleep(10000);
                 execl("./komisja_b", "komisja_b", NULL);
                 perror("execl() | Nie udalo sie urchomic programu komisja_a.");
@@ -126,6 +131,7 @@ int main()
             exit(EXIT_FAILURE);
 
         case 0:
+            setpgid(0, getppid());
             execl("./kandydat", "kandydat", NULL);
             perror("execl() | Nie udalo sie urchomic programu kandydat");
             exit(EXIT_FAILURE);

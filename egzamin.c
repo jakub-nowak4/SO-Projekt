@@ -29,6 +29,7 @@ void loguj(int sem_index, char *file_path, char *msg)
     struct tm czas;
     int ms;
     char buffer[512];
+    char color_buffer[600];
     int len;
 
     semafor_p(sem_index);
@@ -45,8 +46,42 @@ void loguj(int sem_index, char *file_path, char *msg)
     }
     semafor_v(sem_index);
 
+    // Kolorowe wypisywanie na stdout
+    const char *color = "\033[0m";
+
+    if (strcmp(file_path, LOGI_MAIN) == 0)
+    {
+        color = "\033[1;37m";
+    }
+    else if (strcmp(file_path, LOGI_DZIEKAN) == 0)
+    {
+        color = "\033[1;35m";
+    }
+    else if (strcmp(file_path, LOGI_KANDYDACI) == 0)
+    {
+        color = "\033[1;36m";
+    }
+    else if (strcmp(file_path, LOGI_KOMISJA_A) == 0)
+    {
+        color = "\033[1;33m";
+    }
+    else if (strcmp(file_path, LOGI_KOMISJA_B) == 0)
+    {
+        color = "\033[1;32m";
+    }
+    else if (strcmp(file_path, LOGI_LISTA_RANKINGOWA) == 0)
+    {
+        color = "\033[1;34m";
+    }
+    else if (strcmp(file_path, LOGI_LISTA_ODRZUCONYCH) == 0)
+    {
+        color = "\033[1;31m";
+    }
+
+    int color_len = snprintf(color_buffer, sizeof(color_buffer), "%s%s\033[0m", color, buffer);
+
     semafor_p(SEMAFOR_STD_OUT);
-    write(STDOUT_FILENO, buffer, len);
+    write(STDOUT_FILENO, color_buffer, color_len);
     semafor_v(SEMAFOR_STD_OUT);
 }
 
@@ -229,8 +264,12 @@ void semafor_p(int semNum)
     buffer.sem_op = -1;
     buffer.sem_flg = SEM_UNDO;
 
-    if (semop(semafor_id, &buffer, 1) == -1)
+    while (semop(semafor_id, &buffer, 1) == -1)
     {
+        if (errno == EINTR)
+        {
+            continue;
+        }
         perror("semop() | Nie udalo sie wykonac operacji semafor P");
         exit(EXIT_FAILURE);
     }
@@ -243,8 +282,12 @@ void semafor_v(int semNum)
     buffer.sem_op = 1;
     buffer.sem_flg = SEM_UNDO;
 
-    if (semop(semafor_id, &buffer, 1) == -1)
+    while (semop(semafor_id, &buffer, 1) == -1)
     {
+        if (errno == EINTR)
+        {
+            continue;
+        }
         perror("semop() | Nie udalo sie wykonac operacji semafor V");
         exit(EXIT_FAILURE);
     }
@@ -383,11 +426,17 @@ void msq_send(int msqid, void *msg, size_t msg_size)
 
 void msq_receive(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci)
 {
-    if (msgrcv(msqid, buffer, buffer_size - sizeof(long), typ_wiadomosci, 0) == -1)
+    while (msgrcv(msqid, buffer, buffer_size - sizeof(long), typ_wiadomosci, 0) == -1)
     {
+        if (errno == EINTR)
+        {
+            continue;
+        }
         if (errno == EIDRM || errno == EINVAL)
+        {
             exit(EXIT_SUCCESS);
-        perror("msgrcv() | Nie udalo sie odberac wiadomosci.");
+        }
+        perror("msgrcv() | Nie udalo sie odebrac wiadomosci.");
         exit(EXIT_FAILURE);
     }
 }
