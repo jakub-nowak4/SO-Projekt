@@ -1,19 +1,57 @@
 #include "egzamin.h"
 
 void start_egzamin(int sigNum);
+void handler_sigusr2(int sigNum);
+void handler_sigterm(int sigNum);
+
 volatile sig_atomic_t egzamin_start = false;
 volatile sig_atomic_t egzamin_aktywny = true;
+volatile sig_atomic_t ewakuacja_aktywna = false;
+PamiecDzielona *pamiec_shm = NULL;
 
 int main()
 {
-    if (signal(SIGUSR1, start_egzamin) == SIG_ERR)
+    // SIGUSR1
+    struct sigaction sa_usr1;
+    sa_usr1.sa_handler = start_egzamin;
+    sigemptyset(&sa_usr1.sa_mask);
+    sa_usr1.sa_flags = 0;
+    if (sigaction(SIGUSR1, &sa_usr1, NULL) == -1)
     {
-        perror("signal() | Nie udalo sie dodac signal handler.");
+        perror("sigaction(SIGUSR1) | Nie udalo sie dodac signal handler.");
+        exit(EXIT_FAILURE);
+    }
+
+    // SIGUSR2
+    struct sigaction sa_usr2;
+    sa_usr2.sa_handler = handler_sigusr2;
+    sigemptyset(&sa_usr2.sa_mask);
+    sa_usr2.sa_flags = 0;
+    if (sigaction(SIGUSR2, &sa_usr2, NULL) == -1)
+    {
+        perror("sigaction(SIGUSR2) | Nie udalo sie dodac signal handler.");
+        exit(EXIT_FAILURE);
+    }
+
+    // SIGTERM
+    struct sigaction sa_term;
+    sa_term.sa_handler = handler_sigterm;
+    sigemptyset(&sa_term.sa_mask);
+    sa_term.sa_flags = 0;
+    if (sigaction(SIGTERM, &sa_term, NULL) == -1)
+    {
+        perror("sigaction(SIGTERM) | Nie udalo sie dodac signal handler.");
+        exit(EXIT_FAILURE);
+    }
+
+    // SIGINT
+    if (signal(SIGINT, SIG_IGN) == SIG_ERR)
+    {
+        perror("signal(SIGINT) | Nie udalo sie zignorowac SIGINT.");
         exit(EXIT_FAILURE);
     }
 
     char msg_buffer[512];
-    PamiecDzielona *pamiec_shm;
 
     key_t klucz_sem = utworz_klucz(66);
     utworz_semafory(klucz_sem);
@@ -24,6 +62,13 @@ int main()
     utworz_shm(klucz_shm);
     dolacz_shm(&pamiec_shm);
 
+    // Sprawdz czy ewakuacja nie zostala juz ogloszona
+    if (pamiec_shm->ewakuacja)
+    {
+        ewakuacja_aktywna = true;
+        egzamin_aktywny = false;
+    }
+
     key_t klucz_msq_budynek = utworz_klucz(MSQ_KOLEJKA_BUDYNEK);
     int msqid_budynek = utworz_msq(klucz_msq_budynek);
 
@@ -33,22 +78,24 @@ int main()
     snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID: %d | Rozpoczynam prace.\n", getpid());
     loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
-    while (egzamin_start == false)
+    // Czeka na start egzaminu
+    while (!egzamin_start)
     {
         pause();
     }
 
-    semafor_p(SEMAFOR_MUTEX);
+    // Start egzaminu
+    semafor_p_bez_ewakuacji(SEMAFOR_MUTEX);
     pamiec_shm->egzamin_trwa = true;
     sprintf(msg_buffer, "[DZIEKAN] PID: %d | Rozpoczynam egzamin.\n", getpid());
     loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
     semafor_v(SEMAFOR_MUTEX);
 
-    while (egzamin_aktywny)
+    while (egzamin_aktywny && !ewakuacja_aktywna)
     {
         ssize_t res;
 
-        semafor_p(SEMAFOR_MUTEX);
+        semafor_p_bez_ewakuacji(SEMAFOR_MUTEX);
         int procesow = pamiec_shm->kandydatow_procesow;
         semafor_v(SEMAFOR_MUTEX);
 
@@ -63,7 +110,7 @@ int main()
 
         if (res != -1)
         {
-            snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Odebralem informacje o wyniku matury od Kandydata PID:%d\n", getpid(), zgloszenie.pid);
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Odebralem wyniki matury od Kandydata PID:%d i przetwarzam je...\n", getpid(), zgloszenie.pid);
             loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
             MSG_DECYZJA decyzja;
@@ -73,7 +120,7 @@ int main()
             {
                 decyzja.dopuszczony_do_egzamin = true;
 
-                semafor_p(SEMAFOR_MUTEX);
+                semafor_p_bez_ewakuacji(SEMAFOR_MUTEX);
 
                 int index = pamiec_shm->index_kandydaci;
 
@@ -100,7 +147,7 @@ int main()
                 decyzja.dopuszczony_do_egzamin = false;
                 decyzja.numer_na_liscie = -1;
 
-                semafor_p(SEMAFOR_MUTEX);
+                semafor_p_bez_ewakuacji(SEMAFOR_MUTEX);
 
                 int index = pamiec_shm->index_odrzuceni;
 
@@ -122,7 +169,10 @@ int main()
                 loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
             }
 
-            msq_send(msqid_budynek, &decyzja, sizeof(decyzja));
+            if (msq_send(msqid_budynek, &decyzja, sizeof(decyzja)) == -1)
+            {
+                continue;
+            }
         }
 
         MSG_WYNIK_KONCOWY_DZIEKAN wynik_koncowy_egzamin;
@@ -143,8 +193,12 @@ int main()
                 write(STDERR_FILENO, error_msg, len);
             }
         }
+    }
 
-        // usleep(1000);
+    if (ewakuacja_aktywna && egzamin_start)
+    {
+        snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Ewakuacja w trakcie egzaminu - przerywam egzamin i generuje ranking\n");
+        loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
     }
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Odbieram pozostale wyniki z kolejki...\n");
@@ -182,7 +236,46 @@ int main()
     snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Odebrano %d pozostalych wynikow.\n", odebrane);
     loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
 
-    semafor_p(SEMAFOR_MUTEX);
+    // Kandydaci dostaja SIGTERM nie czekaj na nich
+    if (!ewakuacja_aktywna)
+    {
+        snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Oczekiwanie na zakonczenie procesow kandydatow...\n");
+        loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
+
+        int odebrane = 0;
+        while (odebrane < LICZBA_KANDYDATOW)
+        {
+            if (ewakuacja_aktywna)
+                break;
+
+            if (semafor_p(SEMAFOR_KONIEC_KANDYDATOW) == -1)
+            {
+                break;
+            }
+            odebrane++;
+
+            if (odebrane % 1000 == 0 || odebrane == LICZBA_KANDYDATOW)
+            {
+                semafor_p_bez_ewakuacji(SEMAFOR_MUTEX);
+                int pozostalo = pamiec_shm->kandydatow_procesow;
+                semafor_v(SEMAFOR_MUTEX);
+
+                snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Zakonczylo sie %d/%d kandydatow (pozostalo w SHM: %d)\n", odebrane, LICZBA_KANDYDATOW, pozostalo);
+                loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
+            }
+        }
+
+        snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Przerwano oczekiwanie na kandydatow. Zakonczylo sie: %d/%d.\n", odebrane, LICZBA_KANDYDATOW);
+        loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
+    }
+    else
+    {
+        snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Ewakuacja - pomijam oczekiwanie na kandydatow (zostali zabici przez SIGTERM)\n");
+        loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
+    }
+
+    semafor_p_bez_ewakuacji(SEMAFOR_MUTEX);
+    pamiec_shm->egzamin_trwa = false;
 
     int n = 0;
     for (int i = 0; i < pamiec_shm->index_kandydaci; i++)
@@ -227,6 +320,19 @@ int main()
     wypisz_liste_rankingowa(pamiec_shm);
     semafor_v(SEMAFOR_MUTEX);
 
+    // Czekaj na kom A i kom B
+    snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Czekam na zakonczenie Komisji A i B...\n");
+    loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
+
+    semafor_p_bez_ewakuacji(SEMAFOR_KOMISJA_A_KONIEC);
+    semafor_p_bez_ewakuacji(SEMAFOR_KOMISJA_B_KONIEC);
+
+    snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] Komisje zakonczone. Dziekan konczy prace.\n");
+    loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
+
+    snprintf(msg_buffer, sizeof(msg_buffer), "[DZIEKAN] PID:%d | Opuszczam budynek.\n", getpid());
+    loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
+
     odlacz_shm(pamiec_shm);
 
     return 0;
@@ -236,4 +342,34 @@ void start_egzamin(int sigNum)
 {
     (void)sigNum;
     egzamin_start = true;
+}
+
+void handler_sigusr2(int sigNum)
+{
+    (void)sigNum;
+    if (!ewakuacja_aktywna)
+    {
+        ewakuacja_aktywna = true;
+        egzamin_aktywny = false;
+        if (pamiec_shm != NULL)
+        {
+            pamiec_shm->ewakuacja = true;
+        }
+
+        kill(0, SIGTERM);
+    }
+}
+
+void handler_sigterm(int sigNum)
+{
+    (void)sigNum;
+    if (!ewakuacja_aktywna)
+    {
+        ewakuacja_aktywna = true;
+        egzamin_aktywny = false;
+        if (pamiec_shm != NULL)
+        {
+            pamiec_shm->ewakuacja = true;
+        }
+    }
 }

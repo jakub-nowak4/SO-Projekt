@@ -2,6 +2,17 @@
 
 int semafor_id = -1;
 int shmid = -1;
+extern volatile sig_atomic_t ewakuacja_aktywna;
+static PamiecDzielona *shm_ptr = NULL;
+
+static inline bool czy_ewakuacja(void)
+{
+    if (ewakuacja_aktywna)
+        return true;
+    if (shm_ptr != NULL && shm_ptr->ewakuacja)
+        return true;
+    return false;
+}
 
 void pobierz_czas(struct tm *wynik)
 {
@@ -32,7 +43,10 @@ void loguj(int sem_index, char *file_path, char *msg)
     char color_buffer[600];
     int len;
 
-    semafor_p(sem_index);
+    if (semafor_p_bez_ewakuacji(sem_index) == -1)
+    {
+        return;
+    }
 
     pobierz_czas_precyzyjny(&czas, &ms);
 
@@ -46,7 +60,13 @@ void loguj(int sem_index, char *file_path, char *msg)
     }
     semafor_v(sem_index);
 
-    // Kolorowe wypisywanie na stdout
+    bool wazny_komunikat = (strcmp(file_path, LOGI_DZIEKAN) == 0 ||
+                            strcmp(file_path, LOGI_MAIN) == 0 ||
+                            strcmp(file_path, LOGI_LISTA_RANKINGOWA) == 0 ||
+                            strcmp(file_path, LOGI_LISTA_ODRZUCONYCH) == 0 ||
+                            strcmp(file_path, LOGI_KOMISJA_A) == 0 ||
+                            strcmp(file_path, LOGI_KOMISJA_B) == 0);
+
     const char *color = "\033[0m";
 
     if (strcmp(file_path, LOGI_MAIN) == 0)
@@ -80,7 +100,17 @@ void loguj(int sem_index, char *file_path, char *msg)
 
     int color_len = snprintf(color_buffer, sizeof(color_buffer), "%s%s\033[0m", color, buffer);
 
-    semafor_p(SEMAFOR_STD_OUT);
+    if (wazny_komunikat)
+    {
+        if (semafor_p_bez_ewakuacji(SEMAFOR_STD_OUT) == -1)
+            return;
+    }
+    else
+    {
+        if (semafor_p(SEMAFOR_STD_OUT) == -1)
+            return;
+    }
+
     write(STDOUT_FILENO, color_buffer, color_len);
     semafor_v(SEMAFOR_STD_OUT);
 }
@@ -96,7 +126,11 @@ void wypisz_wiadomosc(char *msg)
         exit(EXIT_FAILURE);
     }
 
-    semafor_p(SEMAFOR_STD_OUT);
+    if (semafor_p(SEMAFOR_STD_OUT) == -1)
+    {
+        fprintf(stderr, "[Egzamin] Blad semafora przy logowaniu\n");
+        exit(EXIT_FAILURE);
+    }
     pobierz_czas(&czas);
     int len = snprintf(buffor, sizeof(buffor), "%02d:%02d:%02d | %s", czas.tm_hour, czas.tm_min, czas.tm_sec, msg);
 
@@ -136,12 +170,12 @@ key_t utworz_klucz(int arg)
 
 void utworz_semafory(key_t klucz_sem)
 {
-    semafor_id = semget(klucz_sem, 15, IPC_CREAT | IPC_EXCL | 0600);
+    semafor_id = semget(klucz_sem, 18, IPC_CREAT | IPC_EXCL | 0600);
     if (semafor_id == -1)
     {
         if (errno == EEXIST)
         {
-            semafor_id = semget(klucz_sem, 15, 0600);
+            semafor_id = semget(klucz_sem, 18, 0600);
             if (semafor_id == -1)
             {
                 perror("semget() | Nie udalo sie przylaczyc do zbioru semaforow");
@@ -245,20 +279,78 @@ void utworz_semafory(key_t klucz_sem)
             perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_KOLEJKA_PRZED_BUDYNKIEM");
             exit(EXIT_FAILURE);
         }
+
+        if (semctl(semafor_id, SEMAFOR_KONIEC_KANDYDATOW, SETVAL, 0) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_KONIEC_KANDYDATOW");
+            exit(EXIT_FAILURE);
+        }
+
+        if (semctl(semafor_id, SEMAFOR_KOMISJA_A_KONIEC, SETVAL, 0) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_KOMISJA_A_KONIEC");
+            exit(EXIT_FAILURE);
+        }
+
+        if (semctl(semafor_id, SEMAFOR_KOMISJA_B_KONIEC, SETVAL, 0) == -1)
+        {
+            perror("semctl() | Nie udalo sie ustawic wartosci poczatkowej SEMAFOR_KOMISJA_B_KONIEC");
+            exit(EXIT_FAILURE);
+        }
     }
 }
 
 void usun_semafory(void)
 {
+    if (semafor_id == -1)
+    {
+        return;
+    }
     if (semctl(semafor_id, 0, IPC_RMID) == -1)
     {
-        perror("semctl() | Nie udalo sie usunac zbioru semaforow");
-        exit(EXIT_FAILURE);
+        if (errno != EINVAL && errno != EIDRM)
+        {
+            perror("semctl() | Nie udalo sie usunac zbioru semaforow");
+        }
     }
 }
 
-void semafor_p(int semNum)
+int semafor_p(int semNum)
 {
+    if (czy_ewakuacja())
+    {
+        return -1;
+    }
+
+    struct sembuf buffer;
+    buffer.sem_num = semNum;
+    buffer.sem_op = -1;
+    buffer.sem_flg = SEM_UNDO;
+
+    while (semop(semafor_id, &buffer, 1) == -1)
+    {
+        if (errno == EINTR)
+        {
+            if (czy_ewakuacja())
+            {
+                return -1;
+            }
+            continue;
+        }
+        if (errno == EINVAL || errno == EIDRM)
+        {
+            return -1;
+        }
+        perror("semop() | Nie udalo sie wykonac operacji semafor P");
+        exit(EXIT_FAILURE);
+    }
+
+    return 0;
+}
+
+int semafor_p_bez_ewakuacji(int semNum)
+{
+    // funkcja nie sprawdza ewakuacji na poczatku zywana gdy proces musi dokonczyc operacje nawet podczas ewakuacji
     struct sembuf buffer;
     buffer.sem_num = semNum;
     buffer.sem_op = -1;
@@ -270,9 +362,15 @@ void semafor_p(int semNum)
         {
             continue;
         }
-        perror("semop() | Nie udalo sie wykonac operacji semafor P");
+        if (errno == EINVAL || errno == EIDRM)
+        {
+            return -1;
+        }
+        perror("semop() | Nie udalo sie wykonac operacji semafor P (bez ewakuacji)");
         exit(EXIT_FAILURE);
     }
+
+    return 0;
 }
 
 void semafor_v(int semNum)
@@ -288,21 +386,36 @@ void semafor_v(int semNum)
         {
             continue;
         }
+        if (errno == EINVAL || errno == EIDRM)
+        {
+            return;
+        }
         perror("semop() | Nie udalo sie wykonac operacji semafor V");
         exit(EXIT_FAILURE);
     }
 }
 
-int semafor_wartosc(int semNum)
+// wersja bez SEM_UNDO do sygnalizacji zakonczenia procesu
+void semafor_v_bez_undo(int semNum)
 {
-    int wartosc = semctl(semafor_id, semNum, GETVAL);
-    if (wartosc == -1)
+    struct sembuf buffer;
+    buffer.sem_num = semNum;
+    buffer.sem_op = 1;
+    buffer.sem_flg = 0;
+
+    while (semop(semafor_id, &buffer, 1) == -1)
     {
-        perror("semctl() | Nie udalo sie pobrac wartosci semafora");
+        if (errno == EINTR)
+        {
+            continue;
+        }
+        if (errno == EINVAL || errno == EIDRM)
+        {
+            return;
+        }
+        perror("semop() | Nie udalo sie wykonac operacji semafor V final");
         exit(EXIT_FAILURE);
     }
-
-    return wartosc;
 }
 
 void utworz_shm(key_t klucz_shm)
@@ -335,23 +448,36 @@ void dolacz_shm(PamiecDzielona **wsk)
         perror("shmat() | Nie udalo sie dolaczyc shm do pamieci adresowej procesu.");
         exit(EXIT_FAILURE);
     }
+    shm_ptr = *wsk;
 }
 
 void odlacz_shm(PamiecDzielona *adr)
 {
+    if (adr == NULL || adr == (PamiecDzielona *)-1)
+    {
+        return;
+    }
     if (shmdt(adr) == -1)
     {
-        perror("shmdt() | Nie udalo sie odlaczyc shm od pamiec adresowej procesu.");
-        exit(EXIT_FAILURE);
+        if (errno != EINVAL)
+        {
+            perror("shmdt() | Nie udalo sie odlaczyc shm od pamiec adresowej procesu.");
+        }
     }
 }
 
 void usun_shm(void)
 {
+    if (shmid == -1)
+    {
+        return;
+    }
     if (shmctl(shmid, IPC_RMID, NULL) == -1)
     {
-        perror("shmctl() | Nie udalo sie usunac shm.");
-        exit(EXIT_FAILURE);
+        if (errno != EINVAL && errno != EIDRM)
+        {
+            perror("shmctl() | Nie udalo sie usunac shm.");
+        }
     }
 }
 
@@ -379,32 +505,24 @@ int utworz_msq(key_t klucz_msq)
     return msqid;
 }
 
-void msq_send(int msqid, void *msg, size_t msg_size)
+int msq_send(int msqid, void *msg, size_t msg_size)
 {
     size_t msgsz = msg_size - sizeof(long);
 
-    int max_liczba_prob = 50;
-    int czas_oczekiwania = 100000;
-    int proby = 0;
-
-    while (proby < max_liczba_prob)
+    while (true)
     {
-        if (msgsnd(msqid, msg, msgsz, 0) == 0)
+        if (czy_ewakuacja())
         {
-            return;
+            return -1;
+        }
+
+        if (msgsnd(msqid, msg, msgsz, IPC_NOWAIT) == 0)
+        {
+            return 0;
         }
 
         if (errno == EAGAIN)
         {
-            if (proby >= max_liczba_prob)
-            {
-                const char *msg = "Kolejka jest przepelniona\n";
-                write(2, msg, strlen(msg));
-                exit(EXIT_FAILURE);
-            }
-
-            // usleep(czas_oczekiwania);
-            proby++;
             continue;
         }
 
@@ -415,46 +533,61 @@ void msq_send(int msqid, void *msg, size_t msg_size)
 
         if (errno == EIDRM || errno == EINVAL)
         {
-            return;
+            return -1;
         }
 
-        const char *msg = "Blad krytyczny wysylania wiadomosci\n";
-        write(2, msg, strlen(msg));
+        const char *error_msg = "Blad krytyczny wysylania wiadomosci\n";
+        write(2, error_msg, strlen(error_msg));
         exit(EXIT_FAILURE);
     }
 }
 
-void msq_receive(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci)
+ssize_t msq_receive(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci)
 {
-    while (msgrcv(msqid, buffer, buffer_size - sizeof(long), typ_wiadomosci, 0) == -1)
+    ssize_t res;
+    while (true)
     {
-        if (errno == EINTR)
+        if (czy_ewakuacja())
         {
-            continue;
+            return -1;
         }
-        if (errno == EIDRM || errno == EINVAL)
+
+        res = msgrcv(msqid, buffer, buffer_size - sizeof(long), typ_wiadomosci, 0);
+        if (res == -1)
         {
-            exit(EXIT_SUCCESS);
+            if (errno == EINTR)
+            {
+                if (ewakuacja_aktywna)
+                {
+                    return -1;
+                }
+                continue;
+            }
+
+            if (errno == EIDRM || errno == EINVAL)
+            {
+                return -1;
+            }
+            perror("msgrcv() | Nie udalo sie odebrac wiadomosci.");
+            exit(EXIT_FAILURE);
         }
-        perror("msgrcv() | Nie udalo sie odebrac wiadomosci.");
-        exit(EXIT_FAILURE);
+        return res;
     }
 }
 
 ssize_t msq_receive_no_wait(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci)
 {
     ssize_t res;
-    if ((res = msgrcv(msqid, buffer, buffer_size - sizeof(long), typ_wiadomosci, IPC_NOWAIT)) == -1)
+    res = msgrcv(msqid, buffer, buffer_size - sizeof(long), typ_wiadomosci, IPC_NOWAIT);
+    if (res == -1)
     {
-        if (errno == ENOMSG)
+        if (errno == ENOMSG || errno == EINVAL || errno == EIDRM || errno == EINTR)
         {
-            return res;
+            return -1;
         }
-        else
-        {
-            perror("msgrcv() | Nie udalo sie odberac wiadomosci.");
-            exit(EXIT_FAILURE);
-        }
+
+        perror("msgrcv() | Nie udalo sie odberac wiadomosci.");
+        exit(EXIT_FAILURE);
     }
 
     return res;
@@ -462,10 +595,16 @@ ssize_t msq_receive_no_wait(int msqid, void *buffer, size_t buffer_size, long ty
 
 void usun_msq(int msqid)
 {
+    if (msqid == -1)
+    {
+        return;
+    }
     if (msgctl(msqid, IPC_RMID, NULL) == -1)
     {
-        perror("msgctl() | Nie udalo sie usunac kolejki komunikatow");
-        exit(EXIT_FAILURE);
+        if (errno != EINVAL && errno != EIDRM)
+        {
+            perror("msgctl() | Nie udalo sie usunac kolejki komunikatow");
+        }
     }
 }
 
@@ -479,7 +618,10 @@ bool zaktualizuj_wynik_kandydata(pid_t pid, char komisja, float wynik, PamiecDzi
 
     bool znaleziono = false;
 
-    semafor_p(SEMAFOR_MUTEX);
+    if (semafor_p(SEMAFOR_MUTEX) == -1)
+    {
+        return false;
+    }
     for (int i = 0; i < shm->index_kandydaci; i++)
     {
         if (shm->LISTA_KANDYDACI[i].pid == pid)

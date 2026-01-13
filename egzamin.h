@@ -22,7 +22,7 @@
 #include <sys/ipc.h>
 #include <pthread.h>
 
-#define M 1800                     // liczba osob ktore moga byc przyjete dla WSL MAX < 1900
+#define M 1000                     // liczba osob ktore moga byc przyjete dla WSL MAX < 1900
 #define POJEMNOSC_BUDYNKU 500      // max kandydatow w budynku naraz (musi byc < MAX_POJEMNOSC_BUDYNKU)
 #define MAX_POJEMNOSC_BUDYNKU 1000 // limit kolejek komunikatow - NIE ZMIENIAC!
 #define LICZBA_KANDYDATOW (10 * M)
@@ -101,6 +101,7 @@ bool losuj_czy_powtarza_egzamin();
 typedef struct
 {
     bool egzamin_trwa;
+    volatile bool ewakuacja; // Flaga ewakuacji w pamięci dzielonej - widoczna dla wszystkich procesów
     int index_kandydaci;
     int index_odrzuceni;
     int index_rankingowa;
@@ -129,7 +130,10 @@ typedef enum
     SEMAFOR_DZIEKAN_GOTOWY,
     SEMAFOR_KOMISJA_A_GOTOWA,
     SEMAFOR_KOMISJA_B_GOTOWA,
-    SEMAFOR_KOLEJKA_PRZED_BUDYNKIEM
+    SEMAFOR_KOLEJKA_PRZED_BUDYNKIEM,
+    SEMAFOR_KONIEC_KANDYDATOW,
+    SEMAFOR_KOMISJA_A_KONIEC,
+    SEMAFOR_KOMISJA_B_KONIEC
 } Semafory;
 
 void pobierz_czas(struct tm *wynik);
@@ -139,9 +143,10 @@ void wypisz_wiadomosc(char *msg);
 key_t utworz_klucz(int arg);
 void usun_semafory(void);
 void utworz_semafory(key_t klucz_sem);
-void semafor_p(int semNum);
+int semafor_p(int semNum);
+int semafor_p_bez_ewakuacji(int semNum); // NIE sprawdza ewakuacji (dla dziekana)
 void semafor_v(int semNum);
-int semafor_wartosc(int semNum);
+void semafor_v_bez_undo(int semNum); // Bez SEM_UNDO - do sygnalizacji zakonczenia procesu
 
 void utworz_shm(key_t klucz_shm);
 void dolacz_shm(PamiecDzielona **wsk);
@@ -257,8 +262,8 @@ typedef struct
 } MSG_WYNIK_KONCOWY_DZIEKAN;
 
 int utworz_msq(key_t klucz_msq);
-void msq_send(int msqid, void *msg, size_t msg_size);
-void msq_receive(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci);
+int msq_send(int msqid, void *msg, size_t msg_size);
+ssize_t msq_receive(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci);
 ssize_t msq_receive_no_wait(int msqid, void *buffer, size_t buffer_size, long typ_wiadomosci);
 void usun_msq(int msqid);
 

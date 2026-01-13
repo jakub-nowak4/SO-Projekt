@@ -1,6 +1,9 @@
 #include "egzamin.h"
 
 volatile sig_atomic_t egzamin_aktywny = true;
+volatile sig_atomic_t ewakuacja_aktywna = false;
+void handler_sigterm(int sigNum);
+void handler_sigusr1(int sigNum);
 
 int msqid_B = -1;
 int msqid_dziekan_komisja = -1;
@@ -12,11 +15,59 @@ pid_t kandydat_odpowiada = 0;
 
 pthread_mutex_t mutex;
 
+pthread_t watki_komisji[LICZBA_CZLONKOW_B];
+volatile sig_atomic_t liczba_watkow = 0;
+pthread_t watek_glowny;
+
+int safe_mutex_lock(pthread_mutex_t *mtx)
+{
+    if (ewakuacja_aktywna)
+        return -1;
+    pthread_mutex_lock(mtx);
+    if (ewakuacja_aktywna)
+    {
+        pthread_mutex_unlock(mtx);
+        return -1;
+    }
+    return 0;
+}
+
 void *nadzorca(void *args);
 void *czlonek(void *args);
-
 int main()
 {
+    if (signal(SIGINT, SIG_IGN) == SIG_ERR)
+    {
+        perror("signal() | Nie udalo sie dodac signal handler.");
+        exit(EXIT_FAILURE);
+    }
+    struct sigaction sa;
+    sa.sa_handler = handler_sigterm;
+    sigemptyset(&sa.sa_mask);
+    sa.sa_flags = 0;
+    if (sigaction(SIGTERM, &sa, NULL) == -1)
+    {
+        perror("sigaction(SIGTERM) | Nie udalo sie dodac signal handler.");
+        exit(EXIT_FAILURE);
+    }
+
+    if (signal(SIGINT, SIG_IGN) == SIG_ERR)
+    {
+        perror("signal(SIGINT) | Nie udalo sie zignorowac SIGINT.");
+        exit(EXIT_FAILURE);
+    }
+    struct sigaction sa_usr1;
+    sa_usr1.sa_handler = handler_sigusr1;
+    sigemptyset(&sa_usr1.sa_mask);
+    sa_usr1.sa_flags = 0;
+    if (sigaction(SIGUSR1, &sa_usr1, NULL) == -1)
+    {
+        perror("sigaction(SIGUSR1) | Nie udalo sie dodac signal handler.");
+        exit(EXIT_FAILURE);
+    }
+
+    watek_glowny = pthread_self();
+
     char msg_buffer[200];
 
     srand(time(NULL) ^ getpid());
@@ -29,6 +80,11 @@ int main()
     key_t klucz_shm = utworz_klucz(77);
     utworz_shm(klucz_shm);
     dolacz_shm(&pamiec_shm);
+
+    if (pamiec_shm->ewakuacja)
+    {
+        ewakuacja_aktywna = true;
+    }
 
     pthread_mutex_init(&mutex, NULL);
 
@@ -43,7 +99,11 @@ int main()
 
     while (true)
     {
-        semafor_p(SEMAFOR_MUTEX);
+        if (semafor_p(SEMAFOR_MUTEX) == -1)
+        {
+            fprintf(stderr, "[KOMISJA B] Blad semafora przy inicjalizacji pamieci dzielonej\n");
+            break;
+        }
         bool egzamin_trwa = pamiec_shm->egzamin_trwa;
         semafor_v(SEMAFOR_MUTEX);
 
@@ -51,19 +111,17 @@ int main()
         {
             break;
         }
-        // usleep(10000);
     }
 
-    snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B] PID%d | Komisja rozpoczyna prace.\n", getpid());
+    snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B] PID:%d | Komisja rozpoczyna prace.\n", getpid());
     loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
 
-    pthread_t czlonkowie_komisji[LICZBA_CZLONKOW_B];
     for (int i = 0; i < LICZBA_CZLONKOW_B; i++)
     {
         numery_czlonkow[i] = i;
         if (i == 0)
         {
-            if (pthread_create(&czlonkowie_komisji[i], NULL, nadzorca, &numery_czlonkow[i]) != 0)
+            if (pthread_create(&watki_komisji[i], NULL, nadzorca, &numery_czlonkow[i]) != 0)
             {
                 perror("pthread_create() | Nie udalo sie utworzyc watku nadzorca Komisji B.\n");
                 exit(EXIT_FAILURE);
@@ -71,17 +129,22 @@ int main()
         }
         else
         {
-            if (pthread_create(&czlonkowie_komisji[i], NULL, czlonek, &numery_czlonkow[i]) != 0)
+            if (pthread_create(&watki_komisji[i], NULL, czlonek, &numery_czlonkow[i]) != 0)
             {
                 perror("pthread_create() | Nie udalo sie utworzyc watku czlonek Komisji B.\n");
                 exit(EXIT_FAILURE);
             }
         }
+        liczba_watkow++;
     }
 
-    while (egzamin_aktywny)
+    while (egzamin_aktywny && !ewakuacja_aktywna)
     {
-        semafor_p(SEMAFOR_MUTEX);
+        if (semafor_p(SEMAFOR_MUTEX) == -1)
+        {
+            fprintf(stderr, "[KOMISJA B] Blad semafora przy inicjalizacji pamieci dzielonej\n");
+            break;
+        }
         int procesow = pamiec_shm->kandydatow_procesow;
         int osoby_w_sali = pamiec_shm->liczba_osob_w_B;
         semafor_v(SEMAFOR_MUTEX);
@@ -91,8 +154,6 @@ int main()
             egzamin_aktywny = false;
             break;
         }
-
-        // usleep(10000);
     }
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B] PID:%d | Komisja konczy prace.\n", getpid());
@@ -100,7 +161,7 @@ int main()
 
     for (int i = 0; i < LICZBA_CZLONKOW_B; i++)
     {
-        int ret = pthread_join(czlonkowie_komisji[i], NULL);
+        int ret = pthread_join(watki_komisji[i], NULL);
         if (ret != 0)
         {
             fprintf(stderr, "pthread_join() | Nie udalo sie przylaczyc watku: %s\n", strerror(ret));
@@ -110,6 +171,9 @@ int main()
 
     pthread_mutex_destroy(&mutex);
     odlacz_shm(pamiec_shm);
+
+    semafor_v_bez_undo(SEMAFOR_KOMISJA_B_KONIEC);
+
     return 0;
 }
 
@@ -119,9 +183,13 @@ void *nadzorca(void *args)
     ssize_t res;
     char msg_buffer[200];
 
-    while (true)
+    while (!ewakuacja_aktywna)
     {
-        semafor_p(SEMAFOR_MUTEX);
+        if (semafor_p(SEMAFOR_MUTEX) == -1)
+        {
+            fprintf(stderr, "[KOMISJA B] Blad semafora przy inicjalizacji pamieci dzielonej\n");
+            break;
+        }
         bool egzamin_trwa = pamiec_shm->egzamin_trwa;
         int liczba_osob = pamiec_shm->liczba_osob_w_B;
         int kandydatow = pamiec_shm->kandydatow_procesow;
@@ -141,8 +209,15 @@ void *nadzorca(void *args)
             {
                 int slot = -1;
 
-                semafor_p(SEMAFOR_MUTEX);
-                pthread_mutex_lock(&mutex);
+                if (semafor_p(SEMAFOR_MUTEX) == -1)
+                {
+                    break;
+                }
+                if (safe_mutex_lock(&mutex) == -1)
+                {
+                    semafor_v(SEMAFOR_MUTEX);
+                    break;
+                }
                 for (int i = 0; i < 3; i++)
                 {
                     if (miejsca[i].pid == 0)
@@ -171,7 +246,8 @@ void *nadzorca(void *args)
                 {
                     MSG_KANDYDAT_WCHODZI_DO_B_POTWIERDZENIE potwierdzenie;
                     potwierdzenie.mtype = MTYPE_B_POTWIERDZENIE + zgloszenie_B.pid;
-                    msq_send(msqid_B, &potwierdzenie, sizeof(potwierdzenie));
+                    if (msq_send(msqid_B, &potwierdzenie, sizeof(potwierdzenie)) == -1)
+                        break;
 
                     snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B  NADZORCA] PID:%d | Do sali wchodzi kandydat PID:%d\n", getpid(), zgloszenie_B.pid);
                     loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
@@ -184,7 +260,8 @@ void *nadzorca(void *args)
         ssize_t gotowy_res = msq_receive_no_wait(msqid_B, &gotowy, sizeof(gotowy), KANDYDAT_GOTOWY_B);
         if (gotowy_res != -1)
         {
-            pthread_mutex_lock(&mutex);
+            if (safe_mutex_lock(&mutex) == -1)
+                break;
             for (int i = 0; i < 3; i++)
             {
                 if (miejsca[i].pid == gotowy.pid)
@@ -197,14 +274,16 @@ void *nadzorca(void *args)
         }
 
         // Pytania wysyłane tylko gdy nikt nie odpowiada
-        pthread_mutex_lock(&mutex);
+        if (safe_mutex_lock(&mutex) == -1)
+            break;
         bool ktos_odpowiada = (kandydat_odpowiada != 0);
         pthread_mutex_unlock(&mutex);
 
         if (!ktos_odpowiada)
         {
             pid_t kandydat_pid = 0;
-            pthread_mutex_lock(&mutex);
+            if (safe_mutex_lock(&mutex) == -1)
+                break;
             for (int i = 0; i < 3; i++)
             {
                 if (miejsca[i].pid != 0 && kandydat_gotowy[i] && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
@@ -218,12 +297,11 @@ void *nadzorca(void *args)
 
             if (kandydat_pid != 0)
             {
-                // usleep((rand() % 2 + 1) * 1000000);
-
                 MSG_PYTANIE pytanie;
                 pytanie.mtype = MTYPE_B_PYTANIE + kandydat_pid;
                 pytanie.pid = kandydat_pid;
-                msq_send(msqid_B, &pytanie, sizeof(pytanie));
+                if (msq_send(msqid_B, &pytanie, sizeof(pytanie)) == -1)
+                    break;
 
                 snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B NADZORCA] PID:%d |Zadaje pytanie dla kandydata PID:%d\n", getpid(), kandydat_pid);
                 loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
@@ -234,7 +312,13 @@ void *nadzorca(void *args)
         res = msq_receive_no_wait(msqid_B, &odpowiedz, sizeof(odpowiedz), numer_czlonka + 1);
         if (res != -1)
         {
-            pthread_mutex_lock(&mutex);
+            MSG_WYNIK wynik_do_wyslania;
+            bool wyslij_wynik = false;
+            pid_t pid_do_logu = 0;
+
+            if (safe_mutex_lock(&mutex) == -1)
+                break;
+
             if (kandydat_odpowiada == 0)
             {
                 kandydat_odpowiada = odpowiedz.pid;
@@ -250,29 +334,40 @@ void *nadzorca(void *args)
                         miejsca[i].oceny[numer_czlonka] = ocena;
                         miejsca[i].liczba_ocen++;
 
-                        MSG_WYNIK wynik;
-                        wynik.mtype = MTYPE_B_WYNIK + odpowiedz.pid;
-                        wynik.numer_czlonka_komisj = numer_czlonka;
-                        wynik.ocena = ocena;
-
-                        msq_send(msqid_B, &wynik, sizeof(wynik));
-
-                        snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B NADZORCA] PID:%d |Otrzymalem odpowiedz od kandydat PID:%d\n", getpid(), odpowiedz.pid);
-                        loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
+                        wynik_do_wyslania.mtype = MTYPE_B_WYNIK + odpowiedz.pid;
+                        wynik_do_wyslania.numer_czlonka_komisj = numer_czlonka;
+                        wynik_do_wyslania.ocena = ocena;
+                        wyslij_wynik = true;
+                        pid_do_logu = odpowiedz.pid;
 
                         break;
                     }
                 }
             }
             pthread_mutex_unlock(&mutex);
+
+            if (wyslij_wynik)
+            {
+                if (msq_send(msqid_B, &wynik_do_wyslania, sizeof(wynik_do_wyslania)) == -1)
+                    break;
+                snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B NADZORCA] PID:%d |Otrzymalem odpowiedz od kandydat PID:%d\n", getpid(), pid_do_logu);
+                loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
+            }
         }
 
         pid_t kandydat_do_oceny = 0;
         float srednia_do_wyslania = 0.0f;
         int numer_na_liscie_kandydata = -1;
 
-        semafor_p(SEMAFOR_MUTEX);
-        pthread_mutex_lock(&mutex);
+        if (semafor_p(SEMAFOR_MUTEX) == -1)
+        {
+            break;
+        }
+        if (safe_mutex_lock(&mutex) == -1)
+        {
+            semafor_v(SEMAFOR_MUTEX);
+            break;
+        }
         for (int i = 0; i < 3; i++)
         {
             if (miejsca[i].pid != 0 && miejsca[i].liczba_ocen == LICZBA_CZLONKOW_B)
@@ -302,7 +397,8 @@ void *nadzorca(void *args)
         {
             (void)numer_na_liscie_kandydata;
 
-            pthread_mutex_lock(&mutex);
+            if (safe_mutex_lock(&mutex) == -1)
+                break;
             if (kandydat_odpowiada == kandydat_do_oceny)
             {
                 kandydat_odpowiada = 0;
@@ -320,16 +416,16 @@ void *nadzorca(void *args)
             wynik_dla_dziekana.pid = kandydat_do_oceny;
             wynik_dla_dziekana.wynik_koncowy = srednia_do_wyslania;
 
-            msq_send(msqid_B, &wynik_koncowy, sizeof(wynik_koncowy));
+            if (msq_send(msqid_B, &wynik_koncowy, sizeof(wynik_koncowy)) == -1)
+                break;
             snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B Nadzorca] PID:%d | Kandydat PID:%d otrzymal wynik koncowy za czesc praktyczna=%.2f.\n", getpid(), kandydat_do_oceny, srednia_do_wyslania);
             loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
 
-            msq_send(msqid_dziekan_komisja, &wynik_dla_dziekana, sizeof(wynik_dla_dziekana));
+            if (msq_send(msqid_dziekan_komisja, &wynik_dla_dziekana, sizeof(wynik_dla_dziekana)) == -1)
+                break;
             snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B NADZORCA] PID:%d | Przeyslam do Dziekana wynik kandydata PID:%d\n", getpid(), kandydat_do_oceny);
             loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
         }
-
-        // usleep(10000);
     }
 
     return NULL;
@@ -341,9 +437,12 @@ void *czlonek(void *args)
     ssize_t res;
     char msg_buffer[512];
 
-    while (true)
+    while (!ewakuacja_aktywna)
     {
-        semafor_p(SEMAFOR_MUTEX);
+        if (semafor_p(SEMAFOR_MUTEX) == -1)
+        {
+            break;
+        }
         bool egzamin_trwa = pamiec_shm->egzamin_trwa;
         int kandydatow = pamiec_shm->kandydatow_procesow;
         int liczba_osob = pamiec_shm->liczba_osob_w_B;
@@ -355,14 +454,16 @@ void *czlonek(void *args)
         }
 
         // Pytania wysyłane tylko gdy nikt nie odpowiada
-        pthread_mutex_lock(&mutex);
+        if (safe_mutex_lock(&mutex) == -1)
+            break;
         bool ktos_odpowiada = (kandydat_odpowiada != 0);
         pthread_mutex_unlock(&mutex);
 
         if (!ktos_odpowiada)
         {
             pid_t kandydat_pid = 0;
-            pthread_mutex_lock(&mutex);
+            if (safe_mutex_lock(&mutex) == -1)
+                break;
 
             for (int i = 0; i < 3; i++)
             {
@@ -377,12 +478,11 @@ void *czlonek(void *args)
 
             if (kandydat_pid != 0)
             {
-                // usleep((rand() % 2 + 1) * 1000000);
-
                 MSG_PYTANIE pytanie;
                 pytanie.mtype = MTYPE_B_PYTANIE + kandydat_pid;
                 pytanie.pid = kandydat_pid;
-                msq_send(msqid_B, &pytanie, sizeof(pytanie));
+                if (msq_send(msqid_B, &pytanie, sizeof(pytanie)) == -1)
+                    break;
 
                 snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B CZLONEK %d] PID:%d | Zadaje pytanie dla kandydat PID:%d\n", numer_czlonka + 1, getpid(), kandydat_pid);
                 loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
@@ -393,7 +493,13 @@ void *czlonek(void *args)
         res = msq_receive_no_wait(msqid_B, &odpowiedz, sizeof(odpowiedz), numer_czlonka + 1);
         if (res != -1)
         {
-            pthread_mutex_lock(&mutex);
+            MSG_WYNIK wynik_do_wyslania;
+            bool wyslij_wynik = false;
+            pid_t pid_do_logu = 0;
+
+            if (safe_mutex_lock(&mutex) == -1)
+                break;
+
             if (kandydat_odpowiada == 0)
             {
                 kandydat_odpowiada = odpowiedz.pid;
@@ -409,24 +515,67 @@ void *czlonek(void *args)
                         miejsca[i].oceny[numer_czlonka] = ocena;
                         miejsca[i].liczba_ocen++;
 
-                        MSG_WYNIK wynik;
-                        wynik.mtype = MTYPE_B_WYNIK + odpowiedz.pid;
-                        wynik.numer_czlonka_komisj = numer_czlonka;
-                        wynik.ocena = ocena;
-
-                        msq_send(msqid_B, &wynik, sizeof(wynik));
-                        snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B CZLONEK %d] PID:%d | Otrzymalem odpowiedz od kandydat PID:%d\n", numer_czlonka + 1, getpid(), odpowiedz.pid);
-                        loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
+                        wynik_do_wyslania.mtype = MTYPE_B_WYNIK + odpowiedz.pid;
+                        wynik_do_wyslania.numer_czlonka_komisj = numer_czlonka;
+                        wynik_do_wyslania.ocena = ocena;
+                        wyslij_wynik = true;
+                        pid_do_logu = odpowiedz.pid;
 
                         break;
                     }
                 }
             }
             pthread_mutex_unlock(&mutex);
-        }
 
-        // usleep(10000);
+            // Wysyłanie POZA sekcją krytyczną
+            if (wyslij_wynik)
+            {
+                if (msq_send(msqid_B, &wynik_do_wyslania, sizeof(wynik_do_wyslania)) == -1)
+                    break;
+                snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA B CZLONEK %d] PID:%d | Otrzymalem odpowiedz od kandydat PID:%d\n", numer_czlonka + 1, getpid(), pid_do_logu);
+                loguj(SEMAFOR_LOGI_KOMISJA_B, LOGI_KOMISJA_B, msg_buffer);
+            }
+        }
     }
 
     return NULL;
+}
+
+void handler_sigterm(int sigNum)
+{
+    (void)sigNum;
+    ewakuacja_aktywna = true;
+    if (pamiec_shm != NULL)
+    {
+        pamiec_shm->ewakuacja = true;
+    }
+
+    const char *msg = "[Komisja B] Otrzymano SIGTERM - ewakuacja.\n";
+    write(STDOUT_FILENO, msg, strlen(msg));
+
+    // Sygnalizuj watki tylko jesli zostaly utworzone
+    if (liczba_watkow > 0)
+    {
+        // Sygnalizuj waek glowny
+        pthread_t self = pthread_self();
+        if (!pthread_equal(watek_glowny, self))
+        {
+            pthread_kill(watek_glowny, SIGUSR1);
+        }
+
+        // Sygnalizuj watki robocze
+        for (int i = 0; i < liczba_watkow; i++)
+        {
+            if (!pthread_equal(watki_komisji[i], self))
+            {
+                pthread_kill(watki_komisji[i], SIGUSR1);
+            }
+        }
+    }
+}
+
+void handler_sigusr1(int sigNum)
+{
+    // Pusty handler - tylko do budzenia watkow z blokujacych wywolan systemowych
+    (void)sigNum;
 }
