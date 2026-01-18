@@ -307,6 +307,8 @@ void *nadzorca(void *args)
 
             if (kandydat_pid != 0)
             {
+                // usleep(CZAS_PRZYGOTOWANIA_PYTANIA_MIN + rand() % (CZAS_PRZYGOTOWANIA_PYTANIA_MAX - CZAS_PRZYGOTOWANIA_PYTANIA_MIN));
+
                 MSG_PYTANIE pytanie;
                 pytanie.mtype = MTYPE_B_PYTANIE + kandydat_pid;
                 pytanie.pid = kandydat_pid;
@@ -360,6 +362,8 @@ void *nadzorca(void *args)
 
             if (wyslij_wynik)
             {
+                // usleep(CZAS_OCENIANIA_ODPOWIEDZI_MIN + rand() % (CZAS_OCENIANIA_ODPOWIEDZI_MAX - CZAS_OCENIANIA_ODPOWIEDZI_MIN));
+
                 if (msq_send(msqid_B, &wynik_do_wyslania, sizeof(wynik_do_wyslania)) == -1)
                     break;
                 snprintf(msg_buffer, sizeof(msg_buffer), "[Nadzorca B] PID:%d | Otrzymalem odpowiedz od kandydata PID:%d Nr:%d, Ocena: %d\n", getpid(), pid_do_logu, nr_do_logu, wynik_do_wyslania.ocena);
@@ -489,6 +493,8 @@ void *czlonek(void *args)
 
             if (kandydat_pid != 0)
             {
+                // usleep(CZAS_PRZYGOTOWANIA_PYTANIA_MIN + rand() % (CZAS_PRZYGOTOWANIA_PYTANIA_MAX - CZAS_PRZYGOTOWANIA_PYTANIA_MIN));
+
                 MSG_PYTANIE pytanie;
                 pytanie.mtype = MTYPE_B_PYTANIE + kandydat_pid;
                 pytanie.pid = kandydat_pid;
@@ -542,6 +548,8 @@ void *czlonek(void *args)
 
             if (wyslij_wynik)
             {
+                // usleep(CZAS_OCENIANIA_ODPOWIEDZI_MIN + rand() % (CZAS_OCENIANIA_ODPOWIEDZI_MAX - CZAS_OCENIANIA_ODPOWIEDZI_MIN));
+
                 if (msq_send(msqid_B, &wynik_do_wyslania, sizeof(wynik_do_wyslania)) == -1)
                     break;
                 snprintf(msg_buffer, sizeof(msg_buffer), "[Czlonek B %d] PID:%d | Otrzymalem odpowiedz od kandydata PID:%d Nr:%d, Ocena: %d\n", numer_czlonka + 1, getpid(), pid_do_logu, nr_do_logu, wynik_do_wyslania.ocena);
@@ -563,7 +571,7 @@ void handler_sigterm(int sigNum)
     }
 
     const char *msg = "[Komisja B] Otrzymano SIGTERM - ewakuacja.\n";
-    write(STDOUT_FILENO, msg, strlen(msg));
+    (void)write(STDOUT_FILENO, msg, strlen(msg));
 
     // Sygnalizuj watki tylko jesli zostaly utworzone
     if (liczba_watkow > 0)

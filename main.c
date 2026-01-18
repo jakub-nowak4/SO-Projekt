@@ -212,6 +212,8 @@ int main()
     snprintf(msg_buffer, sizeof(msg_buffer), "[main] Oczekiwanie na godzinę T (start egzaminu)...\n");
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
+    // sleep(GODZINA_ROZPOCZECIA_EGZAMINU);
+
     // SIGUSR1 - dziekan rozpoczyna egzamin
     snprintf(msg_buffer, sizeof(msg_buffer), "[main] Wysyłam sygnał SIGUSR1 do Dziekana (PID:%d) - rozpoczynam egzamin\n", pid_dziekan);
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
@@ -285,7 +287,7 @@ void handler_sigint(int sigNum)
             pamiec_shm_global->ewakuacja = true;
         }
         const char *msg = "CTRL+C: Ewakuacja aktywna\n";
-        write(STDOUT_FILENO, msg, strlen(msg));
+        (void)write(STDOUT_FILENO, msg, strlen(msg));
         // SIGUSR2 - jesli dziekan instanieje ropczyna procedure ewakuacji
         if (pid_dziekan > 0)
         {

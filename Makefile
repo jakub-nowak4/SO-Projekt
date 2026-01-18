@@ -1,5 +1,5 @@
 CC ?= gcc
-CFLAGS ?= -Wall -Wextra -O2 -g
+CFLAGS ?= -Wall -Wextra -O2 -g -Wno-unused-result
 LDFLAGS_PTHREAD = -pthread
 
 PROGS := main dziekan kandydat komisja_a komisja_b

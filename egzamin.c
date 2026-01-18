@@ -55,7 +55,7 @@ void loguj(int sem_index, char *file_path, char *msg)
     int fd = open(file_path, O_WRONLY | O_APPEND | O_CREAT, 0644);
     if (fd != -1)
     {
-        write(fd, buffer, len);
+        (void)write(fd, buffer, len);
         close(fd);
     }
     semafor_v(sem_index);
@@ -111,7 +111,7 @@ void loguj(int sem_index, char *file_path, char *msg)
             return;
     }
 
-    write(STDOUT_FILENO, color_buffer, color_len);
+    (void)write(STDOUT_FILENO, color_buffer, color_len);
     semafor_v(SEMAFOR_STD_OUT);
 }
 
@@ -537,7 +537,7 @@ int msq_send(int msqid, void *msg, size_t msg_size)
         }
 
         const char *error_msg = "Blad krytyczny wysylania wiadomosci\n";
-        write(2, error_msg, strlen(error_msg));
+        (void)write(2, error_msg, strlen(error_msg));
         exit(EXIT_FAILURE);
     }
 }

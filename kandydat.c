@@ -51,6 +51,8 @@ int main()
     snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | Ustawiam sie w kolejce przed budynkiem.\n", moj_pid);
     loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
+    // usleep(CZAS_OCZEKIWANIA_W_KOLEJCE_MIN + rand() % (CZAS_OCZEKIWANIA_W_KOLEJCE_MAX - CZAS_OCZEKIWANIA_W_KOLEJCE_MIN));
+
     if (semafor_p(SEMAFOR_KOLEJKA_PRZED_BUDYNKIEM) == -1)
     {
         kandydat_zakoncz();
@@ -252,6 +254,8 @@ int main()
         snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
+        // usleep(CZAS_PRZYGOTOWANIA_ODPOWIEDZI_MIN + rand() % (CZAS_PRZYGOTOWANIA_ODPOWIEDZI_MAX - CZAS_PRZYGOTOWANIA_ODPOWIEDZI_MIN));
+
         snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Opracowalem pytania od Komisji A. Czekam az bede mogl odpowiadac.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
@@ -270,6 +274,7 @@ int main()
                 semafor_v(SEMAFOR_ODPOWIEDZ_A);
                 kandydat_zakoncz();
             }
+            // usleep(CZAS_UDZIELANIA_ODPOWIEDZI_MIN + rand() % (CZAS_UDZIELANIA_ODPOWIEDZI_MAX - CZAS_UDZIELANIA_ODPOWIEDZI_MIN));
         }
 
         snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Udzielilem odpowiedzi na wszystkie pytania Komisji A. Czekam na wyniki za czesc teoretyczna egzaminu.\n", moj_pid, decyzja.numer_na_liscie);
@@ -363,6 +368,8 @@ int main()
         snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
+        // usleep(CZAS_PRZYGOTOWANIA_ODPOWIEDZI_MIN + rand() % (CZAS_PRZYGOTOWANIA_ODPOWIEDZI_MAX - CZAS_PRZYGOTOWANIA_ODPOWIEDZI_MIN));
+
         snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Opracowalem pytania od Komisji B. Czekam az bede mogl odpowiadac.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
@@ -381,6 +388,7 @@ int main()
                 semafor_v(SEMAFOR_ODPOWIEDZ_B);
                 kandydat_zakoncz();
             }
+            // usleep(CZAS_UDZIELANIA_ODPOWIEDZI_MIN + rand() % (CZAS_UDZIELANIA_ODPOWIEDZI_MAX - CZAS_UDZIELANIA_ODPOWIEDZI_MIN));
         }
 
         snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Udzielilem odpowiedzi na wszystkie pytania Komisji B. Czekam na wyniki za czesc praktyczna egzaminu.\n", moj_pid, decyzja.numer_na_liscie);
@@ -429,7 +437,7 @@ void kandydat_zakoncz(void)
     if (pamiec_shm == NULL)
     {
         const char *msg = "[Kandydat] Blad: pamiec_shm == NULL\n";
-        write(STDERR_FILENO, msg, strlen(msg));
+        (void)write(STDERR_FILENO, msg, strlen(msg));
         exit(EXIT_FAILURE);
     }
 

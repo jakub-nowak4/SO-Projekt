@@ -190,7 +190,7 @@ int main()
             {
                 char error_msg[256];
                 int len = snprintf(error_msg, sizeof(error_msg), "dziekan.c | Nie znaleziono kandydata o podanym pid_t: %d\n", kandydat_pid);
-                write(STDERR_FILENO, error_msg, len);
+                (void)write(STDERR_FILENO, error_msg, len);
             }
         }
     }
@@ -229,7 +229,7 @@ int main()
         {
             char error_msg[256];
             int len = snprintf(error_msg, sizeof(error_msg), "dziekan.c | Nie znaleziono kandydata o podanym pid_t: %d (odbiór pozostałych)\n", kandydat_pid);
-            write(STDERR_FILENO, error_msg, len);
+            (void)write(STDERR_FILENO, error_msg, len);
         }
     }
 
