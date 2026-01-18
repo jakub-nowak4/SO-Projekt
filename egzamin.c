@@ -653,7 +653,7 @@ void wypisz_liste_rankingowa(PamiecDzielona *shm)
 
     for (int i = 0; i < shm->index_rankingowa; i++)
     {
-        snprintf(buffer, sizeof(buffer), "Miejsce %d: PID %d | Wynik: %.2f (A: %.2f, B: %.2f)\n", i + 1, shm->LISTA_RANKINGOWA[i].pid, shm->LISTA_RANKINGOWA[i].wynik_koncowy, shm->LISTA_RANKINGOWA[i].wynik_a, shm->LISTA_RANKINGOWA[i].wynik_b);
+        snprintf(buffer, sizeof(buffer), "Miejsce %d: PID %d Nr:%d | Wynik: %.2f (A: %.2f, B: %.2f)\n", i + 1, shm->LISTA_RANKINGOWA[i].pid, shm->LISTA_RANKINGOWA[i].numer_na_liscie, shm->LISTA_RANKINGOWA[i].wynik_koncowy, shm->LISTA_RANKINGOWA[i].wynik_a, shm->LISTA_RANKINGOWA[i].wynik_b);
         loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
     }
 
@@ -664,7 +664,7 @@ void wypisz_liste_rankingowa(PamiecDzielona *shm)
 
     for (int i = 0; i < przyjetych; i++)
     {
-        snprintf(buffer, sizeof(buffer), "Miejsce %d: PID %d | Wynik: %.2f (A: %.2f, B: %.2f) - PRZYJETY\n", i + 1, shm->LISTA_RANKINGOWA[i].pid, shm->LISTA_RANKINGOWA[i].wynik_koncowy, shm->LISTA_RANKINGOWA[i].wynik_a, shm->LISTA_RANKINGOWA[i].wynik_b);
+        snprintf(buffer, sizeof(buffer), "Miejsce %d: PID %d Nr:%d | Wynik: %.2f (A: %.2f, B: %.2f) - PRZYJETY\n", i + 1, shm->LISTA_RANKINGOWA[i].pid, shm->LISTA_RANKINGOWA[i].numer_na_liscie, shm->LISTA_RANKINGOWA[i].wynik_koncowy, shm->LISTA_RANKINGOWA[i].wynik_a, shm->LISTA_RANKINGOWA[i].wynik_b);
         loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
     }
 
@@ -677,7 +677,7 @@ void wypisz_liste_rankingowa(PamiecDzielona *shm)
 
         for (int i = M; i < shm->index_rankingowa; i++)
         {
-            snprintf(buffer, sizeof(buffer), "Miejsce %d: PID %d | Wynik: %.2f (A: %.2f, B: %.2f) - NIEPRZYJETY (brak miejsc)\n", i + 1, shm->LISTA_RANKINGOWA[i].pid, shm->LISTA_RANKINGOWA[i].wynik_koncowy, shm->LISTA_RANKINGOWA[i].wynik_a, shm->LISTA_RANKINGOWA[i].wynik_b);
+            snprintf(buffer, sizeof(buffer), "Miejsce %d: PID %d Nr:%d | Wynik: %.2f (A: %.2f, B: %.2f) - NIEPRZYJETY (brak miejsc)\n", i + 1, shm->LISTA_RANKINGOWA[i].pid, shm->LISTA_RANKINGOWA[i].numer_na_liscie, shm->LISTA_RANKINGOWA[i].wynik_koncowy, shm->LISTA_RANKINGOWA[i].wynik_a, shm->LISTA_RANKINGOWA[i].wynik_b);
             loguj(SEMAFOR_LOGI_LISTA_RANKINGOWA, LOGI_LISTA_RANKINGOWA, buffer);
         }
     }
@@ -706,7 +706,7 @@ void wypisz_liste_rankingowa(PamiecDzielona *shm)
             powod = "Zbyt niski wynik";
         }
 
-        snprintf(buffer, sizeof(buffer), "PID %d | A: %.2f | B: %.2f | Powod: %s\n", shm->LISTA_ODRZUCONYCH[i].pid, shm->LISTA_ODRZUCONYCH[i].wynik_a >= 0 ? shm->LISTA_ODRZUCONYCH[i].wynik_a : 0.0f, shm->LISTA_ODRZUCONYCH[i].wynik_b >= 0 ? shm->LISTA_ODRZUCONYCH[i].wynik_b : 0.0f, powod);
+        snprintf(buffer, sizeof(buffer), "PID %d Nr:%d | A: %.2f | B: %.2f | Powod: %s\n", shm->LISTA_ODRZUCONYCH[i].pid, shm->LISTA_ODRZUCONYCH[i].numer_na_liscie, shm->LISTA_ODRZUCONYCH[i].wynik_a >= 0 ? shm->LISTA_ODRZUCONYCH[i].wynik_a : 0.0f, shm->LISTA_ODRZUCONYCH[i].wynik_b >= 0 ? shm->LISTA_ODRZUCONYCH[i].wynik_b : 0.0f, powod);
         loguj(SEMAFOR_LOGI_LISTA_ODRZUCONYCH, LOGI_LISTA_ODRZUCONYCH, buffer);
     }
 

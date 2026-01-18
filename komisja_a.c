@@ -253,7 +253,7 @@ void *nadzorca(void *args)
                     if (msq_send(msqid_A, &ok, sizeof(ok)) == -1)
                         break;
 
-                    snprintf(msg_buffer, sizeof(msg_buffer), "[NADZORCA A] PID:%d | Wpuscilem kandydata PID:%d do sali.\n", getpid(), prosba.pid);
+                    snprintf(msg_buffer, sizeof(msg_buffer), "[Nadzorca A] PID:%d | Wpuscilem kandydata PID:%d Nr:%d do sali.\n", getpid(), prosba.pid, prosba.numer_na_liscie);
                     loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
                 }
             }
@@ -264,6 +264,7 @@ void *nadzorca(void *args)
         rozmiar_odpowiedz = msq_receive_no_wait(msqid_A, &gotowy, sizeof(gotowy), KANDYDAT_GOTOWY_A);
         if (rozmiar_odpowiedz != -1)
         {
+            int nr_liscie_gotowy = -1;
             if (safe_mutex_lock(&mutex) == -1)
                 break;
             for (int i = 0; i < 3; i++)
@@ -271,10 +272,17 @@ void *nadzorca(void *args)
                 if (miejsca[i].pid == gotowy.pid)
                 {
                     kandydat_gotowy[i] = true;
+                    nr_liscie_gotowy = miejsca[i].numer_na_liscie; 
                     break;
                 }
             }
             pthread_mutex_unlock(&mutex);
+
+            if (nr_liscie_gotowy != -1)
+            {
+                snprintf(msg_buffer, sizeof(msg_buffer), "[Nadzorca A] PID:%d | Kandydat PID:%d Nr:%d gotowy do odpowiadania.\n", getpid(), gotowy.pid, nr_liscie_gotowy);
+                loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
+            }
         }
 
         MSG_KANDYDAT_POWTARZA weryfikacja;
@@ -282,7 +290,20 @@ void *nadzorca(void *args)
 
         if (rozmiar_odpowiedz != -1)
         {
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA A NADZORCA] PID:%d | Zglasza sie do mnie kandydat PID:%d ,ktory ma zdana czesc teorytyczna egzaminu\n", getpid(), weryfikacja.pid);
+            int nr_liscie_weryf = -1;    
+            if (safe_mutex_lock(&mutex) == -1)
+                break;
+            for (int i = 0; i < 3; i++)
+            {
+                if (miejsca[i].pid == weryfikacja.pid)
+                {
+                    nr_liscie_weryf = miejsca[i].numer_na_liscie; 
+                    break;
+                }
+            }
+            pthread_mutex_unlock(&mutex);
+
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Nadzorca A] PID:%d | Zglasza sie do mnie kandydat PID:%d Nr:%d, ktory ma zdana czesc teoretyczna egzaminu.\n", getpid(), weryfikacja.pid, nr_liscie_weryf);
             loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
 
             MSG_KANDYDAT_POWTARZA_ODPOWIEDZ_NADZORCY weryfikacja_odpowiedz;
@@ -291,6 +312,9 @@ void *nadzorca(void *args)
 
             if (weryfikacja_odpowiedz.zgoda)
             {
+                snprintf(msg_buffer, sizeof(msg_buffer), "[Nadzorca A] PID:%d | Weryfikacja pozytywna dla kandydata PID:%d Nr:%d - przepuszczam do Komisji B.\n", getpid(), weryfikacja.pid, nr_liscie_weryf);
+                loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
+
                 if (semafor_p(SEMAFOR_MUTEX) == -1)
                 {
                     break;
@@ -321,6 +345,11 @@ void *nadzorca(void *args)
                 if (msq_send(msqid_dziekan_komisja, &wynik_dla_dziekana, sizeof(wynik_dla_dziekana)) == -1)
                     break;
             }
+            else
+            {
+                snprintf(msg_buffer, sizeof(msg_buffer), "[Nadzorca A] PID:%d | Weryfikacja negatywna dla kandydata PID:%d Nr:%d - wynik %.2f jest nieprawidlowy.\n", getpid(), weryfikacja.pid, nr_liscie_weryf, weryfikacja.wynik_a);
+                loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
+            }
 
             if (msq_send(msqid_A, &weryfikacja_odpowiedz, sizeof(weryfikacja_odpowiedz)) == -1)
                 break;
@@ -335,6 +364,7 @@ void *nadzorca(void *args)
         if (!ktos_odpowiada)
         {
             pid_t kandydat_pid = 0;
+            int nr_liscie_pytanie = -1;
             if (safe_mutex_lock(&mutex) == -1)
                 break;
 
@@ -343,6 +373,7 @@ void *nadzorca(void *args)
                 if (miejsca[i].pid != 0 && kandydat_gotowy[i] && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
                 {
                     kandydat_pid = miejsca[i].pid;
+                    nr_liscie_pytanie = miejsca[i].numer_na_liscie;     
                     miejsca[i].czy_dostal_pytanie[numer_czlonka] = true;
                     break;
                 }
@@ -357,7 +388,7 @@ void *nadzorca(void *args)
                 if (msq_send(msqid_A, &pytanie, sizeof(pytanie)) == -1)
                     break;
 
-                snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA A NADZORCA] PID:%d |Zadaje pytanie dla kandydata PID:%d\n", getpid(), kandydat_pid);
+                snprintf(msg_buffer, sizeof(msg_buffer), "[Nadzorca A] PID:%d | Zadaje pytanie dla kandydata PID:%d Nr:%d\n", getpid(), kandydat_pid, nr_liscie_pytanie);
                 loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
             }
         }
@@ -370,6 +401,7 @@ void *nadzorca(void *args)
             MSG_WYNIK wynik_do_wyslania;
             bool wyslij_wynik = false;
             pid_t pid_do_logu = 0;
+            int nr_do_logu = -1; 
 
             if (safe_mutex_lock(&mutex) == -1)
                 break;
@@ -395,6 +427,7 @@ void *nadzorca(void *args)
                         wynik_do_wyslania.ocena = ocena;
                         wyslij_wynik = true;
                         pid_do_logu = odpowiedz.pid;
+                        nr_do_logu = miejsca[i].numer_na_liscie; 
 
                         break;
                     }
@@ -406,13 +439,14 @@ void *nadzorca(void *args)
             {
                 if (msq_send(msqid_A, &wynik_do_wyslania, sizeof(wynik_do_wyslania)) == -1)
                     break;
-                snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA A NADZORCA] PID:%d |Otrzymalem odpowiedz od kandydat PID:%d\n", getpid(), pid_do_logu);
+                snprintf(msg_buffer, sizeof(msg_buffer), "[Nadzorca A] PID:%d | Otrzymalem odpowiedz od kandydata PID:%d Nr:%d, Ocena: %d\n", getpid(), pid_do_logu, nr_do_logu, wynik_do_wyslania.ocena);
                 loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
             }
         }
 
         pid_t kandydat_do_oceny = 0;
         float srednia_do_wyslania = 0.0f;
+        int numer_na_liscie_kandydata = -1; 
 
         if (semafor_p(SEMAFOR_MUTEX) == -1)
         {
@@ -437,6 +471,7 @@ void *nadzorca(void *args)
 
                 kandydat_do_oceny = miejsca[i].pid;
                 srednia_do_wyslania = srednia;
+                numer_na_liscie_kandydata = miejsca[i].numer_na_liscie; 
 
                 memset(&miejsca[i], 0, sizeof(Sala_A));
                 kandydat_gotowy[i] = false;
@@ -462,7 +497,7 @@ void *nadzorca(void *args)
             wynik_koncowy.wynik_koncowy = srednia_do_wyslania;
             wynik_koncowy.czy_zdal = (srednia_do_wyslania >= 30 && srednia_do_wyslania <= 100);
 
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA A NADZORCA] PID:%d | Kandydat PID:%d otrzymal wynik koncowy za czesc teorytyczna=%.2f.\n", getpid(), kandydat_do_oceny, srednia_do_wyslania);
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Nadzorca A] PID:%d | Kandydat PID:%d Nr:%d otrzymal wynik koncowy za czesc teoretyczna: %.2f\n", getpid(), kandydat_do_oceny, numer_na_liscie_kandydata, srednia_do_wyslania);
             loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
 
             MSG_WYNIK_KONCOWY_DZIEKAN wynik_dla_dziekana;
@@ -476,7 +511,7 @@ void *nadzorca(void *args)
             if (msq_send(msqid_dziekan_komisja, &wynik_dla_dziekana, sizeof(wynik_dla_dziekana)) == -1)
                 break;
 
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA A NADZORCA] PID:%d | Przeyslam do Dziekana wynik kandydata PID:%d\n", getpid(), kandydat_do_oceny);
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Nadzorca A] PID:%d | Przesylam do Dziekana wynik kandydata PID:%d Nr:%d\n", getpid(), kandydat_do_oceny, numer_na_liscie_kandydata);
             loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
         }
     }
@@ -515,6 +550,7 @@ void *czlonek(void *args)
         if (!ktos_odpowiada)
         {
             pid_t kandydat_pid = 0;
+            int nr_liscie_pytanie = -1;
             if (safe_mutex_lock(&mutex) == -1)
                 break;
             for (int i = 0; i < 3; i++)
@@ -522,6 +558,7 @@ void *czlonek(void *args)
                 if (miejsca[i].pid != 0 && kandydat_gotowy[i] && (miejsca[i].czy_dostal_pytanie[numer_czlonka] == false))
                 {
                     kandydat_pid = miejsca[i].pid;
+                    nr_liscie_pytanie = miejsca[i].numer_na_liscie;     
                     miejsca[i].czy_dostal_pytanie[numer_czlonka] = true;
                     break;
                 }
@@ -536,7 +573,7 @@ void *czlonek(void *args)
                 if (msq_send(msqid_A, &pytanie, sizeof(pytanie)) == -1)
                     break;
 
-                snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA A CZLONEK %d] PID:%d | Zadaje pytanie dla kandydat PID:%d\n", numer_czlonka + 1, getpid(), kandydat_pid);
+                snprintf(msg_buffer, sizeof(msg_buffer), "[Czlonek A %d] PID:%d | Zadaje pytanie dla kandydata PID:%d Nr:%d\n", numer_czlonka + 1, getpid(), kandydat_pid, nr_liscie_pytanie);
                 loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
             }
         }
@@ -549,6 +586,7 @@ void *czlonek(void *args)
             MSG_WYNIK wynik_do_wyslania;
             bool wyslij_wynik = false;
             pid_t pid_do_logu = 0;
+            int nr_do_logu = -1; 
 
             if (safe_mutex_lock(&mutex) == -1)
                 break;
@@ -574,6 +612,7 @@ void *czlonek(void *args)
                         wynik_do_wyslania.ocena = ocena;
                         wyslij_wynik = true;
                         pid_do_logu = odpowiedz.pid;
+                        nr_do_logu = miejsca[i].numer_na_liscie; 
 
                         break;
                     }
@@ -585,7 +624,7 @@ void *czlonek(void *args)
             {
                 if (msq_send(msqid_A, &wynik_do_wyslania, sizeof(wynik_do_wyslania)) == -1)
                     break;
-                snprintf(msg_buffer, sizeof(msg_buffer), "[KOMISJA A CZLONEK %d] PID:%d | Otrzymalem odpowiedz od kandydat PID:%d\n", numer_czlonka + 1, getpid(), pid_do_logu);
+                snprintf(msg_buffer, sizeof(msg_buffer), "[Czlonek A %d] PID:%d | Otrzymalem odpowiedz od kandydata PID:%d Nr:%d, Ocena: %d\n", numer_czlonka + 1, getpid(), pid_do_logu, nr_do_logu, wynik_do_wyslania.ocena);
                 loguj(SEMAFOR_LOGI_KOMISJA_A, LOGI_KOMISJA_A, msg_buffer);
             }
         }

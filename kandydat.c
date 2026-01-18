@@ -2,8 +2,8 @@
 
 PamiecDzielona *pamiec_shm;
 volatile sig_atomic_t ewakuacja_aktywna = false;
-
 volatile sig_atomic_t w_budynku = false;
+int global_numer_na_liscie = -1;
 
 void kandydat_zakoncz(void);
 void handler_sigterm(int sigNum);
@@ -48,7 +48,7 @@ int main()
     key_t klucz_msq_budynek = utworz_klucz(MSQ_KOLEJKA_BUDYNEK);
     int msqid_budynek = utworz_msq(klucz_msq_budynek);
 
-    snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | Ustawia sie w kolejce przed budynkiem.\n", moj_pid);
+    snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | Ustawiam sie w kolejce przed budynkiem.\n", moj_pid);
     loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
     if (semafor_p(SEMAFOR_KOLEJKA_PRZED_BUDYNKIEM) == -1)
@@ -76,7 +76,7 @@ int main()
 
     zgloszenie.wynik_a = moj_wynik_a;
 
-    snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Wysylam zgloszenie (wpisuje sie na liste) i czekam na decyzje.\n", moj_pid);
+    snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | Wysylam zgloszenie (wpisuje sie na liste) i czekam na decyzje od Dziekana.\n", moj_pid);
     loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
     if (msq_send(msqid_budynek, &zgloszenie, sizeof(zgloszenie)) == -1)
@@ -94,12 +94,14 @@ int main()
 
     if (decyzja.numer_na_liscie == -1)
     {
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem negatywna decyzje od dziekana i koncze udzial w egzaminie.\n", moj_pid);
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | Otrzymalem negatywna decyzje od Dziekana (niezdana matura) - koncze udzial w egzaminie.\n", moj_pid);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
         kandydat_zakoncz();
     }
 
-    snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem decyzje od dziekana ustawiam sie w kolejce do komisji A.\n", moj_pid);
+    global_numer_na_liscie = decyzja.numer_na_liscie;
+
+    snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Otrzymalem pozytywna decyzje od Dziekana - ustawiam sie w kolejce do Komisji A.\n", moj_pid, decyzja.numer_na_liscie);
     loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
     key_t klucz_msq_A = utworz_klucz(MSQ_KOLEJKA_EGZAMIN_A);
@@ -147,7 +149,7 @@ int main()
                 kandydat_zakoncz();
             }
 
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Czekam przed drzwiami Komisji A...\n", moj_pid);
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Czekam przed drzwiami Komisji A...\n", moj_pid, decyzja.numer_na_liscie);
             loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
             MSG_KANDYDAT_WCHODZI_DO_A_POTWIERDZENIE potwierdzenie;
@@ -158,7 +160,7 @@ int main()
                 kandydat_zakoncz();
             }
 
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Wszedlem do sali A\n", moj_pid);
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Wszedlem do sali A.\n", moj_pid, decyzja.numer_na_liscie);
             loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
             break;
         }
@@ -178,7 +180,7 @@ int main()
 
     if (!egzamin_nadal_trwa)
     {
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Egzamin nie trwa - opuszczam budynek\n", moj_pid);
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Egzamin nie trwa - opuszczam budynek.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
         kandydat_zakoncz();
     }
@@ -188,7 +190,7 @@ int main()
 
     if (czy_powtarzam)
     {
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Mam zdana czesc teorytyczna egzaminu. Czekam na weryfikacje od nadzorcy Komisji A.\n", moj_pid);
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Mam zdana czesc teoretyczna egzaminu. Czekam na weryfikacje od Nadzorcy Komisji A.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
         MSG_KANDYDAT_POWTARZA weryfikacja;
@@ -211,7 +213,7 @@ int main()
 
         if (weryfikacja_odpowiedz.zgoda)
         {
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Nadzorca Komisji A uznaje moj wynik z egazminu. Ustawiam sie w kolejce do Komisji B.\n", moj_pid);
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Nadzorca Komisji A uznaje moj wynik z egzaminu. Ustawiam sie w kolejce do Komisji B.\n", moj_pid, decyzja.numer_na_liscie);
             loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
             czy_ide_do_B = true;
         }
@@ -223,7 +225,6 @@ int main()
 
     if (czy_musze_zdawac)
     {
-        // Kandydat wysla do nadzorcy komunikat ze jest gotowy na zadawanie pytan
         MSG_KANDYDAT_GOTOWY gotowy;
         gotowy.mtype = KANDYDAT_GOTOWY_A;
         gotowy.pid = moj_pid;
@@ -232,7 +233,10 @@ int main()
             kandydat_zakoncz();
         }
 
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji A.\n", moj_pid);
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Jestem gotowy do odbierania pytan od Komisji A.\n", moj_pid, decyzja.numer_na_liscie);
+        loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
+
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Czekam na otrzymanie wszystkich pytan od czlonkow Komisji A.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
         for (int i = 0; i < LICZBA_CZLONKOW_A; i++)
@@ -245,10 +249,10 @@ int main()
             }
         }
 
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.\n", moj_pid);
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Otrzymalem wszystkie pytania od Komisji A. Zaczynam opracowywac odpowiedzi.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Opracowalem pytania od komisji A. Czekam az bede mogl odpowiadac.\n", moj_pid);
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Opracowalem pytania od Komisji A. Czekam az bede mogl odpowiadac.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
         if (semafor_p(SEMAFOR_ODPOWIEDZ_A) == -1)
@@ -268,7 +272,7 @@ int main()
             }
         }
 
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Udzieliem odpowiedzi na wszytskie pytania Komisji A. Czekam na wyniki za czesc teorytyczna egzaminu.\n", moj_pid);
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Udzielilem odpowiedzi na wszystkie pytania Komisji A. Czekam na wyniki za czesc teoretyczna egzaminu.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
         for (int i = 0; i < LICZBA_CZLONKOW_A; i++)
@@ -295,12 +299,12 @@ int main()
         czy_ide_do_B = wynik_koncowy.czy_zdal;
         if (wynik_koncowy.czy_zdal)
         {
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: %.2f. Ustawiam sie w kolejsce do Komisji B.\n", moj_pid, wynik_koncowy.wynik_koncowy);
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Otrzymalem wynik koncowy za czesc teoretyczna egzaminu: %.2f. Ustawiam sie w kolejce do Komisji B.\n", moj_pid, decyzja.numer_na_liscie, wynik_koncowy.wynik_koncowy);
             loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
         }
         else
         {
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem wynik koncowy za czesc teorytyczna egzaminu: %.2f. Moj wynik jest za niski aby przystapic do kolejnego etapu egzaminu.\n", moj_pid, wynik_koncowy.wynik_koncowy);
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Otrzymalem wynik koncowy za czesc teoretyczna egzaminu: %.2f. Moj wynik jest za niski aby przystapic do kolejnego etapu egzaminu.\n", moj_pid, decyzja.numer_na_liscie, wynik_koncowy.wynik_koncowy);
             loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
             kandydat_zakoncz();
         }
@@ -329,10 +333,9 @@ int main()
             kandydat_zakoncz();
         }
 
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Wchodze na czesc praktyczna egzaminu do Komisji B.\n", moj_pid);
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Wchodze na czesc praktyczna egzaminu do Komisji B.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
-        // Kandydat wysla do nadzorcy komunikat ze jest gotowy na zadawanie pytan
         MSG_KANDYDAT_GOTOWY gotowy_B;
         gotowy_B.mtype = KANDYDAT_GOTOWY_B;
         gotowy_B.pid = moj_pid;
@@ -341,7 +344,10 @@ int main()
             kandydat_zakoncz();
         }
 
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Czekam na otrzymanie wszytskich pytan od czlonkow Komisji B.\n", moj_pid);
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Jestem gotowy do odbierania pytan od Komisji B.\n", moj_pid, decyzja.numer_na_liscie);
+        loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
+
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Czekam na otrzymanie wszystkich pytan od czlonkow Komisji B.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
         for (int i = 0; i < LICZBA_CZLONKOW_B; i++)
@@ -354,10 +360,10 @@ int main()
             }
         }
 
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.\n", moj_pid);
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Otrzymalem wszystkie pytania od Komisji B. Zaczynam opracowywac odpowiedzi.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Opracowalem pytania od komisji B. Czekam az bede mogl odpowiadac.\n", moj_pid);
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Opracowalem pytania od Komisji B. Czekam az bede mogl odpowiadac.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
         if (semafor_p(SEMAFOR_ODPOWIEDZ_B) == -1)
@@ -377,7 +383,7 @@ int main()
             }
         }
 
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Udzieliem odpowiedzi na wszytskie pytania Komisji B. Czekam na wyniki za czesc praktyczna egzaminu.\n", moj_pid);
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Udzielilem odpowiedzi na wszystkie pytania Komisji B. Czekam na wyniki za czesc praktyczna egzaminu.\n", moj_pid, decyzja.numer_na_liscie);
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
         for (int i = 0; i < LICZBA_CZLONKOW_B; i++)
@@ -403,12 +409,12 @@ int main()
 
         if (wynik_koncowy_B.czy_zdal)
         {
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: %.2f. Ide do domu i czekam na liste rankingowa.\n", moj_pid, wynik_koncowy_B.wynik_koncowy);
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: %.2f. Ide do domu i czekam na liste rankingowa.\n", moj_pid, decyzja.numer_na_liscie, wynik_koncowy_B.wynik_koncowy);
             loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
         }
         else
         {
-            snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: %.2f. Moj wynik jest za niski - koncze egzamin.\n", moj_pid, wynik_koncowy_B.wynik_koncowy);
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Otrzymalem wynik koncowy za czesc praktyczna egzaminu: %.2f. Moj wynik jest za niski - koncze egzamin.\n", moj_pid, decyzja.numer_na_liscie, wynik_koncowy_B.wynik_koncowy);
             loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
         }
     }
@@ -422,7 +428,7 @@ void kandydat_zakoncz(void)
 {
     if (pamiec_shm == NULL)
     {
-        const char *msg = "[KANDYDAT] Blad: pamiec_shm == NULL\n";
+        const char *msg = "[Kandydat] Blad: pamiec_shm == NULL\n";
         write(STDERR_FILENO, msg, strlen(msg));
         exit(EXIT_FAILURE);
     }
@@ -430,13 +436,27 @@ void kandydat_zakoncz(void)
     if (ewakuacja_aktywna)
     {
         char msg_buffer[128];
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Ewakuacja - opuszczam budynek\n", getpid());
+        if (global_numer_na_liscie != -1)
+        {
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Ewakuacja - opuszczam budynek.\n", getpid(), global_numer_na_liscie);
+        }
+        else
+        {
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | Ewakuacja - opuszczam budynek.\n", getpid());
+        }
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
     }
     else
     {
         char msg_buffer[128];
-        snprintf(msg_buffer, sizeof(msg_buffer), "[KANDYDAT] PID:%d | Koncze egzamin - wypisuje sie.\n", getpid());
+        if (global_numer_na_liscie != -1)
+        {
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Koncze egzamin - wypisuje sie.\n", getpid(), global_numer_na_liscie);
+        }
+        else
+        {
+            snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | Koncze egzamin - wypisuje sie.\n", getpid());
+        }
         loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
     }
 
@@ -454,7 +474,14 @@ void kandydat_zakoncz(void)
     }
 
     char msg_buffer[256];
-    snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | Koncze prace. Pozostalo procesow: %d\n", getpid(), pozostalo);
+    if (global_numer_na_liscie != -1)
+    {
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d Nr:%d | Koncze prace. Pozostalo procesow: %d\n", getpid(), global_numer_na_liscie, pozostalo);
+    }
+    else
+    {
+        snprintf(msg_buffer, sizeof(msg_buffer), "[Kandydat] PID:%d | Koncze prace. Pozostalo procesow: %d\n", getpid(), pozostalo);
+    }
     loguj(SEMAFOR_LOGI_KANDYDACI, LOGI_KANDYDACI, msg_buffer);
 
     semafor_v_bez_undo(SEMAFOR_KONIEC_KANDYDATOW);

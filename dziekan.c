@@ -139,7 +139,7 @@ int main()
 
                 semafor_v(SEMAFOR_MUTEX);
 
-                snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Po weryfikacji matury dopuszczam Kandydata PID:%d do dalszej czesci egzaminu\n", getpid(), zgloszenie.pid);
+                snprintf(msg_buffer, sizeof(msg_buffer), "[Dziekan] PID:%d | Po weryfikacji matury dopuszczam Kandydata PID:%d Nr:%d do dalszej czesci egzaminu.\n", getpid(), zgloszenie.pid, index);
                 loguj(SEMAFOR_LOGI_DZIEKAN, LOGI_DZIEKAN, msg_buffer);
             }
             else
