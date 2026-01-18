@@ -1,10 +1,13 @@
 #include "egzamin.h"
 
 volatile sig_atomic_t ewakuacja_aktywna = false;
+volatile sig_atomic_t liczba_zakonczonych_procesow = 0;
+int liczba_utworzonych_procesow = 0;
 pid_t pid_dziekan = -1;
-PamiecDzielona *pamiec_shm_global = NULL; // Globalna referencja do SHM dla handlera sygnału
+PamiecDzielona *pamiec_shm_global = NULL;
 
 void handler_sigint(int sigNum);
+void handler_sigchld(int sigNum);
 
 int main()
 {
@@ -35,6 +38,16 @@ int main()
     if (signal(SIGTERM, SIG_IGN) == SIG_ERR)
     {
         perror("signal(SIGTERM) | Nie udalo sie dodac signal handler.");
+        exit(EXIT_FAILURE);
+    }
+
+    struct sigaction sa_chld;
+    sa_chld.sa_handler = handler_sigchld;
+    sigemptyset(&sa_chld.sa_mask);
+    sa_chld.sa_flags = SA_RESTART | SA_NOCLDSTOP;
+    if (sigaction(SIGCHLD, &sa_chld, NULL) == -1)
+    {
+        perror("sigaction(SIGCHLD) | Nie udalo sie dodac signal handler.");
         exit(EXIT_FAILURE);
     }
 
@@ -112,6 +125,10 @@ int main()
         execl("./dziekan", "dziekan", NULL);
         perror("execl() | Nie udalo sie urchomic programu dziekan.");
         exit(EXIT_FAILURE);
+
+    default:
+        liczba_utworzonych_procesow++;
+        break;
     }
 
     // Tworzenie komisji A i B
@@ -144,6 +161,10 @@ int main()
                 perror("execl() | Nie udalo sie urchomic programu komisja_b.");
             }
             exit(EXIT_FAILURE);
+
+        default:
+            liczba_utworzonych_procesow++;
+            break;
         }
     }
 
@@ -178,6 +199,10 @@ int main()
             execl("./kandydat", "kandydat", NULL);
             perror("execl() | Nie udalo sie urchomic programu kandydat");
             exit(EXIT_FAILURE);
+
+        default:
+            liczba_utworzonych_procesow++;
+            break;
         }
     }
 
@@ -222,20 +247,21 @@ int main()
             break;
         }
 
-        if (WIFEXITED(status))
-        {
-            // snprintf(msg_buffer, sizeof(msg_buffer), "PROCES PID: %d zakonczył działanie z kodem: %d\n", pid_procesu, WEXITSTATUS(status));
-            // loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
-        }
-        else if (WIFSIGNALED(status))
-        {
-            // snprintf(msg_buffer, sizeof(msg_buffer), "PROCES PID: %d został przerwany sygnałem: %d\n", pid_procesu, WTERMSIG(status));
-            // loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
-        }
+        liczba_zakonczonych_procesow++;
     }
 
     snprintf(msg_buffer, sizeof(msg_buffer), "Zakończono oczekiwanie na procesy.\n");
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
+
+    // Podsumowanie procesów
+    snprintf(msg_buffer, sizeof(msg_buffer), "[main] PODSUMOWANIE: Utworzono %d procesów, zakończyło się %d procesów\n", 
+             liczba_utworzonych_procesow, (int)liczba_zakonczonych_procesow);
+    loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
+    printf("\n========================================\n");
+    printf("PODSUMOWANIE PROCESÓW:\n");
+    printf("  Utworzono:    %d procesów\n", liczba_utworzonych_procesow);
+    printf("  Zakończono:   %d procesów\n", (int)liczba_zakonczonych_procesow);
+    printf("========================================\n\n");
 
     usun_semafory();
     odlacz_shm(pamiec_shm);
@@ -266,4 +292,18 @@ void handler_sigint(int sigNum)
             kill(pid_dziekan, SIGUSR2);
         }
     }
+}
+
+void handler_sigchld(int sigNum)
+{
+    (void)sigNum;
+    int saved_errno = errno;
+    int status;
+
+    while (waitpid(-1, &status, WNOHANG) > 0)
+    {
+        liczba_zakonczonych_procesow++;
+    }
+
+    errno = saved_errno;
 }
