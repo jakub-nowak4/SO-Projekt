@@ -256,14 +256,9 @@ int main()
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     // Podsumowanie procesów
-    snprintf(msg_buffer, sizeof(msg_buffer), "[main] PODSUMOWANIE: Utworzono %d procesów, zakończyło się %d procesów\n", 
+    snprintf(msg_buffer, sizeof(msg_buffer), "[main] PODSUMOWANIE: Utworzono %d procesów, zakończyło się %d procesów\n",
              liczba_utworzonych_procesow, (int)liczba_zakonczonych_procesow);
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
-    printf("\n========================================\n");
-    printf("PODSUMOWANIE PROCESÓW:\n");
-    printf("  Utworzono:    %d procesów\n", liczba_utworzonych_procesow);
-    printf("  Zakończono:   %d procesów\n", (int)liczba_zakonczonych_procesow);
-    printf("========================================\n\n");
 
     usun_semafory();
     odlacz_shm(pamiec_shm);
