@@ -10,7 +10,7 @@ all: $(PROGS)
 
 # Programy bez watkow
 main: main.c egzamin.c egzamin.h
-	$(CC) $(CFLAGS) -o $@ main.c egzamin.c
+	$(CC) $(CFLAGS) $(LDFLAGS_PTHREAD) -o $@ main.c egzamin.c
 
 dziekan: dziekan.c egzamin.c egzamin.h
 	$(CC) $(CFLAGS) -o $@ dziekan.c egzamin.c

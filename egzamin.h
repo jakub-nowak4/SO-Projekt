@@ -22,7 +22,7 @@
 #include <sys/ipc.h>
 #include <pthread.h>
 
-#define M 120                    // liczba osob ktore moga byc przyjete dla WSL MAX <= 1800
+#define M 1800                     // liczba osob ktore moga byc przyjete dla WSL MAX <= 1800
 #define POJEMNOSC_BUDYNKU 500      // max kandydatow w budynku naraz (musi byc < MAX_POJEMNOSC_BUDYNKU)
 #define MAX_POJEMNOSC_BUDYNKU 1000 // limit kolejek komunikatow - NIE ZMIENIAC!
 #define LICZBA_KANDYDATOW (10 * M)
