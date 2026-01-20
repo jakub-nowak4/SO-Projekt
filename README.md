@@ -2,8 +2,6 @@
 
 ## Wersja i dystrybucja
 
-### Opcja A
-
 | Parametr | Wartość |
 |----------|---------|
 | Operating System | Ubuntu 24.04.1 LTS |
@@ -11,15 +9,6 @@
 | Kernel | Linux 6.6.87.2-microsoft-standard-WSL2 |
 | Architecture | x86-64 |
 | Kompilator | gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0 |
-
-### Opcja B
-
-| Parametr | Wartość |
-|----------|---------|
-| Operating System | Arch Linux |
-| Kernel | Linux 6.17.9-arch1-1 |
-| Architecture | x86-64 |
-| Kompilator | gcc (GCC) 15.2.1 20251112 |
 
 ### Wymagania wstępne
 

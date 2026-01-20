@@ -15,12 +15,11 @@ volatile bool watek_dziala = true;
 void handler_sigint(int sigNum);
 void *zbieraj_procesy(void *arg);
 
-
 int main()
 {
     if (POJEMNOSC_BUDYNKU >= MAX_POJEMNOSC_BUDYNKU)
     {
-        fprintf(stderr, "BLAD: POJEMNOSC_BUDYNKU (%d) musi byc < %d!\n",POJEMNOSC_BUDYNKU, MAX_POJEMNOSC_BUDYNKU);
+        fprintf(stderr, "BLAD: POJEMNOSC_BUDYNKU (%d) musi byc < %d!\n", POJEMNOSC_BUDYNKU, MAX_POJEMNOSC_BUDYNKU);
         exit(EXIT_FAILURE);
     }
 
@@ -61,7 +60,7 @@ int main()
     setpgid(0, 0);
 
     mkdir(LOGI_DIR, 0777);
-    const char *files[] = {LOGI_MAIN, LOGI_DZIEKAN, LOGI_KANDYDACI,LOGI_KOMISJA_A, LOGI_KOMISJA_B, LOGI_LISTA_RANKINGOWA, LOGI_LISTA_ODRZUCONYCH};
+    const char *files[] = {LOGI_MAIN, LOGI_DZIEKAN, LOGI_KANDYDACI, LOGI_KOMISJA_A, LOGI_KOMISJA_B, LOGI_LISTA_RANKINGOWA, LOGI_LISTA_ODRZUCONYCH};
 
     for (int i = 0; i < 7; i++)
     {
@@ -106,7 +105,7 @@ int main()
 
     char msg_buffer[512];
 
-    snprintf(msg_buffer, sizeof(msg_buffer),"[main] Rozpoczynam symulacje EGZAMIN WSTEPNY NA KIERUNEK INFORMATYKA\n");
+    snprintf(msg_buffer, sizeof(msg_buffer), "[main] Rozpoczynam symulacje EGZAMIN WSTEPNY NA KIERUNEK INFORMATYKA\n");
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     snprintf(msg_buffer, sizeof(msg_buffer), "[main] LICZBA MIEJSC: %d\n", M);
@@ -121,7 +120,7 @@ int main()
         exit(EXIT_FAILURE);
     }
 
-    snprintf(msg_buffer, sizeof(msg_buffer),"[main] Uruchomiono watek zbierajacy procesy\n");
+    snprintf(msg_buffer, sizeof(msg_buffer), "[main] Uruchomiono watek zbierajacy procesy\n");
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     // Dziekan
@@ -192,11 +191,11 @@ int main()
         }
     }
 
-    snprintf(msg_buffer, sizeof(msg_buffer),"[main] Utworzono %d kandydatow\n", LICZBA_KANDYDATOW);
+    snprintf(msg_buffer, sizeof(msg_buffer), "[main] Utworzono %d kandydatow\n", LICZBA_KANDYDATOW);
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     // Start egzaminu
-    snprintf(msg_buffer, sizeof(msg_buffer),"[main] Wysylam SIGUSR1 do Dziekana (PID:%d)\n", pid_dziekan);
+    snprintf(msg_buffer, sizeof(msg_buffer), "[main] Wysylam SIGUSR1 do Dziekana (PID:%d)\n", pid_dziekan);
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     if (kill(pid_dziekan, SIGUSR1) == -1)
@@ -212,7 +211,7 @@ int main()
         exit(EXIT_FAILURE);
     }
 
-    snprintf(msg_buffer, sizeof(msg_buffer),"[main] Oczekiwanie na zakonczenie procesow...\n");
+    snprintf(msg_buffer, sizeof(msg_buffer), "[main] Oczekiwanie na zakonczenie procesow...\n");
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     pthread_mutex_lock(&mutex_procesow);
@@ -225,7 +224,7 @@ int main()
     watek_dziala = false;
     pthread_join(watek_zbierajacy, NULL);
 
-    snprintf(msg_buffer, sizeof(msg_buffer),"[main] PODSUMOWANIE: Utworzono %d, zakonczono %d procesow\n",liczba_utworzonych_procesow, liczba_zakonczonych_procesow);
+    snprintf(msg_buffer, sizeof(msg_buffer), "[main] PODSUMOWANIE: Utworzono %d, zakonczono %d procesow\n", liczba_utworzonych_procesow, liczba_zakonczonych_procesow);
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     pthread_mutex_destroy(&mutex_procesow);
@@ -288,7 +287,9 @@ void *zbieraj_procesy(void *arg)
             pthread_mutex_unlock(&mutex_procesow);
 
             if (zakonczone >= utworzone && utworzone > 0)
+            {
                 break;
+            }
 
             continue;
         }
@@ -303,10 +304,11 @@ void *zbieraj_procesy(void *arg)
                 pthread_mutex_unlock(&mutex_procesow);
 
                 if (zakonczone >= utworzone && utworzone > 0)
+                {
                     break;
+                }
             }
         }
-
     }
 
     int status;
@@ -321,7 +323,7 @@ void *zbieraj_procesy(void *arg)
     pthread_cond_signal(&cond_procesow);
     pthread_mutex_unlock(&mutex_procesow);
 
-    snprintf(msg_buffer, sizeof(msg_buffer),"[Watek] Zakonczono. Zebrano: %d procesow\n", liczba_zakonczonych_procesow);
+    snprintf(msg_buffer, sizeof(msg_buffer), "[Watek] Zakonczono. Zebrano: %d procesow\n", liczba_zakonczonych_procesow);
     loguj(SEMAFOR_LOGI_MAIN, LOGI_MAIN, msg_buffer);
 
     return NULL;
