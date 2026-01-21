@@ -757,35 +757,35 @@ Symulacja tworzy katalog `logi/` z następującymi plikami:
 ### A. Tworzenie i obsługa plików
 
 * **open()**
-[main.c (Linia 67)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L67)
+[main.c (Linia 67)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L67)
 ```c
 int fd = open(files[i], O_WRONLY | O_CREAT | O_TRUNC, 0666);
 ```
-[egzamin.c (Linia 55)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L55)
+[egzamin.c (Linia 55)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L55)
 ```c
 int fd = open(file_path, O_WRONLY | O_APPEND | O_CREAT, 0644);
 ```
 
 * **close()**
-[main.c (Linia 69)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L69)
+[main.c (Linia 69)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L69)
 ```c
 close(fd);
 ```
-[egzamin.c (Linia 59)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L59)
+[egzamin.c (Linia 59)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L59)
 ```c
 close(fd);
 ```
 
 * **write()**
-[egzamin.c (Linia 58)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L58)
+[egzamin.c (Linia 58)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L58)
 ```c
 (void)write(fd, buffer, len);
 ```
-[egzamin.c (Linia 114)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L114)
+[egzamin.c (Linia 114)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L114)
 ```c
 (void)write(STDOUT_FILENO, color_buffer, color_len);
 ```
-[egzamin.c (Linia 137)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L137)
+[egzamin.c (Linia 137)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L137)
 ```c
 if (write(STDOUT_FILENO, buffor, len) == -1)
 ```
@@ -793,33 +793,33 @@ if (write(STDOUT_FILENO, buffor, len) == -1)
 ### B. Tworzenie procesów
 
 * **fork()**
-[main.c (Linia 127) - Proces Dziekana](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L127)
+[main.c (Linia 127) - Proces Dziekana](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L127)
 ```c
 pid_dziekan = fork();
 ```
-[main.c (Linia 148) - Procesy Komisji](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L148)
+[main.c (Linia 148) - Procesy Komisji](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L148)
 ```c
 switch (fork())
 ```
-[main.c (Linia 176) - Procesy Kandydatów](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L176)
+[main.c (Linia 176) - Procesy Kandydatów](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L176)
 ```c
 switch (fork())
 ```
 
 * **exec() (execl)**
-[main.c (Linia 135) - Uruchomienie Dziekana](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L135)
+[main.c (Linia 135) - Uruchomienie Dziekana](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L135)
 ```c
 execl("./dziekan", "dziekan", NULL);
 ```
-[main.c (Linia 156) - Uruchomienie Komisji A](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L156)
+[main.c (Linia 156) - Uruchomienie Komisji A](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L156)
 ```c
 execl("./komisja_a", "komisja_a", NULL);
 ```
-[main.c (Linia 158) - Uruchomienie Komisji B](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L158)
+[main.c (Linia 158) - Uruchomienie Komisji B](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L158)
 ```c
 execl("./komisja_b", "komisja_b", NULL);
 ```
-[main.c (Linia 183) - Uruchomienie Kandydata](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L183)
+[main.c (Linia 183) - Uruchomienie Kandydata](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L183)
 ```c
 execl("./kandydat", "kandydat", NULL);
 ```
@@ -827,18 +827,18 @@ execl("./kandydat", "kandydat", NULL);
 * **exit()**
 (Funkcja używana w obsłudze błędów we wszystkich plikach. Poniżej przykłady poprawnego zakończenia)
 
-[main.c (Linia 137)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L137)
+[main.c (Linia 137)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L137)
 ```c
 exit(EXIT_SUCCESS);
 ```
 
 
 * **wait() / waitpid()**
-[main.c (Linia 271) - Wątek zbierający procesy](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L271)
+[main.c (Linia 271) - Wątek zbierający procesy](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L271)
 ```c
 while ((pid = waitpid(-1, &status, WNOHANG)) > 0)
 ```
-[main.c (Linia 315) - Oczekiwanie końcowe](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L315)
+[main.c (Linia 315) - Oczekiwanie końcowe](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L315)
 ```c
 while (waitpid(-1, &status, WNOHANG) > 0)
 ```
@@ -846,37 +846,37 @@ while (waitpid(-1, &status, WNOHANG) > 0)
 ### C. Tworzenie i obsługa wątków
 
 * **pthread_create()**
-[main.c (Linia 117)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L117)
+[main.c (Linia 117)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L117)
 ```c
 if (pthread_create(&watek_zbierajacy, NULL, zbieraj_procesy, NULL) != 0)
 ```
-[komisja_a.c (Linia 124)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/komisja_a.c#L124)
+[komisja_a.c (Linia 124)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/komisja_a.c#L124)
 ```c
 if (pthread_create(&watki_komisji[i], NULL, nadzorca, &numery_czlonkow[i]) != 0)
 ```
-[komisja_b.c (Linia 132)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/komisja_b.c#L132)
+[komisja_b.c (Linia 132)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/komisja_b.c#L132)
 ```c
 if (pthread_create(&watki_komisji[i], NULL, czlonek, &numery_czlonkow[i]) != 0)
 ```
 
 * **pthread_join()**
-[main.c (Linia 225)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L225)
+[main.c (Linia 225)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L225)
 ```c
 pthread_join(watek_zbierajacy, NULL);
 ```
-[komisja_a.c (Linia 164)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/komisja_a.c#L164)
+[komisja_a.c (Linia 164)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/komisja_a.c#L164)
 ```c
 int ret = pthread_join(watki_komisji[i], NULL);
 ```
 
 * **pthread_mutex_lock()**
-[komisja_a.c (Linia 21)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/komisja_a.c#L21)
+[komisja_a.c (Linia 21)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/komisja_a.c#L21)
 ```c
 pthread_mutex_lock(mtx);
 ```
 
 * **pthread_mutex_unlock()**
-[komisja_a.c (Linia 24)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/komisja_a.c#L24)
+[komisja_a.c (Linia 24)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/komisja_a.c#L24)
 ```c
 pthread_mutex_unlock(mtx);
 ```
@@ -884,27 +884,27 @@ pthread_mutex_unlock(mtx);
 ### D. Obsługa sygnałów
 
 * **kill()**
-[main.c (Linia 201)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L201)
+[main.c (Linia 201)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L201)
 ```c
 if (kill(pid_dziekan, SIGUSR1) == -1)
 ```
-[dziekan.c (Linia 359)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/dziekan.c#L359)
+[dziekan.c (Linia 359)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/dziekan.c#L359)
 ```c
 kill(0, SIGTERM);
 ```
 
 * **signal()**
-[main.c (Linia 35)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L35)
+[main.c (Linia 35)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/main.c#L35)
 ```c
 if (signal(SIGINT, handler_sigint) == SIG_ERR)
 ```
-[dziekan.c (Linia 48)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/dziekan.c#L48)
+[dziekan.c (Linia 48)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/dziekan.c#L48)
 ```c
 if (signal(SIGINT, SIG_IGN) == SIG_ERR)
 ```
 
 * **sigaction()**
-[dziekan.c (Linia 19)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/dziekan.c#L19)
+[dziekan.c (Linia 19)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/dziekan.c#L19)
 ```c
 if (sigaction(SIGUSR1, &sa_usr1, NULL) == -1)
 ```
@@ -912,45 +912,45 @@ if (sigaction(SIGUSR1, &sa_usr1, NULL) == -1)
 ### E. Synchronizacja procesów (wątków)
 
 * **ftok()**
-[egzamin.c (Linia 161) - Wrapper `utworz_klucz`](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L161)
+[egzamin.c (Linia 161) - Wrapper `utworz_klucz`](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L161)
 ```c
 key_t klucz = ftok(".", arg);
 ```
 
 * **semget()**
-[egzamin.c (Linia 173) - Wrapper `utworz_semafory`](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L173)
+[egzamin.c (Linia 173) - Wrapper `utworz_semafory`](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L173)
 ```c
 semafor_id = semget(klucz_sem, 18, IPC_CREAT | IPC_EXCL | 0600);
 ```
 
 * **semctl()**
-[egzamin.c (Linia 193) - Inicjalizacja wartości semaforów](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L193)
+[egzamin.c (Linia 193) - Inicjalizacja wartości semaforów](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L193)
 ```c
 if (semctl(semafor_id, SEMAFOR_STD_OUT, SETVAL, 1) == -1)
 ```
-[egzamin.c (Linia 309) - Usuwanie semaforów](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L309)
+[egzamin.c (Linia 309) - Usuwanie semaforów](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L309)
 ```c
 if (semctl(semafor_id, 0, IPC_RMID) == -1)
 ```
 
 * **semop()**
-[egzamin.c (Linia 330) - Wrapper `semafor_p`](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L330)
+[egzamin.c (Linia 330) - Wrapper `semafor_p`](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L330)
 ```c
 while (semop(semafor_id, &buffer, 1) == -1)
 ```
-[egzamin.c (Linia 383) - Wrapper `semafor_v`](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L383)
+[egzamin.c (Linia 383) - Wrapper `semafor_v`](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L383)
 ```c
 while (semop(semafor_id, &buffer, 1) == -1)
 ```
 
 * **semafor_p_bez_ewakuacji()**
-[egzamin.c (Linia 351)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L351)
+[egzamin.c (Linia 351)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L351)
 ```c
 int semafor_p_bez_ewakuacji(int semNum)
 ```
 
 * **semafor_v_bez_undo()**
-[egzamin.c (Linia 399)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L399)
+[egzamin.c (Linia 399)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L399)
 ```c
 void semafor_v_bez_undo(int semNum)
 ```
@@ -958,31 +958,31 @@ void semafor_v_bez_undo(int semNum)
 ### G. Segmenty pamięci dzielonej
 
 * **ftok()**
-[egzamin.c (Linia 161)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L161)
+[egzamin.c (Linia 161)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L161)
 ```c
 key_t klucz = ftok(".", arg);
 ```
 
 * **shmget()**
-[egzamin.c (Linia 423)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L423)
+[egzamin.c (Linia 423)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L423)
 ```c
 shmid = shmget(klucz_shm, sizeof(PamiecDzielona), IPC_CREAT | IPC_EXCL | 0600);
 ```
 
 * **shmat()**
-[egzamin.c (Linia 445)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L445)
+[egzamin.c (Linia 445)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L445)
 ```c
 *wsk = (PamiecDzielona *)shmat(shmid, NULL, 0);
 ```
 
 * **shmdt()**
-[egzamin.c (Linia 460)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L460)
+[egzamin.c (Linia 460)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L460)
 ```c
 if (shmdt(adr) == -1)
 ```
 
 * **shmctl()**
-[egzamin.c (Linia 475)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L475)
+[egzamin.c (Linia 475)](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L475)
 ```c
 if (shmctl(shmid, IPC_RMID, NULL) == -1)
 ```
@@ -990,31 +990,31 @@ if (shmctl(shmid, IPC_RMID, NULL) == -1)
 ### H. Kolejki komunikatów
 
 * **ftok()**
-[egzamin.c (Linia 161) - Wrapper `utworz_klucz`](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L161)
+[egzamin.c (Linia 161) - Wrapper `utworz_klucz`](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L161)
 ```c
 key_t klucz = ftok(".", arg);
 ```
 
 * **msgget()**
-[egzamin.c (Linia 486) - Wrapper `utworz_msq`](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L486)
+[egzamin.c (Linia 486) - Wrapper `utworz_msq`](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L486)
 ```c
 int msqid = msgget(klucz_msq, IPC_CREAT | IPC_EXCL | 0600);
 ```
 
 * **msgsnd()**
-[egzamin.c (Linia 519) - Wrapper `msq_send`](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L519)
+[egzamin.c (Linia 519) - Wrapper `msq_send`](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L519)
 ```c
 if (msgsnd(msqid, msg, msgsz, IPC_NOWAIT) == 0)
 ```
 
 * **msgrcv()**
-[egzamin.c (Linia 555) - Wrapper `msq_receive`](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L555)
+[egzamin.c (Linia 555) - Wrapper `msq_receive`](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L555)
 ```c
 res = msgrcv(msqid, buffer, buffer_size - sizeof(long), typ_wiadomosci, 0);
 ```
 
 * **msgctl()**
-[egzamin.c (Linia 602) - Wrapper `usun_msq`](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/egzamin.c#L602)
+[egzamin.c (Linia 602) - Wrapper `usun_msq`](https://github.com/jakub-nowak4/SO-Projekt/blob/320a93ce4179d61c2cdc32531a95471ba27acb35/egzamin.c#L602)
 ```c
 if (msgctl(msqid, IPC_RMID, NULL) == -1)
 ```
