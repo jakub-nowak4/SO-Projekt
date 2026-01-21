@@ -14,7 +14,7 @@ int main()
     struct sigaction sa;
     sa.sa_handler = handler_sigterm;
     sigemptyset(&sa.sa_mask);
-    sa.sa_flags = 0; // bez SA_RESTART aby przerwac msqrcb
+    sa.sa_flags = 0;
     if (sigaction(SIGTERM, &sa, NULL) == -1)
     {
         perror("sigaction(SIGTERM) | Nie udalo sie dodac signal handler.");

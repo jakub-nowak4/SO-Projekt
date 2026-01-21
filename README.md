@@ -451,19 +451,77 @@ msq_receive(msqid_A, &pytanie, sizeof(pytanie), MTYPE_A_PYTANIE + getpid());
 
 **Opis:** Przy dużej liczbie kończących się procesów kandydatów, tworzyły się procesy zombie zajmujące zasoby systemowe.
 
-**Rozwiązanie:** Obsługa sygnału `SIGCHLD` w procesie `main`, który wywołuje `waitpid()` z flagą `WNOHANG`:
+**Rozwiązanie:** Wprowadzenie asynchronicznego wątku w procesie `main`, który odpowiedzialny jest za ciągłe zbieranie zakończonych procesów (zombie). Wątek ten działa w tle i cyklicznie wywołuje funkcję `waitpid()` z flagą `WNOHANG`:
 
 ```c
-void handler_sigchld(int sig) {
-    (void)sig;
-    int saved_errno = errno;
-    int status;
-    
-    while (waitpid(-1, &status, WNOHANG) > 0) {
-        liczba_zakonczonych_procesow++;
+void *zbieraj_procesy(void *arg)
+{
+    (void)arg;
+    char msg_buffer[512];
+
+    while (watek_dziala)
+    {
+        int status;
+        int zebrane_w_iteracji = 0;
+
+        pid_t pid;
+        while ((pid = waitpid(-1, &status, WNOHANG)) > 0)
+        {
+            zebrane_w_iteracji++;
+        }
+
+        if (zebrane_w_iteracji > 0)
+        {
+            pthread_mutex_lock(&mutex_procesow);
+            liczba_zakonczonych_procesow += zebrane_w_iteracji;
+            int zakonczone = liczba_zakonczonych_procesow;
+            int utworzone = liczba_utworzonych_procesow;
+
+            if (zakonczone >= utworzone || zakonczone % 100 == 0)
+            {
+                pthread_cond_signal(&cond_procesow);
+            }
+            pthread_mutex_unlock(&mutex_procesow);
+
+            if (zakonczone >= utworzone && utworzone > 0)
+            {
+                break;
+            }
+
+            continue;
+        }
+
+        if (pid == -1)
+        {
+            if (errno == ECHILD)
+            {
+                pthread_mutex_lock(&mutex_procesow);
+                int zakonczone = liczba_zakonczonych_procesow;
+                int utworzone = liczba_utworzonych_procesow;
+                pthread_mutex_unlock(&mutex_procesow);
+
+                if (zakonczone >= utworzone && utworzone > 0)
+                {
+                    break;
+                }
+            }
+        }
     }
     
-    errno = saved_errno;
+    // Oczekiwanie na resztę procesów (jeśli jakieś zostały)
+    int status;
+    while (waitpid(-1, &status, WNOHANG) > 0)
+    {
+        pthread_mutex_lock(&mutex_procesow);
+        liczba_zakonczonych_procesow++;
+        pthread_mutex_unlock(&mutex_procesow);
+    }
+
+    pthread_mutex_lock(&mutex_procesow);
+    pthread_cond_signal(&cond_procesow);
+    pthread_mutex_unlock(&mutex_procesow);
+
+    return NULL;
 }
 ```
 
@@ -505,9 +563,8 @@ Dzięki temu ewakuacja może zostać wywołana tylko gdy egzamin już trwa i wsz
 **Opis:** Przy dużej skali (M=500+) kolejki komunikatów przepełniały się (limit systemowy).
 
 **Rozwiązanie:**
-1. Zmniejszenie czasów opóźnień (używanie μs zamiast sekund)
-2. Wprowadzenie `POJEMNOSC_BUDYNKU` < `MAX_POJEMNOSC_BUDYNKU` aby ograniczyć liczbę jednoczesnych kandydatów
-3. Walidacja przy starcie programu:
+1. Wprowadzenie `POJEMNOSC_BUDYNKU` < `MAX_POJEMNOSC_BUDYNKU` aby ograniczyć liczbę jednoczesnych kandydatów
+2. Walidacja przy starcie programu:
 
 ```c
 if (POJEMNOSC_BUDYNKU >= MAX_POJEMNOSC_BUDYNKU) {
@@ -700,7 +757,7 @@ Symulacja tworzy katalog `logi/` z następującymi plikami:
 ### A. Tworzenie i obsługa plików
 
 * **open()**
-[main.c (Linia 62)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L62)
+[main.c (Linia 67)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L67)
 ```c
 int fd = open(files[i], O_WRONLY | O_CREAT | O_TRUNC, 0666);
 ```
@@ -710,7 +767,7 @@ int fd = open(file_path, O_WRONLY | O_APPEND | O_CREAT, 0644);
 ```
 
 * **close()**
-[main.c (Linia 64)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L64)
+[main.c (Linia 69)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L69)
 ```c
 close(fd);
 ```
@@ -736,33 +793,33 @@ if (write(STDOUT_FILENO, buffor, len) == -1)
 ### B. Tworzenie procesów
 
 * **fork()**
-[main.c (Linia 116) - Proces Dziekana](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L116)
+[main.c (Linia 127) - Proces Dziekana](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L127)
 ```c
 pid_dziekan = fork();
 ```
-[main.c (Linia 137) - Procesy Komisji](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L137)
+[main.c (Linia 148) - Procesy Komisji](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L148)
 ```c
 switch (fork())
 ```
-[main.c (Linia 191) - Procesy Kandydatów](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L191)
+[main.c (Linia 176) - Procesy Kandydatów](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L176)
 ```c
 switch (fork())
 ```
 
 * **exec() (execl)**
-[main.c (Linia 125) - Uruchomienie Dziekana](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L125)
+[main.c (Linia 135) - Uruchomienie Dziekana](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L135)
 ```c
 execl("./dziekan", "dziekan", NULL);
 ```
-[main.c (Linia 154) - Uruchomienie Komisji A](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L154)
+[main.c (Linia 156) - Uruchomienie Komisji A](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L156)
 ```c
 execl("./komisja_a", "komisja_a", NULL);
 ```
-[main.c (Linia 160) - Uruchomienie Komisji B](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L160)
+[main.c (Linia 158) - Uruchomienie Komisji B](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L158)
 ```c
 execl("./komisja_b", "komisja_b", NULL);
 ```
-[main.c (Linia 199) - Uruchomienie Kandydata](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L199)
+[main.c (Linia 183) - Uruchomienie Kandydata](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L183)
 ```c
 execl("./kandydat", "kandydat", NULL);
 ```
@@ -770,18 +827,18 @@ execl("./kandydat", "kandydat", NULL);
 * **exit()**
 (Funkcja używana w obsłudze błędów we wszystkich plikach. Poniżej przykłady poprawnego zakończenia)
 
-[main.c (Linia 265)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L265)
+[main.c (Linia 137)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L137)
 ```c
 exit(EXIT_SUCCESS);
 ```
 
 
 * **wait() / waitpid()**
-[main.c (Linia 241) - Oczekiwanie na zakończenie procesów](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L241)
+[main.c (Linia 271) - Wątek zbierający procesy](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L271)
 ```c
-pid_procesu = wait(&status);
+while ((pid = waitpid(-1, &status, WNOHANG)) > 0)
 ```
-[main.c (Linia 300) - Obsługa procesów zombie (SIGCHLD)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L300)
+[main.c (Linia 315) - Oczekiwanie końcowe](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L315)
 ```c
 while (waitpid(-1, &status, WNOHANG) > 0)
 ```
@@ -789,6 +846,10 @@ while (waitpid(-1, &status, WNOHANG) > 0)
 ### C. Tworzenie i obsługa wątków
 
 * **pthread_create()**
+[main.c (Linia 117)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L117)
+```c
+if (pthread_create(&watek_zbierajacy, NULL, zbieraj_procesy, NULL) != 0)
+```
 [komisja_a.c (Linia 124)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/komisja_a.c#L124)
 ```c
 if (pthread_create(&watki_komisji[i], NULL, nadzorca, &numery_czlonkow[i]) != 0)
@@ -799,6 +860,10 @@ if (pthread_create(&watki_komisji[i], NULL, czlonek, &numery_czlonkow[i]) != 0)
 ```
 
 * **pthread_join()**
+[main.c (Linia 225)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L225)
+```c
+pthread_join(watek_zbierajacy, NULL);
+```
 [komisja_a.c (Linia 164)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/komisja_a.c#L164)
 ```c
 int ret = pthread_join(watki_komisji[i], NULL);
@@ -819,7 +884,7 @@ pthread_mutex_unlock(mtx);
 ### D. Obsługa sygnałów
 
 * **kill()**
-[main.c (Linia 220)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L220)
+[main.c (Linia 201)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L201)
 ```c
 if (kill(pid_dziekan, SIGUSR1) == -1)
 ```
@@ -829,7 +894,7 @@ kill(0, SIGTERM);
 ```
 
 * **signal()**
-[main.c (Linia 32)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L32)
+[main.c (Linia 35)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L35)
 ```c
 if (signal(SIGINT, handler_sigint) == SIG_ERR)
 ```
@@ -839,10 +904,6 @@ if (signal(SIGINT, SIG_IGN) == SIG_ERR)
 ```
 
 * **sigaction()**
-[main.c (Linia 48)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/main.c#L48)
-```c
-if (sigaction(SIGCHLD, &sa_chld, NULL) == -1)
-```
 [dziekan.c (Linia 19)](https://github.com/jakub-nowak4/SO-Projekt/blob/59422bb98d6497c4b6757994d4d96ae143f2f540/dziekan.c#L19)
 ```c
 if (sigaction(SIGUSR1, &sa_usr1, NULL) == -1)
